@@ -1,0 +1,20 @@
+{
+  "name": "fotos-random",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@auth/core": "^0.18.6",
+    "astro": "^4.6.1",
+    "auth-astro": "^4.1.1",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^3.4.3"
+  }
+}
