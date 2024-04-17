@@ -1,0 +1,46 @@
+---
+const pages = [
+  { name: 'Inicio', href: '/', label: 'Ir al inicio' },
+  { name: 'Votaciones', href: '/votos', label: 'Ir a votaciones'},
+  { name: 'Resultados', href: '/resultados', label: 'Ir a resultados'},
+  { name: 'Galeria', href: '/galeria', label: 'Ir a la galeria'}
+]
+---
+
+<header class="mb-10 h-16 max-w-[100vw] lg:h-24">
+  <nav class="group flex h-full w-full items-center justify-between px-10 lg:justify-center">
+    {
+      pages.map(({ name, href, label }) => (
+        <a href={href} 
+         class="nav-item relative hidden h-full select-none flex-col items-center justify-center gap-1 text-center text-xl uppercase lg:flex lg:px-7 xl:px-10"
+         aria-label={label}
+          >
+          <span class="z-10">{name}</span>
+          <div class="background absolute -z-10 h-full w-full" />
+        </a>
+      ))
+    }
+  </nav>
+  <hr
+    class="h-[2px] w-full border-t-0"
+    style="background:linear-gradient(to right, transparent 0%, white 50%, transparent 100%)"
+  />
+</header>
+
+<style>
+  .nav-item .background {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom, rgba(221, 221, 221, 20%) 0%, transparent 100%);
+		transition: opacity 0.3s;
+	}
+
+	.nav-item:hover .background,
+	.nav-item:focus .background {
+		opacity: 1;
+    z-index: 10;
+	}
+
+</style>
