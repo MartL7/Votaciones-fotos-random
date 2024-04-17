@@ -1,0 +1,40 @@
+---
+import GithubIcon from '@/components/icons/Github.astro'
+import InstagramIcon from '@/components/icons/Instagram.astro'
+
+// Credits to Midudev -> Thanks Crack 🤍
+---
+
+<footer class="relative md:px-5 mt-20 flex w-full flex-col place-items-center pb-20 pt-14 md:flex-row md:justify-between md:pt-16">
+
+  <hr class="absolute top-0 h-[2px] w-full min-w-[18rem] border-t-0 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent bg-center md:my-9"/>
+
+  <span class="text-center text-white/50">
+    © 2024 Fotos Random<strong> by Geovas </strong> <span aria-hidden="true" class="hidden md:inline"> | </span>
+    <br aria-hidden="true" class="block md:hidden" /> casi todos los derechos reservado ♥️
+  </span>
+
+  <hr
+    aria-hidden="true"
+    class="my-12 h-[2px] w-full min-w-[18rem] border-t-0 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent bg-center md:hidden"/>
+
+  <nav>
+    <ul class="flex flex-row items-center gap-x-6" aria-label="redes sociales">
+      <li>
+        <a target="_blank" rel="noopener" href="https://github.com/MartL7"
+          aria-label="Github de Geovany Rincón - MartL7"
+          class="inline-block any-hover:scale-125 any-hover:opacity-70 motion-safe:transition hover:scale-125 transition">
+          <GithubIcon class="size-8 opacity-70 hover:opacity-100 hover:text-orange-200/90  transition" />
+        </a>
+      </li>
+
+      <li>
+        <a target="_blank" rel="noopener" href="https://instagram.com/geovx_lg"
+          aria-label="Instagram de Geovany Rincón"
+          class="inline-block hover:scale-135 hover:opacity-70 motion-safe:transition hover:scale-125 transition">
+          <InstagramIcon class="size-8 opacity-70 hover:opacity-100 hover:text-orange-200/90 transition"/>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</footer>
