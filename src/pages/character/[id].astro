@@ -1,0 +1,60 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { Characters } from "@/logic/character"
+
+const { id } = Astro.params
+
+const character = Characters.find((character) => character.id === id)
+
+const { imagePresentation, name, imagesGalery, funnyText } = character
+---
+
+<Layout title="Post">
+  <main class="flex justify-center flex-col items-center">
+
+    <h1 class="text-2xl sm:text-3xl font-bold text-gray-400/90"> Información del Personaje </h1>
+
+    <a href="/" class="group relative cursor-pointer">
+      <img 
+        decoding="async"
+        loading="lazy"
+        src={imagePresentation} 
+        alt={`Imagen Grande de ${name}`}
+        class="masked-image"
+      />
+
+      <div>
+        <span class=`font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-48 left-0 right-0 z-50 mx-auto text-6xl lg:text-6xl`>
+          {name}
+        </span>
+
+        <span class=`font-Dancing font-bold skew-y-[-10deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto`>
+          <p class="text-blue-400/80 uppercase text-2xl"> "{funnyText.at(0)}" </p>
+        </span>
+      </div>
+    </a>
+
+    <h2 class="mt-20 font-semibold text-2xl sm:text-3xl "> Fotos Cagadas de {name} </h2>
+    <section class="grid grid-cols-2 gap-5 sm:gap-8 md:gap-10 sm:grid-cols-3 p-5">
+      {
+        imagesGalery.map((imageObj, index) => (
+          <picture class={imageObj.class}>
+            <img 
+              decoding="async"
+              loading="lazy"
+              src={imageObj.image} 
+              alt={`Imagen ${index + 1} de ${name}`}
+              class={`size-full rounded-lg object-cover`}
+            />
+          </picture>
+        ))
+      }
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .masked-image {
+    mask-image: linear-gradient(black 50%, transparent);
+  }
+</style>
