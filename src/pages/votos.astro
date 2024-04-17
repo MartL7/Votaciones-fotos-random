@@ -1,0 +1,14 @@
+---
+import { getSession } from 'auth-astro/server'
+import Layout from "@/layouts/Layout.astro"
+import Sesion from "@/components/Sesion.astro"
+import Vote from "@/components/Vote.astro"
+
+const session = await getSession(Astro.request)
+---
+
+<Layout title="Pronostica por las fotos más random que sean tus favoritas">
+  <main class="flex flex-col justify-center items-center">
+    { session ? <Vote /> : <Sesion /> }
+  </main>
+</Layout>

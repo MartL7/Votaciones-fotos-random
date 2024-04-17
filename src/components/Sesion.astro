@@ -1,0 +1,37 @@
+---
+import Actions from "@/components/Actions.astro"
+---
+
+<main class="flex flex-col md:flex-row min-h-fit items-center justify-center">
+  <img src="/img/User-test.webp" class="size-96 relative pointer-events-none opacity-30 md:opacity-100" alt="Logo de LOG-IN"
+  style="filter: drop-shadow(0 0 10px rgba(1, 1, 1, .9)); 
+  mask-image: linear-gradient(black 50%, transparent)">
+
+  <div class="flex absolute mt-20 md:mt-0 md:relative flex-col gap-y-4 text-center max-w-[350px]">
+      <h2 class="font-Dancing -skew-y-3 text-4xl lg:text-5xl text-green-400/90 font-bold lowercase">
+           Votar 
+      </h2>
+      
+      <h3 class="text-2xl font-bold uppercase"> Vota ahora!! </h3>
+
+      <p class="text-pretty text-xl">¡Hola! Para poder votar por tus fotos favoritas 
+        <span class="text-slate-400/90"> debes iniciar sesión. </span> 
+      </p>
+      <Actions class="mt-7 text-center" as="button" id="login">
+          Iniciar Sesión
+      </Actions>
+      <small> Es necesario tener una cuenta de GitHub </small>
+  </div>
+</main>
+
+<script>
+  import { $ } from '@/lib/dom-selector'
+
+  document.addEventListener('astro:page-load', async () => {
+    const { signIn } = await import("auth-astro/client")
+
+    const $login = $('#login')
+
+    if ($login) $login.onclick = () => signIn("github")
+  })
+</script>

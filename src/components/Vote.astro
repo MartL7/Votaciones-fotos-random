@@ -1,0 +1,30 @@
+---
+import { getSession } from 'auth-astro/server'
+import Actions from "@/components/Actions.astro"
+
+const session = await getSession(Astro.request)
+---
+
+<section class="flex justify-center flex-col items-center">
+  <article class="flex gap-5">
+    <img src={session.user.image} alt="" class="size-14 rounded-full">
+    <div class="flex flex-col">
+      <h1 class="text-2xl font-bold">{session.user.name }</h1>
+      <button id="logout"> 
+        <span class="text-red-400/70"> Cerrar Sesión </span>
+      </button>
+    </div>
+
+  </article>
+</section>
+
+<script>
+  import { $ } from '@/lib/dom-selector'
+
+  document.addEventListener('astro:page-load', async () => {
+    const { signOut } = await import('auth-astro/client')
+    const $logout = $('#logout')
+
+    if ($logout) $logout.onclick = () => signOut()
+  })
+</script>
