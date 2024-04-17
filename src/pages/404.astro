@@ -1,0 +1,25 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Actions from "@/components/Actions.astro"
+---
+
+
+<Layout title="Página no encontrada - 404">
+  <main class="mt-20 md:mt-44 flex flex-col md:flex-row h-auto items-center justify-center">
+      <img src="/img/404.webp" class="size-96 relative pointer-events-none opacity-30 md:opacity-100" alt="Logo de LOG-IN"
+      style="filter: drop-shadow(0 0 10px rgba(1, 1, 1, .9));">
+
+      <div class="flex absolute mt-20 md:mt-0 md:relative flex-col gap-y-4 text-center max-w-[350px]">
+          <h2 class="font-Dancing -skew-y-3 text-4xl lg:text-5xl text-green-400/90 font-bold lowercase">
+               Error 404 
+          </h2>
+          
+          <h3 class="text-2xl font-bold uppercase"> Página no encontrada</h3>
+
+          <p class="text-pretty text-xl">¡Hola! Lo sentimos, pero no pudimos encontrar lo que buscabas. Verifica que la dirección URL sea correcta.</p>
+          <Actions class="mt-7 text-center" href="/" aria-label="volver a la página principal" as="a">
+              Volver al inicio
+          </Actions>
+      </div>
+  </main>
+</Layout>
