@@ -1,17 +1,26 @@
 ---
 import { Characters as person } from "@/logic/character"
 ---
-<main class="mt-10 md:mt-14 lg:mt-20 flex flex-col justify-center items-center">
+<main class="flex flex-col justify-center items-center">
 
-  <img alt="Imagen de xd" id="image-presentation">
-  <section class="flex flex-row gap-10 flex-wrap">
+  <picture class="mb-20 md:h-auto h-96">
+    <img 
+      src="/img/Yahir/Yahir-image-presentation.webp" 
+      transition:name="Character-Yahir"
+      alt="Imagen de Yahir" id="image-presentation" 
+      class="w-auto h-full object-cover transition"
+      style="mask-image: linear-gradient(black 50%, transparent);"
+      />
+  </picture>
+
+  <section class="flex flex-row gap-10 flex-wrap justify-center">
     {
       person.map(({ id, name, imageSmall }) => (
-        <a href={`/character/${id}`} class="character-link relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
+        <a href={`/character/${id}`} class="character-link relative w-48 h-32 md:w-56 md:h-40 lg:w-64 lg:h-48">
           <img src={imageSmall} alt={`Imagen del personaje ${name}`}
           decoding="async"
           loading="lazy"
-          class="size-full object-cover rounded-lg -top-5 scale-95 z-10 absolute hover:saturate-150" 
+          class="size-48 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-10 left-0 hover:saturate-150" 
           style="mask-image: linear-gradient(black 50%, transparent);"
           />
           <div class="absolute inset-0 character-link-background"></div>
@@ -27,15 +36,3 @@ import { Characters as person } from "@/logic/character"
     background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
   }
 </style>
-
-<script>
-  const links = document.querySelectorAll('.character-link') as NodeListOf<HTMLAnchorElement>
-  let presentationImage = document.getElementById('image-presentation') as HTMLImageElement
-  links.forEach(link => {
-    const { href } = link
-    const [_, id] = href.split('/character/')
-    link.addEventListener('mouseenter', () => {
-      console.log(id)
-    })
-  })
-</script>

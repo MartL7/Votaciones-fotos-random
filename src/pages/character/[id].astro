@@ -18,9 +18,10 @@ const { imagePresentation, name, imagesGalery, funnyText } = character
       <img 
         decoding="async"
         loading="lazy"
+        transition:name="Character-Yahir"
         src={imagePresentation} 
         alt={`Imagen Grande de ${name}`}
-        class="masked-image"
+        class="masked-image transition"
       />
 
       <div>
@@ -28,7 +29,7 @@ const { imagePresentation, name, imagesGalery, funnyText } = character
           {name}
         </span>
 
-        <span class=`font-Dancing font-bold skew-y-[-10deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto`>
+        <span class=`font-bold skew-y-[-10deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto`>
           <p class="text-blue-400/80 uppercase text-2xl"> "{funnyText.at(0)}" </p>
         </span>
       </div>
