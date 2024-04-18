@@ -89,7 +89,7 @@ const arrayText = funnyText.join(', ')
 
     $buttonChangeText.addEventListener('click', () => {
       index = (index + 1) % arrayText.length
-      $funnyText.textContent = arrayText[index]
+      $funnyText.textContent = `"${arrayText[index]}"`
       $textCounter.textContent = `${index + 1}/${arrayText.length}`
     })
   }
