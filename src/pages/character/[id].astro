@@ -7,19 +7,22 @@ const { id } = Astro.params
 const character = Characters.find((character) => character.id === id)
 
 const { imagePresentation, name, imagesGalery, funnyText } = character
----
 
+const arrayText = funnyText.join(', ')
+---
 <Layout title="Post">
   <main class="flex justify-center flex-col items-center">
 
     <h1 class="text-2xl sm:text-3xl font-bold text-gray-400/90"> Información del Personaje </h1>
+
+    <input type="hidden" name="arrayToText" value={arrayText} id="arrayToText">
 
     <a href="/" class="group relative cursor-pointer">
       <img 
         decoding="async"
         loading="lazy"
         transition:name="Character-Yahir"
-        src={imagePresentation} 
+        src={imagePresentation}
         alt={`Imagen Grande de ${name}`}
         class="masked-image transition"
       />
@@ -30,12 +33,22 @@ const { imagePresentation, name, imagesGalery, funnyText } = character
         </span>
 
         <span class=`font-bold skew-y-[-10deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto`>
-          <p class="text-blue-400/80 uppercase text-2xl"> "{funnyText.at(0)}" </p>
+          <p class="text-blue-400/80 uppercase text-2xl" id="funnyText"> 
+            {funnyText.at(0)}
+          </p>
         </span>
       </div>
     </a>
 
-    <h2 class="mt-20 font-semibold text-2xl sm:text-3xl "> Fotos Cagadas de {name} </h2>
+    <aside class="mt-10 flex gap-5 justify-center items-center">
+      <span id="text-counter" class="text-3xl">
+      </span>
+      <button id="button-change-text"> 
+        <span class="text-3xl"> > </span>
+      </button>
+    </aside>
+
+    <h2 class="mt-20 font-semibold text-2xl sm:text-3xl "> Galeria de Fotos de {name} </h2>
     <section class="grid grid-cols-2 gap-5 sm:gap-8 md:gap-10 sm:grid-cols-3 p-5">
       {
         imagesGalery.map((imageObj, index) => (
@@ -59,3 +72,28 @@ const { imagePresentation, name, imagesGalery, funnyText } = character
     mask-image: linear-gradient(black 50%, transparent);
   }
 </style>
+
+<script>
+  import { $ } from '@/lib/dom-selector'
+
+  const changeText = () => {
+    const $funnyText = $('#funnyText') as HTMLParagraphElement
+    const $buttonChangeText = $('#button-change-text') as HTMLButtonElement
+    const $arrayToText = $('#arrayToText') as HTMLInputElement
+    const $textCounter = $('#text-counter') as HTMLSpanElement
+
+    let index = 0
+    const arrayText = $arrayToText.value.split(', ')
+
+    $textCounter.textContent = `${index + 1}/${arrayText.length}`
+
+    $buttonChangeText.addEventListener('click', () => {
+      index = (index + 1) % arrayText.length
+      $funnyText.textContent = arrayText[index]
+      $textCounter.textContent = `${index + 1}/${arrayText.length}`
+    })
+  }
+
+  document.addEventListener('astro:page-load', changeText)
+
+</script>
