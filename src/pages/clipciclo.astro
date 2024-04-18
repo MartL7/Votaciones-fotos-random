@@ -1,0 +1,29 @@
+---
+import Layout from '@/layouts/Layout.astro'
+// TODO: ADD Video and change design
+---
+
+<Layout title="Clip del Ciclo">
+  <section class="flex flex-col justify-center items-center gap-5"> 
+    <h1 class="text-2xl font-bold uppercase text-center"> Presentación </h1>
+
+    <p class="text-gray-400/90 text-center text-xl"> Vuelve a ver el Clip del Ciclo <br/>
+        desde el CBTis 86
+    </p>
+
+    <picture>
+      <img 
+        decoding="async"
+        loading="lazy"
+        src="/img/Backgrounds/Bg-rose.webp" 
+        alt="Imagen de Fondo del cilp del ciclo"
+        class="relative object-cover"
+      />
+    </picture>
+
+    <video controls class="absolute w-screen">
+      <source src="https://drive.google.com/uc?export=download&id=1TLXub6qbrtgqQsnmfWaJ-qh0vF_fuVWz" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+</Layout>
