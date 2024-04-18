@@ -1,54 +1,58 @@
-# Astro Starter Kit: Basics
+# Proyecto de Votaciones y Colaboración de Clase
 
-```sh
-npm create astro@latest -- --template basics
+Este proyecto es una plataforma diseñada para facilitar la colaboración entre compañeros de clase y para llevar a cabo votaciones sobre diversos temas relacionados con el curso. Durante un semestre académico, nos enfocamos en desarrollar esta aplicación que sirviera como herramienta integral para nuestra comunidad estudiantil.
+
+## Instalación
+
+Para comenzar, asegúrate de tener instalado `pnpm`. Si no lo tienes instalado, puedes hacerlo utilizando npm:
+
+```bash
+npm install -g pnpm
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Clona este repositorio
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+git clone https://github.com/MartL7/Votaciones-fotos-random.git
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Navega al directorio del proyecto
+```bash
+cd votaciones-fotos-random
+```
+Instala todas las dependencias usando pnpm
+```bash
+pnpm install
+```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Levanta tu entorno de desarrollo
+```bash
+pnpm run dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contribuir al proyecto
 
-## 🧞 Commands
+Las contribuciones son lo que hacen que la comunidad de código abierto sea un lugar increíble para aprender, inspirar y crear. ¡Cualquier contribución que hagas es **muy apreciada**!
 
-All commands are run from the root of the project, from a terminal:
+Si tienes alguna sugerencia que podría mejorar el proyecto, por favor haz un [_fork_](https://github.com/MartL7/votaciones-fotos-random/fork) del repositorio y crea una [_pull request_](https://github.com/MartL7/votaciones-fotos-random/pulls). También puedes simplemente abrir un [_issue_](https://github.com/MartL7/votaciones-fotos-random) con la etiqueta "enhancement".
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Aquí tienes una guía rápida:
 
-## 👀 Want to learn more?
+1. Haz un [_fork_](https://github.com/MartL7/votaciones-fotos-random/fork) del Proyecto
+2. Clona tu [_fork_](https://github.com/MartL7/votaciones-fotos-random/fork) (`git clone <URL del fork>`)
+3. Añade el repositorio original como remoto (`git remote add upstream <URL del repositorio original>`)
+4. Crea tu Rama de Funcionalidad (`git switch -c feature/CaracteristicaIncreible`)
+5. Realiza tus Cambios (`git commit -m 'Add: alguna CaracterísticaIncreible'`)
+6. Haz Push a la Rama (`git push origin feature/CaracteristicaIncreible`)
+7. Abre una [_pull request_](https://github.com/MartL7/votaciones-fotos-random/pulls)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## 🛠️ Stack
+
+[![Astro](https://img.shields.io/badge/-Astro-000000?style=flat&logo=astro)](https://astro.build/)
+[![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
+
+
+<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
