@@ -59,7 +59,7 @@ export const Characters: Character[] = [
     imageSmall: '/img/Geovas/Geovas-small.png',
     imagesGalery: [
       { image: '/img/Geovas/Geovas-image-1.avif', isVertical: false },
-      { image: '/img/Geovas/Geovas-image-1.webp', isVertical: false },
+      { image: '/img/Geovas/Geovas-image-2.webp', isVertical: false },
       { image: '/img/Geovas/Geovas-image-3.avif', isVertical: false }
     ],
     funnyText: [
