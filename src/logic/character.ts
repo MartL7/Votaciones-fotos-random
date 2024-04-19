@@ -46,9 +46,11 @@ export const Characters: Character[] = [
         imagePresentation: '/img/Elvin/Elvin-image-presentation.webp',
         imageSmall: '/img/Elvin/Elvin-small.webp',
         imagesGalery: [
-            { image: '/img/Elvin/Elvin-image-1.webp', isVertical: false },
-            { image: '/img/Elvin/Elvin-image-1.webp', isVertical: false },
-            { image: '/img/Elvin/Elvin-image-1.webp', isVertical: false },
+            { image: '/img/Elvin/Elvin-image-1.avif', isVertical: false, class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px] col-start-2 col-end-3 h-[200px]' },
+            { image: '/img/Elvin/Elvin-image-2.webp', isVertical: false, class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] sm:row-start-1' },
+            { image: '/img/Elvin/Elvin-image-3.webp', isVertical: false, class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3' },
+            { image: '/img/Elvin/Elvin-image-1.avif', isVertical: false, class: 'sm:col-start-2 sm:col-end-4 sm:h-[300px] sm:row-start-2 col-start-1 col-end-3 h-[250px]' }
+
         ],
         funnyText: ['Lo hago en 30 segundos!', 'El Yahir está cabezón', 'Miau'],
     },
@@ -128,7 +130,7 @@ export const Characters: Character[] = [
         funnyText: ['A poco si tilin'],
     },
 
-    {
+    /* {
         id: 'Character-Damian',
         name: 'Damian',
         imagePresentation: '/img/Damian/Damian-image-presentation.webp',
@@ -139,5 +141,5 @@ export const Characters: Character[] = [
             { image: '/img/Damian/Damian-image-3.avif', isVertical: false },
         ],
         funnyText: ['Crecer como los Bisteces', 'A Putazos'],
-    },
+    }, */
 ]
