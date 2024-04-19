@@ -5,4 +5,5 @@ export interface Character {
   imageSmall: string
   imagesGalery: { image: string, isVertical: boolean, class?: string }[]
   funnyText?: string[]
+  socials?: {name: string, link: string, type: 'github' | 'instagram' | 'twitter' | 'youtube'}[]
 }

@@ -1,12 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import Instagram from "@/components/icons/Instagram.astro"
+import Socials from "@/components/Socials.astro"
 import { Characters } from "@/logic/character"
 
 const { id } = Astro.params
 
 const character = Characters.find((character) => character.id === id)
 
-const { imagePresentation, name, imagesGalery, funnyText } = character
+const { imagePresentation, name, imagesGalery, funnyText, socials } = character
 
 const arrayText = funnyText.join(', ')
 ---
@@ -63,6 +65,19 @@ const arrayText = funnyText.join(', ')
           </picture>
         ))
       }
+    </section>
+
+    <section class="mt-10">
+      <h3 class="uppercase text-3xl text-center font-bold mb-8"> Redes Sociales </h3>
+      <div class="mx-auto flex max-w-[600px] flex-wrap justify-center gap-2 lg:max-w-full">
+        {
+          socials?.map((social) => (
+            <Socials href={social.link}>
+              <Instagram class="size-8"/>
+            </Socials>
+          ))
+        }
+      </div>
     </section>
   </main>
 </Layout>

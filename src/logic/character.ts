@@ -99,6 +99,9 @@ export const Characters: Character[] = [
             { image: '/img/Geovas/Geovas-image-3.avif', isVertical: false },
         ],
         funnyText: ['Te extraño Karlita :(', 'Goku eta vaina e seria', 'Siuuuuuu'],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/geovx_lg/', type: 'instagram' }
+        ]
     },
 
     {
@@ -114,6 +117,9 @@ export const Characters: Character[] = [
             { image: '/img/Aree/Are-image-2.webp', isVertical: false, class: 'sm:h-[300px]' },
         ],
         funnyText: ['Hii'],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/_arelyyyy__/', type: 'instagram' }
+        ]
     },
 
     {
