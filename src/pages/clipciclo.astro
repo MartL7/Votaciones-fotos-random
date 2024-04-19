@@ -1,10 +1,11 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import { Characters as person } from '@/logic/character'
 // TODO: ADD Video and change design
 ---
 
 <Layout title="Clip del Ciclo">
-  <section class="flex flex-col justify-center items-center gap-5"> 
+  <!-- <section class="flex flex-col justify-center items-center gap-5"> 
     <h1 class="text-2xl font-bold uppercase text-center"> Presentación </h1>
 
     <p class="text-gray-400/90 text-center text-xl"> Vuelve a ver el Clip del Ciclo <br/>
@@ -25,5 +26,85 @@ import Layout from '@/layouts/Layout.astro'
       <source src="https://drive.google.com/uc?export=download&id=1TLXub6qbrtgqQsnmfWaJ-qh0vF_fuVWz" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+  </section> -->
+
+  <section class="flex justify-center items-center"> 
+    <article class="grid grid-cols-2 grid-rows-[300px, 300px]">
+      <div class="flex flex-row flex-wrap gap-5 row-start-1 row-end-3">
+        {
+          person.map(({ id, name, imageSmall }) => (
+            <a href={`/character/${id}`} class="character-link relative md:w-56 md:h-40 lg:w-42 lg:h-28">
+              <img src={imageSmall} alt={`Imagen del personaje ${name}`}
+                decoding="async"
+                loading="lazy"
+                class="size-32 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-10 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+                style="mask-image: linear-gradient(black 50%, transparent);"
+                id={`character-${id}`}
+              />
+              <div class="absolute inset-0 character-link-background"></div>
+            </a>
+          ))
+        }
+      </div>
+
+      <picture class="flex justify-center items-center col-start-2 col-end-3 row-start-1 row-end-2">
+        <img 
+          src="/img/Yahir/Yahir-image-presentation.webp"
+          transition:name="Character-Yahir"
+          alt="Imagen de Emmanuel" id="image-presentation" 
+          class="w-auto h-[600px] object-cover transition"
+          id="image-presentation"
+          style="mask-image: linear-gradient(black 50%, transparent);"
+        />
+      </picture>
+    </article>
   </section>
 </Layout>
+
+<style>
+  .character-link-background {
+    opacity: .25;
+    background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
+  }
+
+  .active {
+    filter: saturate(150%);
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  import { $, $$ } from '@/lib/dom-selector'
+
+  const changeCharacterImage = () => {
+    const $imageLink = $$('.character-link') as globalThis.NodeListOf<HTMLAnchorElement>
+    const $characterPhoto = $('#image-presentation') as HTMLImageElement
+    let $lastActiveImage: HTMLImageElement | null = null
+
+    $imageLink.forEach((link) => {
+        const id = link.href.split('/').at(-1)
+        
+        const $characterSmallImage = $$(`#character-${id}`) as globalThis.NodeListOf<HTMLImageElement>
+
+        const characterSrc = `/img/${id}/${id}-image-presentation.webp` ?? '/img/Yahir/Yahir-image-presentation.webp'
+
+        link.addEventListener('mouseenter', () => {
+
+            if ($lastActiveImage) {
+                $lastActiveImage.classList.remove('active');
+            }
+
+            $characterPhoto.src = characterSrc
+
+            $characterPhoto.setAttribute('transition:name', `Character-${id}`)
+
+            $characterSmallImage.forEach((image) => image.classList.add('active'))
+
+            $lastActiveImage = $characterSmallImage[0]
+        })
+    })
+}
+
+
+  document.addEventListener('astro:page-load', changeCharacterImage)
+</script>

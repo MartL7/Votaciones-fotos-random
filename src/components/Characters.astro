@@ -3,35 +3,52 @@ import { Characters as person } from "@/logic/character"
 ---
 <main class="flex flex-col justify-center items-center">
 
-  <picture class="mb-20 md:h-auto h-96">
-    <img 
-      src="/img/Emmanuel/Emmanuel-image-presentation.webp" 
-      transition:name="Character-Emmanuel"
-      alt="Imagen de Emmanuel" id="image-presentation" 
-      class="w-auto h-full object-cover transition"
-      style="mask-image: linear-gradient(black 50%, transparent);"
-      />
-  </picture>
-
   <div class="hidden md:block">
-    <section class="flex flex-row gap-10 flex-wrap justify-center">
-      {
-        person.map(({ id, name, imageSmall }) => (
-          <a href={`/character/${id}`} class="character-link relative w-48 h-32 md:w-56 md:h-40 lg:w-64 lg:h-48">
-            <img src={imageSmall} alt={`Imagen del personaje ${name}`}
-              decoding="async"
-              loading="lazy"
-              class="size-48 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-10 left-0 hover:saturate-150" 
-              style="mask-image: linear-gradient(black 50%, transparent);"
-            />
-            <div class="absolute inset-0 character-link-background"></div>
-          </a>
-        ))
-      }
+    <section class="flex justify-center items-center"> 
+      <article class="grid grid-cols-2 grid-rows-[300px, 300px]">
+        <div class="flex flex-row flex-wrap gap-5 row-start-1 row-end-3">
+          {
+            person.map(({ id, name, imageSmall }) => (
+              <a href={`/character/${id}`} class="character-link relative md:w-56 md:h-40 lg:w-42 lg:h-28">
+                <img src={imageSmall} alt={`Imagen del personaje ${name}`}
+                  decoding="async"
+                  loading="lazy"
+                  class="size-32 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-10 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+                  style="mask-image: linear-gradient(black 50%, transparent);"
+                  id={`character-${id}`}
+                />
+                <div class="absolute inset-0 character-link-background"></div>
+              </a>
+            ))
+          }
+        </div>
+  
+        <picture class="flex justify-center items-center col-start-2 col-end-3 row-start-1 row-end-2">
+          <img 
+            src="/img/Yahir/Yahir-image-presentation.webp"
+            transition:name="Character-Yahir"
+            alt="Imagen de Emmanuel" id="image-presentation" 
+            class="w-auto h-[600px] object-cover transition"
+            style="mask-image: linear-gradient(black 50%, transparent);"
+          />
+        </picture>
+      </article>
     </section>
   </div>
   
   <div class="md:hidden">
+    <picture class="flex flex-col justify-center items-center mb-10">
+      <img 
+        src="/img/Yahir/Yahir-image-presentation.webp"
+        transition:name="Character-Yahir"
+        alt="Imagen de Emmanuel" 
+        class="w-auto h-[400px] object-cover transition"
+        id="image-presentation-2"
+        style="mask-image: linear-gradient(black 50%, transparent);"
+      />
+      <h1 id="name-text" class="text-3xl"></h1>
+    </picture>
+
     <section class="swiper">
       <div class="swiper-wrapper">
         {
@@ -66,12 +83,51 @@ import { Characters as person } from "@/logic/character"
     opacity: .25;
     background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
   }
+  .active {
+    filter: saturate(150%);
+    transform: scale(1.1);
+  }
 </style>
 
 <script>
-  import Swiper from 'swiper/bundle'
+  import { $, $$ } from '@/lib/dom-selector'
 
-  const id = 'image-presentation'
+  const changeCharacterImage = () => {
+    const $imageLink = $$('.character-link') as globalThis.NodeListOf<HTMLAnchorElement>
+    const $characterPhoto = $('#image-presentation') as HTMLImageElement
+    let $lastActiveImage: HTMLImageElement | null = null
+
+    $imageLink.forEach((link) => {
+        const id = link.href.split('/').at(-1)
+        
+        const $characterSmallImage = $$(`#character-${id}`) as globalThis.NodeListOf<HTMLImageElement>
+
+        const characterSrc = `/img/${id}/${id}-image-presentation.webp` ?? '/img/Yahir/Yahir-image-presentation.webp'
+
+        link.addEventListener('mouseenter', () => {
+
+            if ($lastActiveImage) {
+                $lastActiveImage.classList.remove('active');
+            }
+
+            $characterPhoto.src = characterSrc
+
+            $characterPhoto.setAttribute('transition:name', `Character-${id}`)
+
+            $characterSmallImage.forEach((image) => image.classList.add('active'))
+
+            $lastActiveImage = $characterSmallImage[0]
+        })
+    })
+}
+
+
+  document.addEventListener('astro:page-load', changeCharacterImage)
+</script>
+
+<script>
+  import Swiper from 'swiper/bundle'
+  import { $, $$ } from '@/lib/dom-selector'
 
   const Carrousel = () => {
     const swiper = new Swiper('.swiper', {
@@ -82,8 +138,27 @@ import { Characters as person } from "@/logic/character"
         el: '.swiper-pagination',
         clickable: true,
       },
+      on: {
+        slideChange: function () {
+            const activeSlide = this.slides[this.activeIndex]
+            const $hola = $('#name-text')
+            const $characterLink = activeSlide.querySelector('.character-link') as HTMLAnchorElement
+            const id = $characterLink.href.split('/').at(-1)
+            const characterSrc = `/img/${id}/${id}-image-presentation.webp`
+
+            console.log(id)
+
+            const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
+
+            $characterPhoto.src = characterSrc
+            $hola.textContent = id
+            $characterPhoto.setAttribute('transition:name', `Character-${id}`)
+        }
+      }
     })
+
+    swiper.init()
   }
 
-  document.addEventListener('astro:page-load', Carrousel)
+  document.addEventListener('astro:page-load', Carrousel);
 </script>

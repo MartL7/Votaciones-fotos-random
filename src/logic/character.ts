@@ -2,7 +2,7 @@ import type { Character } from '@/types/Character'
 
 export const Characters: Character[] = [
     {
-        id: 'Character-Yahir',
+        id: 'Yahir',
         name: 'Yahir',
         imagePresentation: '/img/Yahir/Yahir-image-presentation.webp',
         imageSmall: '/img/Yahir/Yahir-small.webp',
@@ -41,7 +41,7 @@ export const Characters: Character[] = [
         ],
     },
     {
-        id: 'Character-Elvin',
+        id: 'Elvin',
         name: 'Elvin',
         imagePresentation: '/img/Elvin/Elvin-image-presentation.webp',
         imageSmall: '/img/Elvin/Elvin-small.webp',
@@ -55,7 +55,7 @@ export const Characters: Character[] = [
         funnyText: ['Lo hago en 30 segundos!', 'El Yahir está cabezón', 'Miau'],
     },
     {
-        id: 'Character-Emmanuel',
+        id: 'Emmanuel',
         name: 'Emmanuel',
         imagePresentation: '/img/Emmanuel/Emmanuel-image-presentation.webp',
         imageSmall: '/img/Emmanuel/Emmanuel-small.webp',
@@ -89,7 +89,7 @@ export const Characters: Character[] = [
         funnyText: ['Mí chaparrita hermoshita', 'Ante la duda la más tetuda'],
     },
     {
-        id: 'Character-Geovas',
+        id: 'Geovas',
         name: 'Geovas',
         imagePresentation: '/img/Geovas/Geovas-image-presentation.webp',
         imageSmall: '/img/Geovas/Geovas-small.png',
@@ -105,16 +105,16 @@ export const Characters: Character[] = [
     },
 
     {
-        id: 'Character-Luzcesita',
+        id: 'Are',
         name: 'Luzcesita',
-        imagePresentation: '/img/Aree/Are-image-presentation.webp',
-        imageSmall: '/img/Aree/Are-small.webp',
+        imagePresentation: '/img/Are/Are-image-presentation.webp',
+        imageSmall: '/img/Are/Are-small.webp',
         imagesGalery: [
-            { image: '/img/Aree/Are-image-1.webp', isVertical: false, class:'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[620px]' },
-            { image: '/img/Aree/Are-image-2.webp', isVertical: false, class: 'sm:col-start-2 sm:col-end-3 h-[300px]' },
-            { image: '/img/Aree/Are-image-3.webp', isVertical: false, class: 'sm:h-[300px]' },
-            { image: '/img/Aree/Are-image-4.webp', isVertical: false, class: 'sm:h-[300px]' },
-            { image: '/img/Aree/Are-image-2.webp', isVertical: false, class: 'sm:h-[300px]' },
+            { image: '/img/Are/Are-image-1.webp', isVertical: false, class:'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[620px]' },
+            { image: '/img/Are/Are-image-2.webp', isVertical: false, class: 'sm:col-start-2 sm:col-end-3 h-[300px]' },
+            { image: '/img/Are/Are-image-3.webp', isVertical: false, class: 'sm:h-[300px]' },
+            { image: '/img/Are/Are-image-4.webp', isVertical: false, class: 'sm:h-[300px]' },
+            { image: '/img/Are/Are-image-2.webp', isVertical: false, class: 'sm:h-[300px]' },
         ],
         funnyText: ['Hii'],
         socials: [
@@ -123,7 +123,7 @@ export const Characters: Character[] = [
     },
 
     {
-        id: 'Character-Mike',
+        id: 'Mike',
         name: 'Mike',
         imagePresentation: '/img/Mike/Mike-image-presentation.webp',
         imageSmall: '/img/Mike/Mike-small.webp',
