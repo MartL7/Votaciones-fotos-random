@@ -32,7 +32,8 @@ export const Characters: Character[] = [
     ],
     funnyText: [
       'Lo hago en 30 segundos!',
-      'El Yahir está cabezón'
+      'El Yahir está cabezón',
+      'Miau'
     ]
   },
   {
@@ -64,7 +65,8 @@ export const Characters: Character[] = [
     ],
     funnyText: [
       'Te extraño Karlita :(',
-      'Goku eta vaina e seria'
+      'Goku eta vaina e seria',
+      'Siuuuuuu'
     ]
   }
 ]
