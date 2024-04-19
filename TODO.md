@@ -7,3 +7,6 @@
 - 5. Optimizar la página (accesibilidad) ✅
 - 6. Mejorar Galerias en teléfonos ❌
 - 7. Hacer menu desplegable del Header en Movil -> URGENTE ❌
+- 8. Mostrar al hacer hover la imagen-presentation de cada persona -> URGENTE ❌
+- 9. Arreglar sección de Clip del Ciclo ❌
+- 10. Agregar base de datos para los votos ❌
