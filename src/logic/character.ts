@@ -4,7 +4,7 @@ export const Characters: Character[] = [
     {
         id: 'Character-Yahir',
         name: 'Yahir',
-        imagePresentation: '/img/Yahir/Yahir-image-presentation.webp',
+        imagePresentation: '/img/Yahir/Yahir-image-presentation2.webp',
         imageSmall: '/img/Yahir/Yahir-small.webp',
         imagesGalery: [
             {

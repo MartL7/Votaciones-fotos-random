@@ -24,7 +24,7 @@ const arrayText = funnyText.join(', ')
         transition:name="Character-Yahir"
         src={imagePresentation}
         alt={`Imagen Grande de ${name}`}
-        class="masked-image transition"
+        class="masked-image transition sizes"
       />
 
       <div>
@@ -70,6 +70,9 @@ const arrayText = funnyText.join(', ')
 <style>
   .masked-image {
     mask-image: linear-gradient(black 50%, transparent);
+  }
+  .sizes{
+    height: 700px;
   }
 </style>
 
