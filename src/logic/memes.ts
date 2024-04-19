@@ -1,4 +1,4 @@
-import type { Meme } from '@/types/memes'
+import type { Meme } from '@/types/Memes'
 
 export const memesImages: Meme[] = [
   {

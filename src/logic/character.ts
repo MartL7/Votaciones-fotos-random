@@ -102,27 +102,30 @@ export const Characters: Character[] = [
     {
         id: 'Character-Luzcesita',
         name: 'Luzcesita',
-        imagePresentation: '/img/Luzcesita/Luzcesita-image-presentation.webp',
-        imageSmall: '/img/Luzcesita/Luzcesita-small.png',
+        imagePresentation: '/img/Aree/Are-image-presentation.webp',
+        imageSmall: '/img/Aree/Are-small.webp',
         imagesGalery: [
-            { image: '/img/Luzcesita/Luzcesita-image-1.avif', isVertical: false },
-            { image: '/img/Luzcesita/Luzcesita-image-2.webp', isVertical: false },
-            { image: '/img/Luzcesita/Luzcesita-image-3.avif', isVertical: false },
+            { image: '/img/Aree/Are-image-1.webp', isVertical: false, class:'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[620px]' },
+            { image: '/img/Aree/Are-image-2.webp', isVertical: false, class: 'sm:col-start-2 sm:col-end-3 h-[300px]' },
+            { image: '/img/Aree/Are-image-3.webp', isVertical: false, class: 'sm:h-[300px]' },
+            { image: '/img/Aree/Are-image-4.webp', isVertical: false, class: 'sm:h-[300px]' },
+            { image: '/img/Aree/Are-image-2.webp', isVertical: false, class: 'sm:h-[300px]' },
         ],
-        funnyText: [],
+        funnyText: ['Hii'],
     },
 
     {
         id: 'Character-Mike',
         name: 'Mike',
         imagePresentation: '/img/Mike/Mike-image-presentation.webp',
-        imageSmall: '/img/Mike/Mike-small.png',
+        imageSmall: '/img/Mike/Mike-small.webp',
         imagesGalery: [
-            { image: '/img/Mike/Mike-image-1.avif', isVertical: false },
-            { image: '/img/Mike/Mike-image-2.webp', isVertical: false },
-            { image: '/img/Mike/Mike-image-3.avif', isVertical: false },
+            { image: '/img/Mike/Mike-image-4.webp', isVertical: false, class: 'h-[400px]' },
+            { image: '/img/Mike/Mike-image-1.webp', isVertical: false, class: 'h-[400px]' },
+            { image: '/img/Mike/Mike-image-2.avif', isVertical: false, class: 'sm:col-start-3 sm:col-end-4 col-start-1 col-end-3 sm:h-auto h-[300px]' },
+            { image: '/img/Mike/Mike-image-3.avif', isVertical: false, class: 'sm:col-start-1 sm:col-end-3 sm:h-[300px]' }
         ],
-        funnyText: [],
+        funnyText: ['A poco si tilin'],
     },
 
     {
