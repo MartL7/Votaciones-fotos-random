@@ -7,12 +7,12 @@ const pages = [
 ]
 ---
 
-<header class="mb-10 h-16 max-w-[100vw] lg:h-24">
+<header class=" nav-var-top mb-10 h-16 max-w-[100vw] lg:h-24">
   <nav class="group flex h-full w-full items-center justify-between px-10 lg:justify-center">
     {
       pages.map(({ name, href, label }) => (
         <a href={href} 
-         class="nav-item relative h-full select-none flex-col items-center justify-center gap-1 text-center text-sm sm:text-xl sm:uppercase lg:flex lg:px-7 xl:px-10"
+         class=" nav-item relative h-full select-none flex-col items-center justify-center gap-1 text-center text-sm sm:text-xl sm:uppercase lg:flex lg:px-7 xl:px-10"
          aria-label={label}
           >
           <span class="z-10">{name}</span>
@@ -21,6 +21,7 @@ const pages = [
       ))
     }
   </nav>
+  <div class="nav-button">  ⇩  </div>
   <hr
     class="h-[2px] w-full border-t-0"
     style="background:linear-gradient(to right, transparent 0%, white 50%, transparent 100%)"
@@ -36,11 +37,34 @@ const pages = [
 		background: linear-gradient(to bottom, rgba(221, 221, 221, 20%) 0%, transparent 100%);
 		transition: opacity 0.3s;
 	}
-
+  .nav-button{
+    display: none
+  }
 	.nav-item:hover .background,
 	.nav-item:focus .background {
 		opacity: 1;
     z-index: 10;
 	}
+
+  @media (max-width: 600px) {
+    .nav-var-top {
+      position: relative;
+      top: -65px;
+      transition-duration: 0.7s
+    }
+    .nav-var-top:hover,
+    .nav-var-top:focus{
+      top: 0px;
+      transition-duration: 0.7s;
+      background: linear-gradient(to bottom, rgba(221, 221, 221, 20%) 0%, transparent 100%);
+    }
+
+    .nav-button{
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      font-size: x-large
+    }
+  }
 
 </style>
