@@ -10,27 +10,27 @@ export const Characters: Character[] = [
             {
                 image: '/img/Yahir/Yahir-image-5.webp',
                 isVertical: false,
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:max-h-[300px]',
             },
             {
                 image: '/img/Yahir/Yahir-image-6.webp',
                 isVertical: true,
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3 sm:max-h-[600px]',
             },
             {
                 image: '/img/Yahir/Yahir-image-3.avif',
                 isVertical: false,
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:max-h-[300px]',
             },
             {
                 image: '/img/Yahir/Yahir-image-4.webp',
                 isVertical: true,
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3 sm:max-h-[300px]',
             },
             {
                 image: '/img/Yahir/Yahir-image-7.webp',
                 isVertical: false,
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:max-h-[300px]',
             },
         ],
         funnyText: [
@@ -128,13 +128,30 @@ export const Characters: Character[] = [
         imagePresentation: '/img/Mike/Mike-image-presentation.webp',
         imageSmall: '/img/Mike/Mike-small.webp',
         imagesGalery: [
-            { image: '/img/Mike/Mike-image-4.webp', isVertical: false, class: 'h-[400px]' },
-            { image: '/img/Mike/Mike-image-1.webp', isVertical: false, class: 'h-[400px]' },
-            { image: '/img/Mike/Mike-image-2.avif', isVertical: false, class: 'sm:col-start-3 sm:col-end-4 col-start-1 col-end-3 sm:h-auto h-[300px]' },
-            { image: '/img/Mike/Mike-image-3.avif', isVertical: false, class: 'sm:col-start-1 sm:col-end-3 sm:h-[300px]' }
+            { image: '/img/Mike/Mike-image-4.webp', isVertical: false, class: 'max-h-[300px]' },
+            { image: '/img/Mike/Mike-image-1.webp', isVertical: false, class: 'max-h-[300px]' },
+            { image: '/img/Mike/Mike-image-2.avif', isVertical: false, class: 'sm:col-start-3 sm:col-end-4 col-start-1 col-end-2 sm:max-h[300px] h-[300px]' },
+            { image: '/img/Mike/Mike-image-3.avif', isVertical: false, class: 'sm:col-start-1 sm:col-end-3 sm:h-[300px] h-[300px]' }
         ],
         funnyText: ['A poco si tilin'],
     },
+
+    {
+        id: 'Leslie',
+        name: 'Less',
+        imagePresentation: '/img/Leslie/Leslie-image-presentation.webp',
+        imageSmall: '/img/Leslie/Leslie-small.webp',
+        imagesGalery: [
+            { image: '/img/Leslie/Leslie-image-1.webp', isVertical: false, class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[600px] hidden sm:block' },
+            { image: '/img/Leslie/Leslie-image-6.webp', isVertical: false, class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:h-[300px] sm:hidden'},
+            { image: '/img/Leslie/Leslie-image-2.webp', isVertical: false, class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:h-[300px] row-start-2 h-[250px]' },
+            { image: '/img/Leslie/Leslie-image-3.webp', isVertical: false, class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:h-[300px]'},
+            { image: '/img/Leslie/Leslie-image-4.webp', isVertical: false, class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3 sm:h-[300px] row-start-2 row-end-4 h-[500px] ' },
+            { image: '/img/Leslie/Leslie-image-5.webp', isVertical: false, class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:h-[300px] h-[220px]' },
+            
+        ],
+        funnyText: ['Hiii']
+    }
 
     /* {
         id: 'Character-Damian',

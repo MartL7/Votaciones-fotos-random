@@ -114,6 +114,7 @@ import { Characters as person } from "@/logic/character"
             }
 
             $characterPhoto.src = characterSrc
+            $characterPhoto.alt = `Imagen de ${id}`
 
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
 
