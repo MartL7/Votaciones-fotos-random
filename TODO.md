@@ -12,3 +12,5 @@
 - 10. Agregar base de datos para los votos ❌
 - 11. Agregar Modal al hacer click en cada imagen de las Galerias ❌ -> URGENTE
 - 12. Corregir bugs de ViewTransitions de Astro y el localStorage del inicio ❌
+- 13. Cambiar / Agregar algunas imagenes ❌
+- 14. Cambiar el Login a Google en lugar de GitHub ❌
