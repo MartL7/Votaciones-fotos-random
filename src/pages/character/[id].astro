@@ -2,6 +2,8 @@
 import Layout from "@/layouts/Layout.astro"
 import Instagram from "@/components/icons/Instagram.astro"
 import Socials from "@/components/Socials.astro"
+import ArrowRight from "@/components/icons/Arrows/ArrowRight.astro"
+import ArrowLeft from "@/components/icons/Arrows/ArrowLeft.astro"
 import { Characters } from "@/logic/character"
 
 const { id } = Astro.params
@@ -42,10 +44,17 @@ const arrayText = funnyText.join(', ')
     </a>
 
     <aside class="mt-10 flex gap-5 justify-center items-center">
+      <button id="button-left-change-text"> 
+        <span class="text-3xl"> 
+          <ArrowLeft class="size-12"/>
+        </span>
+      </button>
       <span id="text-counter" class="text-3xl">
       </span>
       <button id="button-change-text"> 
-        <span class="text-3xl"> > </span>
+        <span class="text-3xl"> 
+          <ArrowRight class="size-10"/>
+        </span>
       </button>
     </aside>
 
@@ -93,6 +102,7 @@ const arrayText = funnyText.join(', ')
   const changeText = () => {
     const $funnyText = $('#funnyText') as HTMLParagraphElement
     const $buttonChangeText = $('#button-change-text') as HTMLButtonElement
+    const $buttonLeftChangeText = $('#button-left-change-text') as HTMLButtonElement
     const $arrayToText = $('#arrayToText') as HTMLInputElement
     const $textCounter = $('#text-counter') as HTMLSpanElement
 
@@ -100,6 +110,12 @@ const arrayText = funnyText.join(', ')
     const arrayText = $arrayToText.value.split(', ')
 
     $textCounter.textContent = `${index + 1}/${arrayText.length}`
+
+    $buttonLeftChangeText.addEventListener('click', () => {
+      index = (index - 1 + arrayText.length) % arrayText.length
+      $funnyText.textContent = `"${arrayText[index]}"`
+      $textCounter.textContent = `${index + 1}/${arrayText.length}`
+    })
 
     $buttonChangeText.addEventListener('click', () => {
       index = (index + 1) % arrayText.length
