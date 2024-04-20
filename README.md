@@ -54,5 +54,11 @@ Aquí tienes una guía rápida:
 [![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 
+## Contribuidores
+| Nombre de Usuario | Foto de Perfil |
+|-------------------|----------------|
+| [@MartL7](https://github.com/MartL7) | ![Foto de usuario1](https://avatars.githubusercontent.com/u/106359853?v=4) |
+| [@c0d3hdz](https://github.com/c0d3hdz) | ![Foto de usuario2](https://avatars.githubusercontent.com/u/145168535?v=4) |
+
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
