@@ -5,7 +5,7 @@ import { Characters as person } from "@/logic/character"
 
   <div class="hidden md:block">
     <section class="flex justify-center items-center"> 
-      <article class="grid grid-cols-2 grid-rows-[300px, 300px]">
+      <article class="grid grid-cols-2 grid-rows-2">
         <div class="flex flex-row flex-wrap gap-5 row-start-1 row-end-3">
           {
             person.map(({ id, name, imageSmall }) => (
@@ -23,12 +23,12 @@ import { Characters as person } from "@/logic/character"
           }
         </div>
   
-        <picture class="flex justify-center items-center col-start-2 col-end-3 row-start-1 row-end-2">
+        <picture class="flex justify-center items-center col-start-2 col-end-3 row-start-1 row-end-3 h-[300px]">
           <img 
             src="/img/Yahir/Yahir-image-presentation.webp"
             transition:name="Character-Yahir"
             alt="Imagen de Emmanuel" id="image-presentation" 
-            class="w-auto h-[600px] object-cover transition"
+            class="w-auto h-[600px] object-cover transition z-10"
             style="mask-image: linear-gradient(black 50%, transparent);"
           />
         </picture>
@@ -37,16 +37,18 @@ import { Characters as person } from "@/logic/character"
   </div>
   
   <div class="md:hidden">
-    <picture class="flex flex-col justify-center items-center mb-10">
+    <picture class="flex relative h-[400px] sm:h-[600px] flex-col justify-center items-center mb-10">
       <img 
         src="/img/Yahir/Yahir-image-presentation.webp"
         transition:name="Character-Yahir"
         alt="Imagen de Emmanuel" 
-        class="w-auto h-[400px] object-cover transition"
+        class="size-full object-contain transition"
         id="image-presentation-2"
         style="mask-image: linear-gradient(black 50%, transparent);"
       />
-      <h1 id="name-text" class="text-3xl"></h1>
+      <span id="name-text" class='font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-3xl lg:text-3xl text-blue-300/90'>
+        
+      </span>
     </picture>
 
     <section class="swiper">
@@ -106,6 +108,7 @@ import { Characters as person } from "@/logic/character"
 
         link.addEventListener('mouseenter', () => {
 
+            localStorage.removeItem('lastHoveredImageId');
             if ($lastActiveImage) {
                 $lastActiveImage.classList.remove('active');
             }
@@ -117,10 +120,18 @@ import { Characters as person } from "@/logic/character"
             $characterSmallImage.forEach((image) => image.classList.add('active'))
 
             $lastActiveImage = $characterSmallImage[0]
-        })
-    })
-}
 
+            localStorage.setItem('lastHoveredImageId', id)
+        })
+
+        const lastHoveredImageId = localStorage.getItem('lastHoveredImageId')
+        if(lastHoveredImageId === id) {
+            $characterPhoto.src = characterSrc
+            $characterPhoto.setAttribute('transition:name', `Character-${id}`)
+            $characterSmallImage.forEach((image) => image.classList.add('active'))
+        }
+    })
+  }
 
   document.addEventListener('astro:page-load', changeCharacterImage)
 </script>
@@ -141,18 +152,24 @@ import { Characters as person } from "@/logic/character"
       on: {
         slideChange: function () {
             const activeSlide = this.slides[this.activeIndex]
-            const $hola = $('#name-text')
+            const $nameText = $('#name-text')
             const $characterLink = activeSlide.querySelector('.character-link') as HTMLAnchorElement
             const id = $characterLink.href.split('/').at(-1)
             const characterSrc = `/img/${id}/${id}-image-presentation.webp`
 
-            console.log(id)
-
             const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
 
+            localStorage.setItem('lastImage', id)
             $characterPhoto.src = characterSrc
-            $hola.textContent = id
+            $nameText.textContent = id
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
+
+
+            const lastHoveredImageId = localStorage.getItem('lastImage')
+            if(lastHoveredImageId === id) {
+                $characterPhoto.src = characterSrc
+                $characterPhoto.setAttribute('transition:name', `Character-${id}`)
+            }
         }
       }
     })

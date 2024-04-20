@@ -6,7 +6,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				'Dancing': ['Dancing Script Variable', 'cursive']
+				'Dancing': ['Dancing Script Variable', 'cursive'],
+				'Public': ['Public Sans Variable', 'sans-serif']
 			}
 		},
 	},
