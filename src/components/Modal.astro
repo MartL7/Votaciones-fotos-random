@@ -1,0 +1,49 @@
+<dialog
+	class="clip-dialog items-center justify-center bg-transparent px-4 text-2xl text-white sm:px-0"
+	id="dialog-image"
+>
+	<div class="relative block w-[80vw] sm:w-[50vh] max-w-[1000px] bg-transparent">
+		<img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
+
+		<button
+			type="button"
+			class="close-dialog fixed right-8 top-8 rounded bg-black/60 p-4 transition hover:scale-110"
+			id="close-dialog"
+		>
+			<svg
+				class="size-5"
+				aria-hidden="true"
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 14 14"
+			>
+				<path
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+			</svg>
+		</button>
+	</div>
+</dialog>
+
+<style>
+	.clip-dialog[open]::backdrop {
+		background-color: rgba(0, 0, 0, 0.7);
+
+		animation-name: join-anim;
+		animation-duration: 200ms;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-in-out;
+	}
+
+	@keyframes join-anim {
+		from {
+			background-color: rgba(0, 0, 0, 0);
+		}
+		to {
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+	}
+</style>

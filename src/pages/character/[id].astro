@@ -1,4 +1,5 @@
 ---
+import Modal from '@/components/Modal.astro'
 import Layout from "@/layouts/Layout.astro"
 import Instagram from "@/components/icons/Instagram.astro"
 import Socials from "@/components/Socials.astro"
@@ -15,6 +16,7 @@ const { imagePresentation, name, imagesGalery, funnyText, socials } = character
 const arrayText = funnyText.join(', ')
 ---
 <Layout title={`Información del personaje ${name}`}>
+
   <main class="flex justify-center flex-col items-center">
 
     <h1 class="text-2xl sm:text-3xl font-bold text-gray-400/90"> Información del Personaje </h1>
@@ -62,13 +64,13 @@ const arrayText = funnyText.join(', ')
     <section class="grid grid-cols-2 gap-5 sm:gap-8 md:gap-10 sm:grid-cols-3 p-5">
       {
         imagesGalery.map((imageObj, index) => (
-          <picture class={imageObj.class}>
-            <img 
+          <picture class={`image-container ${imageObj.class}`} data-url={imageObj.image}>
+              <img 
               decoding="async"
               loading="lazy"
               src={imageObj.image} 
               alt={`Imagen ${index + 1} de ${name}`}
-              class={`size-full rounded-lg object-cover`}
+              class={`size-full rounded-lg object-cover cursor-zoom-in`}
             />
           </picture>
         ))
@@ -87,6 +89,7 @@ const arrayText = funnyText.join(', ')
         }
       </div>
     </section>
+    <Modal />
   </main>
 </Layout>
 
@@ -97,33 +100,60 @@ const arrayText = funnyText.join(', ')
 </style>
 
 <script>
-  import { $ } from '@/lib/dom-selector'
+  import { $, $$ } from '@/lib/dom-selector'
 
-  const changeText = () => {
-    const $funnyText = $('#funnyText') as HTMLParagraphElement
-    const $buttonChangeText = $('#button-change-text') as HTMLButtonElement
-    const $buttonLeftChangeText = $('#button-left-change-text') as HTMLButtonElement
-    const $arrayToText = $('#arrayToText') as HTMLInputElement
-    const $textCounter = $('#text-counter') as HTMLSpanElement
+  document.addEventListener('astro:page-load', () => {
+    
+    const changeText = () => {
+      const $funnyText = $('#funnyText') as HTMLParagraphElement
+      const $buttonChangeText = $('#button-change-text') as HTMLButtonElement
+      const $buttonLeftChangeText = $('#button-left-change-text') as HTMLButtonElement
+      const $arrayToText = $('#arrayToText') as HTMLInputElement
+      const $textCounter = $('#text-counter') as HTMLSpanElement
+  
+      let index = 0
+      const arrayText = $arrayToText?.value.split(', ')
+  
+      $textCounter.textContent = `${index + 1}/${arrayText?.length}`
+  
+      $buttonLeftChangeText.addEventListener('click', () => {
+        index = (index - 1 + arrayText.length) % arrayText.length
+        $funnyText.textContent = `"${arrayText[index]}"`
+        $textCounter.textContent = `${index + 1}/${arrayText.length}`
+      })
+  
+      $buttonChangeText.addEventListener('click', () => {
+        index = (index + 1) % arrayText.length
+        $funnyText.textContent = `"${arrayText[index]}"`
+        $textCounter.textContent = `${index + 1}/${arrayText.length}`
+      })
+    }
 
-    let index = 0
-    const arrayText = $arrayToText.value.split(', ')
+    const Modal = () => {
+      const $imageContainer = $$('.image-container') as NodeListOf<HTMLImageElement>
+      const $imageClip = $('#image-clip') as HTMLImageElement
+      const $imageDialog = $('.clip-dialog') as HTMLDialogElement
+      const $closeButton = $('#close-dialog') as HTMLButtonElement
 
-    $textCounter.textContent = `${index + 1}/${arrayText.length}`
+      $imageDialog.addEventListener('close', () => {
+        $imageClip.src = ''
+      })
 
-    $buttonLeftChangeText.addEventListener('click', () => {
-      index = (index - 1 + arrayText.length) % arrayText.length
-      $funnyText.textContent = `"${arrayText[index]}"`
-      $textCounter.textContent = `${index + 1}/${arrayText.length}`
-    })
+      $imageContainer.forEach((image) => {
+        const { url } = image.dataset
 
-    $buttonChangeText.addEventListener('click', () => {
-      index = (index + 1) % arrayText.length
-      $funnyText.textContent = `"${arrayText[index]}"`
-      $textCounter.textContent = `${index + 1}/${arrayText.length}`
+        image.addEventListener('click', () => {
+          const name = url.split('/').at(-2)
+
+          $imageClip.alt = `Imagen de la galeria de ${name}`
+          $imageClip.src = url
+          $imageDialog.showModal()
+
+          $closeButton.onclick = () => $imageDialog.close()
+        })
     })
   }
-
-  document.addEventListener('astro:page-load', changeText)
-
+  changeText()
+  Modal()
+})
 </script>
