@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import Modal from "@/components/Modal.astro"
 import { memesImages } from "@/logic/memes"
 ---
 
@@ -11,7 +12,7 @@ import { memesImages } from "@/logic/memes"
     <div class="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-4">
       {
         memesImages.map((memeImage) => (
-          <picture class={`border rounded-lg ${memeImage.class}`}>
+          <picture class={`image-container cursor-zoom-in border rounded-lg ${memeImage.class}`} data-url={memeImage.image}>
             <img
               decoding="async" 
               loading="lazy"
@@ -22,4 +23,11 @@ import { memesImages } from "@/logic/memes"
         ))
       }
     </div>
+    <Modal />
 </Layout> 
+
+<script>
+  import { showModal } from '@/const/showModal'
+
+  document.addEventListener('astro:page-load', showModal)
+</script>

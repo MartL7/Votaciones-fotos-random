@@ -101,6 +101,7 @@ const arrayText = funnyText.join(', ')
 
 <script>
   import { $, $$ } from '@/lib/dom-selector'
+  import { showModal } from '@/const/showModal'
 
   document.addEventListener('astro:page-load', () => {
     
@@ -128,32 +129,7 @@ const arrayText = funnyText.join(', ')
         $textCounter.textContent = `${index + 1}/${arrayText.length}`
       })
     }
-
-    const Modal = () => {
-      const $imageContainer = $$('.image-container') as NodeListOf<HTMLImageElement>
-      const $imageClip = $('#image-clip') as HTMLImageElement
-      const $imageDialog = $('.clip-dialog') as HTMLDialogElement
-      const $closeButton = $('#close-dialog') as HTMLButtonElement
-
-      $imageDialog.addEventListener('close', () => {
-        $imageClip.src = ''
-      })
-
-      $imageContainer.forEach((image) => {
-        const { url } = image.dataset
-
-        image.addEventListener('click', () => {
-          const name = url.split('/').at(-2)
-
-          $imageClip.alt = `Imagen de la galeria de ${name}`
-          $imageClip.src = url
-          $imageDialog.showModal()
-
-          $closeButton.onclick = () => $imageDialog.close()
-        })
-    })
-  }
   changeText()
-  Modal()
+  showModal()
 })
 </script>
