@@ -14,3 +14,4 @@
 - 12. Corregir bugs de ViewTransitions de Astro y el localStorage del inicio ❌
 - 13. Cambiar / Agregar algunas imagenes ❌
 - 14. Cambiar el Login a Google en lugar de GitHub ❌
+- 15. Persistencia del personaje al navegar y recargar la página (Movil) -> URGENTE ❌ 
