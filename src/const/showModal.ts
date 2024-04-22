@@ -6,6 +6,8 @@ export const showModal = () => {
   const $imageDialog = $('.clip-dialog') as HTMLDialogElement
   const $closeButton = $('#close-dialog') as HTMLButtonElement
 
+  if (!$imageContainer || !$imageClip || !$imageDialog || !$closeButton) return
+
   $imageDialog.addEventListener('close', () => {
     $imageClip.src = ''
   })

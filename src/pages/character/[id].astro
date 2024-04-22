@@ -112,6 +112,8 @@ const arrayText = funnyText.join(', ')
       const $arrayToText = $('#arrayToText') as HTMLInputElement
       const $textCounter = $('#text-counter') as HTMLSpanElement
   
+      if (!$funnyText || !$buttonChangeText || !$buttonLeftChangeText || !$arrayToText || !$textCounter) return
+      
       let index = 0
       const arrayText = $arrayToText?.value.split(', ')
   
