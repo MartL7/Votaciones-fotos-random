@@ -269,7 +269,7 @@ export const Characters: Character[] = [
             'Chanfles!..., ya nimodo', 
             'Ya sabía, quería saber si tu sabías',
             'Me siento como pollo rostizado porque nomás doy vueltas.'
-            ]
+        ]
     },
 
     /*{

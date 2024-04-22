@@ -8,15 +8,15 @@ const secondArray = person.slice(8, person.length)
 
   <div class="hidden md:block">
     <section class="flex justify-center items-center"> 
-      <article class="grid grid-cols-2 grid-rows-2">
+      <article class="grid grid-cols-3 grid-rows-2 gap-x-10">
         <div class="flex flex-row flex-wrap gap-5 row-start-1 row-end-3">
           {
             firstArray.map(({ id, name, imageSmall }) => (
-              <a href={`/character/${id}`} class="character-link relative md:w-56 md:h-40 lg:w-36 lg:h-24">
+              <a href={`/character/${id}`} class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24">
                 <img src={imageSmall} alt={`Imagen del personaje ${name}`}
                   decoding="async"
                   loading="lazy"
-                  class="size-28 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+                  class="lg:size-28 md:size-24 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
                   style="mask-image: linear-gradient(black 50%, transparent);"
                   id={`character-${id}`}
                 />
@@ -26,7 +26,7 @@ const secondArray = person.slice(8, person.length)
           }
         </div>
   
-        <picture class="flex justify-center items-center col-start-2 col-end-3 row-start-1 row-end-3 h-[300px]">
+        <picture class="flex relative justify-center items-center col-start-2 col-end-3 row-start-1 row-end-3 h-[400px]">
           <img 
             src="/img/Yahir/Yahir-image-presentation.webp"
             transition:name="Character-Yahir"
@@ -34,16 +34,18 @@ const secondArray = person.slice(8, person.length)
             class="w-auto h-[600px] object-cover transition z-10"
             style="mask-image: linear-gradient(black 50%, transparent);"
           />
+
+          <span id="name-text-big" class='font-Public font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-5xl text-blue-300/90'>  </span>
         </picture>
 
         <div class="flex flex-row flex-wrap gap-5 col-start-3 col-end-4">
           {
             secondArray.map(({ id, name, imageSmall }) => (
-              <a href={`/character/${id}`} class="character-link relative md:w-56 md:h-40 lg:w-36 lg:h-24">
+              <a href={`/character/${id}`} class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24">
                 <img src={imageSmall} alt={`Imagen del personaje ${name}`}
                   decoding="async"
                   loading="lazy"
-                  class="size-28 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+                  class="lg:size-28 md:size-24 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
                   style="mask-image: linear-gradient(black 50%, transparent);"
                   id={`character-${id}`}
                 />
@@ -117,6 +119,7 @@ const secondArray = person.slice(8, person.length)
   const changeCharacterImage = () => {
     const $imageLink = $$('.character-link') as globalThis.NodeListOf<HTMLAnchorElement>
     const $characterPhoto = $('#image-presentation') as HTMLImageElement
+    const $nameText = $('#name-text-big') as HTMLSpanElement
     let $lastActiveImage: HTMLImageElement | null = null
 
     $imageLink.forEach((link) => {
@@ -127,6 +130,8 @@ const secondArray = person.slice(8, person.length)
         const characterSrc = `/img/${id}/${id}-image-presentation.webp` ?? '/img/Yahir/Yahir-image-presentation.webp'
 
         link.addEventListener('mouseenter', () => {
+
+            $nameText.textContent = id
 
             localStorage.removeItem('lastHoveredImageId');
             if ($lastActiveImage) {
@@ -143,13 +148,16 @@ const secondArray = person.slice(8, person.length)
             $lastActiveImage = $characterSmallImage[0]
 
             localStorage.setItem('lastHoveredImageId', id)
+            localStorage.setItem('lastName', id)
         })
 
         const lastHoveredImageId = localStorage.getItem('lastHoveredImageId')
+        const lastName = localStorage.getItem('lastName')
         if(lastHoveredImageId === id) {
             $characterPhoto.src = characterSrc
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
             $characterSmallImage.forEach((image) => image.classList.add('active'))
+            $nameText.textContent = lastName
         }
     })
   }
