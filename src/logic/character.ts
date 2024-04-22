@@ -233,18 +233,39 @@ export const Characters: Character[] = [
         ],
         funnyText: ['Crecer como los Bisteces', 'A Putazos', 'BOMBARDEN HUAUCHINANGO'],
     },
-    /*{
-        id: 'Alejandra',
-        name: 'Alejandra',
-        imagePresentation: '/img/Alejandra/Alejandra-image-presentation.webp',
-        imageSmall: '/img/Alejandra/Alejandra-small.png',
+    {
+        id: 'Ale',
+        name: 'Alita',
+        imagePresentation: '/img/Ale/Ale-image-presentation.webp',
+        imageSmall: '/img/Ale/Ale-small.webp',
         imagesGalery: [
-            { image: '/img/Alejandra/Alejandra-image-1.web', isVertical: false },
-            { image: '/img/Alejandra/Alejandra-image-2.webp', isVertical: false },
-            { image: '/img/Alejandra/Alejandra-image-3.web', isVertical: false },
+            { 
+                image: '/img/Ale/Ale-image-1.webp', 
+                isVertical: false, 
+                class:'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]' },
+            { 
+                image: '/img/Ale/Ale-image-2.webp', 
+                isVertical: false,
+                class:'sm:row-start-2 sm:row-end-3 sm:col-start-2 sm:col-end-3 sm:h-[250px] col-start-2 col-end-3 h-[200px]'
+            },
+            { 
+                image: '/img/Ale/Ale-image-3.webp', 
+                isVertical: false,
+                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[300px] row-start-3 row-end-4 h-[200px] col-start-1 col-end-2'
+            },
+            {
+                image: '/img/Ale/Ale-image-4.webp',
+                isVertical: false,
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4'
+            },
+            {
+                image: '/img/Ale/Ale-image-5.webp',
+                isVertical: false,
+                class: 'sm:row-start-3 sm:row-end-4 sm:col-start-1 sm:col-end-2 sm:h-[300px] col-start-2 col-end-3 h-[180px] row-start-2 row-end-3'
+            }
         ],
-        funnyText: [''],
-    },*/
+        funnyText: ['ñam ñaaaam'],
+    },
 
     /*{
         id: 'Janet',
