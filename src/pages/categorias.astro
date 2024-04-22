@@ -5,7 +5,7 @@ import Actions from "@/components/Actions.astro"
 import { memesImages } from "@/logic/memes"
 ---
 
-<Layout title="Memes del año">
+<Layout title="Bienvenido a las Categorías">
   <section class="flex flex-col justify-center items-center px-5">
 
     <h1 class="text-2xl font-bold"> <span class="text-2xl font-Dancing"> Categoria: </span> Meme del año </h1>
@@ -27,16 +27,14 @@ import { memesImages } from "@/logic/memes"
     <Modal />
 
     <div class="mt-8 sm:mt-10 lg:mt-20 flex flex-col justify-center items-center">
-      <h1 class="text-2xl font-bold uppercase text-center"> Presentación </h1>
+      <h1 class="text-2xl font-bold uppercase text-center"> Clip del Ciclo </h1>
 
-      <p class="text-gray-400/90 text-center text-xl"> Vota por tu meme favorito <br/>
-          ir a la sección de votos
+      <p class="text-gray-400/90 text-center text-xl"> Vuelve a ver el Clip del Ciclo <br/>
+          desde el CBTis 86
       </p>
-
-      <Actions class="mt-7 text-center" href="/votos" aria-label="Ir a la seccioón de votos" as="a">
-        Vota ahora!
-      </Actions>
     </div>
+
+  </section>
 </Layout> 
 
 <script>
