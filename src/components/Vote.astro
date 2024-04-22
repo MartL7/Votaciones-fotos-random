@@ -1,6 +1,7 @@
 ---
 import { getSession } from 'auth-astro/server'
 import Actions from "@/components/Actions.astro"
+import ShowMemes from '@/components/ShowMemes.astro'
 
 const session = await getSession(Astro.request)
 ---
@@ -16,6 +17,8 @@ const session = await getSession(Astro.request)
     </div>
 
   </article>
+
+  <ShowMemes classImage="saturate-0 hover:saturate-100 cursor-pointer"/>
 </section>
 
 <script>
@@ -26,5 +29,52 @@ const session = await getSession(Astro.request)
     const $logout = $('#logout')
 
     if ($logout) $logout.onclick = () => signOut()
+  })
+</script>
+
+<script>
+  import { $, $$ } from '@/lib/dom-selector'
+
+  document.addEventListener('astro:page-load', () => {
+    const $images = $$('.image-container') as NodeListOf<HTMLImageElement>
+
+    $images.forEach(($image) => {
+      $image.onclick = async () => {
+        const { url, id } = $image.dataset
+        console.log(url)
+
+        const category = url.split('/').at(-2)
+
+        const dataToSend = {
+          voteId: id,
+          category: category
+        }
+        
+        const response = await fetch('/api/memes/votes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dataToSend)
+        })
+
+        if (!response.ok) {
+          window.toast({
+            title: '❌ Error',
+            message: 'Error al realizar el voto',
+            location: 'bottom-center',
+            dismissible: true
+          })
+          return
+        }
+
+        window.toast({
+          title: '✅ Voto realizado',
+          message: 'Gracias por votar',
+          location: 'bottom-center',
+          dismissible: true
+        })
+      }
+    })
   })
 </script>

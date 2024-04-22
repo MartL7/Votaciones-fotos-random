@@ -7,7 +7,7 @@ import Vote from "@/components/Vote.astro"
 const session = await getSession(Astro.request)
 ---
 
-<Layout title="Pronostica por las fotos más random que sean tus favoritas">
+<Layout title="Pronostica por las Categorias que sean tus favoritas">
   <main class="flex flex-col justify-center items-center">
     { session ? <Vote /> : <Sesion /> }
   </main>

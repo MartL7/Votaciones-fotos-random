@@ -14,11 +14,11 @@ import Actions from "@/components/Actions.astro"
       
       <h3 class="text-2xl font-bold uppercase"> Vota ahora!! </h3>
 
-      <p class="text-pretty text-xl">¡Hola! Para poder votar por tus fotos favoritas 
+      <p class="text-pretty text-xl"> Para poder votar por tus sección favorita 
         <span class="text-slate-400/90"> debes iniciar sesión. </span> 
       </p>
       <Actions class="mt-7 text-center" as="button" id="login">
-          Iniciar Sesión
+          <span class="transition"> Iniciar Sesión </span>
       </Actions>
       <small> Es necesario tener una cuenta de GitHub </small>
   </div>
@@ -32,6 +32,13 @@ import Actions from "@/components/Actions.astro"
 
     const $login = $('#login')
 
-    if ($login) $login.onclick = () => signIn("github")
+    if ($login) {
+      $login.onclick = () => {
+        signIn("github")
+        const $span = $login.querySelector('span')
+        $login.setAttribute('aria-disabled', 'true')
+        $span.textContent = "Iniciando sesión..."
+      }
+    }
   })
 </script>

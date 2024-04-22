@@ -155,6 +155,11 @@ export const Characters: Character[] = [
                 isVertical: false,
                 class: 'sm:col-start-1 sm:col-end-3 sm:h-[300px] h-[300px]',
             },
+            {
+                image: '/img/Mike/Mike-image-5.webp',
+                isVertical: false,
+                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px]',
+            },
         ],
         funnyText: ['A poco si tilin'],
     },
