@@ -67,7 +67,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-4 sm:h-[300px] sm:row-start-2 col-start-1 col-end-3 h-[250px]',
             },
         ],
-        funnyText: ['Lo hago en 30 segundos!', 'El Yahir está cabezón', 'Miau'],
+        funnyText: ['Lo hago en 30 segundos!', 'Miau', 'El Yahir está cabezón', '100 por línea'],
     },
     {
         id: 'Emmanuel',
@@ -264,7 +264,12 @@ export const Characters: Character[] = [
                 class: 'sm:row-start-3 sm:row-end-4 sm:col-start-1 sm:col-end-2 sm:h-[300px] col-start-2 col-end-3 h-[180px] row-start-2 row-end-3'
             }
         ],
-        funnyText: ['ñam ñaaaam'],
+        funnyText: [
+            'Es que es hombre, por eso miente',
+            'Chanfles!..., ya nimodo', 
+            'Ya sabía, quería saber si tu sabías',
+            'Me siento como pollo rostizado porque nomás doy vueltas.'
+            ]
     },
 
     /*{

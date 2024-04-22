@@ -18,3 +18,4 @@
 -   16. Agregar imagenes en alta calidad para mostrar ❌
 -   17. Cambiar lógica para poder cambiar tu voto pero no votar más de 3 veces ❌
 -   18. Arreglar bug de lógica de clases en componente ShowMemes ❌
+-   19. Arreglar bug de Sesión en los votos --> URGENTE ❌

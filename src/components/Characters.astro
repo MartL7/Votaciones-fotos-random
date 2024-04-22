@@ -1,5 +1,8 @@
 ---
 import { Characters as person } from "@/logic/character"
+
+const firstArray = person.slice(0, 8)
+const secondArray = person.slice(8, person.length)
 ---
 <main class="flex flex-col justify-center items-center">
 
@@ -8,12 +11,12 @@ import { Characters as person } from "@/logic/character"
       <article class="grid grid-cols-2 grid-rows-2">
         <div class="flex flex-row flex-wrap gap-5 row-start-1 row-end-3">
           {
-            person.map(({ id, name, imageSmall }) => (
-              <a href={`/character/${id}`} class="character-link relative md:w-56 md:h-40 lg:w-42 lg:h-28">
+            firstArray.map(({ id, name, imageSmall }) => (
+              <a href={`/character/${id}`} class="character-link relative md:w-56 md:h-40 lg:w-36 lg:h-24">
                 <img src={imageSmall} alt={`Imagen del personaje ${name}`}
                   decoding="async"
                   loading="lazy"
-                  class="size-32 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-10 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+                  class="size-28 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
                   style="mask-image: linear-gradient(black 50%, transparent);"
                   id={`character-${id}`}
                 />
@@ -32,6 +35,23 @@ import { Characters as person } from "@/logic/character"
             style="mask-image: linear-gradient(black 50%, transparent);"
           />
         </picture>
+
+        <div class="flex flex-row flex-wrap gap-5 col-start-3 col-end-4">
+          {
+            secondArray.map(({ id, name, imageSmall }) => (
+              <a href={`/character/${id}`} class="character-link relative md:w-56 md:h-40 lg:w-36 lg:h-24">
+                <img src={imageSmall} alt={`Imagen del personaje ${name}`}
+                  decoding="async"
+                  loading="lazy"
+                  class="size-28 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+                  style="mask-image: linear-gradient(black 50%, transparent);"
+                  id={`character-${id}`}
+                />
+                <div class="absolute inset-0 character-link-background"></div>
+              </a>
+            ))
+          }
+        </div>
       </article>
     </section>
   </div>
