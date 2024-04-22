@@ -8,7 +8,14 @@ export default {
 			fontFamily: {
 				'Dancing': ['Dancing Script Variable', 'cursive'],
 				'Public': ['Public Sans Variable', 'sans-serif']
-			}
+			},
+			colors: {
+				primary: "var(--color-primary)",
+				secondary: "var(--color-secondary)",
+				accent: "var(--color-accent)",
+				twitch: "var(--color-twitch)",
+				ice: "var(--color-twitch-ice)",
+			},
 		},
 	},
 	plugins: [animations],
