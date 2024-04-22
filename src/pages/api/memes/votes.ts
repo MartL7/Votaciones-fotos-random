@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro'
-import { Votes, db } from 'astro:db'
+import { db, Votes } from 'astro:db'
 import { string, object, safeParse } from 'valibot'
 import { getSession } from 'auth-astro/server'
 
@@ -24,6 +24,8 @@ export const POST: APIRoute = async ({ request }) => {
   const newId = `${userId}-${voteId}`
 
   const vote = { id: newId, userId, category, voteId }
+
+  console.log(vote)
 
   try {
     await db.insert(Votes).values(vote)

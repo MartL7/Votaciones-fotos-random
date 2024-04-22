@@ -65,15 +65,17 @@ const session = await getSession(Astro.request)
             location: 'bottom-center',
             dismissible: true
           })
-          return
+          console.log('Error')
+          return 
+        } else {
+          console.log('Voto realizado')
+          window.toast({
+            title: '✅ Voto realizado',
+            message: 'Gracias por votar',
+            location: 'bottom-center',
+            dismissible: true
+          })
         }
-
-        window.toast({
-          title: '✅ Voto realizado',
-          message: 'Gracias por votar',
-          location: 'bottom-center',
-          dismissible: true
-        })
       }
     })
   })
