@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
 import Footer from '@/components/Footer.astro'
+import Toast from '@/components/ui/Toast.astro'
 import Header from '@/components/Header.astro'
 import '@fontsource-variable/jost'
 import 'swiper/css/bundle'
@@ -37,6 +38,7 @@ const { title } = Astro.props
 			<Header />
 			<slot />
 			<Footer />
+			<Toast />
 		</div>
 	</body>
 </html>
