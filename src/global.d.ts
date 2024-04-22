@@ -1,6 +1,6 @@
 interface ToastOptions {
 	title: string
-	message: string
+	message?: string
 	type?: "success" | "error" | "warning" | "info"
 	location?:
 		| "top-right"

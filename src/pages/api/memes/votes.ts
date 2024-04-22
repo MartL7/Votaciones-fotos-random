@@ -20,15 +20,16 @@ export const POST: APIRoute = async ({ request }) => {
 
   const { category, voteId } = output
 
-  const userId = session.user.email
+  const userId = session.user.id
   const newId = `${userId}-${voteId}`
 
   const vote = { id: newId, userId, category, voteId }
 
-  console.log(vote)
-
   try {
-    await db.insert(Votes).values(vote)
+    await db.insert(Votes).values(vote).onConflictDoUpdate({
+      target: Votes.id,
+      set: vote,
+    })
   } catch(error) {
     console.error(error)
     return new Response('Error al insertar el Voto', { status: 500 })
