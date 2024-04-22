@@ -82,7 +82,7 @@ const secondArray = person.slice(8, person.length)
                 <img src={imageSmall} alt={`Imagen del personaje ${name}`}
                   decoding="async"
                   loading="lazy"
-                  class="size-48 scale-125 z-10"
+                  class="size-48 object-cover z-10"
                   style="mask-image: linear-gradient(black 50%, transparent);"
                 />
                 <div class="absolute inset-0 character-link-background"></div>
@@ -182,11 +182,13 @@ const secondArray = person.slice(8, person.length)
         slideChange: function () {
             const activeSlide = this.slides[this.activeIndex]
             const $nameText = $('#name-text')
-            const $characterLink = activeSlide.querySelector('.character-link') as HTMLAnchorElement
-            const id = $characterLink.href.split('/').at(-1)
+            const $characterLink = activeSlide?.querySelector('.character-link') as HTMLAnchorElement
+            const id = $characterLink?.href.split('/').at(-1)
             const characterSrc = `/img/${id}/${id}-image-presentation.webp`
 
             const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
+
+            if (!$nameText || !$characterLink) return
 
             localStorage.setItem('lastImage', id)
             $characterPhoto.src = characterSrc
