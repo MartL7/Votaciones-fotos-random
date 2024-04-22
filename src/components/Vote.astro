@@ -43,7 +43,7 @@ const session = await getSession(Astro.request)
         const { url, id } = $image.dataset
         console.log(url)
 
-        const category = url.split('/').at(-2)
+        const category = `category-${url.split('/').at(-2).toLowerCase()}`
 
         const dataToSend = {
           voteId: id,
