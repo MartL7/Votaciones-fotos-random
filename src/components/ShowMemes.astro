@@ -4,7 +4,7 @@ import { memesImages } from "@/logic/memes"
 interface Props {
   classPicture?: string
   classImage?: string
-  votes: string[]
+  votes?: string[]
 }
 
 const { classPicture, classImage, votes } = Astro.props
@@ -13,7 +13,7 @@ const { classPicture, classImage, votes } = Astro.props
 <div class="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-4">
   {
     memesImages.map((memeImage) => (
-      <picture class={`image-container-vote relative cursor-zoom-in border rounded-lg ${classPicture} ${memeImage.class}`} data-url={memeImage.image} data-id={memeImage.id}>
+      <picture class={`relative cursor-zoom-in border rounded-lg ${classPicture} ${memeImage.class}`} data-url={memeImage.image} data-id={memeImage.id}>
         <img
           decoding="async" 
           loading="lazy"
@@ -21,12 +21,12 @@ const { classPicture, classImage, votes } = Astro.props
           alt={`Imagen ${memeImage.id}`} 
           class:list={[
             `size-full rounded-g ${classImage}`,
-            {'is-voted': votes.includes(memeImage.id) }
+            {'is-voted': votes?.includes(memeImage.id) }
           ]}/>
 
           <span class:list={[
             'absolute bottom-0 left-20 text-2xl font-Dancing font-bold bg-black bg-opacity-50 rounded-bl-lg -skew-y-3',
-            {'hidden': !votes.includes(memeImage.id)}
+            {'hidden': !votes?.includes(memeImage.id)}
           ]}>
             Tu voto
           </span>
