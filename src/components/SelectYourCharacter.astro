@@ -1,0 +1,73 @@
+---
+import type { Character } from '@/types/Character'
+
+interface Props {
+  firstArrayCharacters?: Character[]
+  secondArrayCharacters?: Character[]
+  arrayCharacters?: Character[]
+}
+
+const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.props
+---
+
+<div class="hidden md:block">
+  <section class="flex justify-center items-center"> 
+    <article class="grid grid-cols-3 grid-rows-2 gap-x-10">
+      <div class="flex flex-row flex-wrap gap-5 row-start-1 row-end-3 h-[400px]">
+        {
+          firstArrayCharacters.map(({ id, name, imageSmall }) => (
+            <a href={`/character/${id}`} class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24">
+              <img src={imageSmall} alt={`Imagen small de ${name}`}
+                decoding="async"
+                loading="lazy"
+                class="lg:size-28 md:size-24 object-cover rounded-lg -top-5 scale-90 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+                style="mask-image: linear-gradient(black 50%, transparent);"
+                id={`character-${id}`}
+              />
+              <div class="absolute inset-0 character-link-background"></div>
+            </a>
+          ))
+        }
+      </div>
+
+      <picture class="flex relative justify-center items-center col-start-2 col-end-3 row-start-1 row-end-3 h-[400px]">
+        <img
+          transition:name="Character-Yahir"
+          alt="Imagen de Emmanuel" id="image-presentation" 
+          class="size-full object-contain transition z-10"
+          style="mask-image: linear-gradient(black 50%, transparent);"
+        />
+
+        <span id="name-text-big" class='font-Public font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-5xl text-blue-300/90'>  </span>
+      </picture>
+
+      <div class="flex flex-row flex-wrap gap-5 col-start-3 col-end-4">
+        {
+          secondArrayCharacters.map(({ id, name, imageSmall }) => (
+            <a href={`/character/${id}`} class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24">
+              <img src={imageSmall} alt={`Imagen small de ${name}`}
+                decoding="async"
+                loading="lazy"
+                class="lg:size-28 md:size-24 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+                style="mask-image: linear-gradient(black 50%, transparent);"
+                id={`character-${id}`}
+              />
+              <div class="absolute inset-0 character-link-background"></div>
+            </a>
+          ))
+        }
+      </div>
+    </article>
+  </section>
+</div>
+
+<style>
+  .character-link-background {
+    opacity: .25;
+    background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
+  }
+  .active {
+    filter: saturate(150%);
+    transform: scale(1.1);
+  }
+</style>

@@ -1,0 +1,58 @@
+---
+import type { Character } from "@/types/Character"
+
+interface Props {
+  characters: Character[]
+}
+
+const { characters } = Astro.props
+---
+
+<div class="md:hidden">
+  <picture class="flex relative h-[400px] sm:h-[600px] flex-col justify-center items-center mb-10">
+    <img 
+      src="/img/Yahir/Yahir-image-presentation.webp"
+      transition:name="Character-Yahir"
+      alt="Imagen de Emmanuel" 
+      class="size-full object-contain transition"
+      id="image-presentation-2"
+      style="mask-image: linear-gradient(black 50%, transparent);"
+    />
+    <span id="name-text" class='font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-3xl lg:text-3xl text-blue-300/90'>
+      
+    </span>
+  </picture>
+
+  <section class="swiper">
+    <div class="swiper-wrapper">
+      {
+        characters.map(({ id, name, imageSmall }) => (
+          <div class="swiper-slide">
+            <a href={`/character/${id}`} class="character-link relative flex justify-center items-center">
+              <img src={imageSmall} alt={`Imagen del personaje ${name}`}
+                decoding="async"
+                loading="lazy"
+                class="size-48 object-cover z-10"
+                style="mask-image: linear-gradient(black 50%, transparent);"
+              />
+              <div class="absolute inset-0 character-link-background"></div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+    <div class="swiper-pagination"></div>
+  </section>
+</div>
+
+<style>
+  .swiper {
+    width: 300px;
+    height: 220px;
+  }
+
+  .character-link-background {
+    opacity: .25;
+    background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
+  }
+</style>
