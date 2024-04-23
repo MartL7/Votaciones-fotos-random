@@ -16,7 +16,7 @@
 -   14. Cambiar el Login a Google en lugar de GitHub ❌
 -   15. Persistencia del personaje al navegar y recargar la página (Movil) -> URGENTE ❌
 -   16. Agregar imagenes en alta calidad para mostrar ❌
--   17. Cambiar lógica para poder cambiar tu voto pero no votar más de 3 veces ❌
+-   17. Cambiar lógica para poder cambiar tu voto pero no votar más de 3 veces ✅
 -   18. Arreglar bug de lógica de clases en componente ShowMemes ✅
 -   19. Arreglar bug de Sesión en los votos --> URGENTE ✅
 -   20. Separar en un componente la lógica de select your character -> URGENTE ❌
