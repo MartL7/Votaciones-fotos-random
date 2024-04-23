@@ -13,7 +13,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:max-h-[300px]',
             },
             {
-                image: '/img/Yahir/Yahir-image-6.webp',
+                image: '/img/Yahir/Yahir-image-8.webp',
                 isVertical: true,
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3 sm:max-h-[600px]',
             },
@@ -67,7 +67,14 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-4 sm:h-[300px] sm:row-start-2 col-start-1 col-end-3 h-[250px]',
             },
         ],
-        funnyText: ['Lo hago en 30 segundos!', 'Miau', 'El Yahir está cabezón', '100 por línea'],
+        funnyText: [
+            'Lo hago en 30 segundos!',
+            'Miau',
+            'El Yahir está cabezón',
+            '100 por línea',
+            'Antes me decias "mi amor"',
+            'Ahora ni me hablas',
+        ],
     },
     {
         id: 'Emmanuel',
@@ -216,34 +223,38 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[260px] col-start-2 col-end-3 row-start-5 row-end-6 h-[200px]',
             },
         ],
-        funnyText: ['Hiii'],
+        funnyText: ['Hiii', 'Iraaaa'],
     },
 
     {
         id: 'Damian',
         name: 'Damian',
         imagePresentation: '/img/Damian/Damian-image-presentation.webp',
-        imageSmall: '/img/Damian/Damian-small.webp',
+        imageSmall: '/img/Damian/Damian-image-presentation.webp',
         imagesGalery: [
             {
                 image: '/img/Damian/Damian-image-1.webp',
                 isVertical: false,
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-1 row-end-3 h-[400px]',
             },
             {
-                image: '/img/Damian/Damian-image-2.webp',
+                image: '/img/Damian/Damian-image-5.webp',
                 isVertical: false,
-                class: 'sm:h-[300px] sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 col-start-1 col-end-2 row-start-2 row-end-4 h-[400px]',
             },
             {
                 image: '/img/Damian/Damian-image-3.webp',
                 isVertical: false,
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[600px] h-[200px] col-start-1 col-end-2 row-start-1 row-end-2',
             },
             {
                 image: '/img/Damian/Damian-image-4.webp',
                 isVertical: false,
-                class: 'sm:h-[300px] sm:col-start-2 sm:col-end-3 sm:row-start-2 row-start-3 row-end-4 col-start-2 col-end-3 h-[200px]',
+            },
+            {
+                image: '/img/Damian/Damian-image-6.webp',
+                isVertical: false,
+            },
+            {
+                image: '/img/Damian/Damian-image-7.webp',
+                isVertical: false,
             },
         ],
         funnyText: ['Crecer como los Bisteces', 'A Putazos', 'BOMBARDEN HUAUCHINANGO'],
@@ -254,39 +265,88 @@ export const Characters: Character[] = [
         imagePresentation: '/img/Ale/Ale-image-presentation.webp',
         imageSmall: '/img/Ale/Ale-small.webp',
         imagesGalery: [
-            { 
-                image: '/img/Ale/Ale-image-1.webp', 
-                isVertical: false, 
-                class:'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]' },
-            { 
-                image: '/img/Ale/Ale-image-2.webp', 
+            {
+                image: '/img/Ale/Ale-image-1.webp',
                 isVertical: false,
-                class:'sm:row-start-2 sm:row-end-3 sm:col-start-2 sm:col-end-3 sm:h-[250px] col-start-2 col-end-3 h-[200px]'
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
             },
-            { 
-                image: '/img/Ale/Ale-image-3.webp', 
+            {
+                image: '/img/Ale/Ale-image-2.webp',
                 isVertical: false,
-                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[300px] row-start-3 row-end-4 h-[200px] col-start-1 col-end-2'
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-2 sm:col-end-3 sm:h-[250px] col-start-2 col-end-3 h-[200px]',
+            },
+            {
+                image: '/img/Ale/Ale-image-3.webp',
+                isVertical: false,
+                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[300px] row-start-3 row-end-4 h-[200px] col-start-1 col-end-2',
             },
             {
                 image: '/img/Ale/Ale-image-4.webp',
                 isVertical: false,
-                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4'
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
             },
             {
                 image: '/img/Ale/Ale-image-5.webp',
                 isVertical: false,
-                class: 'sm:row-start-3 sm:row-end-4 sm:col-start-1 sm:col-end-2 sm:h-[300px] col-start-2 col-end-3 h-[180px] row-start-2 row-end-3'
-            }
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
+            },
         ],
         funnyText: [
             'Es que es hombre, por eso miente',
-            'Chanfles!..., ya nimodo', 
+            'Chanfles!..., ya nimodo',
             'Ya sabía, quería saber si tu sabías',
-            'Me siento como pollo rostizado porque nomás doy vueltas.'
-        ]
+            'Me siento como pollo rostizado porque nomás doy vueltas.',
+        ],
     },
-
+    {
+        id: 'Karen',
+        name: 'Karen',
+        imagePresentation: '/img/Karen/Karen-image-presentation.webp',
+        imageSmall: '/img/Karen/Karen-small.webp',
+        imagesGalery: [
+            {
+                image: '/img/Karen/Karen-image-1.webp',
+                isVertical: false,
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
+            },
+            {
+                image: '/img/Karen/Karen-image-2.webp',
+                isVertical: false,
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-2 sm:col-end-3 sm:h-[250px] col-start-2 col-end-3 h-[200px]',
+            },
+            {
+                image: '/img/Karen/Karen-image-8.webp',
+                isVertical: false,
+                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[300px] row-start-3 row-end-4 h-[200px] col-start-1 col-end-2',
+            },
+            {
+                image: '/img/Karen/Karen-image-4.webp',
+                isVertical: false,
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
+            },
+            {
+                image: '/img/Karen/Karen-image-5.webp',
+                isVertical: false,
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
+            },
+            {
+                image: '/img/Karen/Karen-image-3.webp',
+                isVertical: false,
+                class: 'sm:col-start-3 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
+            },
+            {
+                image: '/img/Karen/Karen-image-7.webp',
+                isVertical: false,
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:h-[300px]',
+            },
+            {
+                image: '/img/Karen/Karen-image-6.webp',
+                isVertical: false,
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
+            },
+        ],
+        funnyText: ['MangoLOVER🥭','Me equivoque de carrera'],
+    },
     /*{
         id: 'Janet',
         name: 'Janet',

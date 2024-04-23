@@ -16,7 +16,7 @@ const secondArray = person.slice(8, person.length)
                 <img src={imageSmall} alt={`Imagen del personaje ${name}`}
                   decoding="async"
                   loading="lazy"
-                  class="lg:size-28 md:size-24 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+                  class="lg:size-28 md:size-24 object-cover rounded-lg -top-5 scale-90 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
                   style="mask-image: linear-gradient(black 50%, transparent);"
                   id={`character-${id}`}
                 />
@@ -31,7 +31,7 @@ const secondArray = person.slice(8, person.length)
             src="/img/Yahir/Yahir-image-presentation.webp"
             transition:name="Character-Yahir"
             alt="Imagen de Emmanuel" id="image-presentation" 
-            class="w-auto h-[600px] object-cover transition z-10"
+            class="w-auto h-[400px] object-cover transition z-10"
             style="mask-image: linear-gradient(black 50%, transparent);"
           />
 
@@ -99,10 +99,9 @@ const secondArray = person.slice(8, person.length)
 
 <style>
   .swiper {
-    width: 350px;
+    width: 300px;
     height: 220px;
   }
-
   .character-link-background {
     opacity: .25;
     background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
@@ -176,37 +175,51 @@ const secondArray = person.slice(8, person.length)
       spaceBetween: 10,
       pagination: {
         el: '.swiper-pagination',
-        clickable: true,
+        clickable: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       on: {
+        init: function () {
+          console.log('Swiper initialized');
+        },
         slideChange: function () {
-            const activeSlide = this.slides[this.activeIndex]
-            const $nameText = $('#name-text')
-            const $characterLink = activeSlide?.querySelector('.character-link') as HTMLAnchorElement
-            const id = $characterLink?.href.split('/').at(-1)
-            const characterSrc = `/img/${id}/${id}-image-presentation.webp`
+          const activeSlide = this.slides[this.activeIndex];
+          const $nameText = $('#name-text');
+          const $characterLink = activeSlide?.querySelector('.character-link') as HTMLAnchorElement;
+          const id = $characterLink?.href.split('/').at(-1);
+          const characterSrc = `/img/${id}/${id}-image-presentation.webp`;
+          const $characterPhoto = $('#image-presentation-2') as HTMLImageElement;
 
-            const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
+          if (!$nameText || !$characterLink) return;
 
-            if (!$nameText || !$characterLink) return
+          localStorage.setItem('lastImage', id);
+          $characterPhoto.src = characterSrc;
+          $nameText.textContent = id;
+          $characterPhoto.setAttribute('transition:name', `Character-${id}`);
 
-            localStorage.setItem('lastImage', id)
-            $characterPhoto.src = characterSrc
-            $nameText.textContent = id
-            $characterPhoto.setAttribute('transition:name', `Character-${id}`)
+          const lastHoveredImageId = localStorage.getItem('lastImage');
+          if (lastHoveredImageId === id) {
+            $characterPhoto.src = characterSrc;
+            $characterPhoto.setAttribute('transition:name', `Character-${id}`);
+          }
+        },
+      },
+        effect: 'coverflow', 
+        coverflowEffect: {
+    rotate: 50, 
+    stretch: 0,
+    depth: 200, 
+    modifier: 1,
+    slideShadows: true, 
+      },
+    });
 
-
-            const lastHoveredImageId = localStorage.getItem('lastImage')
-            if(lastHoveredImageId === id) {
-                $characterPhoto.src = characterSrc
-                $characterPhoto.setAttribute('transition:name', `Character-${id}`)
-            }
-        }
-      }
-    })
-
-    swiper.init()
+    swiper.init();
   }
 
   document.addEventListener('astro:page-load', Carrousel);
 </script>
+
