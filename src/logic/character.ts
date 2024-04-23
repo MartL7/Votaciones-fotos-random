@@ -283,7 +283,7 @@ export const Characters: Character[] = [
             {
                 image: '/img/Ale/Ale-image-4.webp',
                 isVertical: false,
-                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
+                class: 'sm:row-start-3 sm:row-end-4 sm:col-start-1 sm:col-end-2 sm:h-[250px] col-start-2 col-end-3 h-[180px] row-start-2 row-end-3',
             },
             {
                 image: '/img/Ale/Ale-image-5.webp',
