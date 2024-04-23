@@ -1,18 +1,93 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import Modal from "@/components/Modal.astro"
+import { results } from '@/logic/results'
+
+const filtersCategoryDog = results.filter((res) => res.category === 'Perro-del-año')
+
+const { name, imagePresentation } = filtersCategoryDog.at(0)
 ---
 
 <Layout title="Resultados de los pronósticos 🦸">
-  <main class="flex flex-col justify-center items-center">
-    <h1 class="text-2xl sm:text-3xl md:text-4xl font-Public mb-10"> Resultados de los pronósticos 🦸</h1>
-    <aside class="flex flex-col justify-center">
-      <p class="text-center text-xl font-semibold"> Categoría: Perro del año</p>
+  <main class="flex flex-col justify-center items-center p-5">
+
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-Public mb-10 text-center text-primary"> Ganadores de los pronósticos 🦸</h1>
+
+    <aside class="flex flex-col items-center justify-center mb-5">
+      <p class="text-center text-2xl font-semibold"> 
+        <span class="text-blue-400/90"> Categoría: </span> 
+        <span class="text-accent"> Perro del año 🐶</span>
+      </p>
+
+      <picture class="h-[50vh] relative">
+        <img 
+          decoding="async" 
+          loading="lazy"
+          src={imagePresentation} 
+          alt={`Imagen de ${name}`}
+          class='image-winner size-full rounded-lg'
+          data-name={name}
+          style="filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));"
+        />
+
+        <span class=`font-Dancing font-bold pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-6xl lg:text-6xl text-blue-300/90`>
+          {name}
+        </span>
+      </picture>
     </aside>
+
+    <section class="grid grid-cols-2 sm:grid-cols-3 gap-5">
+      {
+        filtersCategoryDog.map((result) => {
+          const { name, id, images } = result
+          return (
+            images.map((img) => (
+              <picture class={`image-container cursor-zoom-in border rounded-lg ${img.class}`} data-url={img.image}>
+                <img 
+                  decoding="async" 
+                  loading="lazy"
+                  src={img.image} 
+                  alt={`Imagen de ${name}`} 
+                  class='size-full rounded-lg' 
+                />
+              </picture>
+            ))
+          )
+        })
+      }
+    </section>
+
+    <section class="flex flex-col justify-center items-center mt-10">
+      <p class="text-center text-2xl font-semibold"> 
+        <span class="text-blue-400/90"> Categoría: </span> 
+        <span class="text-accent"> Clip del Ciclo 🎮 </span>
+      </p>
+    </section>
+
+    <Modal />
   </main>
 </Layout>
 
 <script>
+  import { showModal } from '@/const/showModal'
+
+  document.addEventListener('astro:page-load', showModal)
+</script>
+
+<script>
   import confetti from 'canvas-confetti'
 
-  confetti()
+  document.addEventListener('astro:page-load', () => {
+    const $imagesForWinner = document.querySelectorAll('.image-winner') as NodeListOf<HTMLImageElement>
+
+    $imagesForWinner.forEach(($image) => {
+      $image.addEventListener('click', () => {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        })
+      })
+    })
+  })
 </script>
