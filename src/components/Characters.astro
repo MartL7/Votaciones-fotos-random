@@ -6,14 +6,14 @@ const secondArray = person.slice(8, person.length)
 ---
 <main class="flex flex-col justify-center items-center">
 
-  <div class="hidden md:block">
+  <div class="hidden lg:block">
     <section class="flex justify-center items-center"> 
       <article class="grid grid-cols-3 grid-rows-2 gap-x-10">
         <div class="flex flex-row flex-wrap gap-5 row-start-1 row-end-3">
           {
             firstArray.map(({ id, name, imageSmall }) => (
               <a href={`/character/${id}`} class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24">
-                <img src={imageSmall} alt={`Imagen del personaje ${name}`}
+                <img src={imageSmall} alt={`Imagen small de ${name}`}
                   decoding="async"
                   loading="lazy"
                   class="lg:size-28 md:size-24 object-cover rounded-lg -top-5 scale-90 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
@@ -42,7 +42,7 @@ const secondArray = person.slice(8, person.length)
           {
             secondArray.map(({ id, name, imageSmall }) => (
               <a href={`/character/${id}`} class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24">
-                <img src={imageSmall} alt={`Imagen del personaje ${name}`}
+                <img src={imageSmall} alt={`Imagen small de ${name}`}
                   decoding="async"
                   loading="lazy"
                   class="lg:size-28 md:size-24 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
@@ -58,7 +58,7 @@ const secondArray = person.slice(8, person.length)
     </section>
   </div>
   
-  <div class="md:hidden">
+  <div class="lg:hidden">
     <picture class="flex relative h-[400px] sm:h-[600px] flex-col justify-center items-center mb-10">
       <img 
         src="/img/Yahir/Yahir-image-presentation.webp"
@@ -183,43 +183,43 @@ const secondArray = person.slice(8, person.length)
       },
       on: {
         init: function () {
-          console.log('Swiper initialized');
+          // console.log('Swiper initialized')
         },
         slideChange: function () {
-          const activeSlide = this.slides[this.activeIndex];
-          const $nameText = $('#name-text');
-          const $characterLink = activeSlide?.querySelector('.character-link') as HTMLAnchorElement;
-          const id = $characterLink?.href.split('/').at(-1);
-          const characterSrc = `/img/${id}/${id}-image-presentation.webp`;
-          const $characterPhoto = $('#image-presentation-2') as HTMLImageElement;
+          const activeSlide = this.slides[this.activeIndex] as HTMLDivElement
+          const $nameText = $('#name-text')
+          const $characterLink = activeSlide?.querySelector('.character-link') as HTMLAnchorElement
+          const id = $characterLink?.href.split('/').at(-1)
+          const characterSrc = `/img/${id}/${id}-image-presentation.webp`
+          const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
 
-          if (!$nameText || !$characterLink) return;
+          if (!$nameText || !$characterLink) return
 
-          localStorage.setItem('lastImage', id);
-          $characterPhoto.src = characterSrc;
-          $nameText.textContent = id;
-          $characterPhoto.setAttribute('transition:name', `Character-${id}`);
+          localStorage.setItem('lastImage', id)
+          $characterPhoto.src = characterSrc
+          $nameText.textContent = id
+          $characterPhoto.setAttribute('transition:name', `Character-${id}`)
 
-          const lastHoveredImageId = localStorage.getItem('lastImage');
+          const lastHoveredImageId = localStorage.getItem('lastImage')
           if (lastHoveredImageId === id) {
-            $characterPhoto.src = characterSrc;
-            $characterPhoto.setAttribute('transition:name', `Character-${id}`);
+            $characterPhoto.src = characterSrc
+            $characterPhoto.setAttribute('transition:name', `Character-${id}`)
           }
         },
       },
         effect: 'coverflow', 
         coverflowEffect: {
-    rotate: 50, 
-    stretch: 0,
-    depth: 200, 
-    modifier: 1,
-    slideShadows: true, 
+          rotate: 50, 
+          stretch: 0,
+          depth: 200, 
+          modifier: 1,
+          slideShadows: true, 
       },
-    });
+    })
 
-    swiper.init();
+    swiper.init()
   }
 
-  document.addEventListener('astro:page-load', Carrousel);
+  document.addEventListener('astro:page-load', Carrousel)
 </script>
 
