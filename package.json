@@ -20,6 +20,7 @@
     "@midudev/tailwind-animations": "^0.0.7",
     "astro": "^4.6.1",
     "auth-astro": "^4.1.1",
+    "canvas-confetti": "^1.9.2",
     "swiper": "^11.1.1",
     "tailwind": "^4.0.0",
     "tailwindcss": "^3.4.3",

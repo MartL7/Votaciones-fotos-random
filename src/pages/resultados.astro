@@ -1,0 +1,18 @@
+---
+import Layout from "@/layouts/Layout.astro"
+---
+
+<Layout title="Resultados de los pronósticos 🦸">
+  <main class="flex flex-col justify-center items-center">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-Public mb-10"> Resultados de los pronósticos 🦸</h1>
+    <aside class="flex flex-col justify-center">
+      <p class="text-center text-xl font-semibold"> Categoría: Perro del año</p>
+    </aside>
+  </main>
+</Layout>
+
+<script>
+  import confetti from 'canvas-confetti'
+
+  confetti()
+</script>

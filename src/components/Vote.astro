@@ -54,11 +54,11 @@ const userVotes = votes.map(vote => vote.VoteId)
 
     const { votes } = $votes.dataset
     const userVotes = votes.split(',')
-    console.log(userVotes)
 
+    
     $images.forEach(($image) => {
       $image.onclick = async () => {
-
+      
         if (userVotes.length >= 3) {
           toastAlert({ title: 'Ya has votado 3 veces', type: 'error', icon: true, dismissible: false, location: 'bottom-center' })
           return
@@ -83,10 +83,10 @@ const userVotes = votes.map(vote => vote.VoteId)
 
         if (!response.ok) {
           toastAlert({ title: 'Error al votar', type: 'error', icon: true, dismissible: false, location: 'bottom-center' })
-          console.log('Error')
           return 
         } else {
           toastAlert({ title: 'Voto realizado', type: 'success', icon: true, dismissible: true, location: 'bottom-center' })
+          location.reload()
         }
       }
     })
