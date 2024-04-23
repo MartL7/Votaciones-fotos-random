@@ -23,7 +23,7 @@ export const memesImages: Meme[] = [
   },
   {
     id: 'Meme-5',
-    image: '/img/Memes/image-meme-5.avif',
+    image: '/img/Memes/image-meme-oaxaco-2.avif',
     class: 'sm:col-start-4 sm:col-end-5 sm:row-start-1 sm:row-end-2 sm:h-[200px] col-start-1 col-end-2 row-start-3 row-end-5 h-[200px]'
   },
   {
