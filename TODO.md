@@ -12,11 +12,12 @@
 -   10. Agregar base de datos para los votos ✅
 -   11. Agregar Modal al hacer click en cada imagen de las Galerias -> URGENTE ✅
 -   12. Corregir bugs de ViewTransitions de Astro y el localStorage del inicio ❌
--   13. Cambiar / Agregar algunas imagenes ❌
+-   13. Cambiar / Agregar algunas imagenes ✅
 -   14. Cambiar el Login a Google en lugar de GitHub ❌
 -   15. Persistencia del personaje al navegar y recargar la página (Movil) -> URGENTE ❌
 -   16. Agregar imagenes en alta calidad para mostrar ❌
 -   17. Cambiar lógica para poder cambiar tu voto pero no votar más de 3 veces ❌
--   18. Arreglar bug de lógica de clases en componente ShowMemes ❌
--   19. Arreglar bug de Sesión en los votos --> URGENTE ❌
+-   18. Arreglar bug de lógica de clases en componente ShowMemes ✅
+-   19. Arreglar bug de Sesión en los votos --> URGENTE ✅
 -   20. Separar en un componente la lógica de select your character -> URGENTE ❌
+-   21. Agregar todas las imágenes de Ale ❌
