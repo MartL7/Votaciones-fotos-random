@@ -29,7 +29,7 @@ const { links } = Astro.props
   </button>
 </div>
 
-<Modal>
+<Modal class="menu-dialog" id="menu-close-dialog">
   <div class="flex flex-col justify-center items-center gap-y-5">
     {
       links.map(({ name, href, label }) => (
@@ -90,9 +90,9 @@ const { links } = Astro.props
 
  document.addEventListener('astro:page-load', () => {
     const $button = $('.button-nav') as HTMLButtonElement
-    const $navDialog = $('.clip-dialog') as HTMLDialogElement
+    const $navDialog = $('.menu-dialog') as HTMLDialogElement
     const $menuNav = $('.menu-nav') as HTMLElement
-    const $closeButton = $('#close-dialog') as HTMLButtonElement
+    const $closeButton = $('#menu-close-dialog') as HTMLButtonElement
 
     $button.addEventListener('click', () => {
       $navDialog.showModal()

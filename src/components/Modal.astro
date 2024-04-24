@@ -1,6 +1,6 @@
 <dialog
-	class="clip-dialog items-center justify-center bg-transparent px-4 text-2xl text-white sm:px-0"
-	id="dialog-image"
+	class=`${Astro.props.class} items-center justify-center bg-transparent px-4 text-2xl text-white sm:px-0"
+	id="dialog-image`
 >
 	<div class="relative block w-[80vw] sm:w-[50vh] max-w-[1000px] bg-transparent">
 		<slot />
@@ -8,7 +8,7 @@
 		<button
 			type="button"
 			class="close-dialog fixed right-8 top-8 rounded bg-black/60 p-4 transition hover:scale-110"
-			id="close-dialog"
+			id=`${Astro.props.id}`
 		>
 			<svg
 				class="size-5"
