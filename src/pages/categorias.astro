@@ -11,7 +11,9 @@ import ShowMemes from "@/components/ShowMemes.astro"
 
     <ShowMemes classPicture="image-container" />
 
-    <Modal />
+    <Modal>
+      <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
+    </Modal>
 
     <div class="mt-8 sm:mt-10 lg:mt-20 flex flex-col justify-center items-center">
       <h1 class="text-2xl font-bold uppercase text-center"> Clip del Ciclo </h1>
