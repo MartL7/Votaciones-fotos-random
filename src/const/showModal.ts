@@ -23,6 +23,10 @@ export const showModal = () => {
       $imageDialog.showModal()
 
       $closeButton.onclick = () => $imageDialog.close()
+
+      $imageDialog.onclick = (event) => {
+        if (event.target === $imageDialog) $imageDialog.close()
+      }
     })
   })
 }
