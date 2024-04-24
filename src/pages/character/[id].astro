@@ -1,11 +1,11 @@
 ---
 import Modal from '@/components/Modal.astro'
 import Layout from "@/layouts/Layout.astro"
-import Instagram from "@/components/icons/Instagram.astro"
 import Socials from "@/components/Socials.astro"
 import ArrowRight from "@/components/icons/Arrows/ArrowRight.astro"
 import ArrowLeft from "@/components/icons/Arrows/ArrowLeft.astro"
 import { Characters } from "@/logic/character"
+import { socialIcons } from '@/logic/socials'
 
 const { id } = Astro.params
 
@@ -13,7 +13,7 @@ const character = Characters.find((character) => character.id === id)
 
 const { imagePresentation, name, imagesGalery, funnyText, socials } = character
 
-const arrayText = funnyText.join(', ')
+const arrayText = funnyText.join('. ')
 ---
 <Layout title={`Información del personaje ${name}`}>
 
@@ -61,6 +61,7 @@ const arrayText = funnyText.join(', ')
     </aside>
 
     <h2 class="mt-20 font-semibold text-2xl sm:text-3xl "> Galeria de Fotos de {name} </h2>
+    <small class="text-slate-300/90"> Has click a cualquier imagen para su vista en grande </small>
     <section class="grid grid-cols-2 gap-5 sm:gap-8 md:gap-10 sm:grid-cols-3 p-5">
       {
         imagesGalery.map((imageObj, index) => (
@@ -81,11 +82,17 @@ const arrayText = funnyText.join(', ')
       <h3 class="uppercase text-3xl text-center font-bold mb-8"> Redes Sociales </h3>
       <div class="mx-auto flex max-w-[600px] flex-wrap justify-center gap-2 lg:max-w-full">
         {
-          socials?.map((social) => (
-            <Socials href={social.link}>
-              <Instagram class="size-8"/>
-            </Socials>
-          ))
+          socials?.map((social) => {
+            const IconComponent = socialIcons[social.type]
+
+            if (!IconComponent) return
+
+            return (
+              <Socials href={social.link}>
+                <IconComponent class="size-10 sm:size-12"/>
+              </Socials>
+            )
+          })
         }
       </div>
     </section>
@@ -115,7 +122,7 @@ const arrayText = funnyText.join(', ')
       if (!$funnyText || !$buttonChangeText || !$buttonLeftChangeText || !$arrayToText || !$textCounter) return
       
       let index = 0
-      const arrayText = $arrayToText?.value.split(', ')
+      const arrayText = $arrayToText?.value.split('. ')
   
       $textCounter.textContent = `${index + 1}/${arrayText?.length}`
   
