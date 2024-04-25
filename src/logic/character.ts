@@ -453,45 +453,83 @@ export const Characters: Character[] = [
             {
                 image: '/img/Yanet/Yanet-image-1.webp',
                 isVertical: false,
-                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-2 col-start-1 col-end-2 h-[500px]',
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
             },
             {
                 image: '/img/Yanet/Yanet-image-7.webp',
                 isVertical: false,
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:h-[300px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[260px] col-start-2 col-end-3 row-start-1 row-end-2 h-[200px]',
             },
             {
                 image: '/img/Yanet/Yanet-image-3.webp',
                 isVertical: false,
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:h-[300px]',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[260px] col-start-2 col-end-3 row-start-2 row-end-4 h-[400px]',
             },
             {
                 image: '/img/Yanet/Yanet-image-4.webp',
                 isVertical: false,
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[300px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[300px] col-start-1 col-end-2 row-start-3 row-end-4 h-[200px]',
             },
             {
                 image: '/img/Yanet/Yanet-image-5.webp',
                 isVertical: false,
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:h-[300px]',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[300px] col-start-1 col-end-2 row-start-4 row-end-6 h-[400px]',
             },
             {
                 image: '/img/Yanet/Yanet-image-6.webp',
                 isVertical: false,
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:h-[300px]',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-2 col-end-3 row-start-4 row-end-5 h-[200px]',
             },
             {
                 image: '/img/Yanet/Yanet-image-2.webp',
                 isVertical: false,
-                class: 'sm:col-start-1 sm:col-end-3 sm:row-start-3 sm:h-[300px] col-start-1 col-end-3 h-[300px]',
+                class: 'sm:col-start-1 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-3 h-[300px] row-start-6 row-end-7',
             },
             {
                 image: '/img/Yanet/Yanet-image-8.webp',
                 isVertical: false,
-                class: 'sm:col-start-1 sm:col-end-4 row-start-5 row-end-6 col-start-1 col-end-3 h-[300px]',
+                class: 'sm:col-start-1 sm:col-end-4 sm:hidden row-start-5 row-end-6 col-start-2 col-end-3 h-[200px]',
             },
         ],
         funnyText: ['Holiiii', 'vete al cuerno'],
     },
-
+    {
+        id: 'Janet',
+        name: 'Jann',
+        imagePresentation: '/img/Janet/Janet-image-presentation.webp',
+        imageSmall: '/img/Janet/Janet-small.webp',
+        imagesGalery: [
+            {
+                image: '/img/Janet/Janet-image-1.webp',
+                isVertical: false,
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
+            },
+            {
+                image: '/img/Janet/Janet-image-2.webp',
+                isVertical: false,
+                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-3 sm:h-[300px] col-start-2 col-end-3 h-[200px] row-start-1 row-end-2',
+            },
+            {
+                image: '/img/Janet/Janet-image-3.webp',
+                isVertical: false,
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-2 row-end-3 h-[180px]',
+            },
+            {
+                image: '/img/Janet/Janet-image-4.webp',
+                isVertical: false,
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-2 col-end-3 row-start-3 row-end-4 h-[200px]',
+            },
+            {
+                image: '/img/Janet/Janet-image-5.webp',
+                isVertical: false,
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-1 col-end-2 row-start-3 row-end-4 h-[200px]',
+            },
+            {
+                image: '/img/Janet/Janet-image-6.webp',
+                isVertical: false,
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]',
+            },
+        ],
+        funnyText: ['Hiii']
+    }
 ]
