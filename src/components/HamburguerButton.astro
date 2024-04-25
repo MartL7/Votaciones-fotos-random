@@ -1,5 +1,6 @@
 ---
 import Modal from '@/components/Modal.astro'
+import Footer from '@/components/Footer.astro'
 
 interface Props {
   links: {
@@ -31,6 +32,20 @@ const { links } = Astro.props
 
 <Modal class="menu-dialog" id="menu-close-dialog">
   <div class="flex flex-col justify-center items-center gap-y-5">
+    <div class="flex w-full justify-between items-center">
+      <span> Menú </span>
+      <button class="hamburguer-nav">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+    </div>
+    <hr
+      class="h-[2px] w-full border-t-0"
+      style="background:linear-gradient(to right, transparent 0%, white 50%, transparent 100%)"
+    />
+    LOGO
     {
       links.map(({ name, href, label }) => (
         <hr
@@ -44,6 +59,7 @@ const { links } = Astro.props
       class="h-[2px] w-full border-t-0"
       style="background:linear-gradient(to right, transparent 0%, white 50%, transparent 100%)"
     />
+
   </div>
 
 </Modal>
@@ -59,29 +75,46 @@ const { links } = Astro.props
     gap: .30rem;
   }
 
-  button > div {
+  .hamburger-nav {
+    display: flex;
+    flex-direction: column;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    background: transparent;
+    gap: .30rem;
+  }
+
+  .hamburguer-nav > div {
     background: #FFF;
-    height: 2px;
+    height: 3px;
     width: 100%;
-    border-radius: 5px;
     transition: all .5s;
     transform-origin: left;
   }
 
-  button:hover div:first-child {
+  .hamburguer-nav.active div:first-child {
     transform: rotate(45deg);
   }
 
-  button:hover div:nth-child(2) {
+  .hamburguer-nav.active div:nth-child(2) {
     opacity: 0;
   }
 
-  button:hover div:nth-child(3) {
+  .hamburguer-nav.active div:nth-child(3) {
     opacity: 0;
   }
 
-  button:hover div:last-child {
+  .hamburguer-nav.active div:nth-child(4) {
     transform: rotate(-45deg);
+  }
+
+  button > div {
+    background: #FFF;
+    height: 3px;
+    width: 100%;
+    transition: all .5s;
+    transform-origin: left;
   }
 </style>
 
@@ -89,18 +122,17 @@ const { links } = Astro.props
   import { $ } from '@/lib/dom-selector'
 
  document.addEventListener('astro:page-load', () => {
+    const $hamburguer = $('.hamburguer-nav') as HTMLButtonElement
     const $button = $('.button-nav') as HTMLButtonElement
     const $navDialog = $('.menu-dialog') as HTMLDialogElement
-    const $menuNav = $('.menu-nav') as HTMLElement
-    const $closeButton = $('#menu-close-dialog') as HTMLButtonElement
 
     $button.addEventListener('click', () => {
       $navDialog.showModal()
-      $menuNav.style.display = 'none'
+      $hamburguer.classList.toggle('active')
 
-      $closeButton.onclick = () => {
+      $hamburguer.onclick = () => {
+        $hamburguer.classList.toggle('active')
         $navDialog.close()
-        $menuNav.style.display = 'flex'
       }
     })
  })
