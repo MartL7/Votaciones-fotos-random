@@ -72,12 +72,14 @@ const secondArray = person.slice(8, person.length)
 
   const Carrousel = () => {
     const swiper = new Swiper('.swiper', {
-      slidesPerView: 'auto',
+      slidesPerView: 2,
       loop: true,
-      spaceBetween: 10,
+      freeMode: true,
+      spaceBetween: 30,
+      centeredSlides: true,
       pagination: {
         el: '.swiper-pagination',
-        clickable: false,
+        clickable: true,
       },
       navigation: {
         nextEl: '.swiper-button-next',
@@ -85,7 +87,6 @@ const secondArray = person.slice(8, person.length)
       },
       on: {
         init: function () {
-          // console.log('Swiper initialized')
         },
         slideChange: function () {
           const activeSlide = this.slides[this.activeIndex] as HTMLDivElement
@@ -108,14 +109,6 @@ const secondArray = person.slice(8, person.length)
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
           }
         },
-      },
-        effect: 'coverflow', 
-        coverflowEffect: {
-          rotate: 50, 
-          stretch: 0,
-          depth: 200, 
-          modifier: 1,
-          slideShadows: true, 
       },
     })
 

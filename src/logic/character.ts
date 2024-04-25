@@ -108,10 +108,7 @@ export const Characters: Character[] = [
                 class: 'sm:h-[350px] sm:col-start-3 sm:col-end-4 col-start-2 col-end-3 row-start-2 row-end-3 h-[200px]',
             },
         ],
-        funnyText: [
-            'Mí chaparrita hermoshita', 
-            'Ante la duda la más tetuda'
-        ],
+        funnyText: ['Mí chaparrita hermoshita', 'Ante la duda la más tetuda'],
     },
     {
         id: 'Geovas',
@@ -119,29 +116,25 @@ export const Characters: Character[] = [
         imagePresentation: '/img/Geovas/Geovas-image-presentation.webp',
         imageSmall: '/img/Geovas/Geovas-small.png',
         imagesGalery: [
-            { 
-                image: '/img/Geovas/Geovas-image-1.avif', 
-                isVertical: false 
+            {
+                image: '/img/Geovas/Geovas-image-1.avif',
+                isVertical: false,
             },
-            { 
-                image: '/img/Geovas/Geovas-image-2.webp', 
-                isVertical: false 
+            {
+                image: '/img/Geovas/Geovas-image-2.webp',
+                isVertical: false,
             },
-            { 
-                image: '/img/Geovas/Geovas-image-3.avif', 
-                isVertical: false 
+            {
+                image: '/img/Geovas/Geovas-image-3.avif',
+                isVertical: false,
             },
         ],
-        funnyText: [
-            'Te extraño Karlita :(', 
-            'Goku eta vaina e seria', 
-            'Siuuuuuu'
-        ],
+        funnyText: ['Te extraño Karlita :(', 'Goku eta vaina e seria', 'Siuuuuuu'],
 
         socials: [
             { name: 'Instagram', link: 'https://www.instagram.com/geovx_lg/', type: 'instagram' },
             { name: 'GitHub', link: 'https://github.com/MartL7', type: 'github' },
-            { name: 'Twitter', link: 'https://twitter.com/GeovasYoSoy', type: 'twitter' }
+            { name: 'Twitter', link: 'https://twitter.com/GeovasYoSoy', type: 'twitter' },
         ],
     },
 
@@ -156,34 +149,34 @@ export const Characters: Character[] = [
                 isVertical: false,
                 class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[620px]',
             },
-            { 
-                image: '/img/Are/Are-image-2.webp', 
-                isVertical: false, 
-                class: 'sm:col-start-2 sm:col-end-3 h-[300px]' 
+            {
+                image: '/img/Are/Are-image-2.webp',
+                isVertical: false,
+                class: 'sm:col-start-2 sm:col-end-3 h-[300px]',
             },
-            { 
-                image: '/img/Are/Are-image-3.webp', 
-                isVertical: false, 
-                class: 'sm:h-[300px]' 
+            {
+                image: '/img/Are/Are-image-3.webp',
+                isVertical: false,
+                class: 'sm:h-[300px]',
             },
-            { 
-                image: '/img/Are/Are-image-4.webp', 
-                isVertical: false, 
-                class: 'sm:h-[300px]' 
+            {
+                image: '/img/Are/Are-image-4.webp',
+                isVertical: false,
+                class: 'sm:h-[300px]',
             },
-            { 
-                image: '/img/Are/Are-image-2.webp', 
-                isVertical: false, 
-                class: 'sm:h-[300px]' 
+            {
+                image: '/img/Are/Are-image-2.webp',
+                isVertical: false,
+                class: 'sm:h-[300px]',
             },
         ],
-        funnyText: [
-            'Hii'
-        ],
+        funnyText: ['Hii'],
         socials: [
-            { 
-                name: 'Instagram', link: 'https://www.instagram.com/_arelyyyy__/', type: 'instagram'
-            }
+            {
+                name: 'Instagram',
+                link: 'https://www.instagram.com/_arelyyyy__/',
+                type: 'instagram',
+            },
         ],
     },
 
@@ -211,9 +204,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px]',
             },
         ],
-        funnyText: [
-            'A poco si tilin'
-        ],
+        funnyText: ['A poco si tilin'],
     },
 
     {
@@ -268,9 +259,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[260px] col-start-2 col-end-3 row-start-5 row-end-6 h-[200px]',
             },
         ],
-        funnyText: [
-            'Hiii'
-        ],
+        funnyText: ['Hiii'],
     },
 
     {
@@ -304,11 +293,7 @@ export const Characters: Character[] = [
                 isVertical: false,
             },
         ],
-        funnyText: [
-            'Crecer como los Bisteces', 
-            'A Putazos', 
-            'BOMBARDEN HUAUCHINANGO'
-        ],
+        funnyText: ['Crecer como los Bisteces', 'A Putazos', 'BOMBARDEN HUAUCHINANGO'],
     },
     {
         id: 'Ale',
@@ -359,48 +344,48 @@ export const Characters: Character[] = [
             {
                 image: '/img/Ale/Ale-image-9.webp',
                 isVertical: false,
-                class: 'sm:row-start-4 sm:row-end-6 sm:col-start-3 sm:col-end-4 sm:h-[400px] h-[200px] col-start-1 col-end-2 row-start-6 row-end-7'
+                class: 'sm:row-start-4 sm:row-end-6 sm:col-start-3 sm:col-end-4 sm:h-[400px] h-[200px] col-start-1 col-end-2 row-start-6 row-end-7',
             },
             {
                 image: '/img/Ale/Ale-image-10.webp',
                 isVertical: false,
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-5 sm:row-end-7 sm:h-[400px] h-[200px] col-start-2 col-end-3 row-start-6 row-end-7'
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-5 sm:row-end-7 sm:h-[400px] h-[200px] col-start-2 col-end-3 row-start-6 row-end-7',
             },
             {
                 image: '/img/Ale/Ale-image-11.webp',
                 isVertical: false,
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-5 sm:row-end-7 sm:h-[400px] col-start-1 col-end-2 row-start-7 row-end-9 h-[300px]'
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-5 sm:row-end-7 sm:h-[400px] col-start-1 col-end-2 row-start-7 row-end-9 h-[300px]',
             },
             {
                 image: '/img/Ale/Ale-image-12.webp',
                 isVertical: false,
-                class: 'sm:row-start-6 sm:row-end-8 sm:col-start-3 sm:col-end-4 sm:h-[400px] col-start-2 col-end-3 row-start-7 row-end-9 h-[300px]'
+                class: 'sm:row-start-6 sm:row-end-8 sm:col-start-3 sm:col-end-4 sm:h-[400px] col-start-2 col-end-3 row-start-7 row-end-9 h-[300px]',
             },
             {
                 image: '/img/Ale/Ale-image-14.webp',
                 isVertical: false,
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-7 sm:row-end-8 sm:h-[180px] col-start-1 col-end-2 row-start-10 row-end-11'
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-7 sm:row-end-8 sm:h-[180px] col-start-1 col-end-2 row-start-10 row-end-11',
             },
             {
                 image: '/img/Ale/Ale-image-15.webp',
                 isVertical: false,
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-7 sm:row-end-8 sm:h-[180px] col-start-2 col-end-3 row-start-10 row-end-11'
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-7 sm:row-end-8 sm:h-[180px] col-start-2 col-end-3 row-start-10 row-end-11',
             },
             {
                 image: '/img/Ale/Ale-image-13.webp',
                 isVertical: false,
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-1 col-end-2 row-start-11 row-end-12 h-[200px]'
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-1 col-end-2 row-start-11 row-end-12 h-[200px]',
             },
             {
                 image: '/img/Ale/Ale-image-16.webp',
                 isVertical: false,
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-2 col-end-3 row-start-11 row-end-12 h-[200px]'
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-2 col-end-3 row-start-11 row-end-12 h-[200px]',
             },
             {
                 image: '/img/Ale/Ale-image-17.webp',
                 isVertical: false,
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-1 col-end-2 row-start-12 row-end-13 h-[200px]'
-            }
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-1 col-end-2 row-start-12 row-end-13 h-[200px]',
+            },
         ],
         funnyText: [
             'Es que es hombre, por eso miente',
@@ -408,9 +393,7 @@ export const Characters: Character[] = [
             'Ya sabía; quería saber si tu sabías',
             'Me siento como pollo rostizado porque nomás doy vueltas.',
         ],
-        socials: [
-            { name: 'Instagram', link: 'https://www.instagram.com/alex_145e', type: 'instagram'}
-        ]
+        socials: [{ name: 'Instagram', link: 'https://www.instagram.com/alex_145e', type: 'instagram' }],
     },
     {
         id: 'Karen',
@@ -459,34 +442,56 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
             },
         ],
-        funnyText: [
-            'MangoLOVER🥭', 
-            'Me equivoque de carrera'
-        ],
+        funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera'],
     },
-    /*{
-        id: 'Janet',
-        name: 'Janet',
-        imagePresentation: '/img/Janet/Janet-image-presentation.webp',
-        imageSmall: '/img/Janet/Janet-small.png',
-        imagesGalery: [
-            { image: '/img/Janet/Janet-image-1.web', isVertical: false },
-            { image: '/img/Janet/Janet-image-2.webp', isVertical: false },
-            { image: '/img/Janet/Janet-image-3.web', isVertical: false },
-        ],
-        funnyText: [''],
-    },*/
-
-    /*{
+    {
         id: 'Yanet',
-        name: 'Yanet',
+        name: 'Yane',
         imagePresentation: '/img/Yanet/Yanet-image-presentation.webp',
-        imageSmall: '/img/Yanet/Yanet-small.png',
+        imageSmall: '/img/Yanet/Yanet-small.webp',
         imagesGalery: [
-            { image: '/img/Yanet/Yanet-image-1.web', isVertical: false },
-            { image: '/img/Yanet/Yanet-image-2.webp', isVertical: false },
-            { image: '/img/Yanet/Yanet-image-3.web', isVertical: false },
+            {
+                image: '/img/Yanet/Yanet-image-1.webp',
+                isVertical: false,
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-2 col-start-1 col-end-2 h-[500px]',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-7.webp',
+                isVertical: false,
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:h-[300px]',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-3.webp',
+                isVertical: false,
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:h-[300px]',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-4.webp',
+                isVertical: false,
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[300px]',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-5.webp',
+                isVertical: false,
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:h-[300px]',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-6.webp',
+                isVertical: false,
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:h-[300px]',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-2.webp',
+                isVertical: false,
+                class: 'sm:col-start-1 sm:col-end-3 sm:row-start-3 sm:h-[300px] col-start-1 col-end-3 h-[300px]',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-8.webp',
+                isVertical: false,
+                class: 'sm:col-start-1 sm:col-end-4 row-start-5 row-end-6 col-start-1 col-end-3 h-[300px]',
+            },
         ],
-        funnyText: [''],
-    },*/
+        funnyText: ['Holiiii', 'vete al cuerno'],
+    },
+
 ]
