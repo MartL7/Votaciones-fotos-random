@@ -6,7 +6,7 @@
 -   4. Mover todas las imágenes a un CDN (CloudFare) -> URGENTE ❌
 -   5. Optimizar la página (accesibilidad) ✅
 -   6. Mejorar Galerias en teléfonos ✅
--   7. Hacer menu desplegable del Header en Movil -> URGENTE ❌
+-   7. Hacer menu desplegable del Header en Movil -> URGENTE ✅
 -   8. Mostrar al hacer hover la imagen-presentation de cada persona -> URGENTE ✅
 -   9. Arreglar sección de Clip del Ciclo ❌
 -   10. Agregar base de datos para los votos ✅
@@ -24,3 +24,4 @@
 -   22. Conseguir las redes sociales de todos o la mayoría ❌
 -   23. Agregar contador de fecha para la muestra de los resultados -> URGENTE ❌
 -   24. Optimizar la página, simplificar lógica y oragnizar proyecto ❌
+-   25. Cambiar de Flex a Grid en la selección de personajes ❌
