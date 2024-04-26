@@ -16,6 +16,7 @@
     "@auth/core": "^0.18.6",
     "@fontsource-variable/dancing-script": "^5.0.17",
     "@fontsource-variable/jost": "^5.0.18",
+    "@fontsource-variable/oswald": "^5.0.20",
     "@fontsource-variable/public-sans": "^5.0.18",
     "@midudev/tailwind-animations": "^0.0.7",
     "astro": "^4.6.1",

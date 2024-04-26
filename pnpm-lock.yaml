@@ -23,6 +23,9 @@ dependencies:
   '@fontsource-variable/jost':
     specifier: ^5.0.18
     version: 5.0.18
+  '@fontsource-variable/oswald':
+    specifier: ^5.0.20
+    version: 5.0.20
   '@fontsource-variable/public-sans':
     specifier: ^5.0.18
     version: 5.0.18
@@ -958,6 +961,10 @@ packages:
 
   /@fontsource-variable/jost@5.0.18:
     resolution: {integrity: sha512-HjW7Zfszf4Veb2ybgK68azRCT4yvX7NcY7wDBSICAyvRbnrbEmsNm2HWd1r13hG1YEyBYUdMjiZRkauHAFPQFw==}
+    dev: false
+
+  /@fontsource-variable/oswald@5.0.20:
+    resolution: {integrity: sha512-b2aMbEwGUw/mV+Zowhvpd/bayF1gEZs/Qeo5P48l5gZrwSkcgmf5wtQzGrrzJNS0n3/aoUMlmTqOhnjKLQP7Bw==}
     dev: false
 
   /@fontsource-variable/public-sans@5.0.18:
