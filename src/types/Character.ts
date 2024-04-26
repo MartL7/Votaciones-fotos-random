@@ -1,9 +1,16 @@
+interface Socials {
+  name: string
+  link: string
+  type: 'github' | 'instagram' | 'twitter' | 'facebook'
+
+}
+
 export interface Character {
   id: string
   name: string
   imagePresentation: string
   imageSmall: string
-  imagesGalery: { image: string, isVertical: boolean, class?: string }[]
+  imagesGalery: { image: string, class?: string }[]
   funnyText?: string[]
-  socials?: {name: string, link: string, type: 'github' | 'instagram' | 'twitter' | 'youtube'}[]
+  socials?: Socials[]
 }
