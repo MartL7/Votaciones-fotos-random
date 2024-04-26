@@ -9,7 +9,7 @@ const { characters } = Astro.props
 ---
 
 <div class="md:hidden">
-  <picture class="flex relative h-[400px] sm:h-[600px] flex-col justify-center items-center mb-10">
+  <picture class="flex relative sm:h-[600px] h-[550px] flex-col justify-center items-center mb-10">
     <img 
       src="/img/Yahir/Yahir-image-presentation.webp"
       transition:name="Character-Yahir"
@@ -18,7 +18,7 @@ const { characters } = Astro.props
       id="image-presentation-2"
       style="mask-image: linear-gradient(black 50%, transparent);"
     />
-    <span id="name-text" class='font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-3xl lg:text-3xl text-blue-300/90'>
+    <span id="name-text" class='font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-5xl lg:text-3xl text-blue-300/90'>
       
     </span>
   </picture>
@@ -26,13 +26,14 @@ const { characters } = Astro.props
   <section class="swiper">
     <div class="swiper-wrapper">
       {
+        // -> Forma pirata xd -> Corregir el -mt-10
         characters.map(({ id, name, imageSmall }) => (
           <div class="swiper-slide">
-            <a href={`/character/${id}`} class="character-link relative flex justify-center items-center">
+            <a href={`/character/${id}`} class="character-link relative flex justify-center items-center h-24">
               <img src={imageSmall} alt={`Imagen del personaje ${name}`}
                 decoding="async"
                 loading="lazy"
-                class="size-48 object-cover z-10"
+                class="size-48 object-cover z-[1000] -mt-10"
                 style="mask-image: linear-gradient(black 50%, transparent);"
               />
               <div class="absolute inset-0 character-link-background"></div>
@@ -48,16 +49,17 @@ const { characters } = Astro.props
 <style>
   .swiper {
     width: 90vw;
-    height: 220px;
+    height: 192px;
     text-align: center;
   }
-.swiper-slide{
-      text-align: end;
-      font-size: 18px;
-      display: flex;
-      justify-content: end;
-      align-items: end;
-}
+  .swiper-slide{
+    text-align: end;
+    font-size: 18px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    height: 100%;
+  }
   .character-link-background {
     opacity: .25;
     background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
