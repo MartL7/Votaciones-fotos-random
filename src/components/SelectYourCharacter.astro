@@ -70,17 +70,18 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
     filter: saturate(150%);
     transform: scale(1.1);
   }
-.container-characters {
+
+  .container-characters {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 60px;
-    column-gap: 6rem;
-    row-gap: 1rem;
+    gap: 1rem;
+
     a {
-      grid-column: span 2;
+      grid-column: span 3;
 
       &:nth-child(2n) {
-        grid-column-start: 2;
+        grid-column-start: 3;
         grid-column-end: 4;
       }
     }
@@ -90,8 +91,7 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 60px;
-    column-gap: 6rem;
-    row-gap: 1rem;
+    gap: 1rem;
 
     a {
       grid-column: span 2;
@@ -101,13 +101,8 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
         grid-column-end: 4;
       }
     }
-  }
 
-  .fallen-character{
-    text-decoration:line-through ;
-    color: #ff5050e6;;
-  }
-  @media (min-width: 1024px) {
+    @media (min-width: 1024px) {
       a {
         grid-column: span 3;
 
@@ -116,5 +111,11 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
           grid-column-end: 4;
         }
     }
+  }
+}
+
+  .fallen-character{
+    text-decoration:line-through ;
+    color: #ff5050e6;;
   }
 </style>
