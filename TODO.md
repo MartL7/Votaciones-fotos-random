@@ -26,5 +26,7 @@
 -   24. Optimizar la página, simplificar lógica y oragnizar proyecto ❌
 -   25. Cambiar de Flex a Grid en la selección de personajes ✅
 -   26. Cambiar orden de los characters conforme a su mirada ❌
--   27. Agregar seccion caidos ❌
+-   27. Agregar seccion caidos ✅
 -   28. Cambiar algunas imagenes de presentacion para no afectar el aspect-ratio ❌
+-   29. Agregar Sección profesor del año ❌
+-   30. Cambiar tipografía de los nombres de los characters ❌
