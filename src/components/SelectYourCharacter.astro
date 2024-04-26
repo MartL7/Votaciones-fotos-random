@@ -107,4 +107,14 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
     text-decoration:line-through ;
     color: #ff5050e6;;
   }
+  @media (min-width: 1024px) {
+      a {
+        grid-column: span 3;
+
+        &:nth-child(2n + 1) {
+          grid-column-start: 3;
+          grid-column-end: 4;
+        }
+    }
+  }
 </style>
