@@ -25,17 +25,15 @@ const secondArray = person.slice(8, person.length)
     const $nameText = $('#name-text-big') as HTMLSpanElement
     let $lastActiveImage: HTMLImageElement | null = null
 
+    const fallenCharacterIDs = ['Ever', 'Alan', 'Rolando'];
+
     $imageLink.forEach((link) => {
         const { id } = link.dataset ?? null
-        // const id = link.href.split('/').at(-1) --> Regresar en caso de bugs
-
         const { folder } = link.dataset ?? null
-        
         const $characterSmallImage = $$(`#character-${id}`) as globalThis.NodeListOf<HTMLImageElement>
-
         const characterSrc = folder ? `/img/${folder}/${id}-image-presentation.webp` : `/img/${id}/${id}-image-presentation.webp`
-
         const defaultImage = `/img/Yahir/Yahir-image-presentation.webp`
+        const isFallenCharacter = fallenCharacterIDs.includes(id);
 
         link.addEventListener('mouseenter', () => {
             $nameText.textContent = id
@@ -54,10 +52,18 @@ const secondArray = person.slice(8, person.length)
             $characterPhoto.src = characterSrc ?? defaultImage
             $characterPhoto.alt = `Imagen de ${id}`
 
+            if (isFallenCharacter) {
+                $characterPhoto.style.filter = 'grayscale(100%)';
+                $nameText.classList.add('fallen-character');
+                $nameText.classList.remove('text-blue-300/90'); 
+            } else {
+                $characterPhoto.style.filter = 'none';
+                $nameText.classList.remove('fallen-character'); 
+                $nameText.classList.add('text-blue-300/90'); 
+            }
+
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
-
             $characterSmallImage.forEach((image) => image.classList.add('active'))
-
             $lastActiveImage = $characterSmallImage[0]
 
             localStorage.setItem('lastHoveredImageId', id)
@@ -70,10 +76,20 @@ const secondArray = person.slice(8, person.length)
             $characterPhoto.src = characterSrc ?? defaultImage
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
             $characterSmallImage.forEach((image) => image.classList.add('active'))
+            if (isFallenCharacter) {
+                $characterPhoto.style.filter = 'grayscale(100%)';
+                $nameText.classList.add('fallen-character');
+                $nameText.classList.remove('text-blue-300/90');
+            } else {
+                $characterPhoto.style.filter = 'none';
+                $nameText.classList.remove('fallen-character');
+                $nameText.classList.add('text-blue-300/90');
+            }
             $nameText.textContent = lastName
         }
     })
-  }
+}
+
 
   document.addEventListener('astro:page-load', changeCharacterImage)
 </script>
@@ -87,7 +103,7 @@ const secondArray = person.slice(8, person.length)
       slidesPerView: 2,
       loop: true,
       // freeMode: true,
-      spaceBetween: 30,
+      spaceBetween: 0,
       centeredSlides: true,
       pagination: {
         el: '.swiper-pagination',
