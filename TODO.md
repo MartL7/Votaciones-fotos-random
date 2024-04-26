@@ -29,4 +29,4 @@
 -   27. Agregar seccion caidos ✅
 -   28. Cambiar algunas imagenes de presentacion para no afectar el aspect-ratio ❌
 -   29. Agregar Sección profesor del año ❌
--   30. Cambiar tipografía de los nombres de los characters ❌
+-   30. Cambiar tipografía de los nombres de los characters ✅
