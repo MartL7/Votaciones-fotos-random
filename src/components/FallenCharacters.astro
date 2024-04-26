@@ -6,7 +6,7 @@ import { fallenCharacters } from '@/logic/fallenCharacters'
 <article class="flex flex-wrap flex-row lg:gap-x-10 md:gap-x-5">
   {
     fallenCharacters.map((failCharacter) => (
-    <a class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24" data-folder={failCharacter.folder} data-id={failCharacter.id}>
+    <a class="character-link fallen-character relative md:w-32 md:h-20 lg:w-36 lg:h-24" data-folder={failCharacter.folder} data-id={failCharacter.id}>
       <img src={failCharacter.imageSmall} alt={`Imagen small de ${failCharacter.name}`}
         decoding="async"
         loading="lazy"
