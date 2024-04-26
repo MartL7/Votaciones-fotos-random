@@ -2,6 +2,7 @@
 import { Characters as person } from "@/logic/character"
 import SelectYourCharacter from "@/components/SelectYourCharacter.astro"
 import SelectCharacterMovil from "@/components/SelectCharacterMovil.astro"
+import FallenCharacters from "@/components/FallenCharacters.astro"
 
 const firstArray = person.slice(0, 8)
 const secondArray = person.slice(8, person.length)
@@ -11,7 +12,8 @@ const secondArray = person.slice(8, person.length)
   <SelectYourCharacter firstArrayCharacters={firstArray} secondArrayCharacters={secondArray} />
 
   <SelectCharacterMovil characters={person} />
-  
+
+  <FallenCharacters />
 </main>
 
 <script>
@@ -24,22 +26,32 @@ const secondArray = person.slice(8, person.length)
     let $lastActiveImage: HTMLImageElement | null = null
 
     $imageLink.forEach((link) => {
-        const id = link.href.split('/').at(-1)
+        const { id } = link.dataset ?? null
+        // const id = link.href.split('/').at(-1) --> Regresar en caso de bugs
+
+        const { folder } = link.dataset ?? null
         
         const $characterSmallImage = $$(`#character-${id}`) as globalThis.NodeListOf<HTMLImageElement>
 
-        const characterSrc = `/img/${id}/${id}-image-presentation.webp` ?? '/img/Yahir/Yahir-image-presentation.webp'
-        
-        link.addEventListener('mouseenter', () => {
+        const characterSrc = folder ? `/img/${folder}/${id}-image-presentation.webp` : `/img/${id}/${id}-image-presentation.webp`
 
+        const defaultImage = `/img/Yahir/Yahir-image-presentation.webp`
+
+        link.addEventListener('mouseenter', () => {
             $nameText.textContent = id
+
+            if(localStorage.getItem('lastHoveredImageId')) {
+                const lastHoveredImageId = localStorage.getItem('lastHoveredImageId')
+                const $lastActiveImage = $$(`#character-${lastHoveredImageId}`) as globalThis.NodeListOf<HTMLImageElement>
+                $lastActiveImage.forEach((image) => image.classList.remove('active'))
+            } 
 
             localStorage.removeItem('lastHoveredImageId')
             if ($lastActiveImage) {
                 $lastActiveImage.classList.remove('active')
             }
 
-            $characterPhoto.src = characterSrc
+            $characterPhoto.src = characterSrc ?? defaultImage
             $characterPhoto.alt = `Imagen de ${id}`
 
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
@@ -55,7 +67,7 @@ const secondArray = person.slice(8, person.length)
         const lastHoveredImageId = localStorage.getItem('lastHoveredImageId')
         const lastName = localStorage.getItem('lastName')
         if(lastHoveredImageId === id) {
-            $characterPhoto.src = characterSrc
+            $characterPhoto.src = characterSrc ?? defaultImage
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
             $characterSmallImage.forEach((image) => image.classList.add('active'))
             $nameText.textContent = lastName

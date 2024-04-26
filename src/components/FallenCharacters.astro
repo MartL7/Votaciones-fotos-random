@@ -1,0 +1,34 @@
+---
+import { fallenCharacters } from '@/logic/fallenCharacters'
+---
+
+<small class="hidden md:block lg:mt-20 md:mt-10 mb-5 text-red-300/80"> Compañeros caídos </small>
+<article class="flex flex-wrap flex-row lg:gap-x-10 md:gap-x-5">
+  {
+    fallenCharacters.map((failCharacter) => (
+    <a class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24" data-folder={failCharacter.folder} data-id={failCharacter.id}>
+      <img src={failCharacter.imageSmall} alt={`Imagen small de ${failCharacter.name}`}
+        decoding="async"
+        loading="lazy"
+        class="lg:size-28 md:size-24 object-cover rounded-lg -top-5 scale-95 z-10 absolute sm:left-5 lg:left-5 left-0 saturate-0 hover:scale-110 transition hover:saturate-150" 
+        style="mask-image: linear-gradient(black 50%, transparent);"
+        id={`character-${failCharacter.id}`}
+      />
+      <div class="absolute inset-0 character-link-background"></div>
+    </a>
+    ))
+  }
+
+</article>
+
+<style>
+  .character-link-background {
+    opacity: .25;
+    background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
+  }
+
+  .active {
+    filter: saturate(150%);
+    transform: scale(1.1);
+  }
+</style>
