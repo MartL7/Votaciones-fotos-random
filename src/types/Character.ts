@@ -1,8 +1,12 @@
+export interface Images {
+  image: string
+  class?: string
+}
+
 interface Socials {
   name: string
   link: string
   type: 'github' | 'instagram' | 'twitter' | 'facebook'
-
 }
 
 export interface Character {
@@ -10,7 +14,7 @@ export interface Character {
   name: string
   imagePresentation: string
   imageSmall: string
-  imagesGalery: { image: string, class?: string }[]
+  imagesGalery: Images[]
   funnyText?: string[]
   socials?: Socials[]
 }

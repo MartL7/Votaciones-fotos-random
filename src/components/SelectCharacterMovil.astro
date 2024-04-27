@@ -29,8 +29,12 @@ const { characters } = Astro.props
         // -> Forma pirata xd -> Corregir el -mt-10
         characters.map(({ id, name, imageSmall }) => (
           <div class="swiper-slide">
-            <a href={`/character/${id}`} class="character-link relative flex justify-center items-center h-20">
-              <img src={imageSmall} alt={`Imagen del personaje ${name}`}
+            <a 
+              href={`/character/${id}`} 
+              class="character-link relative flex justify-center items-center h-20">
+              <img 
+                src={imageSmall} 
+                alt={`Imagen del personaje ${name}`}
                 decoding="async"
                 loading="lazy"
                 class="size-40 object-cover z-[1000] -mt-10"
@@ -52,6 +56,7 @@ const { characters } = Astro.props
     height: 192px;
     text-align: center;
   }
+
   .swiper-slide{
     text-align: end;
     font-size: 18px;
@@ -59,6 +64,7 @@ const { characters } = Astro.props
     justify-content: end;
     align-items: end;
   }
+  
   .character-link-background {
     opacity: .25;
     background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
