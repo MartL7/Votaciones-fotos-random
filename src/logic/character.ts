@@ -181,7 +181,11 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[260px] col-start-2 col-end-3 row-start-5 row-end-6 h-[200px]',
             },
         ],
-        funnyText: ['Hiii'],
+        funnyText: ['JA, lol, que mal'],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/ds.mayy3/', type: 'instagram' },
+            { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=100087885220850', type: 'facebook' },
+        ]
     },
 
     {
@@ -247,7 +251,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
             },
         ],
-        funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera'],
+        funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera', 'Mucha escuela, poco Voli'],
     },
     
     {
@@ -275,7 +279,7 @@ export const Characters: Character[] = [
                 image: '/img/Damian/Damian-image-7.webp',
             },
         ],
-        funnyText: ['Crecer como los Bisteces', 'A Putazos', 'BOMBARDEN HUAUCHINANGO'],
+        funnyText: ['Crecer como los Bisteces', 'A Putazos', 'BOMBARDEN HUAUCHINANGO', 'Farmeando Firmas'],
     },
     {
         id: 'Ale',
@@ -400,26 +404,48 @@ export const Characters: Character[] = [
         imagesGalery: [
             {
                 image: '/img/Emmanuel/Emmanuel-image-1.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] col-start-2 col-end-3',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-1 row-end-3 h-[400px]',
             },
             {
                 image: '/img/Emmanuel/Emmanuel-image-2.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-auto h-[200px]',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[600px] h-[200px] col-start-1 col-end-2 row-start-3 row-end-4',
             },
             {
                 image: '/img/Emmanuel/Emmanuel-image-3.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-auto h-[200px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[260px] h-[200px]',
             },
             {
                 image: '/img/Emmanuel/Emmanuel-image-4.webp',
-                class: 'sm:h-[300px] sm:col-start-3 sm:col-end-4 col-start-1 col-end-2 row-start-1 row-end-2',
+                class: 'sm:h-[300px] sm:col-start-3 sm:col-end-4 col-start-1 col-end-2 row-start-1 row-end-3 h-[400px]',
             },
             {
                 image: '/img/Emmanuel/Emmanuel-image-5.webp',
-                class: 'sm:h-[350px] sm:col-start-3 sm:col-end-4 col-start-2 col-end-3 row-start-2 row-end-3 h-[200px]',
+                class: 'sm:h-[260px] sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 col-start-2 col-end-3 row-start-3 row-end-4 h-[200px]',
             },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-6.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-2 col-end-3 row-start-4 row-end-6 h-[400px]',
+            },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-7.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 row-start-5 row-end-7 h-[400px]',
+            },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-8.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[260px] col-start-2 col-end-3 row-start-6 row-end-8 h-[400px]',
+            },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-10.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-1 col-end-2 row-start-7 row-end-8 h-[200px]'
+            }
         ],
-        funnyText: ['Mí chaparrita hermoshita', 'Ante la duda la más tetuda', 'Agarras tú y don Rene'],
+        funnyText: [
+            'Mí chaparrita hermoshita',
+            'Si se puede soñar, también se puede lograr', 
+            'Ahora entiendo cual es mi papel',
+            'Nadie muere al intentar olvidar',
+            'Quierete tres pesos wey, te los pago'
+        ],
     },
     
     {
