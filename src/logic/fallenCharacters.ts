@@ -7,27 +7,42 @@ interface FallenCharacter {
 }
 
 export const fallenCharacters: FallenCharacter[] = [
-  {
-    id: 'Ever',
-    name: 'Ever',
-    folder: 'Fallen',
-    imageSmall: '/img/Fallen/Ever-small.webp',
-    imagePresentation: '/img/Fallen/Ever-image-presentation.webp'
-  },
+    {
+        id: 'Ever',
+        name: 'Ever',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Ever-small.webp',
+        imagePresentation: '/img/Fallen/Ever-image-presentation.webp',
+    },
 
-  {
-    id: 'Alan',
-    name: 'Alan',
-    folder: 'Fallen',
-    imageSmall: '/img/Fallen/Alan-small.webp',
-    imagePresentation: '/img/Fallen/Alan-image-presentation.webp'
-  },
+    {
+        id: 'Alan',
+        name: 'Alan',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Alan-small.webp',
+        imagePresentation: '/img/Fallen/Alan-image-presentation.webp',
+    },
 
-  {
-    id: 'Rolando',
-    name: 'Rolando',
-    folder: 'Fallen',
-    imageSmall: '/img/Fallen/Rolando-small.webp',
-    imagePresentation: '/img/Fallen/Rolando-image-presentation.webp'
-  }
+    {
+        id: 'Rolando',
+        name: 'Rolando',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Rolando-small.webp',
+        imagePresentation: '/img/Fallen/Rolando-image-presentation.webp',
+    },
+
+    {
+        id: 'Angela',
+        name: 'Angela',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Angela-small.webp',
+        imagePresentation: '/img/Fallen/Angela-image-presentation.webp',
+    },
+    {
+        id: 'Laura',
+        name: 'Laura',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Laura-small.webp',
+        imagePresentation: '/img/Fallen/Laura-image-presentation.webp',
+    },
 ]

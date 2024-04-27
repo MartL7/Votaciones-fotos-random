@@ -279,7 +279,7 @@ export const Characters: Character[] = [
                 image: '/img/Damian/Damian-image-7.webp',
             },
         ],
-        funnyText: ['Crecer como los Bisteces', 'A Putazos', 'BOMBARDEN HUAUCHINANGO', 'Farmeando Firmas'],
+        funnyText: ['Crecer como los Bisteces', 'A Putazos', 'BOMBARDEN HUAUCHINANGO', 'Farmeando Firmas','La mente es un laberinto donde cualquiera puede perderse'],
     },
     {
         id: 'Ale',
