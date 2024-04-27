@@ -31,3 +31,4 @@
 -   29. Agregar Sección profesor del año ❌
 -   30. Cambiar tipografía de los nombres de los characters ✅
 -   31. Agregar Rollback en la sección de Votos ❌
+-   32. Agregar las demás fotos de Emmanuel ❌
