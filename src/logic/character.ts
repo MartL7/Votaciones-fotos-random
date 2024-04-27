@@ -36,65 +36,78 @@ export const Characters: Character[] = [
         ],
     },
     {
-        id: 'Elvin',
-        name: 'Elvin',
-        imagePresentation: '/img/Elvin/Elvin-image-presentation.webp',
-        imageSmall: '/img/Elvin/Elvin-small.webp',
+        id: 'Janet',
+        name: 'Jann',
+        imagePresentation: '/img/Janet/Janet-image-presentation.webp',
+        imageSmall: '/img/Janet/Janet-small.webp',
         imagesGalery: [
             {
-                image: '/img/Elvin/Elvin-image-1.avif',
-                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px] col-start-2 col-end-3 h-[200px]',
+                image: '/img/Janet/Janet-image-1.webp',
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
             },
             {
-                image: '/img/Elvin/Elvin-image-2.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] sm:row-start-1',
+                image: '/img/Janet/Janet-image-2.webp',
+                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-3 sm:h-[300px] col-start-2 col-end-3 h-[200px] row-start-1 row-end-2',
             },
             {
-                image: '/img/Elvin/Elvin-image-3.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3',
+                image: '/img/Janet/Janet-image-3.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-2 row-end-3 h-[180px]',
             },
             {
-                image: '/img/Elvin/Elvin-image-1.avif',
-                class: 'sm:col-start-2 sm:col-end-4 sm:h-[300px] sm:row-start-2 col-start-1 col-end-3 h-[250px]',
+                image: '/img/Janet/Janet-image-4.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-2 col-end-3 row-start-3 row-end-4 h-[200px]',
+            },
+            {
+                image: '/img/Janet/Janet-image-5.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-1 col-end-2 row-start-3 row-end-4 h-[200px]',
+            },
+            {
+                image: '/img/Janet/Janet-image-6.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]',
             },
         ],
-        funnyText: [
-            'Lo hago en 30 segundos!',
-            'Miau',
-            'El Yahir está cabezón',
-            '100 por línea',
-            'Antes me decias "mi amor"',
-            'Ahora ni me hablas',
-        ],
+        funnyText: ['Hiii']
     },
     {
-        id: 'Emmanuel',
-        name: 'Emmanuel',
-        imagePresentation: '/img/Emmanuel/Emmanuel-image-presentation.webp',
-        imageSmall: '/img/Emmanuel/Emmanuel-small.webp',
+        id: 'Yanet',
+        name: 'Yane',
+        imagePresentation: '/img/Yanet/Yanet-image-presentation.webp',
+        imageSmall: '/img/Yanet/Yanet-small.webp',
         imagesGalery: [
             {
-                image: '/img/Emmanuel/Emmanuel-image-1.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] col-start-2 col-end-3',
+                image: '/img/Yanet/Yanet-image-1.webp',
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
             },
             {
-                image: '/img/Emmanuel/Emmanuel-image-2.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-auto h-[200px]',
+                image: '/img/Yanet/Yanet-image-7.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[260px] col-start-2 col-end-3 row-start-1 row-end-2 h-[200px]',
             },
             {
-                image: '/img/Emmanuel/Emmanuel-image-3.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-auto h-[200px]',
+                image: '/img/Yanet/Yanet-image-3.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[260px] col-start-2 col-end-3 row-start-2 row-end-4 h-[400px]',
             },
             {
-                image: '/img/Emmanuel/Emmanuel-image-4.webp',
-                class: 'sm:h-[300px] sm:col-start-3 sm:col-end-4 col-start-1 col-end-2 row-start-1 row-end-2',
+                image: '/img/Yanet/Yanet-image-4.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[300px] col-start-1 col-end-2 row-start-3 row-end-4 h-[200px]',
             },
             {
-                image: '/img/Emmanuel/Emmanuel-image-5.webp',
-                class: 'sm:h-[350px] sm:col-start-3 sm:col-end-4 col-start-2 col-end-3 row-start-2 row-end-3 h-[200px]',
+                image: '/img/Yanet/Yanet-image-5.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[300px] col-start-1 col-end-2 row-start-4 row-end-6 h-[400px]',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-6.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-2 col-end-3 row-start-4 row-end-5 h-[200px]',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-2.webp',
+                class: 'sm:col-start-1 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-3 h-[300px] row-start-6 row-end-7',
+            },
+            {
+                image: '/img/Yanet/Yanet-image-8.webp',
+                class: 'sm:col-start-1 sm:col-end-4 sm:hidden row-start-5 row-end-6 col-start-2 col-end-3 h-[200px]',
             },
         ],
-        funnyText: ['Mí chaparrita hermoshita', 'Ante la duda la más tetuda'],
+        funnyText: ['Holiiii', 'vete al cuerno'],
     },
     {
         id: 'Geovas',
@@ -120,68 +133,6 @@ export const Characters: Character[] = [
             { name: 'Twitter', link: 'https://twitter.com/GeovasYoSoy', type: 'twitter' },
         ],
     },
-
-    {
-        id: 'Are',
-        name: 'Luzcesita',
-        imagePresentation: '/img/Are/Are-image-presentation.webp',
-        imageSmall: '/img/Are/Are-small.webp',
-        imagesGalery: [
-            {
-                image: '/img/Are/Are-image-1.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[620px]',
-            },
-            {
-                image: '/img/Are/Are-image-2.webp',
-                class: 'sm:col-start-2 sm:col-end-3 h-[300px]',
-            },
-            {
-                image: '/img/Are/Are-image-3.webp',
-                class: 'sm:h-[300px]',
-            },
-            {
-                image: '/img/Are/Are-image-4.webp',
-                class: 'sm:h-[300px]',
-            },
-            {
-                image: '/img/Are/Are-image-2.webp',
-                class: 'sm:h-[300px]',
-            },
-        ],
-        funnyText: ['Hii'],
-        socials: [
-            {
-                name: 'Instagram',
-                link: 'https://www.instagram.com/_arelyyyy__/',
-                type: 'instagram',
-            },
-        ],
-    },
-
-    {
-        id: 'Mike',
-        name: 'Mike',
-        imagePresentation: '/img/Mike/Mike-image-presentation.webp',
-        imageSmall: '/img/Mike/Mike-small.webp',
-        imagesGalery: [
-            { image: '/img/Mike/Mike-image-4.webp', class: 'max-h-[300px]' },
-            { image: '/img/Mike/Mike-image-1.webp', class: 'max-h-[300px]' },
-            {
-                image: '/img/Mike/Mike-image-2.avif',
-                class: 'sm:col-start-3 sm:col-end-4 col-start-1 col-end-2 sm:max-h[300px] h-[300px]',
-            },
-            {
-                image: '/img/Mike/Mike-image-3.avif',
-                class: 'sm:col-start-1 sm:col-end-3 sm:h-[300px] h-[300px]',
-            },
-            {
-                image: '/img/Mike/Mike-image-5.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px]',
-            },
-        ],
-        funnyText: ['A poco si tilin'],
-    },
-
     {
         id: 'Leslie',
         name: 'Less',
@@ -228,6 +179,72 @@ export const Characters: Character[] = [
         funnyText: ['Hiii'],
     },
 
+    {
+        id: 'Mike',
+        name: 'Mike',
+        imagePresentation: '/img/Mike/Mike-image-presentation.webp',
+        imageSmall: '/img/Mike/Mike-small.webp',
+        imagesGalery: [
+            { image: '/img/Mike/Mike-image-4.webp', class: 'max-h-[300px]' },
+            { image: '/img/Mike/Mike-image-1.webp', class: 'max-h-[300px]' },
+            {
+                image: '/img/Mike/Mike-image-2.avif',
+                class: 'sm:col-start-3 sm:col-end-4 col-start-1 col-end-2 sm:max-h[300px] h-[300px]',
+            },
+            {
+                image: '/img/Mike/Mike-image-3.avif',
+                class: 'sm:col-start-1 sm:col-end-3 sm:h-[300px] h-[300px]',
+            },
+            {
+                image: '/img/Mike/Mike-image-5.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px]',
+            },
+        ],
+        funnyText: ['A poco si tilin'],
+    },
+
+    {
+        id: 'Karen',
+        name: 'Karen',
+        imagePresentation: '/img/Karen/Karen-image-presentation.webp',
+        imageSmall: '/img/Karen/Karen-small.webp',
+        imagesGalery: [
+            {
+                image: '/img/Karen/Karen-image-1.webp',
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
+            },
+            {
+                image: '/img/Karen/Karen-image-2.webp',
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-2 sm:col-end-3 sm:h-[250px] col-start-2 col-end-3 h-[200px]',
+            },
+            {
+                image: '/img/Karen/Karen-image-8.webp',
+                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[300px] row-start-3 row-end-4 h-[200px] col-start-1 col-end-2',
+            },
+            {
+                image: '/img/Karen/Karen-image-4.webp',
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
+            },
+            {
+                image: '/img/Karen/Karen-image-5.webp',
+                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
+            },
+            {
+                image: '/img/Karen/Karen-image-3.webp',
+                class: 'sm:col-start-3 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
+            },
+            {
+                image: '/img/Karen/Karen-image-7.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:h-[300px]',
+            },
+            {
+                image: '/img/Karen/Karen-image-6.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
+            },
+        ],
+        funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera'],
+    },
+    
     {
         id: 'Damian',
         name: 'Damian',
@@ -339,119 +356,102 @@ export const Characters: Character[] = [
         socials: [{ name: 'Instagram', link: 'https://www.instagram.com/alex_145e', type: 'instagram' }],
     },
     {
-        id: 'Karen',
-        name: 'Karen',
-        imagePresentation: '/img/Karen/Karen-image-presentation.webp',
-        imageSmall: '/img/Karen/Karen-small.webp',
+        id: 'Elvin',
+        name: 'Elvin',
+        imagePresentation: '/img/Elvin/Elvin-image-presentation.webp',
+        imageSmall: '/img/Elvin/Elvin-small.webp',
         imagesGalery: [
             {
-                image: '/img/Karen/Karen-image-1.webp',
-                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
+                image: '/img/Elvin/Elvin-image-1.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px] col-start-2 col-end-3 h-[200px]',
             },
             {
-                image: '/img/Karen/Karen-image-2.webp',
-                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-2 sm:col-end-3 sm:h-[250px] col-start-2 col-end-3 h-[200px]',
+                image: '/img/Elvin/Elvin-image-2.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] sm:row-start-1',
             },
             {
-                image: '/img/Karen/Karen-image-8.webp',
-                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[300px] row-start-3 row-end-4 h-[200px] col-start-1 col-end-2',
+                image: '/img/Elvin/Elvin-image-3.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3',
             },
             {
-                image: '/img/Karen/Karen-image-4.webp',
-                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
-            },
-            {
-                image: '/img/Karen/Karen-image-5.webp',
-                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
-            },
-            {
-                image: '/img/Karen/Karen-image-3.webp',
-                class: 'sm:col-start-3 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
-            },
-            {
-                image: '/img/Karen/Karen-image-7.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:h-[300px]',
-            },
-            {
-                image: '/img/Karen/Karen-image-6.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
+                image: '/img/Elvin/Elvin-image-1.avif',
+                class: 'sm:col-start-2 sm:col-end-4 sm:h-[300px] sm:row-start-2 col-start-1 col-end-3 h-[250px]',
             },
         ],
-        funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera'],
+        funnyText: [
+            'Lo hago en 30 segundos!',
+            'Miau',
+            'El Yahir está cabezón',
+            '100 por línea',
+            'Antes me decias "mi amor"',
+            'Ahora ni me hablas',
+        ],
     },
     {
-        id: 'Yanet',
-        name: 'Yane',
-        imagePresentation: '/img/Yanet/Yanet-image-presentation.webp',
-        imageSmall: '/img/Yanet/Yanet-small.webp',
+        id: 'Emmanuel',
+        name: 'Emmanuel',
+        imagePresentation: '/img/Emmanuel/Emmanuel-image-presentation.webp',
+        imageSmall: '/img/Emmanuel/Emmanuel-small.webp',
         imagesGalery: [
             {
-                image: '/img/Yanet/Yanet-image-1.webp',
-                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
+                image: '/img/Emmanuel/Emmanuel-image-1.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] col-start-2 col-end-3',
             },
             {
-                image: '/img/Yanet/Yanet-image-7.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[260px] col-start-2 col-end-3 row-start-1 row-end-2 h-[200px]',
+                image: '/img/Emmanuel/Emmanuel-image-2.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-auto h-[200px]',
             },
             {
-                image: '/img/Yanet/Yanet-image-3.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[260px] col-start-2 col-end-3 row-start-2 row-end-4 h-[400px]',
+                image: '/img/Emmanuel/Emmanuel-image-3.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-auto h-[200px]',
             },
             {
-                image: '/img/Yanet/Yanet-image-4.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[300px] col-start-1 col-end-2 row-start-3 row-end-4 h-[200px]',
+                image: '/img/Emmanuel/Emmanuel-image-4.webp',
+                class: 'sm:h-[300px] sm:col-start-3 sm:col-end-4 col-start-1 col-end-2 row-start-1 row-end-2',
             },
             {
-                image: '/img/Yanet/Yanet-image-5.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[300px] col-start-1 col-end-2 row-start-4 row-end-6 h-[400px]',
-            },
-            {
-                image: '/img/Yanet/Yanet-image-6.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-2 col-end-3 row-start-4 row-end-5 h-[200px]',
-            },
-            {
-                image: '/img/Yanet/Yanet-image-2.webp',
-                class: 'sm:col-start-1 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-3 h-[300px] row-start-6 row-end-7',
-            },
-            {
-                image: '/img/Yanet/Yanet-image-8.webp',
-                class: 'sm:col-start-1 sm:col-end-4 sm:hidden row-start-5 row-end-6 col-start-2 col-end-3 h-[200px]',
+                image: '/img/Emmanuel/Emmanuel-image-5.webp',
+                class: 'sm:h-[350px] sm:col-start-3 sm:col-end-4 col-start-2 col-end-3 row-start-2 row-end-3 h-[200px]',
             },
         ],
-        funnyText: ['Holiiii', 'vete al cuerno'],
+        funnyText: ['Mí chaparrita hermoshita', 'Ante la duda la más tetuda'],
     },
+    
     {
-        id: 'Janet',
-        name: 'Jann',
-        imagePresentation: '/img/Janet/Janet-image-presentation.webp',
-        imageSmall: '/img/Janet/Janet-small.webp',
+        id: 'Are',
+        name: 'Luzcesita',
+        imagePresentation: '/img/Are/Are-image-presentation.webp',
+        imageSmall: '/img/Are/Are-small.webp',
         imagesGalery: [
             {
-                image: '/img/Janet/Janet-image-1.webp',
-                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
+                image: '/img/Are/Are-image-1.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[620px]',
             },
             {
-                image: '/img/Janet/Janet-image-2.webp',
-                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-3 sm:h-[300px] col-start-2 col-end-3 h-[200px] row-start-1 row-end-2',
+                image: '/img/Are/Are-image-2.webp',
+                class: 'sm:col-start-2 sm:col-end-3 h-[300px]',
             },
             {
-                image: '/img/Janet/Janet-image-3.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-2 row-end-3 h-[180px]',
+                image: '/img/Are/Are-image-3.webp',
+                class: 'sm:h-[300px]',
             },
             {
-                image: '/img/Janet/Janet-image-4.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-2 col-end-3 row-start-3 row-end-4 h-[200px]',
+                image: '/img/Are/Are-image-4.webp',
+                class: 'sm:h-[300px]',
             },
             {
-                image: '/img/Janet/Janet-image-5.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-1 col-end-2 row-start-3 row-end-4 h-[200px]',
-            },
-            {
-                image: '/img/Janet/Janet-image-6.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]',
+                image: '/img/Are/Are-image-2.webp',
+                class: 'sm:h-[300px]',
             },
         ],
-        funnyText: ['Hiii']
+        funnyText: ['Hii'],
+        socials: [
+            {
+                name: 'Instagram',
+                link: 'https://www.instagram.com/_arelyyyy__/',
+                type: 'instagram',
+            },
+        ],
     },
     {
         id: 'Lupita',
