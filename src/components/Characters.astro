@@ -102,47 +102,53 @@ const secondArray = person.slice(8, person.length)
   import { $, $$ } from '@/lib/dom-selector'
 
   const Carrousel = () => {
+    const lastCharacterId = localStorage.getItem('lastCharacterId')
+
     const swiper = new Swiper('.swiper', {
       slidesPerView: 2,
       loop: true,
-      // freeMode: true,
       spaceBetween: 0,
       centeredSlides: true,
       pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+          el: '.swiper-pagination',
+          clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
       },
       on: {
         init: function () {
+          if (lastCharacterId) {
+            const slideIndex = Array.from(this.slides).findIndex(slide => {
+              const $characterLink = (slide as Element)?.querySelector('.character-link') as HTMLAnchorElement
+              const id = $characterLink.href.split('/').at(-1)
+              return id === lastCharacterId
+            })
+
+            if (slideIndex !== -1) {
+                this.slideTo(slideIndex, 0)
+            }
+          }
         },
         slideChange: function () {
-          const activeSlide = this.slides[this.activeIndex] as HTMLDivElement
-          const $nameText = $('#name-text')
-          const $characterLink = activeSlide?.querySelector('.character-link') as HTMLAnchorElement
-          const id = $characterLink?.href.split('/').at(-1)
-          const characterSrc = `/img/${id}/${id}-image-presentation.webp`
-          const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
+            const activeSlide = this.slides[this.activeIndex] as HTMLDivElement
+            const $nameText = $('#name-text')
+            const $characterLink = activeSlide?.querySelector('.character-link') as HTMLAnchorElement
+            const id = $characterLink?.href.split('/').at(-1)
+            const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
 
-          if (!$nameText || !$characterLink) return
+            const characterSrc = `/img/${id}/${id}-image-presentation.webp`
 
-          localStorage.setItem('lastImage', id)
-          $characterPhoto.src = characterSrc
-          $nameText.textContent = id
-          $characterPhoto.setAttribute('transition:name', `Character-${id}`)
+            if (!$nameText || !$characterLink) return
 
-          const lastHoveredImageId = localStorage.getItem('lastImage')
-          if (lastHoveredImageId === id) {
+            localStorage.setItem('lastCharacterId', id)
             $characterPhoto.src = characterSrc
+            $nameText.textContent = id
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
-          }
         },
       },
     })
-
     swiper.init()
   }
 
