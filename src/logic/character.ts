@@ -125,7 +125,12 @@ export const Characters: Character[] = [
                 image: '/img/Geovas/Geovas-image-3.avif',
             },
         ],
-        funnyText: ['Te extraño Karlita :(', 'Goku eta vaina e seria', 'Siuuuuuu'],
+        funnyText: [
+            'Te extraño Karlita :(',
+            'Ya es noche', 'X, somos chavos', 
+            'Te quise ver florecer', 
+            'Y me diste la espalda'
+        ],
 
         socials: [
             { name: 'Instagram', link: 'https://www.instagram.com/geovx_lg/', type: 'instagram' },
@@ -414,7 +419,7 @@ export const Characters: Character[] = [
                 class: 'sm:h-[350px] sm:col-start-3 sm:col-end-4 col-start-2 col-end-3 row-start-2 row-end-3 h-[200px]',
             },
         ],
-        funnyText: ['Mí chaparrita hermoshita', 'Ante la duda la más tetuda'],
+        funnyText: ['Mí chaparrita hermoshita', 'Ante la duda la más tetuda', 'Agarras tú y don Rene'],
     },
     
     {
