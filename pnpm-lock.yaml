@@ -29,6 +29,9 @@ dependencies:
   '@fontsource-variable/public-sans':
     specifier: ^5.0.18
     version: 5.0.18
+  '@fontsource/merriweather':
+    specifier: ^5.0.13
+    version: 5.0.13
   '@midudev/tailwind-animations':
     specifier: ^0.0.7
     version: 0.0.7(tailwindcss@3.4.3)
@@ -969,6 +972,10 @@ packages:
 
   /@fontsource-variable/public-sans@5.0.18:
     resolution: {integrity: sha512-sDPItjfl8wSnFZgd2OmN6lZYRgI9NYofCUt6qtXMSCajDaaD4rbt3e6DzlvtRYYPtEqUT4Pl822zSZyZCcIbcg==}
+    dev: false
+
+  /@fontsource/merriweather@5.0.13:
+    resolution: {integrity: sha512-V/UsU+5yceDICBUJJXWCT+6xf5YpLIVUHfUjBQ+NNbllIhe3zaVZ1f3t5+fNKwvBzKBDa3RNMCofAdW7uzw08Q==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:

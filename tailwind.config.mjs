@@ -6,6 +6,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
+				'Merri': ['Merriweather Variable', 'serif'],
+				'Oswald': ['Oswald Variable', 'sans-serif'],
 				'Dancing': ['Dancing Script Variable', 'Oswald Variable'],
 				'Public': ['Public Sans Variable', 'sans-serif']
 			},

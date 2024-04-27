@@ -18,6 +18,7 @@
     "@fontsource-variable/jost": "^5.0.18",
     "@fontsource-variable/oswald": "^5.0.20",
     "@fontsource-variable/public-sans": "^5.0.18",
+    "@fontsource/merriweather": "^5.0.13",
     "@midudev/tailwind-animations": "^0.0.7",
     "astro": "^4.6.1",
     "auth-astro": "^4.1.1",
