@@ -34,3 +34,4 @@
 -   32. Agregar las demás fotos de Emmanuel ✅
 -   33. Cambiar la imagen small y presentation de Marlen ❌
 -   34. Smplificar la lógica en el componente Vote.astro ❌
+-   35. Mejorar diseño a la parte de pronósticos de cada categoría en los Votos -> URGENTE ❌
