@@ -3,7 +3,7 @@
 -   1. Hacer Slider de los personajes (movil) ✅
 -   2. Hacer el diseño de los personajes como en la velada IV (PC) ✔️
 -   3. Arreglar autenticación con GitHub ✅
--   4. Mover todas las imágenes a un CDN (CloudFare) -> URGENTE ❌
+-   4. Mover todas las imágenes a un CDN (CloudFare) -> URGENTE ❌ ❌
 -   5. Optimizar la página (accesibilidad) ✅
 -   6. Mejorar Galerias en teléfonos ✅
 -   7. Hacer menu desplegable del Header en Movil -> URGENTE ✅
@@ -11,7 +11,7 @@
 -   9. Arreglar sección de Clip del Ciclo ❌
 -   10. Agregar base de datos para los votos ✅
 -   11. Agregar Modal al hacer click en cada imagen de las Galerias -> URGENTE ✅
--   12. Corregir bugs de ViewTransitions de Astro y el localStorage del inicio ❌
+-   12. Corregir bugs de ViewTransitions de Astro y el localStorage del inicio ✅
 -   13. Cambiar / Agregar algunas imagenes ✅
 -   14. Cambiar el Login a Google en lugar de GitHub --> URGENTE ✅
 -   15. Persistencia del personaje al navegar y recargar la página (Movil) -> URGENTE ✅
@@ -21,14 +21,16 @@
 -   19. Arreglar bug de Sesión en los votos --> URGENTE ✅
 -   20. Separar en un componente la lógica de select your character -> URGENTE ✅
 -   21. Agregar todas las imágenes de Ale ✔️ -> Faltan pocas
--   22. Conseguir las redes sociales de todos o la mayoría ❌
+-   22. Conseguir las redes sociales de todos o la mayoría ✅
 -   23. Agregar contador de fecha para la muestra de los resultados -> URGENTE ❌
--   24. Optimizar la página, simplificar lógica y oragnizar proyecto ❌
+-   24. Optimizar la página, simplificar lógica y oragnizar proyecto ✔️
 -   25. Cambiar de Flex a Grid en la selección de personajes ✅
--   26. Cambiar orden de los characters conforme a su mirada ❌
+-   26. Cambiar orden de los characters conforme a su mirada ✅
 -   27. Agregar seccion caidos ✅
--   28. Cambiar algunas imagenes de presentacion para no afectar el aspect-ratio ❌
+-   28. Cambiar algunas imagenes de presentacion para no afectar el aspect-ratio ✔️
 -   29. Agregar Sección profesor del año ❌
 -   30. Cambiar tipografía de los nombres de los characters ✅
 -   31. Agregar Rollback en la sección de Votos ❌
--   32. Agregar las demás fotos de Emmanuel ❌
+-   32. Agregar las demás fotos de Emmanuel ✅
+-   33. Cambiar la imagen small y presentation de Marlen ❌
+-   34. Smplificar la lógica en el componente Vote.astro ❌
