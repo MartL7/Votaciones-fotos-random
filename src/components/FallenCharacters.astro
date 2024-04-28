@@ -6,7 +6,7 @@ import { fallenCharacters } from '@/logic/fallenCharacters'
 <article class="flex flex-wrap flex-row lg:gap-x-10 md:gap-x-5">
   {
     fallenCharacters.map(({ folder, id, name, imageSmall }) => (
-      <a 
+      <div 
         class="character-link fallen-character relative md:w-32 md:h-20 lg:w-36 lg:h-24"  
         data-folder={folder} 
         data-id={id}
@@ -21,7 +21,7 @@ import { fallenCharacters } from '@/logic/fallenCharacters'
           id={`character-${id}`}
         />
         <div class="absolute inset-0 character-link-background"></div>
-      </a>
+      </div>
     ))
   }
 
