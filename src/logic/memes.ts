@@ -28,7 +28,7 @@ export const memesImages: Meme[] = [
   },
   {
     id: 'Meme-6-pou',
-    image: '/img/Memes/image-meme-6.webp',
+    image: '/img/Memes/image-meme-morro-8.webp',
     class: 'sm:row-start-1 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[300px] col-start-1 col-end-2 row-start-5 row-end-7 h-[300px]'
   },
   {
