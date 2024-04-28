@@ -1,29 +1,44 @@
 ---
 import HamburguerButton from "@/components/HamburguerButton.astro"
+import type { Links } from '@/types/links'
 
-const pages = [
+const pages: Links[] = [
   { name: 'Inicio', href: '/', label: 'Ir al inicio' },
   { name: 'Votaciones', href: '/votos', label: 'Ir a votaciones'},
+  { url: '/logos/full-logo.svg', href: '/', label: 'Ir al inicio', image: true },
   { name: 'Resultados', href: '/resultados', label: 'Ir a la página de resultados'},
   { name: 'Categorías', href: '/categorias', label: 'Ir a la página de Categorías'}
 ]
 ---
 
-<header class="nav-var-top mb-10 h-16 md:h-24 max-w-[100vw] lg:h-24">
-  <nav class="hidden group md:flex h-full w-full items-center justify-between px-10 lg:justify-center">
+<header class="mb-10 h-16 md:h-24 max-w-[100vw] lg:h-24">
+  <nav class="hidden group md:flex size-full items-center justify-between px-10 lg:justify-center">
     {
-      pages.map(({ name, href, label }) => (
+      pages.map(({ name, href, label, image, url }) => (
         <a href={href} 
-         class="nav-item relative h-full w-full lg:w-auto flex select-none flex-col items-center justify-center gap-1 text-center text-sm sm:text-xl sm:uppercase lg:flex lg:px-7 xl:px-10"
+         class="nav-item relative size-full lg:size-full flex select-none flex-col items-center justify-center gap-1 text-center text-sm sm:text-xl sm:uppercase lg:flex lg:px-7 xl:px-10"
          aria-label={label}
           >
           <span class="z-10">{name}</span>
           <div class="background absolute -z-10 size-full" />
+            {image 
+              && 
+              <img 
+                src={url} 
+                alt={name} 
+                class="absolute inset-0 blur-2xl shadow-xl size-full object-cover "
+              />
+              <img 
+                src={url} 
+                alt={name} 
+                class="absolute inset-0 size-full object-cover z-10"
+                style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));"
+              />
+            }
         </a>
       ))
     }
   </nav>
-  <!-- <div class="nav-button">  ⇩  </div> -->
 
   <HamburguerButton links={pages}/>
 
