@@ -55,7 +55,7 @@ const userVotes = votes.map(vote => vote.VoteId)
             const porcentageCount = (count / totalVotes) * 100
             return (
               <div class="flex flex-col gap-2 items-center">
-                <img src={`/img/Memes/${VoteId}.webp`} alt={`Meme ${VoteId}`} class="size-48 rounded-lg" />
+                <img src={`/img/Memes/${VoteId}.webp`} alt={`Meme ${VoteId}`} class="size-40 sm:size-48 rounded-lg" />
                 <p class="text-xl font-bold"> {porcentageCount.toFixed(2)}% - {count} Votos </p>
               </div>
             )
