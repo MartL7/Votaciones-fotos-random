@@ -20,7 +20,7 @@ import Actions from "@/components/Actions.astro"
       <Actions class="mt-7 text-center" as="button" id="login">
           <span class="transition"> Iniciar Sesión </span>
       </Actions>
-      <small> Es necesario tener una cuenta de GitHub </small>
+      <small> Es necesario tener una cuenta de Google </small>
   </div>
 </main>
 
@@ -34,7 +34,7 @@ import Actions from "@/components/Actions.astro"
 
     if ($login) {
       $login.onclick = () => {
-        signIn("github")
+        signIn("google")
         const $span = $login.querySelector('span')
         $login.setAttribute('aria-disabled', 'true')
         $span.textContent = "Iniciando sesión..."
