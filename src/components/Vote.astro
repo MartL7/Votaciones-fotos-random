@@ -2,18 +2,33 @@
 import { getSession } from 'auth-astro/server'
 import Actions from "@/components/Actions.astro"
 import ShowMemes from '@/components/ShowMemes.astro'
-import { Votes, db, eq } from 'astro:db'
+import { Votes, db, eq, count } from 'astro:db'
 
 const session = await getSession(Astro.request)
 
 const votes = await db.select({ VoteId: Votes.voteId }).from(Votes).where(eq(Votes.userId, session.user.id))
+
+const allVotes = await db
+  .select({ VoteId: Votes.voteId, CategoryId: Votes.category, count: count() })
+  .from(Votes)
+  .groupBy(Votes.voteId, Votes.category)
+  .where(eq(Votes.category, 'category-memes'))
+
+const porcetageVotes: Record<string, number> = {}
+const totalVotes = allVotes.reduce((acc, { count }) => acc + count, 0)
+
+const sortedVotes = allVotes.sort((a, b) => b.count - a.count)
+
+const topTwoVotes = sortedVotes.slice(0, 2)
+
+console.log(topTwoVotes)
 
 const userVotes = votes.map(vote => vote.VoteId)
 ---
 
 <section class="flex justify-center flex-col items-center">
   <article class="mb-5 sm:mb-10 flex gap-5">
-    <img src={session.user.image} alt="" class="size-14 rounded-full">
+    <img src={session.user.image} alt=`Imagen del usuario ${session.user.name}` class="size-14 rounded-full">
     <div class="flex flex-col">
       <h1 class="text-2xl font-bold">{session.user.name }</h1>
       <button id="logout"> 
@@ -31,6 +46,24 @@ const userVotes = votes.map(vote => vote.VoteId)
   </div>
 
   <ShowMemes classImage="saturate-0 hover:saturate-150 cursor-pointer" votes={userVotes} classPicture='image-container-vote'/>
+
+  <div class="mt-5 md:mt-10 flex justify-center items-center flex-col">
+    <h2 class="text-2xl font-bold text-blue-300/90 text-center"> Porcentaje de votos </h2>
+    <small class="text-red-300/80 mb-5"> Basado en todos los votos por los usuarios </small>
+      <div class="flex justify-center items-center gap-10">
+        {
+          topTwoVotes.map(({ VoteId, count }) => {
+            const porcentageCount = (count / totalVotes) * 100
+            return (
+              <div class="flex flex-col gap-2 items-center">
+                <img src={`/img/Memes/${VoteId}.webp`} alt={`Meme ${VoteId}`} class="size-48 rounded-lg" />
+                <p class="text-xl font-bold"> {porcentageCount.toFixed(2)}% </p>
+              </div>
+            )
+          })
+        }
+      </div>
+  </div>
 </section>
 
 <script>
@@ -54,11 +87,15 @@ const userVotes = votes.map(vote => vote.VoteId)
 
     const { votes } = $votes.dataset
     const userVotes = votes.split(',')
-
     
     $images.forEach(($image) => {
       $image.onclick = async () => {
-      
+
+        if (userVotes.includes($image.dataset.id)) {
+          toastAlert({ title: 'Ya has votado por este meme', type: 'error', icon: true, dismissible: false, location: 'bottom-center' })
+          return
+        }
+
         if (userVotes.length >= 3) {
           toastAlert({ title: 'Ya has votado 3 veces', type: 'error', icon: true, dismissible: false, location: 'bottom-center' })
           return
@@ -86,7 +123,7 @@ const userVotes = votes.map(vote => vote.VoteId)
           return 
         } else {
           toastAlert({ title: 'Voto realizado', type: 'success', icon: true, dismissible: true, location: 'bottom-center' })
-          location.reload()
+
         }
       }
     })

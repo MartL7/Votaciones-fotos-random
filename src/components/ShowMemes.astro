@@ -25,7 +25,7 @@ const { classPicture, classImage, votes } = Astro.props
           ]}/>
 
           <span class:list={[
-            'absolute bottom-0 left-20 text-2xl font-Dancing font-bold bg-black bg-opacity-50 rounded-bl-lg -skew-y-3',
+            'absolute bottom-0 left-20 text-2xl font-Dancing font-bold bg-black bg-opacity-50 rounded-bl-lg -skew-y-3 uppercase',
             {'hidden': !votes?.includes(memeImage.id)}
           ]}>
             Tu voto
