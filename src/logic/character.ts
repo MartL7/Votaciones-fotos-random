@@ -444,7 +444,7 @@ export const Characters: Character[] = [
             'Si se puede soñar, también se puede lograr', 
             'Ahora entiendo cual es mi papel',
             'Nadie muere al intentar olvidar',
-            'Quierete tres pesos wey, te los pago'
+            'Ahorita o mañana.'
         ],
     },
     
