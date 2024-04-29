@@ -20,8 +20,6 @@ const sortedVotes = allVotes.sort((a, b) => b.count - a.count)
 
 const topTwoVotes = sortedVotes.slice(0, 2)
 
-console.log(topTwoVotes)
-
 const userVotes = votes.map(vote => vote.VoteId)
 ---
 
@@ -136,7 +134,7 @@ const userVotes = votes.map(vote => vote.VoteId)
           return 
         } else {
           toastAlert({ title: 'Voto realizado', type: 'success', icon: true, dismissible: true, location: 'bottom-center' })
-
+          location.reload()
         }
       }
     })
