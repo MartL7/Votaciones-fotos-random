@@ -1,0 +1,35 @@
+---
+import ArrowUpLeft from '@/components/icons/Arrows/ArrowUpLeft.astro'
+---
+<div class="fixed bottom-5 right-2 transition-opacity flex justify-center items-center"> 
+  <button id="scroll-to-top" class="opacity-0 group flex size-12 items-center justify-center rounded-lg border-2 border-primary bg-black/10 text-primary backdrop-blur hover:scale-105 hover:border-secondary motion-safe:transition transition">
+    <ArrowUpLeft class="arrow-up" />
+  </button>
+</div>
+
+<style>
+  #scroll-to-top:hover .arrow-up {
+    transform: rotate(-45deg);
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const scrollToTop = document.getElementById('scroll-to-top')
+
+    scrollToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    })
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        scrollToTop.classList.remove('opacity-0')
+      } else {
+        scrollToTop.classList.add('opacity-0')
+      }
+    })
+  })
+</script>

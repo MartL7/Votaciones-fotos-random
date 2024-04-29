@@ -86,12 +86,6 @@ const { name, imagePresentation } = filtersCategoryDog.at(0)
   document.addEventListener('astro:page-load', () => {
     const $imagesForWinner = document.querySelectorAll('.image-winner') as NodeListOf<HTMLImageElement>
 
-    confetti({
-      particleCount: 200,
-      spread: 70,
-      origin: { y: 0.6 }
-    })
-
     $imagesForWinner.forEach(($image) => {
       $image.addEventListener('click', () => {
         confetti({
