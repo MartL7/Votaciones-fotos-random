@@ -8,7 +8,7 @@
 -   6. Mejorar Galerias en teléfonos ✅
 -   7. Hacer menu desplegable del Header en Movil -> URGENTE ✅
 -   8. Mostrar al hacer hover la imagen-presentation de cada persona -> URGENTE ✅
--   9. Arreglar sección de Clip del Ciclo ❌
+-   9. Arreglar sección de Clip del Ciclo ✅
 -   10. Agregar base de datos para los votos ✅
 -   11. Agregar Modal al hacer click en cada imagen de las Galerias -> URGENTE ✅
 -   12. Corregir bugs de ViewTransitions de Astro y el localStorage del inicio ✅
@@ -30,8 +30,9 @@
 -   28. Cambiar algunas imagenes de presentacion para no afectar el aspect-ratio ✔️
 -   29. Agregar Sección profesor del año ❌
 -   30. Cambiar tipografía de los nombres de los characters ✅
--   31. Agregar Rollback en la sección de Votos ❌
+-   31. Agregar Rollback en la sección de Votos ✅
 -   32. Agregar las demás fotos de Emmanuel ✅
 -   33. Cambiar la imagen small y presentation de Marlen ❌
 -   34. Smplificar la lógica en el componente Vote.astro ❌
--   35. Mejorar diseño a la parte de pronósticos de cada categoría en los Votos -> URGENTE ❌
+-   35. Mejorar diseño a la parte de pronósticos de cada categoría en los Votos -> URGENTE ✔️
+-   36. Separar componentes en el Vote.astro ❌
