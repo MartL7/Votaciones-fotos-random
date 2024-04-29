@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro"
 import Modal from "@/components/Modal.astro"
 import ShowMemes from "@/components/ShowMemes.astro"
 import Actions from "@/components/Actions.astro"
+import Clip from '@/sections/clip.astro'
 import ArrowDown from "@/components/icons/Arrows/ArrowDown.astro"
 ---
 
@@ -24,13 +25,13 @@ import ArrowDown from "@/components/icons/Arrows/ArrowDown.astro"
       <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
     </Modal>
 
-    <div class="mt-8 sm:mt-10 lg:mt-20 flex flex-col justify-center items-center">
-      <h1 class="text-2xl font-bold uppercase text-center"> Profesor Favorito </h1>
+    <Clip>
+      <h1 class="text-2xl font-bold uppercase text-center"> Clip del Ciclo </h1>
 
-      <p class="text-red-400/90 text-center text-xl"> Próximamente se agregan <br/>
-          las demás secciones
+      <p class="text-red-400/90 text-center text-xl"> Vuelve a verlo <br/>
+          desde el CBTis 86
       </p>
-    </div>
+    </Clip>
 
     <aside class="mt-5 md:mt-10 flex flex-col gap-y-5 justify-center items-center">
       <h2 class="text-2xl font-Oswald text-orange-500/70"> No te lo pierdas 😲 </h2>

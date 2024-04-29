@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import Modal from "@/components/Modal.astro"
+import Clip from '@/sections/clip.astro'
 import { results } from '@/logic/results'
 
 const filtersCategoryDog = results.filter((res) => res.category === 'Perro-del-año')
@@ -19,7 +20,7 @@ const { name, imagePresentation } = filtersCategoryDog.at(0)
         <span class="text-accent"> Perro del año 🐶</span>
       </p>
 
-      <picture class="sm:h-[50vh] relative h-[60vh]">
+      <picture class="sm:h-[50vh] relative h-[500px]">
         <img 
           decoding="async" 
           loading="lazy"
@@ -57,12 +58,15 @@ const { name, imagePresentation } = filtersCategoryDog.at(0)
       }
     </section>
 
-    <section class="flex flex-col justify-center items-center mt-10">
+    <Clip>
       <p class="text-center text-2xl font-semibold"> 
         <span class="text-blue-400/90"> Categoría: </span> 
         <span class="text-accent"> Clip del Ciclo 🎮 </span>
       </p>
-    </section>
+      <span class=`font-Dancing font-bold pointer-events-none text-center mx-auto text-6xl lg:text-6xl text-blue-300/90`>
+        Clip del Ever
+      </span>
+    </Clip>
 
     <Modal className="clip-dialog" id="close-dialog" isButton={true}>
       <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
@@ -81,6 +85,12 @@ const { name, imagePresentation } = filtersCategoryDog.at(0)
 
   document.addEventListener('astro:page-load', () => {
     const $imagesForWinner = document.querySelectorAll('.image-winner') as NodeListOf<HTMLImageElement>
+
+    confetti({
+      particleCount: 200,
+      spread: 70,
+      origin: { y: 0.6 }
+    })
 
     $imagesForWinner.forEach(($image) => {
       $image.addEventListener('click', () => {
