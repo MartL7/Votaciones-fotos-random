@@ -46,25 +46,39 @@ const userVotes = votes.map(vote => vote.VoteId)
 
   <ShowMemes classImage="saturate-0 hover:saturate-150 cursor-pointer" votes={userVotes} classPicture='image-container-vote'/>
 
-  <div class="mt-5 md:mt-10 flex justify-center items-center flex-col">
-    <h2 class="text-2xl font-bold text-blue-300/90 text-center"> Porcentaje de votos </h2>
+  <div class="mt-5 md:mt-10 flex justify-center w-full items-center flex-col">
+    <h2 class="text-3xl font-bold text-blue-300/90 text-center uppercase"> Pronóstico </h2>
     <small class="text-red-300/80 mb-5"> Basado en todos los votos por los usuarios </small>
-      <div class="flex justify-center items-center gap-10">
+      <div class="container-pronostic">
         {
           topTwoVotes.map(({ VoteId, count }) => {
             const porcentageCount = (count / totalVotes) * 100
             return (
-              <div class="flex flex-col gap-2 items-center">
-                <img src={`/img/Memes/${VoteId}.webp`} alt={`Meme ${VoteId}`} class="size-40 sm:size-48 rounded-lg" />
-                <p class="text-xl font-bold"> {porcentageCount.toFixed(2)}% - {count} Votos </p>
+              <div class="flex flex-col gap-2 items-center md:h-[300px]">
+                <img src={`/img/Memes/${VoteId}.webp`} alt={`Meme ${VoteId}`} class="size-40 sm:size-full md:h-[250px] rounded-lg" />
+                <p class="text-xl sm:text-3xl md:text-4xl font-bold font-Public text-accent">       
+                  {porcentageCount.toFixed(2)} %
+                </p>
               </div>
             )
           })
         }
+        <div class="col-start-2 col-end-3 row-start-1 row-end-2 md:h-[300px]"> 
+          <img src="/img/Vs-logo.webp" alt="Logo de enfrentamiento - VS" class="size-full" 
+              style="filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.3)); "
+          />
+        </div>
       </div>
   </div>
 </section>
 
+<style>
+  .container-pronostic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+</style>
 <script>
   import { $ } from '@/lib/dom-selector'
 
