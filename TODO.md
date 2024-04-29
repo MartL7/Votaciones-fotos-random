@@ -36,3 +36,4 @@
 -   34. Smplificar la lógica en el componente Vote.astro ❌
 -   35. Mejorar diseño a la parte de pronósticos de cada categoría en los Votos -> URGENTE ✔️
 -   36. Separar componentes en el Vote.astro ❌
+-   37. Arrgelar error de consola de Image undefined en el carrousel -> URGENTE ❌
