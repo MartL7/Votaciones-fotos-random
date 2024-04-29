@@ -142,6 +142,8 @@ const secondArray = person.slice(8, person.length)
 
             if (!$nameText || !$characterLink) return
 
+            if ($characterPhoto == null) return
+
             localStorage.setItem('lastCharacterId', id)
             $characterPhoto.src = characterSrc
             $nameText.textContent = id
