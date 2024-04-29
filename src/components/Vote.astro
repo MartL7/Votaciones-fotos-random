@@ -6,6 +6,8 @@ import { Votes, db, eq, count } from 'astro:db'
 
 const session = await getSession(Astro.request)
 
+const { image } = session.user
+
 const votes = await db.select({ VoteId: Votes.voteId }).from(Votes).where(eq(Votes.userId, session.user.id))
 
 const allVotes = await db
@@ -25,7 +27,7 @@ const userVotes = votes.map(vote => vote.VoteId)
 
 <section class="flex justify-center flex-col items-center">
   <article class="mb-5 sm:mb-10 flex gap-5">
-    <img src={session.user.image} alt=`Imagen del usuario ${session.user.name}` class="size-14 rounded-full">
+    <img src={image} alt=`Imagen del usuario ${session.user.name}` class="size-14 rounded-full">
     <div class="flex flex-col">
       <h1 class="text-2xl font-bold">{session.user.name }</h1>
       <button id="logout"> 
