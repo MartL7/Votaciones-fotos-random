@@ -34,7 +34,7 @@ const secondArray = person.slice(8, person.length)
 
         const characterSrc = folder ? `/img/${folder}/${id}-image-presentation.webp` : `/img/${id}/${id}-image-presentation.webp`
 
-        const defaultImage = `/img/Yahir/Yahir-image-presentation.webp`
+        const defaultImage = `/img/Ulises/Ulises-image-presentation.webp`
 
         const isFallenCharacter = link.classList.contains('fallen-character')
 
@@ -138,6 +138,8 @@ const secondArray = person.slice(8, person.length)
             const id = $characterLink?.href.split('/').at(-1)
             const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
 
+            const defaultImage = '/img/Ulises/Ulises-image-presentation.webp'
+
             const characterSrc = `/img/${id}/${id}-image-presentation.webp`
 
             if (!$nameText || !$characterLink) return
@@ -145,7 +147,7 @@ const secondArray = person.slice(8, person.length)
             if ($characterPhoto == null) return
 
             localStorage.setItem('lastCharacterId', id)
-            $characterPhoto.src = characterSrc
+            $characterPhoto.src = characterSrc ?? defaultImage
             $nameText.textContent = id
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
         },
