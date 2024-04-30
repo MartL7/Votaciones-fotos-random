@@ -28,7 +28,7 @@
 -   26. Cambiar orden de los characters conforme a su mirada ✅
 -   27. Agregar seccion caidos ✅
 -   28. Cambiar algunas imagenes de presentacion para no afectar el aspect-ratio ✔️
--   29. Agregar Sección profesor del año ❌
+-   29. Agregar Sección profesor del año ✅
 -   30. Cambiar tipografía de los nombres de los characters ✅
 -   31. Agregar Rollback en la sección de Votos ✅
 -   32. Agregar las demás fotos de Emmanuel ✅
@@ -36,4 +36,6 @@
 -   34. Smplificar la lógica en el componente Vote.astro ❌
 -   35. Mejorar diseño a la parte de pronósticos de cada categoría en los Votos -> URGENTE ✔️
 -   36. Separar componentes en el Vote.astro ❌
--   37. Arrgelar error de consola de Image undefined en el carrousel -> URGENTE ❌
+-   37. Arrgelar error de consola de Image undefined en el carrousel -> URGENTE ✅
+-   38. Agregar a Sebas y a Abi -> URGENTE ❌
+-   39. Agregar sección de votos para la catgoría Profesor del Ciclo -> URGENTE ❌
