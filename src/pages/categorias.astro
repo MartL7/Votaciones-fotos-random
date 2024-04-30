@@ -4,7 +4,7 @@ import Modal from "@/components/Modal.astro"
 import ShowMemes from "@/components/ShowMemes.astro"
 import Actions from "@/components/Actions.astro"
 import Clip from '@/sections/clip.astro'
-import { teachers } from '@/logic/teachers'
+import ShowTeachers from "@/components/ShowTeachers.astro"
 import ArrowDown from "@/components/icons/Arrows/ArrowDown.astro"
 ---
 
@@ -15,27 +15,7 @@ import ArrowDown from "@/components/icons/Arrows/ArrowDown.astro"
 
     <ShowMemes classPicture="image-container" />
 
-    <article class="mt-10 md:mt-20 flex flex-col justify-center items-center">
-      <h2 class="text-2xl font-bold"> <span class="text-2xl font-Dancing text-blue-400/90"> Categoria: </span> Profesor del Ciclo </h2>
-      <p class="text-red-400/90 text-center text-xl mb-5 md:mb-10"> Escoge a tu profesor </br>
-        en esta categoría
-      </p>
-      <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 mb-10 md:mb-20">
-        {
-          teachers.map(({ id, imagePresentation, name }) => (
-            <div class="relative flex flex-col justify-center items-center h-[400px]">
-              <picture class="size-full flex justify-center items-center">
-                <img src={imagePresentation} alt={`Imagen de ${name}`} class="object-cover size-full hover:saturate-150 cursor-pointer transition hover:scale-110"
-                style="mask-image: linear-gradient(black 50%, transparent);" />
-              </picture>
-              <span class={`font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 z-50 mx-auto text-5xl lg:text-6xl`}>
-                {name}
-              </span>
-            </div>
-          ))
-        }
-      </section>
-    </article>
+    <ShowTeachers />
 
     <Modal className="clip-dialog" id="close-dialog" isButton={true}>
       <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
