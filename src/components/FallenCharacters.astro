@@ -3,7 +3,7 @@ import { fallenCharacters } from '@/logic/fallenCharacters'
 ---
 
 <small class="hidden md:block lg:mt-20 md:mt-10 mb-5 text-red-300/80"> Compañeros Caídos </small>
-<article class="flex flex-wrap flex-row lg:gap-x-10 md:gap-x-5">
+<article class="flex justify-center flex-wrap flex-row md:gap-y-3 lg:gap-y-5 lg:gap-x-10 md:gap-x-5">
   {
     fallenCharacters.map(({ folder, id, name, imageSmall }) => (
       <div 

@@ -45,4 +45,11 @@ export const fallenCharacters: FallenCharacter[] = [
         imageSmall: '/img/Fallen/Laura-small.webp',
         imagePresentation: '/img/Fallen/Laura-image-presentation.webp',
     },
+    {
+        id: 'Marco',
+        name: 'Marco',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Marco-small.webp',
+        imagePresentation: '/img/Fallen/Marco-image-presentation.webp',
+    }
 ]
