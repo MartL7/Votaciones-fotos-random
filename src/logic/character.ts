@@ -2,38 +2,37 @@ import type { Character } from '@/types/Character'
 
 export const Characters: Character[] = [
     {
-        id: 'Yahir',
-        name: 'Yahir',
-        imagePresentation: '/img/Yahir/Yahir-image-presentation.webp',
-        imageSmall: '/img/Yahir/Yahir-small.webp',
+        id: 'Ulises',
+        name: 'El Prota',
+        imagePresentation: '/img/Ulises/Ulises-image-presentation.webp',
+        imageSmall: '/img/Ulises/Ulises-small.webp',
         imagesGalery: [
             {
-                image: '/img/Yahir/Yahir-image-5.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:max-h-[300px]',
+                image: '/img/Ulises/Ulises-image-1.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[400px]'
             },
             {
-                image: '/img/Yahir/Yahir-image-8.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3 sm:max-h-[600px]',
+                image: '/img/Ulises/Ulises-image-2.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px]'
             },
             {
-                image: '/img/Yahir/Yahir-image-3.avif',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:max-h-[300px]',
+                image: '/img/Ulises/Ulises-image-3.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[400px]'
             },
             {
-                image: '/img/Yahir/Yahir-image-4.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3 sm:max-h-[300px]',
+                image: '/img/Ulises/Ulises-image-4.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[400px]'
             },
             {
-                image: '/img/Yahir/Yahir-image-7.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:max-h-[300px]',
+                image: '/img/Ulises/Ulises-image-5.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px]'
             },
+            {
+                image: '/img/Ulises/Ulises-image-1.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[300px]'
+            }
         ],
-        funnyText: [
-            'Que Chinguen a su madre las mujeres!',
-            'No confies en las mujeres papu',
-            'Jueves de Racismo',
-            'Los viejitos solo nos quitan oxígeno',
-        ],
+        funnyText: ['El guión de mi lado']
     },
     {
         id: 'Janet',
@@ -587,6 +586,73 @@ export const Characters: Character[] = [
         socials: [
             { name: 'Instagram', link: 'https://www.instagram.com/arias_marofc', type: 'instagram' },
             { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=100039046277789', type: 'facebook' },
+        ],
+    },
+    {
+        id: 'CruCru',
+        name: 'Andy',
+        imagePresentation: '/img/CruCru/CruCru-image-presentation.webp',
+        imageSmall: '/img/CruCru/CruCru-small.webp',
+        imagesGalery: [
+            {
+                image: '/img/CruCru/CruCru-image-1.avif',
+                class: 'sm:h-[400px]'
+            },
+            {
+                image: '/img/CruCru/CruCru-image-2.avif',
+                class: 'sm:h-[400px]'
+            },
+            {
+                image: '/img/CruCru/CruCru-image-3.avif',
+                class: 'sm:h-[400px]'
+            },
+            {
+                image: '/img/CruCru/CruCru-image-4.avif',
+                class: 'sm:h-[400px]'
+            }
+        ],
+        funnyText: [
+            'Clon del Mini Galáctico',
+            'No es fácil, Martin',
+            'Y el Cru Cru',
+            'Cru Cru Einstein',
+            'La lógica te llevará de A a B, la imaginación te llevará a todas partes',
+            'La imaginación es más importante que el conocimiento',
+            'El conocimiento es limitado, la imaginación no tiene limites',
+        ],
+    },
+    {
+        id: 'Yahir',
+        name: 'Yahir',
+        imagePresentation: '/img/Yahir/Yahir-image-presentation.webp',
+        imageSmall: '/img/Yahir/Yahir-small.webp',
+        imagesGalery: [
+            {
+                image: '/img/Yahir/Yahir-image-5.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:max-h-[300px]',
+            },
+            {
+                image: '/img/Yahir/Yahir-image-8.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3 sm:max-h-[600px]',
+            },
+            {
+                image: '/img/Yahir/Yahir-image-3.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:max-h-[300px]',
+            },
+            {
+                image: '/img/Yahir/Yahir-image-4.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3 sm:max-h-[300px]',
+            },
+            {
+                image: '/img/Yahir/Yahir-image-7.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:max-h-[300px]',
+            },
+        ],
+        funnyText: [
+            'Que Chinguen a su madre las mujeres!',
+            'No confies en las mujeres papu',
+            'Jueves de Racismo',
+            'Los viejitos solo nos quitan oxígeno',
         ],
     }
 ]
