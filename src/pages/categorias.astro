@@ -4,29 +4,45 @@ import Modal from "@/components/Modal.astro"
 import ShowMemes from "@/components/ShowMemes.astro"
 import Actions from "@/components/Actions.astro"
 import Clip from '@/sections/clip.astro'
+import { teachers } from '@/logic/teachers'
 import ArrowDown from "@/components/icons/Arrows/ArrowDown.astro"
 ---
 
 <Layout title="Bienvenido a las Categorías">
   <section class="flex flex-col justify-center items-center px-5">
 
-    <h1 class="text-2xl font-bold"> <span class="text-2xl font-Dancing"> Categoria: </span> Meme del año </h1>
+    <h1 class="text-2xl font-bold"> <span class="text-2xl font-Dancing text-blue-400/90"> Categoria: </span> Meme del año </h1>
 
     <ShowMemes classPicture="image-container" />
 
-    <aside class="mt-10 md:mt-20 max-w-[320px] md:max-w-[520px] flex flex-col justify-center items-center gap-y-5">
-      <h2 class="text-center text-accent text-3xl"> Mención honorifica </h2>
-      <picture>
-        <img src="/img/Memes/image-meme-ever-6.webp" alt="Imagen de mención honorifica" class="object-cover size-full rounded-lg">
-      </picture>
-    </aside>
+    <article class="mt-10 md:mt-20 flex flex-col justify-center items-center">
+      <h2 class="text-2xl font-bold"> <span class="text-2xl font-Dancing text-blue-400/90"> Categoria: </span> Profesor del Ciclo </h2>
+      <p class="text-red-400/90 text-center text-xl mb-5 md:mb-10"> Escoge a tu profesor </br>
+        en esta categoría
+      </p>
+      <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 mb-10 md:mb-20">
+        {
+          teachers.map(({ id, imagePresentation, name }) => (
+            <div class="relative flex flex-col justify-center items-center h-[400px]">
+              <picture class="size-full flex justify-center items-center">
+                <img src={imagePresentation} alt={`Imagen de ${name}`} class="object-cover size-full hover:saturate-150 cursor-pointer transition hover:scale-110"
+                style="mask-image: linear-gradient(black 50%, transparent);" />
+              </picture>
+              <span class={`font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 z-50 mx-auto text-5xl lg:text-6xl`}>
+                {name}
+              </span>
+            </div>
+          ))
+        }
+      </section>
+    </article>
 
     <Modal className="clip-dialog" id="close-dialog" isButton={true}>
       <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
     </Modal>
 
     <Clip>
-      <h1 class="text-2xl font-bold uppercase text-center"> Clip del Ciclo </h1>
+      <h2 class="text-2xl font-bold"> <span class="text-2xl font-Dancing text-blue-400/90"> Categoria: </span> Clip del Ciclo </h2>
 
       <p class="text-red-400/90 text-center text-xl"> Vuelve a verlo <br/>
           desde el CBTis 86
