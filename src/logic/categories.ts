@@ -1,5 +1,10 @@
 export const Categories = [
-  'category-memes',
-  'category-clips',
-  'category-teachers'
+  {
+    id: 'category-memes',
+    name: 'category-memes'
+  },
+  {
+    id: 'category-teachers',
+    name: 'category-teachers'
+  }
 ]

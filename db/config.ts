@@ -3,6 +3,7 @@ import { column, defineDb } from 'astro:db'
 const Categories = {
   columns: {
     id: column.text({ primaryKey: true }), // category-id
+    name: column.text(),
   }
 }
 
