@@ -116,17 +116,37 @@ export const Characters: Character[] = [
         imagesGalery: [
             {
                 image: '/img/Geovas/Geovas-image-1.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:h-[400px]'
             },
             {
-                image: '/img/Geovas/Geovas-image-2.webp',
+                image: '/img/Geovas/Geovas-image-9.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[400px]'
             },
             {
-                image: '/img/Geovas/Geovas-image-3.avif',
+                image: '/img/Geovas/Geovas-image-6.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[400px]'
             },
+            {
+                image: '/img/Geovas/Geovas-image-4.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-4 sm:h-[440px]'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-5.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[200px]'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-7.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[200px]'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-8.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-4 sm:h-[440px]'
+            }
         ],
         funnyText: [
             'Te extraño Karlita :(',
-            'Ya es noche', 'X, somos chavos', 
+            'Ya es noche', 
+            'X, somos chavos', 
             'Te quise ver florecer', 
             'Y me diste la espalda'
         ],
@@ -274,6 +294,37 @@ export const Characters: Character[] = [
             },
         ],
         funnyText: ['Crecer como los Bisteces', 'A Putazos', 'BOMBARDEN HUAUCHINANGO', 'Farmeando Firmas','La mente es un laberinto donde cualquiera puede perderse'],
+    },
+    {
+        id: 'Sebastian',
+        name: 'Sebas',
+        imagePresentation: '/img/Sebastian/Sebastian-image-presentation.webp',
+        imageSmall: '/img/Sebastian/Sebastian-small.webp',
+        imagesGalery: [
+            {
+                image: '/img/Sebastian/Sebastian-image-1.webp',
+            },
+            {
+                image: '/img/Sebastian/Sebastian-image-2.webp',
+            },
+            {
+                image: '/img/Sebastian/Sebastian-image-3.webp',
+            },
+            {
+                image: '/img/Sebastian/Sebastian-image-4.webp',
+            },
+            {
+                image: '/img/Sebastian/Sebastian-image-5.webp',
+            },
+            {
+                image: '/img/Sebastian/Sebastian-image-6.webp',
+            }
+        ],
+        funnyText: ['No se trata de ser el mejor', 'Sino dar lo mejor de uno mismo'],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/sebastianmanillagayosso/', type: 'instagram' },
+            { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=61554718477351', type: 'facebook' },
+        ]
     },
     {
         id: 'Ale',
