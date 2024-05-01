@@ -40,3 +40,4 @@
 -   38. Agregar a Sebas y a Abi -> URGENTE ✔️ (Solo falta Abi)
 -   39. Agregar sección de votos para la catgoría Profesor del Ciclo -> URGENTE ❌
 -   40. Mejorar mí foto de presentación -> URGENTE ❌
+-   41. Agregar a la sección de votaciones la categoría Profe del Ciclo -> URGENTE ❌
