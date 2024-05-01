@@ -93,55 +93,45 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 60px;
     gap: 1rem;
-
-    a {
-      grid-column: span 2;
-
-      &:nth-child(2n) {
-        grid-column-start: 2;
-        grid-column-end: 4;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      a {
-        grid-column: span 3;
-
-        &:nth-child(2n) {
-          grid-column-start: 3;
-          grid-column-end: 4;
-        }
-      }
-    }
   }
-
+.container-characters > a{
+    grid-column: span 2;
+}
+.container-characters > a:nth-child(2n){
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+@media (min-width: 1024px){
+  .container-characters > a {
+    grid-column: span 3;
+  }
+  .container-characters > a:nth-child(2n) {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+}
   .container-characters-zurd {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 60px;
     gap: 1rem;
-
-    a {
-      grid-column: span 2;
-
-      &:nth-child(2n + 1) {
-        grid-column-start: 2;
-        grid-column-end: 4;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      a {
-        grid-column: span 3;
-
-        &:nth-child(2n + 1) {
-          grid-column-start: 3;
-          grid-column-end: 4;
-        }
-      }
-    }
   }
-
+.container-characters-zurd > a {
+  grid-column: span 2;
+}
+.container-characters-zurd > a:nth-child(2n + 1){
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+@media (min-width: 1024px){
+  .container-characters-zurd > a {
+    grid-column: span 3;
+  }
+  .container-characters-zurd > a:nth-child(2n + 1){
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+}
   .fallen-character {
     text-decoration:line-through ;
     color: #ff5050e6;
