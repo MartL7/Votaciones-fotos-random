@@ -1,9 +1,9 @@
 interface FallenCharacter {
-  id: string
-  name: string
-  folder: string
-  imageSmall: string
-  imagePresentation?: string
+    id: string
+    name: string
+    folder: string
+    imageSmall: string
+    imagePresentation?: string
 }
 
 export const fallenCharacters: FallenCharacter[] = [
@@ -51,5 +51,12 @@ export const fallenCharacters: FallenCharacter[] = [
         folder: 'Fallen',
         imageSmall: '/img/Fallen/Marco-small.webp',
         imagePresentation: '/img/Fallen/Marco-image-presentation.webp',
-    }
+    },
+    {
+        id: 'Caleb',
+        name: 'Caleb',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Caleb-small.webp',
+        imagePresentation: '/img/Fallen/Caleb-image-presentation.webp',
+    },
 ]

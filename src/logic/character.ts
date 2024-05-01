@@ -9,30 +9,30 @@ export const Characters: Character[] = [
         imagesGalery: [
             {
                 image: '/img/Ulises/Ulises-image-1.avif',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[400px]'
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[400px]',
             },
             {
                 image: '/img/Ulises/Ulises-image-2.avif',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px]'
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px]',
             },
             {
                 image: '/img/Ulises/Ulises-image-3.avif',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[400px]'
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[400px]',
             },
             {
                 image: '/img/Ulises/Ulises-image-4.avif',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[400px]'
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[400px]',
             },
             {
                 image: '/img/Ulises/Ulises-image-5.avif',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px]'
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px]',
             },
             {
                 image: '/img/Ulises/Ulises-image-1.avif',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[300px]'
-            }
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[300px]',
+            },
         ],
-        funnyText: ['El guión de mi lado']
+        funnyText: ['El guión de mi lado'],
     },
     {
         id: 'Janet',
@@ -65,7 +65,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]',
             },
         ],
-        funnyText: ['Hiii']
+        funnyText: ['Hiii'],
     },
     {
         id: 'Yanet',
@@ -116,39 +116,39 @@ export const Characters: Character[] = [
         imagesGalery: [
             {
                 image: '/img/Geovas/Geovas-image-1.avif',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:h-[400px]'
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:h-[400px]',
             },
             {
                 image: '/img/Geovas/Geovas-image-9.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[400px]'
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[400px]',
             },
             {
                 image: '/img/Geovas/Geovas-image-6.avif',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[400px]'
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[400px]',
             },
             {
                 image: '/img/Geovas/Geovas-image-4.avif',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-4 sm:h-[440px]'
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-4 sm:h-[440px]',
             },
             {
                 image: '/img/Geovas/Geovas-image-5.avif',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[200px]'
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[200px]',
             },
             {
                 image: '/img/Geovas/Geovas-image-7.avif',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[200px]'
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[200px]',
             },
             {
                 image: '/img/Geovas/Geovas-image-8.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-4 sm:h-[440px]'
-            }
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-4 sm:h-[440px]',
+            },
         ],
         funnyText: [
             'Te extraño Karlita :(',
-            'Ya es noche', 
-            'X, somos chavos', 
-            'Te quise ver florecer', 
-            'Y me diste la espalda'
+            'Ya es noche',
+            'X, somos chavos',
+            'Te quise ver florecer',
+            'Y me diste la espalda',
         ],
 
         socials: [
@@ -172,21 +172,21 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 h-[200px] row-start-1 row-end-2',
             },
             {
-                image: '/img/Marlen/Marlen-image-3.webp',   
+                image: '/img/Marlen/Marlen-image-3.webp',
                 class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-2 row-end-4 h-[400px]',
             },
             {
                 image: '/img/Marlen/Marlen-image-4.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[600px] col-start-1 col-end-2 row-start-3 row-end-5 h-[400px]'
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[600px] col-start-1 col-end-2 row-start-3 row-end-5 h-[400px]',
             },
             {
                 image: '/img/Marlen/Marlen-image-5.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-2 col-end-3 row-start-4 row-end-5 h-[180px]'
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-2 col-end-3 row-start-4 row-end-5 h-[180px]',
             },
             {
                 image: '/img/Marlen/Marlen-image-6.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]'
-            }
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]',
+            },
         ],
         funnyText: ['Hii'],
         socials: [
@@ -199,7 +199,7 @@ export const Characters: Character[] = [
                 name: 'Facebook',
                 link: 'https://www.facebook.com/marleni.rs.3',
                 type: 'facebook',
-            }
+            },
         ],
     },
     {
@@ -237,11 +237,11 @@ export const Characters: Character[] = [
                 class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
             },
             {
-                image: '/img/Karen/Karen-image-2.webp',
+                image: '/img/Karen/Karen-image-9.webp',
                 class: 'sm:row-start-2 sm:row-end-3 sm:col-start-2 sm:col-end-3 sm:h-[250px] col-start-2 col-end-3 h-[200px]',
             },
             {
-                image: '/img/Karen/Karen-image-8.webp',
+                image: '/img/Karen/Karen-image-12.webp',
                 class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[300px] row-start-3 row-end-4 h-[200px] col-start-1 col-end-2',
             },
             {
@@ -264,10 +264,34 @@ export const Characters: Character[] = [
                 image: '/img/Karen/Karen-image-6.webp',
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
             },
+            {
+                image: '/img/Karen/Karen-image-8.webp',
+                class: '',
+            },
+            {
+                image: '/img/Karen/Karen-image-10.webp',
+                class: '',
+            },
+            {
+                image: '/img/Karen/Karen-image-11.webp',
+                class: '',
+            },
+            {
+                image: '/img/Karen/Karen-image-2.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-5 sm:h-[600px]',
+            },
+            {
+                image: '/img/Karen/Karen-image-13.webp',
+                class: '',
+            },
+            {
+                image: '/img/Karen/Karen-image-14.webp',
+                class: '',
+            },
         ],
         funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera', 'Mucha escuela, poco Voli'],
     },
-    
+
     {
         id: 'Damian',
         name: 'Damian',
@@ -276,15 +300,22 @@ export const Characters: Character[] = [
         imagesGalery: [
             {
                 image: '/img/Damian/Damian-image-1.webp',
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] ',
             },
             {
-                image: '/img/Damian/Damian-image-5.webp',
-            },
-            {
-                image: '/img/Damian/Damian-image-3.webp',
+                image: '/img/Damian/Damian-image-9.webp',
+                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[300px] row-start-3 row-end-4 h-[200px] col-start-1 col-end-2',
             },
             {
                 image: '/img/Damian/Damian-image-4.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] h-[300px]',
+            },
+            {
+                image: '/img/Damian/Damian-image-3.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px] h-[300px]',
+            },
+            {
+                image: '/img/Damian/Damian-image-5.webp',
             },
             {
                 image: '/img/Damian/Damian-image-6.webp',
@@ -292,8 +323,25 @@ export const Characters: Character[] = [
             {
                 image: '/img/Damian/Damian-image-7.webp',
             },
+            {
+                image: '/img/Damian/Damian-image-8.webp',
+            },
+            {
+                image: '/img/Damian/Damian-image-10.webp',
+            },
         ],
-        funnyText: ['Crecer como los Bisteces', 'A Putazos', 'BOMBARDEN HUAUCHINANGO', 'Farmeando Firmas','La mente es un laberinto donde cualquiera puede perderse'],
+        funnyText: [
+            'Crecer como los Bisteces',
+            'A Putazos',
+            'BOMBARDEN HUAUCHINANGO',
+            'Farmeando Firmas',
+            'La mente es un laberinto donde cualquiera puede perderse',
+        ],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/c0d3hdz_/', type: 'instagram' },
+            { name: 'GitHub', link: 'https://github.com/c0d3hdz', type: 'github' },
+            { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=100076644204256', type: 'facebook' },
+        ],
     },
     {
         id: 'Sebastian',
@@ -318,13 +366,13 @@ export const Characters: Character[] = [
             },
             {
                 image: '/img/Sebastian/Sebastian-image-6.webp',
-            }
+            },
         ],
         funnyText: ['No se trata de ser el mejor', 'Sino dar lo mejor de uno mismo'],
         socials: [
             { name: 'Instagram', link: 'https://www.instagram.com/sebastianmanillagayosso/', type: 'instagram' },
             { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=61554718477351', type: 'facebook' },
-        ]
+        ],
     },
     {
         id: 'Ale',
@@ -481,15 +529,15 @@ export const Characters: Character[] = [
             },
             {
                 image: '/img/Emmanuel/Emmanuel-image-10.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-1 col-end-2 row-start-7 row-end-8 h-[200px]'
-            }
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-1 col-end-2 row-start-7 row-end-8 h-[200px]',
+            },
         ],
         funnyText: [
             'Mí chaparrita hermoshita',
-            'Si se puede soñar, también se puede lograr', 
+            'Si se puede soñar, también se puede lograr',
             'Ahora entiendo cual es mi papel',
             'Nadie muere al intentar olvidar',
-            'Ahorita o mañana.'
+            'Ahorita o mañana.',
         ],
         socials: [
             {
@@ -501,10 +549,10 @@ export const Characters: Character[] = [
                 name: 'Facebook',
                 link: 'https://www.facebook.com/emmanuel.hernandezaranda',
                 type: 'facebook',
-            }
-        ]
+            },
+        ],
     },
-    
+
     {
         id: 'Are',
         name: 'Luzcesita',
@@ -588,7 +636,7 @@ export const Characters: Character[] = [
         socials: [
             { name: 'Instagram', link: 'https://www.instagram.com/ds.mayy3/', type: 'instagram' },
             { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=100087885220850', type: 'facebook' },
-        ]
+        ],
     },
     {
         id: 'Lupita',
@@ -647,20 +695,20 @@ export const Characters: Character[] = [
         imagesGalery: [
             {
                 image: '/img/CruCru/CruCru-image-1.avif',
-                class: 'sm:h-[400px]'
+                class: 'sm:h-[400px]',
             },
             {
                 image: '/img/CruCru/CruCru-image-2.avif',
-                class: 'sm:h-[400px]'
+                class: 'sm:h-[400px]',
             },
             {
                 image: '/img/CruCru/CruCru-image-3.avif',
-                class: 'sm:h-[400px]'
+                class: 'sm:h-[400px]',
             },
             {
                 image: '/img/CruCru/CruCru-image-4.avif',
-                class: 'sm:h-[400px]'
-            }
+                class: 'sm:h-[400px]',
+            },
         ],
         funnyText: [
             'Clon del Mini Galáctico',
@@ -705,5 +753,5 @@ export const Characters: Character[] = [
             'Jueves de Racismo',
             'Los viejitos solo nos quitan oxígeno',
         ],
-    }
+    },
 ]
