@@ -37,5 +37,6 @@
 -   35. Mejorar diseño a la parte de pronósticos de cada categoría en los Votos -> URGENTE ✔️
 -   36. Separar componentes en el Vote.astro ❌
 -   37. Arrgelar error de consola de Image undefined en el carrousel -> URGENTE ✅
--   38. Agregar a Sebas y a Abi -> URGENTE ❌
+-   38. Agregar a Sebas y a Abi -> URGENTE ✔️ (Solo falta Abi)
 -   39. Agregar sección de votos para la catgoría Profesor del Ciclo -> URGENTE ❌
+-   40. Mejorar mí foto de presentación -> URGENTE ❌
