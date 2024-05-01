@@ -664,7 +664,7 @@ export const Characters: Character[] = [
         ],
         funnyText: [
             'Clon del Mini Galáctico',
-            'No es fácil, Martin',
+            'No es fácil Martin',
             'Y el Cru Cru',
             'Cru Cru Einstein',
             'La lógica te llevará de A a B, la imaginación te llevará a todas partes',
