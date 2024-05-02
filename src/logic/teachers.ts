@@ -2,23 +2,27 @@ import type { Teacher } from "@/types/teachers"
 
 export const teachers: Teacher[] = [
   {
-    id: 'Dayanne',
+    id: 'teacher-Dayanne',
     name: 'Dayanne',
+    category: 'category-teachers',
     imagePresentation: '/img/Profes/Dayanne/Dayanne-image-presentation.webp'
   },
   {
-    id: 'Lizzy',
+    id: 'teacher-Lizzy',
     name: 'Lizzy',
+    category: 'category-teachers',
     imagePresentation: '/img/Profes/Lizzy/Lizzy-image-presentation.webp'
   },
   {
-    id: 'Dayanne',
-    name: 'Dayanne',
+    id: 'teacher-Orlando',
+    name: 'Orlando',
+    category: 'category-teachers',
     imagePresentation: '/img/Profes/Dayanne/Dayanne-image-presentation.webp'
   },
   {
-    id: 'Lizzy',
-    name: 'Lizzy',
+    id: 'teacher-Pinto',
+    name: 'Pinto',
+    category: 'category-teachers',
     imagePresentation: '/img/Profes/Lizzy/Lizzy-image-presentation.webp'
   }
 ]
