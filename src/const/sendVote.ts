@@ -4,6 +4,8 @@ import { toastAlert } from '@/function/alerts'
 export function sendVote($images: NodeListOf<HTMLImageElement>) {
   const $votes = $('p[data-votes]') as HTMLParagraphElement
 
+  if (!$votes) return
+  
   const { votes } = $votes.dataset
   const userVotes = votes.split(',')
 
