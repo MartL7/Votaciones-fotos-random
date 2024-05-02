@@ -22,7 +22,7 @@
 -   20. Separar en un componente la lógica de select your character -> URGENTE ✅
 -   21. Agregar todas las imágenes de Ale ✔️ -> Faltan pocas
 -   22. Conseguir las redes sociales de todos o la mayoría ✅
--   23. Agregar contador de fecha para la muestra de los resultados -> URGENTE ❌
+-   23. Agregar contador de fecha para la muestra de los resultados -> URGENTE ✅
 -   24. Optimizar la página, simplificar lógica y oragnizar proyecto ✔️
 -   25. Cambiar de Flex a Grid en la selección de personajes ✅
 -   26. Cambiar orden de los characters conforme a su mirada ✅
