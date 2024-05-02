@@ -1,0 +1,77 @@
+<article class="mt-10 md:mt-20 max-w-full flex flex-col justify-center items-center p-5 md:p-0">
+
+  <h2 class="text-4xl text-gray-400/90 font-semibold mb-10 md:mb-20 text-center"> Para la revelación de los resultados faltan </h2>
+  <section class="w-full grid grid-cols-3 gap-5">
+    <div class="relative h-[300px] col-span-3 flex flex-col justify-center items-center gap-y-5">
+
+      <span id="get-days" class="absolute -top-10 z-10 font-Public text-9xl -skew-y-3 text-accent font-bold"> </span>
+      <span class="text-center text-blue-400/90 font-Dancing text-3xl">Días</span> 
+
+      <div class="date-background absolute inset-0 character-link-background"></div>
+    </div>
+  
+    <div class="h-[200px] w-full relative flex flex-col justify-center items-center gap-y-5">
+      <span id="get-hours" class="font-Oswald text-7xl -skew-y-3 text-accent font-bold"></span>
+  
+      <span class="text-center text-blue-400/90 font-Dancing text-3xl">Horas</span>
+
+      <div class="date-background absolute inset-0 character-link-background"></div>
+    </div>
+  
+    <div class="h-[200px] w-full relative flex flex-col justify-center items-center gap-y-5">
+      <span id="get-minutes" class="font-Oswald text-7xl -skew-y-3 text-accent font-bold"></span>
+  
+      <span class="text-center text-blue-400/90 font-Dancing text-3xl">Minutos</span>
+
+      <div class="date-background absolute inset-0 character-link-background"></div>
+    </div>
+  
+    <div class="h-[200px] w-full relative flex flex-col justify-center items-center gap-y-5">
+      <span id="get-seconds" class="font-Oswald text-7xl -skew-y-3 text-accent font-bold"></span>
+  
+      <span class="text-center text-blue-400/90 font-Dancing text-3xl">Segundos</span>
+
+      <div class="date-background absolute inset-0 character-link-background"></div>
+    </div>
+  </section>
+</article>
+
+<style>
+  .date-background {
+    opacity: .25;
+    background: linear-gradient( #ffffff80 0%, #0000 25%);
+  }
+</style>
+
+<script>
+  import { $ } from '@/lib/dom-selector'
+
+  document.addEventListener('astro:page-load', () => {
+    const getDays = $('#get-days')
+    const getHours = $('#get-hours')
+    const getMinutes = $('#get-minutes')
+    const getSeconds = $('#get-seconds')
+
+    if (!getDays || !getHours || !getMinutes || !getSeconds) return 
+
+    const fechaLimit = new Date('2024-05-30T00:00:00')
+
+    const updateTime = () => {
+      const now = new Date()
+      const diff = fechaLimit.getTime() - now.getTime()
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+
+      getDays.innerHTML = days.toString()
+      getHours.innerHTML = hours.toString()
+      getMinutes.innerHTML = minutes.toString()
+      getSeconds.innerHTML = seconds.toString()
+    }
+
+    const interval = setInterval(updateTime, 1000)
+    updateTime()
+  })
+</script>
