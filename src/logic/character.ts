@@ -149,6 +149,7 @@ export const Characters: Character[] = [
             'X, somos chavos',
             'Te quise ver florecer',
             'Y me diste la espalda',
+            'Los voy a extrañar mucho, papus :c',
         ],
 
         socials: [
