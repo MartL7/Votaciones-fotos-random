@@ -1,8 +1,7 @@
 import { $, $$ } from '@/lib/dom-selector'
 import { toastAlert } from '@/function/alerts'
 
-export function sendVote(nameImage: string) {
-  const $images = $$(`.${nameImage}`) as NodeListOf<HTMLImageElement>
+export function sendVote($images: NodeListOf<HTMLImageElement>) {
   const $votes = $('p[data-votes]') as HTMLParagraphElement
 
   const { votes } = $votes.dataset
