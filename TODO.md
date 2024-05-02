@@ -42,3 +42,4 @@
 -   40. Mejorar mí foto de presentación -> URGENTE ❌
 -   41. Agregar a la sección de votaciones la categoría Profe del Ciclo -> URGENTE ✅
 -   42. Agregar sección de pronósticos para la categoría profesor del Ciclo -> URGENTE ❌
+-   43. Agregar Las Fotos De Pinto Y Orlando 
