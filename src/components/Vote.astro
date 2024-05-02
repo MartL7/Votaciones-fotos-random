@@ -2,6 +2,7 @@
 import { getSession } from 'auth-astro/server'
 import Actions from "@/components/Actions.astro"
 import ShowMemes from '@/components/ShowMemes.astro'
+import ShowTeachers from '@/components/ShowTeachers.astro'
 import { Votes, db, eq, count } from 'astro:db'
 
 const session = await getSession(Astro.request)
@@ -46,6 +47,8 @@ const userVotes = votes.map(vote => vote.VoteId)
 
   <ShowMemes classImage="saturate-0 hover:saturate-150 cursor-pointer" votes={userVotes} classPicture='image-container-vote'/>
 
+  <ShowTeachers classReference='text-vote' classImage="saturate-0 hover:saturate-150 cursor-pointer" classTitle="Voto a" votes={userVotes} />
+
   <div class="mt-5 md:mt-10 flex justify-center w-full items-center flex-col">
     <h2 class="text-3xl font-bold text-blue-300/90 text-center uppercase"> Pronóstico </h2>
     <small class="text-red-300/80 mb-5"> Basado en todos los votos por los usuarios </small>
@@ -55,7 +58,12 @@ const userVotes = votes.map(vote => vote.VoteId)
             const porcentageCount = (count / totalVotes) * 100
             return (
               <div class="flex flex-col gap-2 items-center md:h-[300px]">
-                <img src={`/img/Memes/${VoteId}.webp`} alt={`Meme ${VoteId}`} class="size-40 sm:size-full md:h-[250px] rounded-lg" />
+                <img 
+                  loading="lazy"
+                  decoding="async"
+                  src={`/img/Memes/${VoteId}.webp`} 
+                  alt={`Meme ${VoteId}`} 
+                  class="size-40 sm:size-full md:h-[250px] rounded-lg" />
                 <p class="text-xl sm:text-3xl md:text-4xl font-bold font-Public text-accent">       
                   {porcentageCount.toFixed(2)} %
                 </p>
@@ -64,8 +72,13 @@ const userVotes = votes.map(vote => vote.VoteId)
           })
         }
         <div class="col-start-2 col-end-3 row-start-1 row-end-2 md:h-[300px]"> 
-          <img src="/img/Vs-logo.webp" alt="Logo de enfrentamiento - VS" class="size-full" 
-              style="filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.3)); "
+          <img 
+            loading="lazy"
+            decoding="async"
+            src="/img/Vs-logo.webp" 
+            alt="Logo de enfrentamiento - VS" 
+            class="size-full" 
+            style="filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.3)); "
           />
         </div>
       </div>
@@ -92,53 +105,16 @@ const userVotes = votes.map(vote => vote.VoteId)
 
 <script>
   import { $, $$ } from '@/lib/dom-selector'
-  import { toastAlert } from '@/function/alerts'
+  import { sendVote } from '@/const/sendVote'
 
   document.addEventListener('astro:page-load', () => {
     const $images = $$('.image-container-vote') as NodeListOf<HTMLImageElement>
-    const $votes = $('p[data-votes]') as HTMLParagraphElement
+    const $teachers = $$('.text-vote') as NodeListOf<HTMLImageElement>
 
-    const { votes } = $votes.dataset
-    const userVotes = votes.split(',')
-    
-    $images.forEach(($image) => {
-      $image.onclick = async () => {
+    if (!$images) return
+    if (!$teachers) return
 
-        if (userVotes.includes($image.dataset.id)) {
-          toastAlert({ title: 'Ya has votado por este meme', type: 'error', icon: true, dismissible: false, location: 'bottom-center' })
-          return
-        }
-
-        if (userVotes.length >= 3) {
-          toastAlert({ title: 'Ya has votado 3 veces', type: 'error', icon: true, dismissible: false, location: 'bottom-center' })
-          return
-        }
-
-        const { url, id } = $image.dataset
-
-        const category = `category-${url.split('/').at(-2).toLowerCase()}`
-
-        const dataToSend = {
-          voteId: id,
-          category: category
-        }
-        
-        const response = await fetch('/api/memes/votes', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(dataToSend)
-        })
-
-        if (!response.ok) {
-          toastAlert({ title: 'Error al votar', type: 'error', icon: true, dismissible: false, location: 'bottom-center' })
-          return 
-        } else {
-          toastAlert({ title: 'Voto realizado', type: 'success', icon: true, dismissible: true, location: 'bottom-center' })
-          location.reload()
-        }
-      }
-    })
+    sendVote('image-container-vote')
+    sendVote('text-vote')
   })
 </script>

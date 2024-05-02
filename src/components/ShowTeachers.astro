@@ -1,5 +1,14 @@
 ---
 import { teachers } from '@/logic/teachers'
+
+interface Props {
+  classImage: string
+  classTitle?: string
+  classReference ?: string
+  votes ?: string[]
+}
+
+const { classImage, classTitle, classReference, votes } = Astro.props
 ---
 
 <article class="mt-10 md:mt-20 flex flex-col justify-center items-center">
@@ -9,13 +18,28 @@ import { teachers } from '@/logic/teachers'
   </p>
   <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-10 mb-10 md:mb-20">
     {
-      teachers.map(({ id, imagePresentation, name }) => (
-        <div class="relative flex flex-col justify-center items-center h-[400px]">
+      teachers.map(({ id, imagePresentation, name, category }) => (
+        <div 
+        class:list={[
+          `${classReference} relative flex flex-col justify-center items-center h-[400px]`,
+          { 'is-voted': votes?.includes(id) }
+        ]} 
+        data-category={category} 
+        data-vote-id={id}>
           <picture class="size-full flex justify-center items-center">
-            <img src={imagePresentation} alt={`Imagen de ${name}`} class="object-cover size-full hover:saturate-150 cursor-pointer transition hover:scale-110"
-            style="mask-image: linear-gradient(black 50%, transparent);" />
+            <img 
+              class:list={[
+                `object-cover size-full ${classImage}`,
+                { 'saturate-150': votes?.includes(id)}
+              ]}
+              loading="lazy"
+              decoding="async"
+              src={imagePresentation} 
+              alt={`Imagen de ${name}`}
+              style="mask-image: linear-gradient(black 50%, transparent);" />
           </picture>
           <span class={`font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 z-50 mx-auto text-5xl lg:text-6xl`}>
+            <span class='text'>{classTitle} </span> <br/>
             {name}
           </span>
         </div>
@@ -23,3 +47,17 @@ import { teachers } from '@/logic/teachers'
     }
   </section>
 </article>
+
+<style>
+  .text {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .text-vote:hover .text {
+    opacity: 1;
+  }
+  .is-voted .text {
+    opacity: 1;
+  }
+</style>

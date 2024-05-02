@@ -13,7 +13,7 @@ const { classPicture, classImage, votes } = Astro.props
 <div class="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-4">
   {
     memesImages.map((memeImage) => (
-      <picture class={`relative cursor-zoom-in border rounded-lg ${classPicture} ${memeImage.class}`} data-url={memeImage.image} data-id={memeImage.id}>
+      <picture class={`relative cursor-zoom-in border rounded-lg ${classPicture} ${memeImage.class}`} data-url={memeImage.image} data-vote-id={memeImage.id}>
         <img
           decoding="async" 
           loading="lazy"
