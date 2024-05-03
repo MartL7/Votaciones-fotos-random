@@ -13,7 +13,6 @@ const { arrayPronostic, totalVotes } = Astro.props
         arrayPronostic.map(({ VoteId, count, CategoryId }) => {
           const porcentageCount = (count / totalVotes) * 100
           const teacher = VoteId.split('-').at(1)
-          console.log(teacher)
           const isMeme = CategoryId.includes('category-memes')
           const imageSrc = isMeme ? `/img/Memes/${VoteId}.webp` : `/img/Profes/${teacher}/${teacher}-image-presentation.webp`
 
