@@ -29,9 +29,6 @@ const sortedVotesByMemes = votesByMemes.sort((a, b) => b.count - a.count)
 const topTwoVotesByTeachers = sortedVotesByTeachers.slice(0, 2)
 const topTwoVotesByMemes = sortedVotesByMemes.slice(0, 2)
 
-console.log(topTwoVotesByTeachers)
-
-
 const userVotes = votes.map(vote => vote.VoteId)
 ---
 
