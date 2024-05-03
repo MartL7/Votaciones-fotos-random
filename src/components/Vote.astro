@@ -3,6 +3,7 @@ import { getSession } from 'auth-astro/server'
 import Actions from "@/components/Actions.astro"
 import ShowMemes from '@/components/ShowMemes.astro'
 import ShowTeachers from '@/components/ShowTeachers.astro'
+import ShowPronostic from '@/components/ShowPronostic.astro'
 import { Votes, db, eq, count } from 'astro:db'
 
 const session = await getSession(Astro.request)
@@ -15,13 +16,21 @@ const allVotes = await db
   .select({ VoteId: Votes.voteId, CategoryId: Votes.category, count: count() })
   .from(Votes)
   .groupBy(Votes.voteId, Votes.category)
-  .where(eq(Votes.category, 'category-memes'))
 
-const totalVotes = allVotes.reduce((acc, { count }) => acc + count, 0)
+const votesByTeachers = allVotes.filter((vote) => vote.CategoryId === 'category-teachers')
+const votesByMemes = allVotes.filter((vote) => vote.CategoryId === 'category-memes')
 
-const sortedVotes = allVotes.sort((a, b) => b.count - a.count)
+const totalVotesByTeachers = votesByTeachers.reduce((acc, { count }) => acc + count, 0)
+const totalVotesByMemes = votesByMemes.reduce((acc, { count }) => acc + count, 0)
 
-const topTwoVotes = sortedVotes.slice(0, 2)
+const sortedVotesByTeachers = votesByTeachers.sort((a, b) => b.count - a.count)
+const sortedVotesByMemes = votesByMemes.sort((a, b) => b.count - a.count)
+
+const topTwoVotesByTeachers = sortedVotesByTeachers.slice(0, 2)
+const topTwoVotesByMemes = sortedVotesByMemes.slice(0, 2)
+
+console.log(topTwoVotesByTeachers)
+
 
 const userVotes = votes.map(vote => vote.VoteId)
 ---
@@ -39,7 +48,6 @@ const userVotes = votes.map(vote => vote.VoteId)
 
   <div class="mb-5 sm:mb-10 flex flex-col justify-center items-center">
     <h1 class="text-2xl font-bold"> <span class="text-2xl font-Dancing text-blue-400/90"> Categoria: </span> Meme del año </h1>
-
     <p class="text-yellow-300/90 text-center text-xl" data-votes={userVotes}> Vota por tu meme favorito <br/>
         <span class="text-red-300/90"> Solo puedes votar 3 veces. </span>
     </p>
@@ -49,40 +57,13 @@ const userVotes = votes.map(vote => vote.VoteId)
 
   <ShowTeachers classReference='text-vote' classImage="saturate-0 hover:saturate-150 cursor-pointer" classTitle="Voto a" votes={userVotes} />
 
-  <div class="mt-5 md:mt-10 flex justify-center w-full items-center flex-col">
-    <h2 class="text-3xl font-bold text-blue-300/90 text-center uppercase"> Pronóstico </h2>
+  <aside class="mt-5 md:mt-10 flex justify-center items-center flex-col">
+    <h2 class="text-3xl font-bold text-blue-300/90 text-center uppercase"> Pronósticos </h2>
     <small class="text-red-300/80 mb-5"> Basado en todos los votos por los usuarios </small>
-      <div class="container-pronostic">
-        {
-          topTwoVotes.map(({ VoteId, count }) => {
-            const porcentageCount = (count / totalVotes) * 100
-            return (
-              <div class="flex flex-col gap-2 items-center md:h-[300px]">
-                <img 
-                  loading="lazy"
-                  decoding="async"
-                  src={`/img/Memes/${VoteId}.webp`} 
-                  alt={`Meme ${VoteId}`} 
-                  class="size-40 sm:size-full md:h-[250px] rounded-lg" />
-                <p class="text-xl sm:text-3xl md:text-4xl font-bold font-Public text-accent">       
-                  {porcentageCount.toFixed(2)} %
-                </p>
-              </div>
-            )
-          })
-        }
-        <div class="col-start-2 col-end-3 row-start-1 row-end-2 md:h-[300px]"> 
-          <img 
-            loading="lazy"
-            decoding="async"
-            src="/img/Vs-logo.webp" 
-            alt="Logo de enfrentamiento - VS" 
-            class="size-full" 
-            style="filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.3)); "
-          />
-        </div>
-      </div>
-  </div>
+  </aside>
+
+  <ShowPronostic arrayPronostic={topTwoVotesByMemes} totalVotes={totalVotesByMemes} />
+  <ShowPronostic arrayPronostic={topTwoVotesByTeachers} totalVotes={totalVotesByTeachers} />
 </section>
 
 <style>

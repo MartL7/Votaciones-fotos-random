@@ -17,12 +17,12 @@ export const teachers: Teacher[] = [
     id: 'teacher-Orlando',
     name: 'Orlando',
     category: 'category-teachers',
-    imagePresentation: '/img/Profes/Dayanne/Dayanne-image-presentation.webp'
+    imagePresentation: '/img/Profes/Orlando/Orlando-image-presentation.webp'
   },
   {
     id: 'teacher-Pinto',
     name: 'Pinto',
     category: 'category-teachers',
-    imagePresentation: '/img/Profes/Lizzy/Lizzy-image-presentation.webp'
+    imagePresentation: '/img/Profes/Pinto/Pinto-image-presentation.webp'
   }
 ]

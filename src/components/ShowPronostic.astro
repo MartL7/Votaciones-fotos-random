@@ -1,0 +1,60 @@
+---
+interface Props {
+  arrayPronostic: { VoteId: string, CategoryId: string, count: number }[]
+  totalVotes: number
+}
+
+const { arrayPronostic, totalVotes } = Astro.props
+---
+
+<div class="mt-5 md:mt-10 flex justify-center w-full items-center flex-col">
+    <div class="container-pronostic">
+      {
+        arrayPronostic.map(({ VoteId, count, CategoryId }) => {
+          const porcentageCount = (count / totalVotes) * 100
+          const teacher = VoteId.split('-').at(1)
+          console.log(teacher)
+          const isMeme = CategoryId.includes('category-memes')
+          const imageSrc = isMeme ? `/img/Memes/${VoteId}.webp` : `/img/Profes/${teacher}/${teacher}-image-presentation.webp`
+
+          return (
+            <div class={isMeme ? 'flex flex-col gap-2 items-center md:h-[300px]': 'relative flex flex-col items-center md:h-[600px]'}>
+              <img 
+                loading="lazy"
+                decoding="async"
+                src={imageSrc}
+                alt={`Imagen ${VoteId}`} 
+                class={isMeme ? 'size-40 sm:size-full md:h-[250px] rounded-lg' : 'object-cover size-full hover:scale-110 hover:saturate-150 cursor-pointer transition' } 
+                style={!isMeme ? 'mask-image: linear-gradient(black 50%, transparent);' : ''}
+              />
+              <span class={!isMeme ? `font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-20 z-50 mx-auto text-4xl lg:text-6xl` : 'hidden'}>
+                {teacher}
+              </span>
+              
+              <p class="text-xl sm:text-3xl md:text-4xl font-bold font-Public text-accent">       
+                {porcentageCount.toFixed(2)} %
+              </p>
+
+            </div>
+          )
+        })
+      }
+      <div class="flex justify-center items-center col-start-2 col-end-3 row-start-1 row-end-2 md:h-full"> 
+        <img 
+          loading="lazy"
+          decoding="async"
+          src="/img/Vs-logo.webp" 
+          alt="Logo de enfrentamiento - VS" 
+          class="size-full" 
+          style="filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.3)); "
+        />
+      </div>
+    </div>
+</div>
+
+<style>
+  .container-pronostic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+</style>
