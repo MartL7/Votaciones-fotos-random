@@ -41,5 +41,6 @@
 -   39. Agregar sección de votos para la categoría Profesor del Ciclo -> URGENTE ✅
 -   40. Mejorar mí foto de presentación -> URGENTE ❌
 -   41. Agregar a la sección de votaciones la categoría Profe del Ciclo -> URGENTE ✅
--   42. Agregar sección de pronósticos para la categoría profesor del Ciclo -> URGENTE ❌
--   43. Agregar Las Fotos De Pinto Y Orlando 
+-   42. Agregar sección de pronósticos para la categoría profesor del Ciclo -> URGENTE ✅
+-   43. Agregar Las Fotos De Pinto Y Orlando -> URGENTE ❌
+-   44. Mejorar el Diseño de los pronósticos -> URGENTE ❌
