@@ -60,6 +60,6 @@ Aquí tienes una guía rápida:
 | [@MartL7](https://github.com/MartL7) | ![Foto de usuario1](https://avatars.githubusercontent.com/u/106359853?v=4) |
 | [@c0d3hdz](https://github.com/c0d3hdz) | ![Foto de usuario2](https://avatars.githubusercontent.com/u/145168535?v=4) |
 | [@MrCat](https://github.com/Mr-Cat86) | ![Foto de usuario2](https://avatars.githubusercontent.com/u/121978941?v=4)
+| [@Ehiltz](https://github.com/EhiltzCirce) | ![Foto de usuario2](https://avatars.githubusercontent.com/u/162728875?v=4)
 
-
-<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
+<p align="right">(<a href="#top">volver arriba</a>)</p>
