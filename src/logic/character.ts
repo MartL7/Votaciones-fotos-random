@@ -254,7 +254,7 @@ export const Characters: Character[] = [
                 class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
             },
             {
-                image: '/img/Karen/Karen-image-3.webp',
+                image: '/img/Karen/Karen-image-15.webp',
                 class: 'sm:col-start-3 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
             },
             {
@@ -290,7 +290,7 @@ export const Characters: Character[] = [
                 class: '',
             },
         ],
-        funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera', 'Mucha escuela, poco Voli'],
+        funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera','El que no arriesga,no gana', 'Mucha escuela, poco Voli'],
     },
 
     {
