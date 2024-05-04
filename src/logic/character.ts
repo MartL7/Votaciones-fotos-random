@@ -290,7 +290,12 @@ export const Characters: Character[] = [
                 class: '',
             },
         ],
-        funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera','El que no arriesga,no gana', 'Mucha escuela, poco Voli'],
+        funnyText: ['MangoLOVER🥭', 'Me equivoque de carrera','El que no arriesga, no gana', 'Mucha escuela, poco Voli'],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/ehiltzcirce', type: 'instagram' },
+            { name: 'GitHub', link: 'https://github.com/EhiltzCirce', type:'github' },
+            { name: 'Facebook', link: 'https://www.facebook.com/EhiltzCirce', type: 'facebook' },
+        ],
     },
 
     {
