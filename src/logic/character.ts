@@ -760,4 +760,41 @@ export const Characters: Character[] = [
             'Los viejitos solo nos quitan oxígeno',
         ],
     },
+    {
+        id: 'Antonio',
+        name: 'Toño',
+        imagePresentation: '/img/Antonio/Antonio-image-presentation.webp',
+        imageSmall: '/img/Antonio/Antonio-small.webp',
+        imagesGalery: [
+            {
+                image: '/img/Antonio/Antonio-image-1.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[500px] col-start-1 col-end-2 h-[250px] row-start-1 row-end-2'
+            },
+            {
+                image: '/img/Antonio/Antonio-image-2.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-2 row-start-1 row-end-2 h-[250px]'
+            },
+            {
+                image : '/img/Antonio/Antonio-image-3.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[500px] col-start-1 col-end-2 h-[300px] row-start-2 row-end-3'
+            },
+            {
+                image: '/img/Antonio/Antonio-image-4.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-5 sm:h-[500px] col-start-2 col-end-3 h-[300px] row-start-2 row-end-3'
+            },
+            {
+                image: '/img/Antonio/Antonio-image-7.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[360px] col-span-2 h-[350px] row-start-3 row-end-4'
+            },
+            {
+                image: '/img/Antonio/Antonio-image-6.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-5 sm:h-[500px] col-start-1 col-end-2 h-[250px] row-start-4 row-end-5'
+            },
+            {
+                image: '/img/Antonio/Antonio-image-5.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[300px] col-start-2 col-end-3 h-[250px] row-start-4 row-end-5'
+            }
+        ],
+        funnyText: ['Qué hace la trans?', 'Viva el Diablo'],
+    }
 ]
