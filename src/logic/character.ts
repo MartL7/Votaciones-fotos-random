@@ -68,6 +68,51 @@ export const Characters: Character[] = [
         funnyText: ['Hiii'],
     },
     {
+        id: 'Marlen',
+        name: 'Marlen',
+        imagePresentation: '/img/Marlen/Marlen-image-presentation.webp',
+        imageSmall: '/img/Marlen/Marlen-small.webp',
+        imagesGalery: [
+            {
+                image: '/img/Marlen/Marlen-image-1.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[600px] col-start-1 col-end-2 row-start-1 row-end-3 h-[400px]',
+            },
+            {
+                image: '/img/Marlen/Marlen-image-2.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 h-[200px] row-start-1 row-end-2',
+            },
+            {
+                image: '/img/Marlen/Marlen-image-3.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-2 row-end-4 h-[400px]',
+            },
+            {
+                image: '/img/Marlen/Marlen-image-4.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[600px] col-start-1 col-end-2 row-start-3 row-end-5 h-[400px]',
+            },
+            {
+                image: '/img/Marlen/Marlen-image-5.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-2 col-end-3 row-start-4 row-end-5 h-[180px]',
+            },
+            {
+                image: '/img/Marlen/Marlen-image-6.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]',
+            },
+        ],
+        funnyText: ['Hii'],
+        socials: [
+            {
+                name: 'Instagram',
+                link: 'https://www.instagram.com/ma_rlen7348/',
+                type: 'instagram',
+            },
+            {
+                name: 'Facebook',
+                link: 'https://www.facebook.com/marleni.rs.3',
+                type: 'facebook',
+            },
+        ],
+    },
+    {
         id: 'Yanet',
         name: 'Yane',
         imagePresentation: '/img/Yanet/Yanet-image-presentation.webp',
@@ -111,8 +156,8 @@ export const Characters: Character[] = [
     {
         id: 'Geovas',
         name: 'Geovas',
-        imagePresentation: '/img/Geovas/Geovas-image-presentation.webp',
-        imageSmall: '/img/Geovas/Geovas-small.png',
+        imagePresentation: '/img/Geovas/Geovas-image-presentation-1.webp',
+        imageSmall: '/img/Geovas/Geovas-small.webp',
         imagesGalery: [
             {
                 image: '/img/Geovas/Geovas-image-1.avif',
@@ -156,51 +201,6 @@ export const Characters: Character[] = [
             { name: 'Instagram', link: 'https://www.instagram.com/geovx_lg/', type: 'instagram' },
             { name: 'GitHub', link: 'https://github.com/MartL7', type: 'github' },
             { name: 'Twitter', link: 'https://twitter.com/GeovasYoSoy', type: 'twitter' },
-        ],
-    },
-    {
-        id: 'Marlen',
-        name: 'Marlen',
-        imagePresentation: '/img/Marlen/Marlen-image-presentation.webp',
-        imageSmall: '/img/Marlen/Marlen-small.webp',
-        imagesGalery: [
-            {
-                image: '/img/Marlen/Marlen-image-1.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[600px] col-start-1 col-end-2 row-start-1 row-end-3 h-[400px]',
-            },
-            {
-                image: '/img/Marlen/Marlen-image-2.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 h-[200px] row-start-1 row-end-2',
-            },
-            {
-                image: '/img/Marlen/Marlen-image-3.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-2 row-end-4 h-[400px]',
-            },
-            {
-                image: '/img/Marlen/Marlen-image-4.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[600px] col-start-1 col-end-2 row-start-3 row-end-5 h-[400px]',
-            },
-            {
-                image: '/img/Marlen/Marlen-image-5.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-2 col-end-3 row-start-4 row-end-5 h-[180px]',
-            },
-            {
-                image: '/img/Marlen/Marlen-image-6.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]',
-            },
-        ],
-        funnyText: ['Hii'],
-        socials: [
-            {
-                name: 'Instagram',
-                link: 'https://www.instagram.com/ma_rlen7348/',
-                type: 'instagram',
-            },
-            {
-                name: 'Facebook',
-                link: 'https://www.facebook.com/marleni.rs.3',
-                type: 'facebook',
-            },
         ],
     },
     {
@@ -840,6 +840,6 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[300px] col-start-2 col-end-3 h-[250px] row-start-4 row-end-5'
             }
         ],
-        funnyText: ['Qué hace la trans?', 'Viva el Diablo'],
+        funnyText: ['Qué hace la trans?', 'Viva el Diablo', 'Una vez si, dos ya no'],
     }
 ]
