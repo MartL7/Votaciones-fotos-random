@@ -44,3 +44,4 @@
 -   42. Agregar sección de pronósticos para la categoría profesor del Ciclo -> URGENTE ✅
 -   43. Agregar Las Fotos De Pinto Y Orlando -> URGENTE ❌
 -   44. Mejorar el Diseño de los pronósticos -> URGENTE ❌
+-   45. Mejorar la Galería de Lesss --> URGENTE ❌
