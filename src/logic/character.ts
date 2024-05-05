@@ -313,7 +313,7 @@ export const Characters: Character[] = [
                 class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[260px] col-start-2 col-end-3 row-start-1 row-end-2 h-auto',
             },
             {
-                image: '/img/Damian/Damian-image-4.webp',
+                image: '/img/Damian/Damian-image-4.avif',
                 class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] sm:row-start-2 sm:row-end-3 col-start-2 col-end-3 row-start-2 row-end-3 h-[230px]',
             },
             {
@@ -762,24 +762,40 @@ export const Characters: Character[] = [
         imageSmall: '/img/Yahir/Yahir-small.webp',
         imagesGalery: [
             {
-                image: '/img/Yahir/Yahir-image-5.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:max-h-[300px]',
+                image: '/img/Yahir/Yahir-image-5.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-1 row-end-2 h-[200px]',
             },
             {
-                image: '/img/Yahir/Yahir-image-8.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3 sm:max-h-[600px]',
+                image: '/img/Yahir/Yahir-image-8.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3 h-[400px] sm:h-[600px]',
             },
             {
                 image: '/img/Yahir/Yahir-image-3.avif',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:max-h-[300px]',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-2 sm:h-[300px] h-[180px] col-start-2 col-end-3 row-start-2 row-end-3',
             },
             {
-                image: '/img/Yahir/Yahir-image-4.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3 sm:max-h-[300px]',
+                image: '/img/Yahir/Yahir-image-4.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-1 col-end-2 row-start-3 row-end-4 h-[200px]',
             },
             {
-                image: '/img/Yahir/Yahir-image-7.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:max-h-[300px]',
+                image: '/img/Yahir/Yahir-image-7.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-2 col-end-3 row-start-3 row-end-4 h-[200px]',
+            },
+            {
+                image: '/img/Yahir/Yahir-image-10.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-5 sm:h-[600px] row-start-4 row-end-5 col-start-1 col-end-2 h-[200px]'
+            },
+            {
+                image: '/img/Yahir/Yahir-image-9.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[260px] col-start-2 col-end-3 row-start-4 row-end-5 h-[200px]'
+            },
+            {
+                image: '/img/Yahir/Yahir-image-11.avif',
+                class: 'sm:col-start-2 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-3 row-start-5 row-end-6 h-[250px]'
+            },
+            {
+                image: '/img/Yahir/Yahir-image-3.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-4 sm:row-end-5 sm:h-[260px] sm:block hidden'
             },
         ],
         funnyText: [
