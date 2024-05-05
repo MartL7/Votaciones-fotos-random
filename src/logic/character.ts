@@ -508,7 +508,7 @@ export const Characters: Character[] = [
         imagesGalery: [
             {
                 image: '/img/Emmanuel/Emmanuel-image-1.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-1 row-end-3 h-[400px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-2 col-end-3 row-start-1 row-end-3 h-[200px]',
             },
             {
                 image: '/img/Emmanuel/Emmanuel-image-2.webp',
@@ -520,7 +520,7 @@ export const Characters: Character[] = [
             },
             {
                 image: '/img/Emmanuel/Emmanuel-image-4.webp',
-                class: 'sm:h-[300px] sm:col-start-3 sm:col-end-4 col-start-1 col-end-2 row-start-1 row-end-3 h-[400px]',
+                class: 'sm:h-[300px] sm:col-start-3 sm:col-end-4 col-start-1 col-end-2 row-start-1 row-end-3 h-[200px]',
             },
             {
                 image: '/img/Emmanuel/Emmanuel-image-5.webp',
@@ -542,6 +542,30 @@ export const Characters: Character[] = [
                 image: '/img/Emmanuel/Emmanuel-image-10.webp',
                 class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-1 col-end-2 row-start-7 row-end-8 h-[200px]',
             },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-12.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-5 sm:row-end-7 sm:h-[600px] col-start-1 col-end-2 h-[350px] row-start-8 row-end-10'
+            },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-9.webp',
+                class: 'sm:col-start-2 sm:col-end-4 sm:row-start-5 sm:row-end-6 sm:h-[300px] col-start-2 col-end-3 row-start-8 row-end-9',
+            },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-11.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-6 sm:row-end-7 sm:h-[260px] col-start-2 col-end-3 row-start-9 row-end-10'
+            },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-13.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-6 sm:row-end-7 sm:h-[260px] col-start-1 col-end-2 row-start-10 row-end-11 h-[200px]'
+            },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-14.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-7 sm:row-end-8 sm:h-[300px] h-[200px]'
+            },
+            {
+                image: '/img/Emmanuel/Emmanuel-image-15.webp',
+                class: 'sm:col-start-1 sm:col-end-3 sm:row-start-7 sm:row-end-8 sm:h-[300px] col-start-1 col-end-3 h-[250px]'
+            }
         ],
         funnyText: [
             'Mí chaparrita hermoshita',
