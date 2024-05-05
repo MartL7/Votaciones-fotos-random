@@ -32,14 +32,14 @@
 -   30. Cambiar tipografía de los nombres de los characters ✅
 -   31. Agregar Rollback en la sección de Votos ✅
 -   32. Agregar las demás fotos de Emmanuel ✅
--   33. Cambiar la imagen small y presentation de Marlen ❌
+-   33. Cambiar la imagen small y presentation de Marlen ✅
 -   34. Smplificar la lógica en el componente Vote.astro ✔️ (Faltan los pronósticos)
 -   35. Mejorar diseño a la parte de pronósticos de cada categoría en los Votos -> URGENTE ✔️
 -   36. Separar componentes en el Vote.astro
 -   37. Arrgelar error de consola de Image undefined en el carrousel -> URGENTE ✅
 -   38. Agregar a Sebas y a Abi -> URGENTE ✔️ (Solo falta Abi)
 -   39. Agregar sección de votos para la categoría Profesor del Ciclo -> URGENTE ✅
--   40. Mejorar mí foto de presentación -> URGENTE ❌
+-   40. Mejorar mí foto de presentación -> URGENTE ✅
 -   41. Agregar a la sección de votaciones la categoría Profe del Ciclo -> URGENTE ✅
 -   42. Agregar sección de pronósticos para la categoría profesor del Ciclo -> URGENTE ✅
 -   43. Agregar Las Fotos De Pinto Y Orlando -> URGENTE ❌
