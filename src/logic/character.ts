@@ -642,7 +642,7 @@ export const Characters: Character[] = [
             },
             {
                 image: '/img/Leslie/Leslie-image-2.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:h-[300px] row-start-2 h-[250px]',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:h-[300px] row-start-2 h-[200px]',
             },
             {
                 image: '/img/Leslie/Leslie-image-3.webp',
@@ -650,15 +650,15 @@ export const Characters: Character[] = [
             },
             {
                 image: '/img/Leslie/Leslie-image-4.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3 sm:h-[260px] row-start-2 row-end-4 h-[500px] ',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3 sm:h-[260px] row-start-2 row-end-4 h-[380px] ',
             },
             {
                 image: '/img/Leslie/Leslie-image-5.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:h-[260px] h-[220px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:h-[260px] h-[160px]',
             },
             {
                 image: '/img/Leslie/Leslie-image-7.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-1 col-end-2 row-start-4 row-end-6 h-[400px]',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-1 col-end-2 row-start-4 row-end-6 h-[380px]',
             },
             {
                 image: '/img/Leslie/Leslie-image-8.webp',
@@ -666,7 +666,7 @@ export const Characters: Character[] = [
             },
             {
                 image: '/img/Leslie/Leslie-image-9.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[260px] col-start-2 col-end-3 row-start-5 row-end-6 h-[200px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[260px] col-start-2 col-end-3 row-start-5 row-end-6 h-[180px]',
             },
         ],
         funnyText: ['JA, lol, que mal'],
