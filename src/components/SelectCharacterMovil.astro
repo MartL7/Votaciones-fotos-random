@@ -1,5 +1,6 @@
 ---
 import type { Character } from "@/types/Character"
+import { fallenCharacters } from '@/logic/fallenCharacters'
 
 interface Props {
   characters: Character[]
@@ -31,7 +32,8 @@ const { characters } = Astro.props
           <div class="swiper-slide">
             <a 
               href={`/character/${id}`} 
-              class="character-link relative flex justify-center items-center h-20">
+              class="character-link relative flex justify-center items-center h-20"
+              data-id={id}>
               <img 
                 src={imageSmall} 
                 alt={`Imagen del personaje ${name}`}
@@ -43,6 +45,28 @@ const { characters } = Astro.props
               <div class="absolute inset-0 character-link-background"></div>
             </a>
           </div>
+        ))
+      }
+      {
+        fallenCharacters.map(({ folder, id, name, imageSmall }) => (
+        <div class="swiper-slide">
+          <div 
+            class="character-link fallen-character relative flex justify-center items-center h-20"  
+            data-folder={folder} 
+            data-id={id}
+          >
+            <img 
+              src={imageSmall} 
+              alt={`Imagen small de ${name}`}
+              decoding="async"
+              loading="lazy"
+              class="saturate-0 size-40 object-cover z-[1000] -mt-10" 
+              style="mask-image: linear-gradient(black 50%, transparent);"
+              id={`character-${id}`}
+            />
+            <div class="absolute inset-0 character-link-background"></div>
+          </div>
+        </div>
         ))
       }
     </div>
@@ -68,5 +92,10 @@ const { characters } = Astro.props
   .character-link-background {
     opacity: .25;
     background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
+  }
+
+  .fallen-character {
+    text-decoration:line-through ;
+    color: #ff5050e6;
   }
 </style>

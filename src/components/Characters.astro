@@ -56,13 +56,13 @@ const secondArray = person.slice(9, person.length)
             $characterPhoto.alt = `Imagen de ${id}`
 
             if (!isFallenCharacter) {
-                $characterPhoto.style.filter = 'none';
-                $nameText.classList.remove('fallen-character');
-                $nameText.classList.add('text-blue-300/90');
+                $characterPhoto.style.filter = 'none'
+                $nameText.classList.remove('fallen-character')
+                $nameText.classList.add('text-blue-300/90')
             } else {
-                $characterPhoto.style.filter = 'grayscale(100%)';
-                $nameText.classList.add('fallen-character');
-                $nameText.classList.remove('text-blue-300/90');
+                $characterPhoto.style.filter = 'grayscale(100%)'
+                $nameText.classList.add('fallen-character')
+                $nameText.classList.remove('text-blue-300/90')
             }
 
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
@@ -80,13 +80,13 @@ const secondArray = person.slice(9, person.length)
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
             $characterSmallImage.forEach((image) => image.classList.add('active'))
             if (isFallenCharacter) {
-                $characterPhoto.style.filter = 'grayscale(100%)';
-                $nameText.classList.add('fallen-character');
-                $nameText.classList.remove('text-blue-300/90');
+                $characterPhoto.style.filter = 'grayscale(100%)'
+                $nameText.classList.add('fallen-character')
+                $nameText.classList.remove('text-blue-300/90')
             } else {
-                $characterPhoto.style.filter = 'none';
-                $nameText.classList.remove('fallen-character');
-                $nameText.classList.add('text-blue-300/90');
+                $characterPhoto.style.filter = 'none'
+                $nameText.classList.remove('fallen-character')
+                $nameText.classList.add('text-blue-300/90')
             }
             $nameText.textContent = lastName
         }
@@ -122,7 +122,7 @@ const secondArray = person.slice(9, person.length)
           if (lastCharacterId) {
             const slideIndex = Array.from(this.slides).findIndex(slide => {
               const $characterLink = (slide as Element)?.querySelector('.character-link') as HTMLAnchorElement
-              const id = $characterLink.href.split('/').at(-1)
+              const { id } = $characterLink.dataset ?? null
               return id === lastCharacterId
             })
 
@@ -135,12 +135,25 @@ const secondArray = person.slice(9, person.length)
             const activeSlide = this.slides[this.activeIndex] as HTMLDivElement
             const $nameText = $('#name-text')
             const $characterLink = activeSlide?.querySelector('.character-link') as HTMLAnchorElement
-            const id = $characterLink?.href.split('/').at(-1)
+            const { id } = $characterLink.dataset ?? null
+            const { folder } = $characterLink.dataset ?? null
             const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
+
+            const isFallenCharacter = $characterLink.classList.contains('fallen-character')
+
+            if (!isFallenCharacter) {
+                $characterPhoto.style.filter = 'none'
+                $nameText.classList.remove('fallen-character')
+                $nameText.classList.add('text-blue-300/90')
+            } else {
+                $characterPhoto.style.filter = 'grayscale(100%)'
+                $nameText.classList.add('fallen-character')
+                $nameText.classList.remove('text-blue-300/90')
+            }
 
             const defaultImage = '/img/Ulises/Ulises-image-presentation.webp'
 
-            const characterSrc = `/img/${id}/${id}-image-presentation.webp`
+            const characterSrc = folder ? `/img/${folder}/${id}-image-presentation.webp` : `/img/${id}/${id}-image-presentation.webp`
 
             if (!$nameText || !$characterLink) return
 

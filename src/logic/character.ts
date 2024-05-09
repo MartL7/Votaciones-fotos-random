@@ -498,6 +498,8 @@ export const Characters: Character[] = [
             '100 por línea',
             'Antes me decias "mi amor"',
             'Ahora ni me hablas',
+            'Tengo una idea', 
+            'Involucra una silla y una cuerda'
         ],
     },
     {
