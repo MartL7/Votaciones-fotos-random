@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 import Modal from "@/components/Modal.astro"
 import Clip from '@/sections/clip.astro'
+import Date from '@/components/Date.astro'
 import { results } from '@/logic/results'
 
 const filtersCategoryDog = results.filter((res) => res.category === 'Perro-del-año')
@@ -71,6 +72,8 @@ const { name, imagePresentation } = filtersCategoryDog.at(0)
     <Modal className="clip-dialog" id="close-dialog" isButton={true}>
       <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
     </Modal>
+
+    <Date />
   </main>
 </Layout>
 
