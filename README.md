@@ -1,6 +1,6 @@
 # Proyecto de Votaciones y Colaboración de Clase
 
-Este proyecto es una plataforma diseñada para facilitar la colaboración entre compañeros de clase y para llevar a cabo votaciones sobre diversos temas relacionados con el curso. Durante un semestre académico, nos enfocamos en desarrollar esta aplicación que sirviera como herramienta integral para nuestra comunidad estudiantil.
+Proyecto de Recuerdos de mi grupo durante este ciclo escolar. Asegurate de Leer la licencia de código antes de distribuir o modificar el código fuente de este proyecto.
 
 ## Instalación
 
@@ -53,13 +53,9 @@ Aquí tienes una guía rápida:
 [![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
+**¡Gracias a todos los colaboradores por su ayuda. <3 !**
 
-## Contribuidores
-| Nombre de Usuario | Foto de Perfil |
-|-------------------|----------------|
-| [@MartL7](https://github.com/MartL7) | ![Foto de usuario1](https://avatars.githubusercontent.com/u/106359853?v=4) |
-| [@c0d3hdz](https://github.com/c0d3hdz) | ![Foto de usuario2](https://avatars.githubusercontent.com/u/145168535?v=4) |
-| [@MrCat](https://github.com/Mr-Cat86) | ![Foto de usuario2](https://avatars.githubusercontent.com/u/121978941?v=4)
-| [@Ehiltz](https://github.com/EhiltzCirce) | ![Foto de usuario2](https://avatars.githubusercontent.com/u/162728875?v=4)
+[![Contribuidores](https://contrib.rocks/image?repo=MartL7/Votaciones-fotos-random&max=500&columns=20)](https://github.com/MartL7/Votaciones-fotos-random/graphs/contributors)
+
 
 <p align="right">(<a href="#top">volver arriba</a>)</p>
