@@ -24,7 +24,6 @@ const { name, imagePresentation } = filtersCategoryDog.at(0)
       <picture class="sm:h-[50vh] relative h-[500px]">
         <img 
           decoding="async" 
-          loading="lazy"
           src={imagePresentation} 
           alt={`Imagen de ${name}`}
           class='image-winner size-full rounded-lg'
@@ -50,7 +49,7 @@ const { name, imagePresentation } = filtersCategoryDog.at(0)
                   loading="lazy"
                   src={img.image} 
                   alt={`Imagen de ${name}`} 
-                  class='size-full rounded-lg' 
+                  class='size-full rounded-lg object-cover' 
                 />
               </picture>
             ))
