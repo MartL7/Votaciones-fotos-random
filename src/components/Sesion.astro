@@ -3,8 +3,12 @@ import Actions from "@/components/Actions.astro"
 ---
 
 <main class="flex flex-col md:flex-row min-h-fit items-center justify-center">
-  <img src="/img/User-session.webp" class="size-[400px] relative pointer-events-none opacity-30 md:opacity-100" alt="Logo de LOG-IN"
-  style="filter: drop-shadow(0 0 10px rgba(1, 1, 1, .9)); 
+  <img 
+    loading="lazy"
+    src="/img/User-session.webp" 
+    class="size-[400px] relative pointer-events-none opacity-30 md:opacity-100 object-cover" 
+    alt="Imagen de C0d3"
+    style="filter: drop-shadow(0 0 10px rgba(1, 1, 1, .9)); 
   mask-image: linear-gradient(black 50%, transparent)">
 
   <div class="flex absolute mt-20 md:mt-0 md:relative flex-col gap-y-4 text-center max-w-[350px]">

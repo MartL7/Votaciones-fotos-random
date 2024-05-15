@@ -14,12 +14,21 @@ const { links } = Astro.props
 
   <picture class="size-20 flex flex-grow flex-col items-center justify-center">
     <a href="/" aria-label="Volver al inicio">
-      <img src="/logos/6m-logo.svg" alt="logo del grupo M" class="size-full"/>
+      <img 
+        src="/logos/6m-logo.svg" 
+        loading="lazy"
+        alt="logo del grupo M" class="size-full"
+      />
     </a>
   </picture>
 
   <div class="relative size-full mr-10"> 
-    <img src="/logos/full-logo.svg" alt="logo del grupo M" class="absolute size-full inset-0 blur-xl shadow-xl"/>
+    <img 
+      src="/logos/full-logo.svg" 
+      loading="lazy"
+      alt="logo del grupo M" 
+      class="absolute size-full inset-0 blur-xl shadow-xl"
+    />
     <img src="/logos/full-logo.svg" alt="logo del grupo M" class="absolute size-full inset-0"/>
   </div>
 
@@ -50,6 +59,7 @@ const { links } = Astro.props
       <img 
         src="/logos/full-logo.svg" 
         alt="logo del grupo M" 
+        loading="lazy"
         class="size-auto"
         style="filter: drop-shadow(0 0 10px rgba(2, 2, 2, .9));" 
       />
