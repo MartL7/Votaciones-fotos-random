@@ -16,7 +16,6 @@ const { classPicture, classImage, votes } = Astro.props
       <picture class={`relative cursor-zoom-in border rounded-lg ${classPicture} ${memeImage.class}`} data-url={memeImage.image} data-vote-id={memeImage.id}>
         <img
           decoding="async" 
-          loading="lazy"
           src={memeImage.image} 
           alt={`Imagen ${memeImage.id}`} 
           class:list={[
