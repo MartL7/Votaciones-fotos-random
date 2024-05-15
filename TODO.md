@@ -46,3 +46,4 @@
 -   44. Mejorar el Diseño de los pronósticos -> URGENTE ✅
 -   45. Mejorar la Galería de Lesss --> URGENTE ✅
 -   46. Simplificar la lógica del carrusel y del cambio de characters para reutilizar código. ❌
+-   47. Arreglar Modal de menú -> URGENTE ❌
