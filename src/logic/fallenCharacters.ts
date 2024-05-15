@@ -24,11 +24,11 @@ export const fallenCharacters: FallenCharacter[] = [
     },
 
     {
-        id: 'Rolando',
-        name: 'Rolando',
+        id: 'Laura',
+        name: 'Laura',
         folder: 'Fallen',
-        imageSmall: '/img/Fallen/Rolando-small.webp',
-        imagePresentation: '/img/Fallen/Rolando-image-presentation.webp',
+        imageSmall: '/img/Fallen/Laura-small.webp',
+        imagePresentation: '/img/Fallen/Laura-image-presentation.webp',
     },
 
     {
@@ -38,13 +38,15 @@ export const fallenCharacters: FallenCharacter[] = [
         imageSmall: '/img/Fallen/Angela-small.webp',
         imagePresentation: '/img/Fallen/Angela-image-presentation.webp',
     },
+
     {
-        id: 'Laura',
-        name: 'Laura',
+        id: 'Rolando',
+        name: 'Rolando',
         folder: 'Fallen',
-        imageSmall: '/img/Fallen/Laura-small.webp',
-        imagePresentation: '/img/Fallen/Laura-image-presentation.webp',
+        imageSmall: '/img/Fallen/Rolando-small.webp',
+        imagePresentation: '/img/Fallen/Rolando-image-presentation.webp',
     },
+
     {
         id: 'Marco',
         name: 'Marco',
@@ -52,6 +54,7 @@ export const fallenCharacters: FallenCharacter[] = [
         imageSmall: '/img/Fallen/Marco-small.webp',
         imagePresentation: '/img/Fallen/Marco-image-presentation.webp',
     },
+    
     {
         id: 'Caleb',
         name: 'Caleb',

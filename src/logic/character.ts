@@ -304,61 +304,39 @@ export const Characters: Character[] = [
     },
 
     {
-        id: 'Damian',
-        name: 'Damian',
-        imagePresentation: '/img/Damian/Damian-image-presentation.webp',
-        imageSmall: '/img/Damian/Damian-small.webp',
+        id: 'CruCru',
+        name: 'Andy',
+        imagePresentation: '/img/CruCru/CruCru-image-presentation.webp',
+        imageSmall: '/img/CruCru/CruCru-small.webp',
         imagesGalery: [
             {
-                image: '/img/Damian/Damian-image-1.webp',
-                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] row-start-1 row-end-3 h-[400px] ',
+                image: '/img/CruCru/CruCru-image-1.avif',
+                class: 'sm:h-[400px]',
             },
             {
-                image: '/img/Damian/Damian-image-9.webp',
-                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[260px] col-start-2 col-end-3 row-start-1 row-end-2 h-auto',
+                image: '/img/CruCru/CruCru-image-2.avif',
+                class: 'sm:h-[400px]',
             },
             {
-                image: '/img/Damian/Damian-image-4.avif',
-                class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] sm:row-start-2 sm:row-end-3 col-start-2 col-end-3 row-start-2 row-end-3 h-[230px]',
+                image: '/img/CruCru/CruCru-image-3.avif',
+                class: 'sm:h-[400px]',
             },
             {
-                image: '/img/Damian/Damian-image-3.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px] sm:row-start-2 sm:row-end-3 col-start-1 col-end-2 row-start-3 row-end-4 h-[300px]',
-            },
-            {
-                image: '/img/Damian/Damian-image-5.webp',
-                class: 'sm:col-start-3 sm:col-end-3 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-2 col-end-3 row-start-3 row-end-5 h-[400px]',
-            },
-            {
-                image: '/img/Damian/Damian-image-6.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 row-start-4 row-end-6 h-[300px]',
-            },
-            {
-                image: '/img/Damian/Damian-image-7.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 row-start-6 row-end-7 h-[300px]',
-            },
-            {
-                image: '/img/Damian/Damian-image-8.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:row-end-5 sm:h-[250px] col-start-2 col-end-3 row-start-6 row-end-7 h-[300px]',
-            },
-            {
-                image: '/img/Damian/Damian-image-10.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[250px] col-start-2 col-end-3 row-start-5 row-end-6 h-full',
+                image: '/img/CruCru/CruCru-image-4.avif',
+                class: 'sm:h-[400px]',
             },
         ],
         funnyText: [
-            'Crecer como los Bisteces',
-            'A Putazos',
-            'BOMBARDEN HUAUCHINANGO',
-            'Farmeando Firmas',
-            'La mente es un laberinto donde cualquiera puede perderse',
-        ],
-        socials: [
-            { name: 'Instagram', link: 'https://www.instagram.com/c0d3hdz_/', type: 'instagram' },
-            { name: 'GitHub', link: 'https://github.com/c0d3hdz', type: 'github' },
-            { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=100076644204256', type: 'facebook' },
+            'Clon del Mini Galáctico',
+            'No es fácil Martin',
+            'Y el Cru Cru',
+            'Cru Cru Einstein',
+            'La lógica te llevará de A a B, la imaginación te llevará a todas partes',
+            'La imaginación es más importante que el conocimiento',
+            'El conocimiento es limitado, la imaginación no tiene limites',
         ],
     },
+    
     {
         id: 'Sebastian',
         name: 'Sebas',
@@ -729,39 +707,64 @@ export const Characters: Character[] = [
             { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=100039046277789', type: 'facebook' },
         ],
     },
+
     {
-        id: 'CruCru',
-        name: 'Andy',
-        imagePresentation: '/img/CruCru/CruCru-image-presentation.webp',
-        imageSmall: '/img/CruCru/CruCru-small.webp',
+        id: 'Damian',
+        name: 'Damian',
+        imagePresentation: '/img/Damian/Damian-image-presentation.webp',
+        imageSmall: '/img/Damian/Damian-small.webp',
         imagesGalery: [
             {
-                image: '/img/CruCru/CruCru-image-1.avif',
-                class: 'sm:h-[400px]',
+                image: '/img/Damian/Damian-image-1.webp',
+                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] row-start-1 row-end-3 h-[400px] ',
             },
             {
-                image: '/img/CruCru/CruCru-image-2.avif',
-                class: 'sm:h-[400px]',
+                image: '/img/Damian/Damian-image-9.webp',
+                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[260px] col-start-2 col-end-3 row-start-1 row-end-2 h-auto',
             },
             {
-                image: '/img/CruCru/CruCru-image-3.avif',
-                class: 'sm:h-[400px]',
+                image: '/img/Damian/Damian-image-4.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] sm:row-start-2 sm:row-end-3 col-start-2 col-end-3 row-start-2 row-end-3 h-[230px]',
             },
             {
-                image: '/img/CruCru/CruCru-image-4.avif',
-                class: 'sm:h-[400px]',
+                image: '/img/Damian/Damian-image-3.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px] sm:row-start-2 sm:row-end-3 col-start-1 col-end-2 row-start-3 row-end-4 h-[300px]',
+            },
+            {
+                image: '/img/Damian/Damian-image-5.webp',
+                class: 'sm:col-start-3 sm:col-end-3 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-2 col-end-3 row-start-3 row-end-5 h-[400px]',
+            },
+            {
+                image: '/img/Damian/Damian-image-6.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 row-start-4 row-end-6 h-[300px]',
+            },
+            {
+                image: '/img/Damian/Damian-image-7.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 row-start-6 row-end-7 h-[300px]',
+            },
+            {
+                image: '/img/Damian/Damian-image-8.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:row-end-5 sm:h-[250px] col-start-2 col-end-3 row-start-6 row-end-7 h-[300px]',
+            },
+            {
+                image: '/img/Damian/Damian-image-10.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[250px] col-start-2 col-end-3 row-start-5 row-end-6 h-full',
             },
         ],
         funnyText: [
-            'Clon del Mini Galáctico',
-            'No es fácil Martin',
-            'Y el Cru Cru',
-            'Cru Cru Einstein',
-            'La lógica te llevará de A a B, la imaginación te llevará a todas partes',
-            'La imaginación es más importante que el conocimiento',
-            'El conocimiento es limitado, la imaginación no tiene limites',
+            'Crecer como los Bisteces',
+            'A Putazos',
+            'BOMBARDEN HUAUCHINANGO',
+            'Farmeando Firmas',
+            'La mente es un laberinto donde cualquiera puede perderse',
+        ],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/c0d3hdz_/', type: 'instagram' },
+            { name: 'GitHub', link: 'https://github.com/c0d3hdz', type: 'github' },
+            { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=100076644204256', type: 'facebook' },
         ],
     },
+
     {
         id: 'Yahir',
         name: 'Yahir',
