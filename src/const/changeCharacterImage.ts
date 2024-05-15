@@ -29,7 +29,6 @@ export function changeCharacterImage () {
             $lastActiveImage.forEach((image) => image.classList.remove('active'))
         } 
 
-        // localStorage.removeItem('lastHoveredImageId')
         removeLocalStorage({ key: 'lastHoveredImageId' })
         if ($lastActiveImage) {
             $lastActiveImage.classList.remove('active')
@@ -45,9 +44,7 @@ export function changeCharacterImage () {
         $lastActiveImage = $characterSmallImage[0]
 
         saveLocalStorage({ key: 'lastHoveredImageId', value: id })
-        // localStorage.setItem('lastHoveredImageId', id)
         saveLocalStorage({ key: 'lastName', value: id })
-        // localStorage.setItem('lastName', id)
     })
 
     const lastHoveredImageId = getLocalStorage({ key: 'lastHoveredImageId' })

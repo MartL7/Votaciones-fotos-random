@@ -1,4 +1,4 @@
-import { $, $$ } from '@/lib/dom-selector'
+import { $ } from '@/lib/dom-selector'
 import { toastAlert } from '@/function/alerts'
 
 export function sendVote($images: NodeListOf<HTMLImageElement>) {

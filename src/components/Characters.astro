@@ -24,9 +24,9 @@ const secondArray = person.slice(9, person.length)
 
 <script>
   import Swiper from 'swiper/bundle'
-  import { $, $$ } from '@/lib/dom-selector'
+  import { $ } from '@/lib/dom-selector'
   import { fallenCharacter } from '@/const/isFallenCharacter'
-  import { saveLocalStorage, removeLocalStorage, getLocalStorage } from '@/const/localStorage'
+  import { saveLocalStorage, getLocalStorage } from '@/const/localStorage'
 
   const Carrousel = () => {
     
@@ -65,6 +65,9 @@ const secondArray = person.slice(9, person.length)
             const activeSlide = this.slides[this.activeIndex] as HTMLDivElement
             const $nameText = $('#name-text')
             const $characterLink = activeSlide?.querySelector('.character-link') as HTMLAnchorElement
+
+            if (!$characterLink || !$characterLink.dataset) return
+
             const { id } = $characterLink.dataset ?? null
             const { folder } = $characterLink.dataset ?? null
             const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
@@ -82,7 +85,6 @@ const secondArray = person.slice(9, person.length)
             if ($characterPhoto == null) return
 
             saveLocalStorage({ key: 'lastCharacterId', value: id })
-            // localStorage.setItem('lastCharacterId', id)
             $characterPhoto.src = characterSrc ?? defaultImage
             $nameText.textContent = id
             $characterPhoto.setAttribute('transition:name', `Character-${id}`)
