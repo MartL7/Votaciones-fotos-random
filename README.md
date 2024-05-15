@@ -1,6 +1,18 @@
+<a name="readme-top" id="readme-top"></a>
+
+<div align="center">
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+
+
 # Proyecto de Votaciones y Colaboración de Clase
 
 Proyecto de Recuerdos de mi grupo durante este ciclo escolar. Asegurate de Leer la licencia de código antes de distribuir o modificar el código fuente de este proyecto.
+
+</div>
 
 ## Instalación
 
@@ -58,4 +70,14 @@ Aquí tienes una guía rápida:
 [![Contribuidores](https://contrib.rocks/image?repo=MartL7/Votaciones-fotos-random&max=500&columns=20)](https://github.com/MartL7/Votaciones-fotos-random/graphs/contributors)
 
 
-<p align="right">(<a href="#top">volver arriba</a>)</p>
+<p align="right"><a href="#readme-top">volver arriba</a></p>
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/MartL7/votaciones-fotos-random.svg?style=for-the-badge
+[contributors-url]: https://github.com/MartL7/Votaciones-fotos-random/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/MartL7/votaciones-fotos-random.svg?style=for-the-badge
+[forks-url]: https://github.com/MartL7/Votaciones-fotos-random/forks
+[stars-shield]: https://img.shields.io/github/stars/MartL7/votaciones-fotos-random.svg?style=for-the-badge
+[stars-url]: https://github.com/MartL7/Votaciones-fotos-random/stargazers
+[issues-shield]: https://img.shields.io/github/issues/MartL7/votaciones-fotos-random.svg?style=for-the-badge
+[issues-url]: https://github.com/MartL7/Votaciones-fotos-random/issues
