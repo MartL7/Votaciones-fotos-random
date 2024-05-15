@@ -12,27 +12,27 @@ const { links } = Astro.props
 ---
 <div class="menu-nav flex items-center justify-between px-5 md:hidden h-20">
 
-  <picture class="size-20 flex flex-grow flex-col items-center justify-center">
+  <picture class="size-20 flex flex-col items-center justify-center">
     <a href="/" aria-label="Volver al inicio">
       <img 
-        src="/logos/6m-logo.svg" 
+        src="/logos/6m-logo.webp" 
         loading="lazy"
         alt="logo del grupo M" class="size-full"
       />
     </a>
   </picture>
 
-  <div class="relative size-full mr-10"> 
+  <div class="relative size-24 mr-10"> 
     <img 
-      src="/logos/full-logo.svg" 
+      src="/logos/logo-full.webp" 
       loading="lazy"
       alt="logo del grupo M" 
-      class="absolute size-full inset-0 blur-xl shadow-xl"
+      class="absolute size-full object-cover inset-0 blur-xl shadow-xl"
     />
-    <img src="/logos/full-logo.svg" alt="logo del grupo M" class="absolute size-full inset-0"/>
+    <img src="/logos/logo-full.webp" alt="logo del grupo M" class="absolute size-full inset-0"/>
   </div>
 
-  <button class="button-nav flex flex-grow" aria-label="Menú hamburguesa">
+  <button class="button-nav flex" aria-label="Menú hamburguesa">
     <div></div>
     <div></div>
     <div></div>
@@ -57,7 +57,7 @@ const { links } = Astro.props
     />
     <div> 
       <img 
-        src="/logos/full-logo.svg" 
+        src="/logos/logo-full.webp" 
         alt="logo del grupo M" 
         loading="lazy"
         class="size-auto"
