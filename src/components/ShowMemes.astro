@@ -19,7 +19,7 @@ const { classPicture, classImage, votes } = Astro.props
           src={memeImage.image} 
           alt={`Imagen ${memeImage.id}`} 
           class:list={[
-            `size-full object-cover rounded-lg ${classImage}`,
+            `size-full object-fill rounded-lg ${classImage}`,
             {'is-voted': votes?.includes(memeImage.id) }
           ]}/>
 

@@ -15,7 +15,6 @@ const { characters } = Astro.props
       src="/img/Ulises/Ulises-image-presentation.webp"
       transition:name="Character-Yahir"
       decoding="async"
-      loading="lazy"
       alt="Imagen de Emmanuel" 
       class="size-full object-contain transition"
       id="image-presentation-2"
@@ -40,6 +39,7 @@ const { characters } = Astro.props
                 src={imageSmall} 
                 alt={`Imagen del personaje ${name}`}
                 decoding="async"
+                loading="lazy"
                 class="size-40 object-cover z-[1000] -mt-10"
                 style="mask-image: linear-gradient(black 50%, transparent);"
               />
