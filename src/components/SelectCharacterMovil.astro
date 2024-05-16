@@ -1,4 +1,5 @@
 ---
+import HorizontalScroll from "@/components/HorizontalScroll.astro"
 import type { Character } from "@/types/Character"
 import { fallenCharacters } from '@/logic/fallenCharacters'
 
@@ -7,6 +8,9 @@ interface Props {
 }
 
 const { characters } = Astro.props
+
+// --> Arreglar error de typescript
+const charactersForMobile = characters.concat(fallenCharacters)
 ---
 
 <div class="md:hidden">
@@ -25,62 +29,49 @@ const { characters } = Astro.props
     </span>
   </picture>
 
-  <section class="swiper">
+  <section class="swiper mb-5">
     <div class="swiper-wrapper">
       {
         // -> Forma pirata xd -> Corregir el -mt-10
-        characters.map(({ id, name, imageSmall }) => (
-          <div class="swiper-slide">
-            <a 
-              href={`/character/${id}`} 
-              class="character-link relative flex justify-center items-center h-20"
-              data-id={id}>
-              <img 
-                src={imageSmall} 
-                alt={`Imagen del personaje ${name}`}
-                decoding="async"
-                loading="lazy"
-                class="size-40 object-cover z-[1000] -mt-10"
-                style="mask-image: linear-gradient(black 50%, transparent);"
-              />
-              <div class="absolute inset-0 character-link-background"></div>
-            </a>
-          </div>
-        ))
-      }
-      {
-        fallenCharacters.map(({ folder, id, name, imageSmall }) => (
-        <div class="swiper-slide">
-          <div 
-            class="character-link fallen-character relative flex justify-center items-center h-20"  
-            data-folder={folder} 
-            data-id={id}
-          >
-            <img 
-              src={imageSmall} 
-              alt={`Imagen small de ${name}`}
-              decoding="async"
-              loading="lazy"
-              class="saturate-0 size-40 object-cover z-[1000] -mt-10" 
-              style="mask-image: linear-gradient(black 50%, transparent);"
-              id={`character-${id}`}
-            />
-            <div class="absolute inset-0 character-link-background"></div>
-          </div>
-        </div>
-        ))
+        charactersForMobile.map(({ folder, id, name, imageSmall }) => {
+
+          const isFallen = folder === 'Fallen'
+          const classFallen = isFallen ? 'fallen-character' : ''
+          const classFallenImage = isFallen ? 'saturate-0' : ''
+
+          return (
+            <div class="swiper-slide">
+              <a 
+                href={!isFallen ? `/character/${id}` : '#'} 
+                class={`character-link relative flex justify-center items-center h-20 ${classFallen}`}
+                data-id={id}
+                data-folder={isFallen ? folder : null}
+                >
+                <img 
+                  src={imageSmall} 
+                  alt={`Imagen del personaje ${name}`}
+                  decoding="async"
+                  loading="lazy"
+                  class={`size-40 object-cover z-[1000] -mt-10 ${classFallenImage}`}
+                  style="mask-image: linear-gradient(black 50%, transparent);"
+                  id={`character-${id}`}
+                />
+                <div class="absolute inset-0 character-link-background"></div>
+              </a>
+            </div>
+          )
+        })
       }
     </div>
-    <div class="swiper-pagination"></div>
   </section>
+
+  <aside class="flex justify-center items-center">
+    <HorizontalScroll class:list={["w-16 text-primary opacity-80"]} />
+  </aside>
+
 </div>
 
 <style>
-  :root {
-    --swiper-theme-color: #fff;
-    --swiper-pagination-bullet-inactive-color: #e8e8e8;
-  }  
-
   .swiper {
     width: 90vw;
     height: 192px;
