@@ -1,7 +1,7 @@
 # Cosas por hacer
 
 -   1. Hacer Slider de los personajes (movil) ✅
--   2. Hacer el diseño de los personajes como en la velada IV (PC) ✔️
+-   2. Hacer el diseño de los personajes como en la velada IV (PC) ✅
 -   3. Arreglar autenticación con GitHub ✅
 -   4. Mover todas las imágenes a un CDN (CloudFare) -> URGENTE ❌ ❌
 -   5. Optimizar la página (accesibilidad) ✅
@@ -27,17 +27,17 @@
 -   25. Cambiar de Flex a Grid en la selección de personajes ✅
 -   26. Cambiar orden de los characters conforme a su mirada ✅
 -   27. Agregar seccion caidos ✅
--   28. Cambiar algunas imagenes de presentacion para no afectar el aspect-ratio ✔️
+-   28. Cambiar algunas imagenes de presentacion para no afectar el aspect-ratio ✅
 -   29. Agregar Sección profesor del año ✅
 -   30. Cambiar tipografía de los nombres de los characters ✅
 -   31. Agregar Rollback en la sección de Votos ✅
 -   32. Agregar las demás fotos de Emmanuel ✅
 -   33. Cambiar la imagen small y presentation de Marlen ✅
--   34. Smplificar la lógica en el componente Vote.astro ✔️ (Faltan los pronósticos)
--   35. Mejorar diseño a la parte de pronósticos de cada categoría en los Votos -> URGENTE ✔️
+-   34. Smplificar la lógica en el componente Vote.astro ✅
+-   35. Mejorar diseño a la parte de pronósticos de cada categoría en los Votos -> URGENTE ✅
 -   36. Separar componentes en el Vote.astro
 -   37. Arrgelar error de consola de Image undefined en el carrousel -> URGENTE ✅
--   38. Agregar a Sebas y a Abi -> URGENTE ✔️ (Solo falta Abi)
+-   38. Agregar a Sebas y a Abi -> URGENTE ✅
 -   39. Agregar sección de votos para la categoría Profesor del Ciclo -> URGENTE ✅
 -   40. Mejorar mí foto de presentación -> URGENTE ✅
 -   41. Agregar a la sección de votaciones la categoría Profe del Ciclo -> URGENTE ✅
@@ -45,6 +45,6 @@
 -   43. Agregar Las Fotos De Pinto Y Orlando -> URGENTE ✔️ (falta Pinto)
 -   44. Mejorar el Diseño de los pronósticos -> URGENTE ✅
 -   45. Mejorar la Galería de Lesss --> URGENTE ✅
--   46. Simplificar la lógica del carrusel y del cambio de characters para reutilizar código. ❌
+-   46. Simplificar la lógica del carrusel y del cambio de characters para reutilizar código. ✅
 -   47. Arreglar Modal de menú -> URGENTE ✅
--   48. Arreglar error de Tipos de TypeScript -> ❌
+-   48. Arreglar error de Tipos de TypeScript -> ✅
