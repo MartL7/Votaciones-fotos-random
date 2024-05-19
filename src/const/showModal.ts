@@ -18,6 +18,7 @@ export const showModal = () => {
     image.addEventListener('click', () => {
       const name = url.split('/').at(-2)
 
+      $imageClip.classList.add('animate-fade-in')
       $imageClip.alt = `Imagen de la galeria de ${name}`
       $imageClip.src = url
       $imageDialog.showModal()
