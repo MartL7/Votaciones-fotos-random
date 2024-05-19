@@ -1,0 +1,34 @@
+---
+import { memories } from '@/logic/memories'
+import Modal from '@/components/Modal.astro'
+---
+<article class="flex flex-col justify-center items-center mt-20">
+ 
+  <h2 class="font-Merri text-center font-bold text-4xl text-blue-100/90 mb-5"> Recuerdos del Grupo </h2>
+  <span class="text-2xl text-red-300/90"> Los Papus </span>
+
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-5 p-2 md:p-5">
+    {
+      memories.map(({ id, image, className }) => (
+        <picture class={`image-container ${className}`} data-url={image}>
+          <img 
+            decoding="async"
+            loading="lazy"
+            src={image} 
+            alt={`image of ${id}`} 
+            class="size-full rounded-lg object-cover cursor-zoom-in" />
+        </picture>
+      ))
+    }
+  </section>
+
+  <Modal className="clip-dialog" id="close-dialog" isButton={true}>
+    <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
+  </Modal>
+</article>
+
+<script>
+  import { showModal } from '@/const/showModal'
+
+  document.addEventListener('astro:page-load', showModal)
+</script>
