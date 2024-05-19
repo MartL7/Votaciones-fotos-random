@@ -1,16 +1,18 @@
 ---
 import HorizontalScroll from "@/components/HorizontalScroll.astro"
 import type { Character } from "@/types/Character"
+import type { FallenCharacter } from '@/types/FallenCharacters'
 import { fallenCharacters } from '@/logic/fallenCharacters'
 
 interface Props {
   characters: Character[]
 }
 
+type CharactersMobile = Character & FallenCharacter
+
 const { characters } = Astro.props
 
-// --> Arreglar error de typescript
-const charactersForMobile = characters.concat(fallenCharacters)
+const charactersForMobile: CharactersMobile[] = characters.concat(fallenCharacters as CharactersMobile[])
 ---
 
 <div class="md:hidden">

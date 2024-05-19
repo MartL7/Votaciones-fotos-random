@@ -1,10 +1,4 @@
-interface FallenCharacter {
-    id: string
-    name: string
-    folder: string
-    imageSmall: string
-    imagePresentation?: string
-}
+import type { FallenCharacter } from '@/types/FallenCharacters'
 
 export const fallenCharacters: FallenCharacter[] = [
     {
