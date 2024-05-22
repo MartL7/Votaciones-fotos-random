@@ -8,7 +8,7 @@ const { arrayPronostic, totalVotes } = Astro.props
 ---
 
 <div class="mt-5 md:mt-10 flex justify-center w-full items-center flex-col">
-    <div class="container-pronostic mb-10 px-5 md:px-0">
+    <div class="container-pronostic gap-10 md:gap-20 mb-10 px-5 md:px-0">
       {
         arrayPronostic.map(({ VoteId, count, CategoryId }) => {
           const porcentageCount = (count / totalVotes) * 100
@@ -17,20 +17,20 @@ const { arrayPronostic, totalVotes } = Astro.props
           const imageSrc = isMeme ? `/img/Memes/${VoteId}.webp` : `/img/Profes/${teacher}/${teacher}-image-presentation.webp`
 
           return (
-            <div class={isMeme ? 'flex flex-col gap-2 items-center h-[200px]  md:h-[300px]': 'relative flex flex-col items-center md:h-[400px]'}>
+            <div class={isMeme ? 'col-span-2 flex flex-col gap-2 items-center h-[200px]  md:h-[300px]': 'col-span-2 relative flex flex-col items-center md:h-[600px] container-image'}>
               <img 
                 loading="lazy"
                 decoding="async"
                 src={imageSrc}
                 alt={`Imagen ${VoteId}`} 
-                class={isMeme ? 'size-40 sm:size-full md:h-[250px] rounded-lg' : 'object-cover h-full hover:scale-110 hover:saturate-150 cursor-pointer transition' } 
+                class={isMeme ? 'size-40 sm:size-full rounded-lg' : 'object-cover size-full hover:scale-110 hover:saturate-150 cursor-pointer transition' } 
                 style={!isMeme ? 'mask-image: linear-gradient(black 50%, transparent);' : ''}
               />
-              <span class={!isMeme ? `font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-20 z-50 mx-auto text-4xl lg:text-6xl` : 'hidden'}>
+              <span class={!isMeme ? `font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-20 z-50 mx-auto text-4xl sm:text-5xl lg:text-6xl text-blue-200/90` : 'hidden'}>
                 {teacher}
               </span>
               
-              <p class="text-3xl md:text-5xl font-bold font-Public text-accent">       
+              <p class="text-3xl md:text-5xl font-semibold text-center text-accent">       
                 {porcentageCount.toFixed(2)} %
               </p>
 
@@ -44,7 +44,10 @@ const { arrayPronostic, totalVotes } = Astro.props
 <style>
   .container-pronostic {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container-image:hover p {
+    transform: scale(0.9);
   }
 </style>

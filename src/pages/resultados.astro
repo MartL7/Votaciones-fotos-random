@@ -13,20 +13,21 @@ const { name, imagePresentation } = filtersCategoryDog.at(0)
 <Layout title="Resultados de los pronósticos 🦸">
   <main class="flex flex-col justify-center items-center p-5">
 
-    <h1 class="text-2xl sm:text-3xl md:text-4xl font-Public mb-10 text-center text-primary"> Ganadores de los pronósticos 🦸</h1>
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-Public mb-10 text-center text-primary"> Ganadores de los pronósticos 👑</h1>
 
     <aside class="flex flex-col items-center justify-center mb-5">
       <p class="text-center text-2xl font-semibold"> 
         <span class="text-blue-400/90"> Categoría: </span> 
         <span class="text-accent"> Perro del año 🐶</span>
       </p>
+      <small class="mt-2 text-primary"> No le des click a la enchilada. 😺 </small>
 
       <picture class="sm:h-[50vh] relative h-[500px]">
         <img 
           decoding="async" 
           src={imagePresentation} 
           alt={`Imagen de ${name}`}
-          class='image-winner size-full object-cover rounded-lg'
+          class='image-winner size-full object-cover rounded-lg cursor-pointer'
           data-name={name}
           style="filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));"
         />
