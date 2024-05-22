@@ -17,7 +17,7 @@ const { arrayPronostic, totalVotes } = Astro.props
           const imageSrc = isMeme ? `/img/Memes/${VoteId}.webp` : `/img/Profes/${teacher}/${teacher}-image-presentation.webp`
 
           return (
-            <div class={isMeme ? 'col-span-2 flex flex-col gap-2 items-center h-[200px]  md:h-[300px]': 'col-span-2 relative flex flex-col items-center md:h-[600px] container-image'}>
+            <div class={isMeme ? 'col-span-2 flex flex-col gap-2 items-center md:h-[300px]': 'col-span-2 relative flex flex-col items-center md:h-[500px] container-image'}>
               <img 
                 loading="lazy"
                 decoding="async"
