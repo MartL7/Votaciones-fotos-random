@@ -17,14 +17,14 @@ const { arrayPronostic, totalVotes } = Astro.props
           const imageSrc = isMeme ? `/img/Memes/${VoteId}.webp` : `/img/Profes/${teacher}/${teacher}-image-presentation.webp`
 
           return (
-            <div class={isMeme ? 'col-span-2 flex flex-col gap-2 items-center md:h-[300px]': 'col-span-2 relative flex flex-col items-center md:h-[500px] container-image'}>
+            <div class={isMeme ? 'col-span-2 flex flex-col gap-2 items-center md:size-[300px] sm:size-[250px]': 'col-span-2 relative flex flex-col items-center md:h-[500px] container-image'}>
               <img 
                 loading="lazy"
                 decoding="async"
                 src={imageSrc}
                 alt={`Imagen ${VoteId}`} 
                 class={isMeme ? 'size-40 sm:size-full rounded-lg' : 'object-cover size-full hover:scale-110 hover:saturate-150 cursor-pointer transition' } 
-                style={!isMeme ? 'mask-image: linear-gradient(black 50%, transparent);' : ''}
+                style={!isMeme ? 'mask-image: linear-gradient(black 40%, transparent);' : ''}
               />
               <span class={!isMeme ? `font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-20 z-50 mx-auto text-4xl sm:text-5xl lg:text-6xl text-blue-200/90` : 'hidden'}>
                 {teacher}
