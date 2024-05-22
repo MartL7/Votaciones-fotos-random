@@ -15,7 +15,7 @@
 -   13. Cambiar / Agregar algunas imagenes ✅
 -   14. Cambiar el Login a Google en lugar de GitHub --> URGENTE ✅
 -   15. Persistencia del personaje al navegar y recargar la página (Movil) -> URGENTE ✅
--   16. Agregar imagenes en alta calidad para mostrar ❌
+-   16. Agregar imagenes en alta calidad para mostrar -> Se Cancela ✔️
 -   17. Cambiar lógica para poder cambiar tu voto pero no votar más de 3 veces ✅
 -   18. Arreglar bug de lógica de clases en componente ShowMemes ✅
 -   19. Arreglar bug de Sesión en los votos --> URGENTE ✅
@@ -48,3 +48,4 @@
 -   46. Simplificar la lógica del carrusel y del cambio de characters para reutilizar código. ✅
 -   47. Arreglar Modal de menú -> URGENTE ✅
 -   48. Arreglar error de Tipos de TypeScript -> ✅
+-   49. Agregar Fallback de imagenes Webp a las Avif para soporte en navegadores antiguos. -> URGENTE ❌ 
