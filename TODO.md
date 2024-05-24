@@ -48,4 +48,8 @@
 -   46. Simplificar la lógica del carrusel y del cambio de characters para reutilizar código. ✅
 -   47. Arreglar Modal de menú -> URGENTE ✅
 -   48. Arreglar error de Tipos de TypeScript -> ✅
--   49. Agregar Fallback de imagenes Webp a las Avif para soporte en navegadores antiguos. -> URGENTE ❌ 
+-   49. Agregar Fallback de imagenes Webp a las Avif para soporte en navegadores antiguos. -> URGENTE ❌
+-   50. Mejorar el diseño en los perfiles de personaje -> URGENTE ❌
+-   51. Conseguir los cumpleaños de todos -> URGENTE ❌
+-   52. Agregar Script para calcular Edad automaticamente -> URGENTE ❌
+-   53. Volver a Optimizar la página -> ❌
