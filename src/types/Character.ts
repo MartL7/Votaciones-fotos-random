@@ -12,6 +12,7 @@ interface Socials {
 export interface Character {
   id: string
   name: string
+  birthDay?: string
   imagePresentation: string
   imageSmall: string
   imagesGalery: Images[]

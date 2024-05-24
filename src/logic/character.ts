@@ -156,6 +156,7 @@ export const Characters: Character[] = [
     {
         id: 'Geovas',
         name: 'Geovas',
+        birthDay: '21/08/2006',
         imagePresentation: '/img/Geovas/Geovas-image-presentation-1.webp',
         imageSmall: '/img/Geovas/Geovas-small.webp',
         imagesGalery: [
@@ -454,6 +455,7 @@ export const Characters: Character[] = [
     {
         id: 'Elvin',
         name: 'Elvin',
+        birthDay: '21/08/2006',
         imagePresentation: '/img/Elvin/Elvin-image-presentation.webp',
         imageSmall: '/img/Elvin/Elvin-small.webp',
         imagesGalery: [
@@ -576,31 +578,64 @@ export const Characters: Character[] = [
     {
         id: 'Are',
         name: 'Luzcesita',
+        birthDay: '05/12/2006',
         imagePresentation: '/img/Are/Are-image-presentation.webp',
         imageSmall: '/img/Are/Are-small.webp',
         imagesGalery: [
             {
                 image: '/img/Are/Are-image-1.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[620px]',
+                class: 'sm:col-start-1 sm:col-end-2 sm:h-[300px] h-[200px] col-start-1 col-end-2',
             },
             {
                 image: '/img/Are/Are-image-2.webp',
-                class: 'sm:col-start-2 sm:col-end-3 h-[300px]',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[500px] col-start-2 col-end-3 row-start-1 row-end-3 h-[320px]',
             },
             {
                 image: '/img/Are/Are-image-3.webp',
-                class: 'sm:h-[300px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px] col-start-1 col-end-2 row-start-2 row-end-4 h-[250px]',
             },
             {
                 image: '/img/Are/Are-image-4.webp',
-                class: 'sm:h-[300px]',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-5 sm:h-[500px] col-start-2 col-end-3 row-start-3 row-end-5 h-[270px]',
             },
             {
-                image: '/img/Are/Are-image-2.webp',
-                class: 'sm:h-[300px]',
+                image: '/img/Are/Are-image-5.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[380px] col-start-1 col-end-2 row-start-4 row-end-6 h-[300px]',
             },
+            {
+                image: '/img/Are/Are-image-6.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-6 sm:h-[610px] col-start-2 col-end-3 row-start-5 row-end-7 h-[300px]',
+            },
+            {
+                image: '/img/Are/Are-image-7.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-6 sm:h-[400px] col-start-1 col-end-2 row-start-6 row-end-8 h-[300px]',
+            },
+            {
+                image: '/img/Are/Are-image-8.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-5 sm:row-end-6 sm:h-[290px] col-start-2 col-end-3 row-start-7 row-end-9 h-[300px]',
+            },
+            {
+                image: '/img/Are/Are-image-9.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-6 sm:row-end-8 sm:h-[540px] col-start-1 col-end-2 row-start-8 row-end-10 h-[300px]',
+            },
+            {
+                image: '/img/Are/Are-image-10.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-6 sm:row-end-8 sm:h-[540px] col-start-2 col-end-3 row-start-9 row-end-11 h-[300px]',
+            },
+            {
+                image: '/img/Are/Are-image-11.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-6 sm:row-end-7 sm:h-[250px] col-start-1 col-end-2 row-start-12 row-end-13 h-[150px]',
+            },
+            {
+                image: '/img/Are/Are-image-12.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-7 sm:row-end-8 sm:h-[250px] col-start-1 col-end-2 row-start-10 row-end-12 h-[300px]',
+            },
+            {
+                image: '/img/Are/Are-image-13.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-2 col-end-3 row-start-11 row-end-13 h-[300px]',
+            }
         ],
-        funnyText: ['Hii'],
+        funnyText: ['Hii', 'Hiii', 'Hiii'],
         socials: [
             {
                 name: 'Instagram',
@@ -612,6 +647,7 @@ export const Characters: Character[] = [
     {
         id: 'Leslie',
         name: 'Less',
+        birthDay: '07/04/2006',
         imagePresentation: '/img/Leslie/Leslie-image-presentation.webp',
         imageSmall: '/img/Leslie/Leslie-small.webp',
         imagesGalery: [
