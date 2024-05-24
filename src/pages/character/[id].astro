@@ -11,20 +11,77 @@ const { id } = Astro.params
 
 const character = Characters.find((character) => character.id === id)
 
-const { imagePresentation, name, imagesGalery, funnyText, socials } = character
+const { imagePresentation, name, birthDay, imagesGalery, funnyText, socials } = character
 
 const arrayText = funnyText.join('. ')
+
+const firstThirdsFunnyText = funnyText.slice(0, 3)
+
+const birthDayText = birthDay ?? '1/01/2000'
 ---
 <Layout title={`Información del personaje ${name}`}>
 
   <main class="flex justify-center flex-col items-center">
 
     <h1 class="text-2xl sm:text-3xl font-bold text-gray-400/90 uppercase"> Información de {name} </h1>
-    <small class="text-red-300/90"> Da click a la imagen para ir atrás </small>
+    <small class="text-red-300/90 mb-5"> Da click a la imagen para ir atrás </small>
 
     <input type="hidden" name="arrayToText" value={arrayText} id="arrayToText">
 
-    <a href="/" class="group relative cursor-pointer">
+    <section class="hidden md:grid grid-cols-3 gap-10">
+      <article class="flex flex-col gap-y-10 justify-center items-center">
+        {
+          firstThirdsFunnyText.map((text) => (
+            <div class="flex justify-center items-center">
+              <p class="font-merri text-center text-orange-200/90 font-semibold text-3xl skew-y-[-8deg]"> "{text}" </p>
+            </div>
+          ))
+        }
+      </article>
+
+      <div class="flex justify-center items-center">
+        <a href="/" class="group relative cursor-pointer">
+          <img 
+            decoding="async"
+            src={imagePresentation}
+            alt={`Imagen Grande de ${name}`}
+            transition:name={`Character-Yahir`}
+            class="masked-image sm:h-[60vh] transition"
+          />
+    
+          <div>
+            <span class=`font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-48 md:bottom-28 lg:bottom-48 left-0 right-0 z-50 mx-auto text-6xl lg:text-6xl`>
+              {name}
+            </span>
+    
+            <span class=`font-bold skew-y-[-10deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto`>
+              <p class="text-blue-400/80 uppercase text-2xl" id="funnyText"> 
+                "{funnyText.at(0)}"
+              </p>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="flex flex-col justify-center items-center gap-y-10">
+        <aside class="flex flex-col justify-center items-center">
+          <h2 class="text-2xl text-center font-Oswald"> Cumpleaños </h2>
+          <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {birthDayText} </span>
+        </aside>
+
+        <aside class="flex flex-col justify-center items-center">
+          <h2 class="text-2xl text-center font-Oswald"> Apodo </h2>
+          <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {name} </span>
+        </aside>
+
+        <aside class="flex flex-col justify-center items-center">
+          <h2 class="text-2xl text-center font-Oswald"> Edad </h2>
+          <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> 17 </span>
+        </aside>
+      </div>
+    </section>
+
+    <a href="/" class="md:hidden group relative cursor-pointer">
       <img 
         decoding="async"
         src={imagePresentation}
