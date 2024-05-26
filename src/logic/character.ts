@@ -512,6 +512,11 @@ export const Characters: Character[] = [
             'Tengo una idea',
             'Involucra una silla y una cuerda',
         ],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/mrcat_86/', type: 'instagram' },
+            { name: 'GitHub', link: 'https://github.com/Mr-Cat86', type: 'github' },
+            { name: 'Twitter', link: 'https://twitter.com/MrCat_86', type: 'twitter' },
+        ]
     },
     {
         id: 'Emmanuel',
@@ -679,41 +684,53 @@ export const Characters: Character[] = [
         imageSmall: '/img/Leslie/Leslie-small.webp',
         imagesGalery: [
             {
-                image: '/img/Leslie/Leslie-image-1.webp',
-                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[600px] hidden sm:block',
+                image: '/img/Leslie/Leslie-image-8.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:h-[200px]',
             },
             {
                 image: '/img/Leslie/Leslie-image-6.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:h-[300px] sm:hidden',
-            },
-            {
-                image: '/img/Leslie/Leslie-image-2.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:h-[300px] row-start-2 h-[200px]',
+                class: 'sm:hidden',
             },
             {
                 image: '/img/Leslie/Leslie-image-3.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:h-[300px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[200px] col-start-2 col-end-3 row-start-4 row-end-5 h-[150px]',
+            },
+            {
+                image: '/img/Leslie/Leslie-image-1.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[500px] sm:block hidden',
             },
             {
                 image: '/img/Leslie/Leslie-image-4.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-3 sm:h-[260px] row-start-2 row-end-4 h-[380px] ',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-2 sm:row-end-4 sm:h-[500px] col-start-1 col-end-2 row-start-1 row-end-3 h-[300px]',
             },
             {
                 image: '/img/Leslie/Leslie-image-5.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:h-[260px] h-[160px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[260px] col-start-2 col-end-3 row-start-5 row-end-7 h-[300px]',
             },
             {
                 image: '/img/Leslie/Leslie-image-7.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-5 sm:h-[600px] col-start-1 col-end-2 row-start-4 row-end-6 h-[380px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-5 sm:h-[400px] col-start-2 col-end-3 row-start-2 row-end-4 h-[300px]',
             },
             {
-                image: '/img/Leslie/Leslie-image-8.webp',
-                class: 'sm:col-start-2 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-2 col-end-3 row-start-4 row-end-5 h-[180px]',
+                image: '/img/Leslie/Leslie-image-2.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[200px] col-start-1 col-end-2 row-start-6 row-end-8 h-[280px]',
+            },
+            {
+                image: '/img/Leslie/Leslie-image-12.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:row-end-6 sm:h-[400px] h-[200px]',
+            },
+            {
+                image: '/img/Leslie/Leslie-image-10.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-4 sm:row-end-6 sm:h-[400px] col-start-1 col-end-2 row-start-4 row-end-6 h-[300px]'
             },
             {
                 image: '/img/Leslie/Leslie-image-9.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[260px] col-start-2 col-end-3 row-start-5 row-end-6 h-[180px]',
+                class: 'sm:hidden col-start-2 col-end-3 row-start-7 row-end-9 h-[350px]'
             },
+            {
+                image: '/img/Leslie/Leslie-image-11.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-5 sm:row-end-6 sm:h-[200px] sm:block hidden'
+            }
         ],
         funnyText: ['JA, lol, que mal'],
         socials: [
