@@ -24,6 +24,18 @@ const arrayText = funnyText.join('. ')
 const firstThirdsFunnyText = funnyText.slice(0, 3)
 
 const birthDayText = birthDay ?? '1/01/2007'
+
+const formatDate = birthDayText.split('/').toReversed().join('-')
+
+const formatBirthDate = new Date(formatDate)
+const today = new Date()
+
+let age = today.getFullYear() - formatBirthDate.getFullYear()
+const month = today.getMonth() - formatBirthDate.getMonth()
+
+if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
+  age--
+}
 ---
 <Layout title={`Información del personaje ${name}`}>
 
@@ -69,12 +81,11 @@ const birthDayText = birthDay ?? '1/01/2007'
         </a>
       </div>
 
-      <InfoCharacterDesk name={name} birthDayText={birthDayText} />
+      <InfoCharacterDesk name={name} birthDayText={birthDayText} isMobile={false} age={age} />
     </section>
 
     <a href="/" class="md:hidden group relative cursor-pointer">
       <img 
-        decoding="async"
         src={imagePresentation}
         alt={`Imagen Grande de ${name}`}
         transition:name={`Character-Yahir`}
@@ -94,7 +105,7 @@ const birthDayText = birthDay ?? '1/01/2007'
       </div>
     </a>
 
-    <aside class="mt-10 flex gap-5 justify-center items-center">
+    <aside class="mt-10 flex gap-5 justify-center items-center mb-10 md:mb-0">
       <button id="button-left-change-text"> 
         <span class="text-3xl"> 
           <ArrowLeft class="size-12"/>
@@ -108,6 +119,8 @@ const birthDayText = birthDay ?? '1/01/2007'
         </span>
       </button>
     </aside>
+
+    <InfoCharacterDesk name={name} birthDayText={birthDayText} isMobile={true} age={age} />
 
     <h2 class="mt-20 font-semibold text-2xl sm:text-3xl "> Galeria de Fotos de {name} </h2>
     <small class="text-slate-300/90"> Has click a cualquier imagen para su vista en grande </small>

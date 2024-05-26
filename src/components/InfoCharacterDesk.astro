@@ -1,24 +1,52 @@
 ---
 interface Props {
-  name: string;
-  birthDayText: string;
+  name: string
+  birthDayText: string
+  age: number
+  isMobile: boolean
 }
 
-const { name, birthDayText } = Astro.props
+const { name, birthDayText, isMobile, age } = Astro.props
 ---
-<div class="flex flex-col justify-center items-center gap-y-10">
-  <aside class="flex flex-col justify-center items-center">
-    <h2 class="text-2xl text-center font-Oswald"> Cumpleaños </h2>
-    <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {birthDayText} </span>
-  </aside>
+{
+  !isMobile ? (
+    <section class="flex flex-col justify-center items-center gap-y-10">
+      <aside class="flex flex-col justify-center items-center">
+        <h2 class="text-2xl text-center font-Oswald"> Cumpleaños </h2>
+        <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {birthDayText} </span>
+      </aside>
 
-  <aside class="flex flex-col justify-center items-center">
-    <h2 class="text-2xl text-center font-Oswald"> Apodo </h2>
-    <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {name} </span>
-  </aside>
+      <aside class="flex flex-col justify-center items-center">
+        <h2 class="text-2xl text-center font-Oswald"> Apodo </h2>
+        <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {name} </span>
+      </aside>
 
-  <aside class="flex flex-col justify-center items-center">
-    <h2 class="text-2xl text-center font-Oswald"> Edad </h2>
-    <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> 17 </span>
-  </aside>
-</div>
+      <aside class="flex flex-col justify-center items-center">
+        <h2 class="text-2xl text-center font-Oswald"> Edad </h2>
+        <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {age} </span>
+      </aside>
+    </section>
+  ) 
+  :
+  (
+    <section class="w-full px-5 md:hidden">
+      <div class="flex flex-col justify-center items-center gap-y-2">
+
+        <div class="border-b-2 flex justify-between items-center w-full">
+          <h2 class="text-2xl text-center font-Oswald"> Cumpleaños </h2>
+          <span class="text-2xl text-center font-public text-blue-200/90 font-bold"> {birthDayText} </span>
+        </div>
+
+        <div class="border-b-2 flex justify-between items-center w-full">
+          <h2 class="text-2xl text-center font-Oswald"> Apodo </h2>
+          <span class="text-2xl text-center font-public text-blue-200/90 font-bold"> {name} </span>
+        </div>
+
+        <div class="flex justify-between items-center w-full">
+          <h2 class="text-2xl text-center font-Oswald"> Edad </h2>
+          <span class="text-2xl text-center font-public text-blue-200/90 font-bold"> {age} </span>
+        </div>
+      </div>
+    </section>
+  )
+}
