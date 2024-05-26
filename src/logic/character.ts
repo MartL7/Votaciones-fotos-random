@@ -663,8 +663,12 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-7 sm:row-end-8 sm:h-[250px] col-start-1 col-end-2 row-start-10 row-end-12 h-[300px]',
             },
             {
+                image: '/img/Are/Are-image-13.webp',
+                class: 'sm:block sm:col-start-1 sm:col-end-2 sm:row-start-8 sm:row-end-9 sm:h-[300px] h-[320px] hidden'
+            },
+            {
                 image: '/img/Are/Are-image-1.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-2 col-end-3 row-start-11 row-end-13 h-[320px]',
+                class: 'sm:hidden col-start-2 col-end-3 row-start-11 row-end-13 h-[320px]',
             },
         ],
         funnyText: ['Hii', 'Hiii', 'Hiii'],
