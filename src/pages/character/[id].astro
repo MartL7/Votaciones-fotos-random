@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro"
 import Socials from "@/components/Socials.astro"
 import ArrowRight from "@/components/icons/Arrows/ArrowRight.astro"
 import ArrowLeft from "@/components/icons/Arrows/ArrowLeft.astro"
+import InfoCharacterDesk from "@/components/InfoCharacterDesk.astro"
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
 
@@ -11,13 +12,18 @@ const { id } = Astro.params
 
 const character = Characters.find((character) => character.id === id)
 
+if (!character) {
+  location.href = '/'
+}
+
 const { imagePresentation, name, birthDay, imagesGalery, funnyText, socials } = character
+
 
 const arrayText = funnyText.join('. ')
 
 const firstThirdsFunnyText = funnyText.slice(0, 3)
 
-const birthDayText = birthDay ?? '1/01/2000'
+const birthDayText = birthDay ?? '1/01/2007'
 ---
 <Layout title={`Información del personaje ${name}`}>
 
@@ -28,18 +34,18 @@ const birthDayText = birthDay ?? '1/01/2000'
 
     <input type="hidden" name="arrayToText" value={arrayText} id="arrayToText">
 
-    <section class="hidden md:grid grid-cols-3 gap-10">
+    <section class="hidden md:grid grid-cols-4 gap-10">
       <article class="flex flex-col gap-y-10 justify-center items-center">
         {
           firstThirdsFunnyText.map((text) => (
             <div class="flex justify-center items-center">
-              <p class="font-merri text-center text-orange-200/90 font-semibold text-3xl skew-y-[-8deg]"> "{text}" </p>
+              <p class="font-merri text-pretty text-center text-orange-200/90 font-semibold text-2xl lg:text-3xl skew-y-[-8deg]"> "{text}" </p>
             </div>
           ))
         }
       </article>
 
-      <div class="flex justify-center items-center">
+      <div class="col-start-2 col-end-4 flex justify-center items-center">
         <a href="/" class="group relative cursor-pointer">
           <img 
             decoding="async"
@@ -63,22 +69,7 @@ const birthDayText = birthDay ?? '1/01/2000'
         </a>
       </div>
 
-      <div class="flex flex-col justify-center items-center gap-y-10">
-        <aside class="flex flex-col justify-center items-center">
-          <h2 class="text-2xl text-center font-Oswald"> Cumpleaños </h2>
-          <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {birthDayText} </span>
-        </aside>
-
-        <aside class="flex flex-col justify-center items-center">
-          <h2 class="text-2xl text-center font-Oswald"> Apodo </h2>
-          <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {name} </span>
-        </aside>
-
-        <aside class="flex flex-col justify-center items-center">
-          <h2 class="text-2xl text-center font-Oswald"> Edad </h2>
-          <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> 17 </span>
-        </aside>
-      </div>
+      <InfoCharacterDesk name={name} birthDayText={birthDayText} />
     </section>
 
     <a href="/" class="md:hidden group relative cursor-pointer">
