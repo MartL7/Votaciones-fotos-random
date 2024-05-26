@@ -87,7 +87,7 @@ const birthDayText = birthDay ?? '1/01/2007'
         </span>
 
         <span class=`font-bold skew-y-[-10deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto`>
-          <p class="text-blue-400/80 uppercase text-2xl" id="funnyText"> 
+          <p class="text-blue-400/80 uppercase text-2xl" id="funnyText2"> 
             "{funnyText.at(0)}"
           </p>
         </span>
@@ -165,6 +165,7 @@ const birthDayText = birthDay ?? '1/01/2007'
     
     const changeText = () => {
       const $funnyText = $('#funnyText') as HTMLParagraphElement
+      const $funnyText2 = $('#funnyText2') as HTMLParagraphElement
       const $buttonChangeText = $('#button-change-text') as HTMLButtonElement
       const $buttonLeftChangeText = $('#button-left-change-text') as HTMLButtonElement
       const $arrayToText = $('#arrayToText') as HTMLInputElement
@@ -180,12 +181,14 @@ const birthDayText = birthDay ?? '1/01/2007'
       $buttonLeftChangeText.addEventListener('click', () => {
         index = (index - 1 + arrayText.length) % arrayText.length
         $funnyText.textContent = `"${arrayText[index]}"`
+        $funnyText2.textContent = `"${arrayText[index]}"`
         $textCounter.textContent = `${index + 1}/${arrayText.length}`
       })
   
       $buttonChangeText.addEventListener('click', () => {
         index = (index + 1) % arrayText.length
         $funnyText.textContent = `"${arrayText[index]}"`
+        $funnyText2.textContent = `"${arrayText[index]}"`
         $textCounter.textContent = `${index + 1}/${arrayText.length}`
       })
     }
