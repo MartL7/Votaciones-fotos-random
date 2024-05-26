@@ -37,6 +37,7 @@ export const Characters: Character[] = [
     {
         id: 'Janet',
         name: 'Jann',
+        birthDay: '20/03/2006',
         imagePresentation: '/img/Janet/Janet-image-presentation.webp',
         imageSmall: '/img/Janet/Janet-small.webp',
         imagesGalery: [
@@ -69,7 +70,8 @@ export const Characters: Character[] = [
     },
     {
         id: 'Marlen',
-        name: 'Marlen',
+        name: 'Mar',
+        birthDay: '21/12/2006',
         imagePresentation: '/img/Marlen/Marlen-image-presentation.webp',
         imageSmall: '/img/Marlen/Marlen-small.webp',
         imagesGalery: [
@@ -115,6 +117,7 @@ export const Characters: Character[] = [
     {
         id: 'Yanet',
         name: 'Yane',
+        birthDay: '25/01/2006',
         imagePresentation: '/img/Yanet/Yanet-image-presentation.webp',
         imageSmall: '/img/Yanet/Yanet-small.webp',
         imagesGalery: [
@@ -231,6 +234,7 @@ export const Characters: Character[] = [
     {
         id: 'Karen',
         name: 'Karen',
+        birthDay: '04/03/2004',
         imagePresentation: '/img/Karen/Karen-image-presentation.webp',
         imageSmall: '/img/Karen/Karen-small.webp',
         imagesGalery: [
@@ -303,6 +307,7 @@ export const Characters: Character[] = [
     {
         id: 'CruCru',
         name: 'Andy',
+        birthDay: '30/11/2006',
         imagePresentation: '/img/CruCru/CruCru-image-presentation.webp',
         imageSmall: '/img/CruCru/CruCru-small.webp',
         imagesGalery: [
@@ -333,7 +338,7 @@ export const Characters: Character[] = [
             'El conocimiento es limitado, la imaginación no tiene limites',
         ],
     },
-    
+
     {
         id: 'Sebastian',
         name: 'Sebas',
@@ -368,6 +373,7 @@ export const Characters: Character[] = [
     {
         id: 'Ale',
         name: 'Alita',
+        birthDay: '09/11/2006',
         imagePresentation: '/img/Ale/Ale-image-presentation.webp',
         imageSmall: '/img/Ale/Ale-small.webp',
         imagesGalery: [
@@ -493,9 +499,8 @@ export const Characters: Character[] = [
             },
             {
                 image: '/img/Elvin/Elvin-image-6.avif',
-                class: 'sm:hidden col-start-2 col-end-3 row-start-7 row-end-8 h-[200px]'
-            }
-            
+                class: 'sm:hidden col-start-2 col-end-3 row-start-7 row-end-8 h-[200px]',
+            },
         ],
         funnyText: [
             'Lo hago en 30 segundos!',
@@ -511,6 +516,7 @@ export const Characters: Character[] = [
     {
         id: 'Emmanuel',
         name: 'Emmanuel',
+        birthDay: '19/07/2005',
         imagePresentation: '/img/Emmanuel/Emmanuel-image-presentation.webp',
         imageSmall: '/img/Emmanuel/Emmanuel-small.webp',
         imagesGalery: [
@@ -654,7 +660,7 @@ export const Characters: Character[] = [
             {
                 image: '/img/Are/Are-image-1.webp',
                 class: 'sm:col-start-1 sm:col-end-2 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-2 col-end-3 row-start-11 row-end-13 h-[320px]',
-            }
+            },
         ],
         funnyText: ['Hii', 'Hiii', 'Hiii'],
         socials: [
@@ -718,6 +724,7 @@ export const Characters: Character[] = [
     {
         id: 'Lupita',
         name: 'China',
+        birthDay: '19/12/2006',
         imagePresentation: '/img/Lupita/Lupita-image-presentation.webp',
         imageSmall: '/img/Lupita/Lupita-small.webp',
         imagesGalery: [
@@ -768,6 +775,7 @@ export const Characters: Character[] = [
     {
         id: 'Damian',
         name: 'Damian',
+        birthDay: '09/03/2005',
         imagePresentation: '/img/Damian/Damian-image-presentation.webp',
         imageSmall: '/img/Damian/Damian-small.webp',
         imagesGalery: [
@@ -825,6 +833,7 @@ export const Characters: Character[] = [
     {
         id: 'Yahir',
         name: 'Yahir',
+        birthDay: '11/11/2006',
         imagePresentation: '/img/Yahir/Yahir-image-presentation.webp',
         imageSmall: '/img/Yahir/Yahir-small.webp',
         imagesGalery: [
@@ -875,6 +884,7 @@ export const Characters: Character[] = [
     {
         id: 'Antonio',
         name: 'Toño',
+        birthDay: '23/01/2006',
         imagePresentation: '/img/Antonio/Antonio-image-presentation.webp',
         imageSmall: '/img/Antonio/Antonio-small.webp',
         imagesGalery: [
