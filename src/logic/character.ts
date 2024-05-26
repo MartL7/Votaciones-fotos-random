@@ -236,59 +236,55 @@ export const Characters: Character[] = [
         imagesGalery: [
             {
                 image: '/img/Karen/Karen-image-1.webp',
-                class: 'sm:row-start-1 sm:row-end-3 sm:h-[600px] sm:col-start-1 sm:col-end-2 row-start-1 row-end-3 col-start-1 col-end-2 h-[400px]',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[500px]',
             },
             {
                 image: '/img/Karen/Karen-image-9.webp',
-                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-2 sm:col-end-3 sm:h-[250px] col-start-2 col-end-3 h-[200px]',
-            },
-            {
-                image: '/img/Karen/Karen-image-12.webp',
-                class: 'sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-4 sm:h-[300px] row-start-3 row-end-4 h-[200px] col-start-1 col-end-2',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[250px]',
             },
             {
                 image: '/img/Karen/Karen-image-4.webp',
-                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[500px]',
             },
             {
                 image: '/img/Karen/Karen-image-5.webp',
-                class: 'sm:row-start-2 sm:row-end-3 sm:col-start-3 sm:col-end-4 sm:h-[250px] col-start-2 col-end-3 h-[200px] row-start-3 row-end-4',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-3 sm:h-[210px]',
             },
             {
                 image: '/img/Karen/Karen-image-15.webp',
-                class: 'sm:col-start-3 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[400px]',
             },
             {
                 image: '/img/Karen/Karen-image-7.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:h-[300px]',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[400px]',
             },
             {
                 image: '/img/Karen/Karen-image-6.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:h-[300px]',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[400px]',
             },
             {
                 image: '/img/Karen/Karen-image-8.webp',
-                class: '',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:row-end-5 sm:h-[250px]',
             },
             {
                 image: '/img/Karen/Karen-image-10.webp',
-                class: '',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[250px]',
             },
             {
                 image: '/img/Karen/Karen-image-11.webp',
-                class: '',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-4 sm:row-end-5 sm:h-[250px]',
             },
             {
                 image: '/img/Karen/Karen-image-2.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-5 sm:h-[600px]',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-5 sm:row-end-6 sm:h-[400px]',
             },
             {
                 image: '/img/Karen/Karen-image-13.webp',
-                class: '',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-5 sm:row-end-6 sm:h-[400px]',
             },
             {
                 image: '/img/Karen/Karen-image-14.webp',
-                class: '',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-5 sm:row-end-6 sm:h-[400px]',
             },
         ],
         funnyText: [
@@ -461,20 +457,45 @@ export const Characters: Character[] = [
         imagesGalery: [
             {
                 image: '/img/Elvin/Elvin-image-1.avif',
-                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px] col-start-2 col-end-3 h-[200px]',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 sm:h-[500px] row-start-1 row-end-3 h-[350px]',
             },
             {
                 image: '/img/Elvin/Elvin-image-2.webp',
-                class: 'sm:col-start-2 sm:col-end-3 sm:h-[300px] sm:row-start-1',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[250px] row-start-1 row-end-2 h-[200px]',
             },
             {
                 image: '/img/Elvin/Elvin-image-3.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-3 col-start-1 col-end-2 row-start-1 row-end-3',
+                class: 'sm:block sm:col-start-2 sm:col-end-3 sm:row-start-2 sm:row-end-4 sm:h-[500px] hidden',
             },
             {
-                image: '/img/Elvin/Elvin-image-1.avif',
-                class: 'sm:col-start-2 sm:col-end-4 sm:h-[300px] sm:row-start-2 col-start-1 col-end-3 h-[250px]',
+                image: '/img/Elvin/Elvin-image-4.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-3 sm:h-[500px] col-start-2 col-end-3 row-start-2 row-end-4 h-[350px]',
             },
+            {
+                image: '/img/Elvin/Elvin-image-5.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[250px] col-start-1 col-end-2 row-start-3 row-end-4 h-[200px]',
+            },
+            {
+                image: '/img/Elvin/Elvin-image-7.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-5 sm:h-[550px] col-start-1 col-end-2 row-start-4 row-end-6 h-[350px]',
+            },
+            {
+                image: '/img/Elvin/Elvin-image-8.avif',
+                class: 'sm:col-start-3 sm:col-end-4 sm:row-start-5 sm:row-end-6 sm:h-[200px] col-start-2 col-end-3 row-start-4 row-end-6 h-[350px]',
+            },
+            {
+                image: '/img/Elvin/Elvin-image-9.avif',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:row-end-6 sm:h-[500px] col-start-1 col-end-2 row-start-6 row-end-8 ',
+            },
+            {
+                image: '/img/Elvin/Elvin-image-10.avif',
+                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-6 sm:h-[500px] row-start-6 row-end-7 h-[200px]',
+            },
+            {
+                image: '/img/Elvin/Elvin-image-6.avif',
+                class: 'sm:hidden col-start-2 col-end-3 row-start-7 row-end-8 h-[200px]'
+            }
+            
         ],
         funnyText: [
             'Lo hago en 30 segundos!',
@@ -631,8 +652,8 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-7 sm:row-end-8 sm:h-[250px] col-start-1 col-end-2 row-start-10 row-end-12 h-[300px]',
             },
             {
-                image: '/img/Are/Are-image-13.webp',
-                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-2 col-end-3 row-start-11 row-end-13 h-[300px]',
+                image: '/img/Are/Are-image-1.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-8 sm:row-end-9 sm:h-[300px] col-start-2 col-end-3 row-start-11 row-end-13 h-[320px]',
             }
         ],
         funnyText: ['Hii', 'Hiii', 'Hiii'],
