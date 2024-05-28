@@ -734,6 +734,22 @@ export const Characters: Character[] = [
             {
                 image: '/img/Leslie/Leslie-image-11.webp',
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-5 sm:row-end-6 sm:h-[200px] sm:block hidden'
+            },
+            {
+                image: '/img/Leslie/Leslie-image-14.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:h-[400px] sm:row-start-6 sm:row-end-7 col-start-1 col-end-2 row-start-9 row-end-10 h-[200px]'
+            }, 
+            {
+                image: '/img/Leslie/Leslie-image-15.webp',
+                class: 'sm:col-start-2 sm:col-end-3 sm:h-[400px] sm:row-start-6 sm:row-end-7 col-start-1 col-end-2 row-start-10 row-end-12 h-[320px]'
+            },
+            {
+                image: '/img/Leslie/Leslie-image-13.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:h-[400px] sm:row-start-6 sm:row-end-7 col-start-2 col-end-3 row-start-9 row-end-11 h-[320px]'
+            },
+            {
+                image: '/img/Leslie/Leslie-image-16.webp',
+                class: 'sm:hidden col-start-2 col-end-3 row-start-11 row-end-12 h-[200px]'
             }
         ],
         funnyText: ['JA, lol, que mal'],
