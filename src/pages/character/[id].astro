@@ -144,7 +144,8 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
       <h3 class="uppercase text-3xl text-center font-bold mb-8"> Redes Sociales </h3>
       <div class="mx-auto flex max-w-[600px] flex-wrap justify-center gap-2 lg:max-w-full">
         {
-          socials?.map((social) => {
+          socials 
+          ? socials?.map((social) => {
             const IconComponent = socialIcons[social.type]
 
             if (!IconComponent) return
@@ -155,6 +156,7 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
               </Socials>
             )
           })
+          : <p class="text-center text-gray-400/90"> No hay redes sociales disponibles </p>
         }
       </div>
     </section>
