@@ -4,6 +4,7 @@ export const Characters: Character[] = [
     {
         id: 'Ulises',
         name: 'El Prota',
+        birthDay: '10/11/2006',
         imagePresentation: '/img/Ulises/Ulises-image-presentation.webp',
         imageSmall: '/img/Ulises/Ulises-small.webp',
         imagesGalery: [
@@ -66,7 +67,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]',
             },
         ],
-        funnyText: ['Hiii'],
+        funnyText: ['Este Compañero', 'no tiene', 'frases aún'],
     },
     {
         id: 'Marlen',
@@ -100,7 +101,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-1 sm:col-end-2 sm:row-start-3 sm:row-end-4 sm:h-[300px] col-start-1 col-end-2 h-[200px]',
             },
         ],
-        funnyText: ['Hii'],
+        funnyText: ['Este Compañero', 'no tiene', 'frases aún'],
         socials: [
             {
                 name: 'Instagram',
@@ -520,7 +521,7 @@ export const Characters: Character[] = [
     },
     {
         id: 'Emmanuel',
-        name: 'Emmanuel',
+        name: 'El Morro',
         birthDay: '19/07/2005',
         imagePresentation: '/img/Emmanuel/Emmanuel-image-presentation.webp',
         imageSmall: '/img/Emmanuel/Emmanuel-small.webp',
@@ -671,7 +672,7 @@ export const Characters: Character[] = [
                 class: 'sm:hidden col-start-2 col-end-3 row-start-11 row-end-13 h-[320px]',
             },
         ],
-        funnyText: ['Hii', 'Hiii', 'Hiii'],
+        funnyText: ['Este Compañero', 'no tiene', 'frases aún'],
         socials: [
             {
                 name: 'Instagram',

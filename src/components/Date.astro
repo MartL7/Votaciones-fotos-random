@@ -4,32 +4,32 @@
   <section class="w-full grid grid-cols-3 gap-5">
     <div class="relative h-[300px] col-span-3 flex flex-col justify-center items-center gap-y-5">
 
-      <span id="get-days" class="absolute -top-10 z-10 font-Public text-9xl -skew-y-3 text-accent font-bold"> </span>
-      <span class="text-center text-blue-400/90 font-Dancing text-3xl">Días</span> 
+      <span id="get-days" class="absolute md:-top-20 -top-10 z-10 font-Public md:text-[200px] text-9xl -skew-y-3 text-blue-400/60 font-bold"> </span>
+      <span class="text-center text-blue-300/90 font-Dancing text-3xl md:mt-10 mt-5">Días</span> 
 
       <div class="date-background absolute inset-0 character-link-background"></div>
     </div>
   
     <div class="h-[200px] w-full relative flex flex-col justify-center items-center gap-y-5">
-      <span id="get-hours" class="font-Oswald text-7xl -skew-y-3 text-accent font-bold"></span>
+      <span id="get-hours" class="font-Oswald text-7xl -skew-y-3 text-blue-400/60 font-bold"></span>
   
-      <span class="text-center text-blue-400/90 font-Dancing text-2xl sm:text-3xl">Horas</span>
+      <span class="text-center text-blue-300/90 font-Dancing text-2xl sm:text-3xl">Horas</span>
 
       <div class="date-background absolute inset-0 character-link-background"></div>
     </div>
   
     <div class="h-[200px] w-full relative flex flex-col justify-center items-center gap-y-5">
-      <span id="get-minutes" class="font-Oswald text-7xl -skew-y-3 text-accent font-bold"></span>
+      <span id="get-minutes" class="font-Oswald text-7xl -skew-y-3 text-blue-400/60 font-bold"></span>
   
-      <span class="text-center text-blue-400/90 font-Dancing text-2xl sm:text-3xl">Minutos</span>
+      <span class="text-center text-blue-300/90 font-Dancing text-2xl sm:text-3xl">Minutos</span>
 
       <div class="date-background absolute inset-0 character-link-background"></div>
     </div>
   
     <div class="h-[200px] w-full relative flex flex-col justify-center items-center gap-y-5">
-      <span id="get-seconds" class="font-Oswald text-7xl -skew-y-3 text-accent font-bold"></span>
+      <span id="get-seconds" class="font-Oswald text-7xl -skew-y-3 text-blue-400/60 font-bold"></span>
   
-      <span class="text-center text-blue-400/90 font-Dancing text-2xl sm:text-3xl">Segundos</span>
+      <span class="text-center text-blue-300/90 font-Dancing text-2xl sm:text-3xl">Segundos</span>
 
       <div class="date-background absolute inset-0 character-link-background"></div>
     </div>
@@ -54,7 +54,7 @@
 
     if (!getDays || !getHours || !getMinutes || !getSeconds) return 
 
-    const fechaLimit = new Date('2024-05-30T00:00:00')
+    const fechaLimit = new Date('2024-06-01T00:00:00')
 
     const updateTime = () => {
       const now = new Date()
