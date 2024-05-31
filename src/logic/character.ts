@@ -211,6 +211,7 @@ export const Characters: Character[] = [
     {
         id: 'Mike',
         name: 'Mike',
+        birthDay: '27/10/2006',
         imagePresentation: '/img/Mike/Mike-image-presentation.webp',
         imageSmall: '/img/Mike/Mike-small.webp',
         imagesGalery: [
@@ -343,6 +344,7 @@ export const Characters: Character[] = [
     {
         id: 'Sebastian',
         name: 'Sebas',
+        birthDay: '23/01/2005',
         imagePresentation: '/img/Sebastian/Sebastian-image-presentation.webp',
         imageSmall: '/img/Sebastian/Sebastian-small.webp',
         imagesGalery: [
