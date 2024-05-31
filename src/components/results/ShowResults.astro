@@ -1,0 +1,63 @@
+---
+import type { Images } from '@/types/Character'
+
+interface Props {
+  category: string
+  troll: string
+  imagePresentation: string
+  name: string
+  classImage: string
+  isGalery: boolean
+  classGalery?: string
+  galery?: Images[]
+}
+
+const { category, troll, imagePresentation, name, classImage, isGalery, classGalery, galery } = Astro.props
+
+const categoryName = imagePresentation.split('/').at(-3)
+---
+
+<article class="flex flex-col justify-center items-center mb-7">
+  <p class="text-center text-2xl font-semibold"> 
+    <span class="text-blue-400/90"> Categoría: </span> 
+    <span class="text-accent"> {category} </span>
+  </p>
+  <small class="mt-2 text-primary"> {troll} </small>
+
+  <picture class={classImage}>
+    <img 
+      decoding="async" 
+      src={imagePresentation} 
+      alt={`Imagen de ${name}`}
+      class=`image-winner size-full ${isGalery ? 'object-cover' : ''} rounded-lg cursor-pointer`
+      data-name={name}
+      style={categoryName !== 'Profes' ? 'filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));' : 'mask-image: linear-gradient(black 50%, transparent);'}
+    />
+
+    <span class=`font-Dancing font-bold pointer-events-none text-center ${isGalery ? 'absolute bottom-0 left-0 right-0 z-50' : ''} mx-auto text-5xl lg:text-6xl text-blue-300/90`>
+      {name}
+    </span>
+  </picture>
+</article>
+{
+  isGalery ?
+  (
+    <section class={classGalery}>
+      {
+        galery.map((result) => (
+          <picture class={`image-container cursor-zoom-in border rounded-lg ${result.class}`} data-url={result.image}>
+            <img 
+              decoding="async" 
+              loading="lazy"
+              src={result.image} 
+              alt={`Imagen de ${name}`} 
+              class='size-full rounded-lg object-cover' 
+            />
+          </picture>
+        ))
+      }
+    </section>
+  )
+  : 
+  null
+}

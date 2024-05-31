@@ -3,11 +3,20 @@ import Layout from "@/layouts/Layout.astro"
 import Modal from "@/components/Modal.astro"
 import Clip from '@/sections/clip.astro'
 import Date from '@/components/Date.astro'
+import ShowResults from "@/components/results/ShowResults.astro"
 import { results } from '@/logic/results'
 
-const filtersCategoryDog = results.filter((res) => res.category === 'Perro-del-año')
+const filtersCategoryDog = results.find((res) => res.category === 'Perro-del-año')
 
-const { name, imagePresentation } = filtersCategoryDog.at(0)
+const filtersCategoryTeachers = results.find((res) => res.category === 'Category-teachers')
+
+const filtersCategoryMemes = results.find((res) => res.category === 'Category-memes')
+
+const { name, imagePresentation, images: galeryDog } = filtersCategoryDog
+
+const { name: nameMeme, imagePresentation: imagePresentationMeme } = filtersCategoryMemes
+
+const { name: nameTeacher, imagePresentation: imagePresentationTeacher, images: galeryTeacher } = filtersCategoryTeachers
 ---
 
 <Layout title="Resultados de los pronósticos 🦸">
@@ -15,59 +24,44 @@ const { name, imagePresentation } = filtersCategoryDog.at(0)
 
     <h1 class="text-2xl sm:text-3xl md:text-4xl font-Public mb-10 text-center text-primary"> Ganadores de los pronósticos 👑</h1>
 
-    <aside class="flex flex-col items-center justify-center mb-5">
-      <p class="text-center text-2xl font-semibold"> 
-        <span class="text-blue-400/90"> Categoría: </span> 
-        <span class="text-accent"> Perro del año 🐶</span>
-      </p>
-      <small class="mt-2 text-primary"> No le des click a la enchilada. 😺 </small>
-
-      <picture class="sm:h-[50vh] relative h-[500px]">
-        <img 
-          decoding="async" 
-          src={imagePresentation} 
-          alt={`Imagen de ${name}`}
-          class='image-winner size-full object-cover rounded-lg cursor-pointer'
-          data-name={name}
-          style="filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));"
-        />
-
-        <span class=`font-Dancing font-bold pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-6xl lg:text-6xl text-blue-300/90`>
-          {name}
-        </span>
-      </picture>
-    </aside>
-
-    <section class="grid grid-cols-2 sm:grid-cols-3 gap-5">
-      {
-        filtersCategoryDog.map((result) => {
-          const { name, id, images } = result
-          return (
-            images.map((img) => (
-              <picture class={`image-container cursor-zoom-in border rounded-lg ${img.class}`} data-url={img.image}>
-                <img 
-                  decoding="async" 
-                  loading="lazy"
-                  src={img.image} 
-                  alt={`Imagen de ${name}`} 
-                  class='size-full rounded-lg object-cover' 
-                />
-              </picture>
-            ))
-          )
-        })
-      }
-    </section>
+    <ShowResults 
+      category="Perro-del-año" 
+      troll="No le des click a la enchilada. 😺" 
+      classImage="sm:h-[50vh] relative h-[500px]" 
+      imagePresentation={imagePresentation} 
+      name={name} 
+      isGalery={true} 
+      galery={galeryDog} 
+      classGalery="grid grid-cols-2 sm:grid-cols-3 gap-5" 
+    />
 
     <Clip>
       <p class="text-center text-2xl font-semibold"> 
         <span class="text-blue-400/90"> Categoría: </span> 
         <span class="text-accent"> Clip del Ciclo 🎮 </span>
       </p>
-      <span class=`font-Dancing font-bold pointer-events-none text-center mx-auto text-6xl lg:text-6xl text-blue-300/90`>
-        Clip del Ever
-      </span>
     </Clip>
+
+
+    <!-- <ShowResults 
+      category="Profesor del año 👨‍🏫" 
+      troll="No le des click a la Profe. 😺" 
+      classImage="mt-5 h-[50vh] relative" 
+      imagePresentation={imagePresentationTeacher} 
+      name={nameTeacher} 
+      isGalery={true} 
+      galery={galeryTeacher} 
+      classGalery="grid grid-cols-2 md:grid-cols-3 gap-5 mb-10 sm:mb-20" 
+    />
+
+    <ShowResults 
+      category="Meme del año 😸" 
+      troll="No le des click a la Imagen. 😺" 
+      classImage="mt-5 h-[50vh] relative" 
+      imagePresentation={imagePresentationMeme} 
+      name={nameMeme} 
+      isGalery={false} 
+    /> -->
 
     <Modal className="clip-dialog" id="close-dialog" isButton={true}>
       <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
