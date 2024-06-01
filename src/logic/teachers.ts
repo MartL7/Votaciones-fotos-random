@@ -3,7 +3,7 @@ import type { Teacher } from "@/types/teachers"
 export const teachers: Teacher[] = [
   {
     id: 'teacher-Dayanne',
-    name: 'Dayanne',
+    name: 'Dianne',
     category: 'category-teachers',
     imagePresentation: '/img/Profes/Dayanne/Dayanne-image-presentation.webp'
   },

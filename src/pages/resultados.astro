@@ -43,7 +43,7 @@ const { name: nameTeacher, imagePresentation: imagePresentationTeacher, images: 
     </Clip>
 
 
-    <!-- <ShowResults 
+    <ShowResults 
       category="Profesor del año 👨‍🏫" 
       troll="No le des click a la Profe. 😺" 
       classImage="mt-5 h-[50vh] relative" 
@@ -61,14 +61,13 @@ const { name: nameTeacher, imagePresentation: imagePresentationTeacher, images: 
       imagePresentation={imagePresentationMeme} 
       name={nameMeme} 
       isGalery={false} 
-    /> -->
+    />
 
     <Modal className="clip-dialog" id="close-dialog" isButton={true}>
       <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
     </Modal>
 
   </main>
-  <Date />
 </Layout>
 
 <script>
@@ -88,9 +87,21 @@ const { name: nameTeacher, imagePresentation: imagePresentationTeacher, images: 
         confetti({
           particleCount: 100,
           spread: 70,
-          origin: { y: 0.6 }
+          origin: { y: 0.6 },
+          shapes: ['star', 'circle', 'square']
         })
       })
     })
+
+    if (!localStorage.getItem('showing')) {
+      confetti({
+        particleCount: 250,
+        spread: 90,
+        origin: { y: 0.6 },
+        shapes: ['star']
+      })
+
+      localStorage.setItem('showing', 'true')
+    }
   })
 </script>
