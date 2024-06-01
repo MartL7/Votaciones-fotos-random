@@ -45,7 +45,7 @@ const categoryName = imagePresentation.split('/').at(-3)
     <section class={classGalery}>
       {
         galery.map((result) => (
-          <picture class={`image-container cursor-zoom-in border rounded-lg ${result.class}`} data-url={result.image}>
+          <picture class={`image-container cursor-zoom-in border shadow-border-custom rounded-lg ${result.class}`} data-url={result.image}>
             <img 
               decoding="async" 
               loading="lazy"

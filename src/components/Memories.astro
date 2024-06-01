@@ -52,6 +52,14 @@ import Modal from '@/components/Modal.astro'
   document.addEventListener('astro:page-load', showModal)
 </script>
 
+<script>
+	import { toastAlert } from '@/function/alerts'
+
+	document.addEventListener('DOMContentLoaded', () => {
+		toastAlert({ title: 'Los resultados ya están disponibles', type: 'success', icon: true, dismissible: false, location: 'bottom-left' })
+	})
+</script>
+
 <style>
   @media (max-width: 768px) {
   .members_group {
