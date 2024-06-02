@@ -6,25 +6,28 @@ import Modal from '@/components/Modal.astro'
 <article class="flex flex-col justify-center items-center mt-20">
  
   <h2 class="font-Merri text-center font-bold text-4xl text-blue-100/90 mb-5"> Recuerdos del Grupo </h2>
-  <span class="text-2xl text-yellow-300/90"> Los Papus </span>
-  <section class="flex items-center gap-5 members_group">
-  {member.map(({ id, class_member }) => (
-    //Actualizar y para no escribir el nombre del grupo de amigos
-    class_member === 'papus' && (
-      <picture
-        class={`image-container ${class_member}`}
-        data-url={`/img/${id}/${id}-small.webp`}
-      >
-        <img
-          decoding="async"
-          loading="lazy"
-          src={`/img/${id}/${id}-small.webp`}
-          alt={`image of ${id}`}
-          class="h-12 w-12 lg:w-10 lg:h-10 md:w-10 md:h-10 object-cover rounded-full shadow-blue-500/50 shadow-md"
-        />
-      </picture>
-    )
-  ))}
+  <span class="text-2xl text-yellow-300/90 mb-5"> Los Papus </span>
+  
+  <section class="md:flex md:items-center md:gap-5 mb-5 p-5 md:p-0 grid grid-cols-4 sm:grid-cols-8 sm:gap-8 gap-5 members_group">
+  {
+    member.map(({ id, class_member }) => (
+      //Actualizar y para no escribir el nombre del grupo de amigos
+      class_member === 'papus' && (
+        <a
+          class={`${class_member}`}
+          href={`/character/${id}`}
+        >
+          <img
+            decoding="async"
+            loading="lazy"
+            src={`/img/${id}/${id}-small.webp`}
+            alt={`imagen de ${id}`}
+            class="size-12 md:size-10 object-cover rounded-full shadow-blue-500/50 shadow-md hover:scale-110 transition"
+          />
+        </a>
+      )
+    ))
+  }
 </section>
   <section class="grid grid-cols-2 md:grid-cols-4 gap-5 p-2 md:p-5">
     {
@@ -51,23 +54,3 @@ import Modal from '@/components/Modal.astro'
 
   document.addEventListener('astro:page-load', showModal)
 </script>
-
-<script>
-	import { toastAlert } from '@/function/alerts'
-
-	document.addEventListener('DOMContentLoaded', () => {
-		toastAlert({ title: 'Los resultados ya están disponibles', type: 'success', icon: true, dismissible: false, location: 'bottom-left' })
-	})
-</script>
-
-<style>
-  @media (max-width: 768px) {
-  .members_group {
-    display: grid;
-    grid-template-columns: repeat(4, 50px);
-    gap: 1;
-    text-align: center;
-  }
-}
-
-  </style>

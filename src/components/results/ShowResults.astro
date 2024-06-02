@@ -34,7 +34,7 @@ const categoryName = imagePresentation.split('/').at(-3)
       style={categoryName !== 'Profes' ? 'filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));' : 'mask-image: linear-gradient(black 50%, transparent);'}
     />
 
-    <span class=`font-Dancing font-bold pointer-events-none text-center ${isGalery ? 'absolute bottom-0 left-0 right-0 z-50' : ''} mx-auto text-5xl lg:text-6xl text-blue-300/90`>
+    <span class=`font-Dancing font-bold pointer-events-none text-center ${isGalery ? 'absolute bottom-0 left-0 right-0 z-50' : 'block'} mx-auto text-5xl lg:text-6xl text-blue-300/90`>
       {name}
     </span>
   </picture>
