@@ -206,6 +206,7 @@ export const Characters: Character[] = [
             { name: 'Instagram', link: 'https://www.instagram.com/geovx_lg/', type: 'instagram' },
             { name: 'GitHub', link: 'https://github.com/MartL7', type: 'github' },
             { name: 'Twitter', link: 'https://twitter.com/GeovasYoSoy', type: 'twitter' },
+            { name: 'PortFolio', link: 'https://geovas.vercel.app', type: 'portfolio' },
         ],
     },
     {
@@ -920,6 +921,9 @@ export const Characters: Character[] = [
             'Jueves de Racismo',
             'Los viejitos solo nos quitan oxígeno',
         ],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/altahir.9083/', type: 'instagram' },
+        ]
     },
     {
         id: 'Antonio',

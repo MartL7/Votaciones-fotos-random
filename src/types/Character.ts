@@ -6,7 +6,7 @@ export interface Images {
 interface Socials {
   name: string
   link: string
-  type: 'github' | 'instagram' | 'twitter' | 'facebook'
+  type: 'github' | 'instagram' | 'twitter' | 'facebook' | 'portfolio'
 }
 
 export interface Character {
