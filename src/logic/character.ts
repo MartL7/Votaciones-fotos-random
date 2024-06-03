@@ -68,6 +68,9 @@ export const Characters: Character[] = [
             },
         ],
         funnyText: ['Este Compañero', 'no tiene', 'frases aún'],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/cruzjanetsanchez', type: 'instagram' },
+        ]
     },
     {
         id: 'Marlen',
@@ -156,6 +159,9 @@ export const Characters: Character[] = [
             },
         ],
         funnyText: ['Holiiii', 'vete al cuerno'],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/yane.aguilar.7121', type: 'instagram' },
+        ]
     },
     {
         id: 'Geovas',
@@ -232,6 +238,9 @@ export const Characters: Character[] = [
             },
         ],
         funnyText: ['A poco si tilin'],
+        socials: [
+            { name: 'Instagram', link: 'https://www.instagram.com/holasoymike.87', type: 'instagram' },
+        ]
     },
 
     {
