@@ -1,17 +1,18 @@
 ---
-import { memories_1 } from '@/logic/memories'
-import { member } from '@/logic/memories'
-import Modal from '@/components/Modal.astro'
+import { memories } from '@/logic/memories';
+import { member } from '@/logic/memories';
+import Modal from '@/components/Modal.astro';
 ---
-<article class="flex flex-col justify-center items-center mt-20">
 
+<article class="flex flex-col justify-center items-center mt-20">
   <h2 class="font-Merri text-center font-bold text-4xl text-blue-100/90 mb-5"> Recuerdos del Grupo </h2>
-  <span class="text-2xl text-yellow-300/90 mb-5"> Los Papus </span>
-  
-  <section class="md:flex md:items-center md:gap-5 mb-5 p-5 md:p-0 grid grid-cols-4 sm:grid-cols-8 sm:gap-8 gap-5 members_group">
-    {
-      memories_1.map(({ id_group }) => (
-        member
+  {memories.map(({ id_group, imagesGalery }) => (
+    <article class="flex flex-col justify-center items-center mt-10">
+
+      <span class="text-2xl text-yellow-300/90 mb-5"> {id_group.charAt(0).toUpperCase() + id_group.slice(1)} </span>
+      
+      <section class="md:flex md:items-center md:gap-5 mb-5 p-5 md:p-0 grid grid-cols-4 sm:grid-cols-8 sm:gap-8 gap-5 members_group">
+        {member
           .filter(({ class_member }) => class_member === id_group)
           .map(({ id }) => (
             <a class={`${id_group}`} href={`/character/${id}`}>
@@ -24,23 +25,23 @@ import Modal from '@/components/Modal.astro'
               />
             </a>
           ))
-      ))
-    }
-  </section>
-<section class="grid grid-cols-2 md:grid-cols-4 gap-5 p-2 md:p-5">
-  {memories_1.map(({imagesGalery }) => (
-    imagesGalery.map(({ id, image, className }) => (
-      <picture class={`image-container ${className}`} data-url={image}>
-        <img 
-          decoding="async"
-          loading="lazy"
-          src={image} 
-          alt={`image of ${id}`} 
-          class="size-full rounded-lg object-cover cursor-zoom-in" />
-      </picture>
-    ))
+        }
+      </section>
+      
+      <section class="grid grid-cols-2 md:grid-cols-4 gap-5 p-2 md:p-5">
+        {imagesGalery.map(({ id, image, className }) => (
+          <picture class={`image-container ${className}`} data-url={image}>
+            <img 
+              decoding="async"
+              loading="lazy"
+              src={image} 
+              alt={`image of ${id}`} 
+              class="size-full rounded-lg object-cover cursor-zoom-in" />
+          </picture>
+        ))}
+      </section>
+    </article>
   ))}
-</section>
 
   <Modal className="clip-dialog" id="close-dialog" isButton={true}>
     <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
@@ -48,7 +49,7 @@ import Modal from '@/components/Modal.astro'
 </article>
 
 <script>
-  import { showModal } from '@/const/showModal'
+  import { showModal } from '@/const/showModal';
 
-  document.addEventListener('astro:page-load', showModal)
+  document.addEventListener('astro:page-load', showModal);
 </script>

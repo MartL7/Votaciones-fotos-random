@@ -14,9 +14,9 @@ interface Member {
     class_member: string
 }
 
-export const memories_1: Memories_1[] = [
+export const memories: Memories_1[] = [
     {
-        id_group: 'papus',
+        id_group: 'los papus',
         imagesGalery: [
             {
                 id: 'memorie-papus-1',
@@ -50,34 +50,34 @@ export const memories_1: Memories_1[] = [
 export const member: Member[] = [
     {
         id: 'Damian',
-        class_member: 'papus',
+        class_member: 'los papus',
     },
     {
         id: 'Geovas',
-        class_member: 'papus',
+        class_member: 'los papus',
     },
     {
         id: 'Elvin',
-        class_member: 'papus',
+        class_member: 'los papus',
     },
     {
         id: 'Antonio',
-        class_member: 'papus',
+        class_member: 'los papus',
     },
     {
         id: 'Yahir',
-        class_member: 'papus',
+        class_member: 'los papus',
     },
     {
         id: 'Karen',
-        class_member: 'papus',
+        class_member: 'los papus',
     },
     {
         id: 'Ulises',
-        class_member: 'papus',
+        class_member: 'los papus',
     },
     {
         id: 'CruCru',
-        class_member: 'papus',
+        class_member: 'los papus',
     },
 ]
