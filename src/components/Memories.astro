@@ -1,48 +1,46 @@
 ---
-import { memories } from '@/logic/memories'
+import { memories_1 } from '@/logic/memories'
 import { member } from '@/logic/memories'
 import Modal from '@/components/Modal.astro'
 ---
 <article class="flex flex-col justify-center items-center mt-20">
- 
+
   <h2 class="font-Merri text-center font-bold text-4xl text-blue-100/90 mb-5"> Recuerdos del Grupo </h2>
   <span class="text-2xl text-yellow-300/90 mb-5"> Los Papus </span>
   
   <section class="md:flex md:items-center md:gap-5 mb-5 p-5 md:p-0 grid grid-cols-4 sm:grid-cols-8 sm:gap-8 gap-5 members_group">
-  {
-    member.map(({ id, class_member }) => (
-      //Actualizar y para no escribir el nombre del grupo de amigos
-      class_member === 'papus' && (
-        <a
-          class={`${class_member}`}
-          href={`/character/${id}`}
-        >
-          <img
-            decoding="async"
-            loading="lazy"
-            src={`/img/${id}/${id}-small.webp`}
-            alt={`imagen de ${id}`}
-            class="size-12 md:size-10 object-cover rounded-full shadow-blue-500/50 shadow-md hover:scale-110 transition"
-          />
-        </a>
-      )
-    ))
-  }
-</section>
-  <section class="grid grid-cols-2 md:grid-cols-4 gap-5 p-2 md:p-5">
     {
-      memories.map(({ id, image, className }) => (
-        <picture class={`image-container ${className}`} data-url={image}>
-          <img 
-            decoding="async"
-            loading="lazy"
-            src={image} 
-            alt={`image of ${id}`} 
-            class="size-full rounded-lg object-cover cursor-zoom-in" />
-        </picture>
+      memories_1.map(({ id_group }) => (
+        member
+          .filter(({ class_member }) => class_member === id_group)
+          .map(({ id }) => (
+            <a class={`${id_group}`} href={`/character/${id}`}>
+              <img
+                decoding="async"
+                loading="lazy"
+                src={`/img/${id}/${id}-small.webp`}
+                alt={`imagen de ${id}`}
+                class="size-12 md:size-10 object-cover rounded-full shadow-blue-500/50 shadow-md hover:scale-110 transition"
+              />
+            </a>
+          ))
       ))
     }
   </section>
+<section class="grid grid-cols-2 md:grid-cols-4 gap-5 p-2 md:p-5">
+  {memories_1.map(({imagesGalery }) => (
+    imagesGalery.map(({ id, image, className }) => (
+      <picture class={`image-container ${className}`} data-url={image}>
+        <img 
+          decoding="async"
+          loading="lazy"
+          src={image} 
+          alt={`image of ${id}`} 
+          class="size-full rounded-lg object-cover cursor-zoom-in" />
+      </picture>
+    ))
+  ))}
+</section>
 
   <Modal className="clip-dialog" id="close-dialog" isButton={true}>
     <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
