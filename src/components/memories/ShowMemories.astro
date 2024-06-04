@@ -1,0 +1,43 @@
+---
+import type { Images } from '@/logic/memories'
+
+interface Props {
+  id_group: string
+  members: string[]
+  imagesGalery: Images[]
+}
+
+const { id_group, members, imagesGalery } = Astro.props
+---
+<span class="text-2xl text-yellow-300/90 mb-5"> {id_group} </span>
+
+<section class="md:flex md:items-center md:gap-5 mb-5 p-5 md:p-0 grid grid-cols-4 sm:grid-cols-8 sm:gap-8 gap-5 members_group">
+  {
+    members.map(member => (
+    <a class={`a`} href={`/character/${member}`}>
+      <img
+        decoding="async"
+        loading="lazy"
+        src={`/img/${member}/${member}-small.webp`}
+        alt={`imagen de ${member}`}
+        class="size-12 md:size-10 object-cover rounded-full shadow-blue-500/50 shadow-md hover:scale-110 transition"
+      />
+    </a>
+    ))
+  }
+</section>
+
+<section class="grid grid-cols-2 md:grid-cols-4 gap-5 p-2 md:p-5">
+  {
+    imagesGalery.map(({ id, image, className }) => (
+      <picture class={`image-container ${className}`} data-url={image}>
+        <img 
+          decoding="async"
+          loading="lazy"
+          src={image} 
+          alt={`image of ${id}`} 
+          class="size-full rounded-lg object-cover cursor-zoom-in" />
+      </picture>
+    ))
+  }
+</section>

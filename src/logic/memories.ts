@@ -1,5 +1,6 @@
 interface Memories_1 {
     id_group: string
+    members: string[]
     imagesGalery: Images[]
 }
 
@@ -17,6 +18,7 @@ interface Member {
 export const memories_1: Memories_1[] = [
     {
         id_group: 'papus',
+        members: ['Damian', 'Geovas', 'Elvin', 'Antonio', 'Yahir', 'Karen', 'Ulises', 'CruCru'],
         imagesGalery: [
             {
                 id: 'memorie-papus-1',
@@ -45,6 +47,37 @@ export const memories_1: Memories_1[] = [
             },
         ],
     },
+    {
+        id_group: 'second-group',
+        members: ['Emmanuel', 'Ale', 'Janet', 'Yanet', 'Mike'],
+        imagesGalery: [
+            {
+                id: 'memorie-second-group-1',
+                image: '/img/Memories/Memorie-second-group-1.webp',
+                className : 'sm:col-start-1 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[250px] row-start-1 row-end-2 col-start-2 col-end-3'
+            }, 
+            {
+                id: 'memorie-second-group-2',
+                image: '/img/Memories/Memorie-second-group-4.webp',
+                className : 'sm:col-start-3 sm:col-end-5 sm:row-start-1 sm:row-end-2 sm:h-[250px]'
+            },
+            {
+                id: 'memorie-second-group-3',
+                image: '/img/Memories/Memorie-second-group-3.webp',
+                className : 'sm:col-start-4 sm:col-end-5 sm:row-start-2 sm:row-end-3 sm:h-[300px] col-start-1 col-end-2 row-start-1 row-end-3 h-[350px]'
+            },
+            {
+                id: 'memorie-second-group-4',
+                image: '/img/Memories/Memorie-second-group-5.webp',
+                className : 'sm:col-start-1 sm:col-end-4 sm:row-start-2 sm:row-end-3 sm:h-[300px] sm:block hidden'
+            },
+            {
+                id: 'memorie-second-group-5',
+                image: '/img/Memories/Memorie-second-group-2.webp',
+                className: 'sm:hidden col-start-2 col-end-3 row-start-2 row-end-4 h-[350px]'
+            }
+        ]
+    }
 ]
 
 export const member: Member[] = [
