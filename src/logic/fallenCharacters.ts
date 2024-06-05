@@ -2,11 +2,11 @@ import type { FallenCharacter } from '@/types/FallenCharacters'
 
 export const fallenCharacters: FallenCharacter[] = [
     {
-        id: 'Ever',
-        name: 'Ever',
+        id: 'Laura',
+        name: 'Laura',
         folder: 'Fallen',
-        imageSmall: '/img/Fallen/Ever-small.webp',
-        imagePresentation: '/img/Fallen/Ever-image-presentation.webp',
+        imageSmall: '/img/Fallen/Laura-small.webp',
+        imagePresentation: '/img/Fallen/Laura-image-presentation.webp',
     },
 
     {
@@ -18,11 +18,11 @@ export const fallenCharacters: FallenCharacter[] = [
     },
 
     {
-        id: 'Laura',
-        name: 'Laura',
+        id: 'Ever',
+        name: 'Ever',
         folder: 'Fallen',
-        imageSmall: '/img/Fallen/Laura-small.webp',
-        imagePresentation: '/img/Fallen/Laura-image-presentation.webp',
+        imageSmall: '/img/Fallen/Ever-small.webp',
+        imagePresentation: '/img/Fallen/Ever-image-presentation.webp',
     },
 
     {
@@ -50,10 +50,34 @@ export const fallenCharacters: FallenCharacter[] = [
     },
     
     {
+        id: 'Joselyn',
+        name: 'Joselyn',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Joselyn-small.webp',
+        imagePresentation: '/img/Fallen/Joselyn-image-presentation.webp',
+    },
+
+    {
+        id: 'Camila',
+        name: 'Camila',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Camila-small.webp',
+        imagePresentation: '/img/Fallen/Camila-image-presentation.webp',
+    },
+
+    {
         id: 'Caleb',
         name: 'Caleb',
         folder: 'Fallen',
         imageSmall: '/img/Fallen/Caleb-small.webp',
         imagePresentation: '/img/Fallen/Caleb-image-presentation.webp',
     },
+
+    {
+        id: 'Lizzu',
+        name: 'Lizzu',
+        folder: 'Fallen',
+        imageSmall: '/img/Fallen/Lizzu-small.webp',
+        imagePresentation: '/img/Fallen/Lizzu-image-presentation.webp',
+    }
 ]

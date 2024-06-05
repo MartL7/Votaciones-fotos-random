@@ -3,7 +3,7 @@ import { fallenCharacters } from '@/logic/fallenCharacters'
 ---
 
 <small class="hidden md:block lg:mt-20 md:mt-10 mb-5 text-red-300/80"> Compañeros Caídos </small>
-<article class="flex justify-center flex-wrap flex-row md:gap-y-3 lg:gap-y-5 lg:gap-x-10 md:gap-x-5">
+<article class="container-fallen">
   {
     fallenCharacters.map(({ folder, id, name, imageSmall }) => (
       <div 
@@ -37,4 +37,24 @@ import { fallenCharacters } from '@/logic/fallenCharacters'
     filter: saturate(150%);
     transform: scale(1.1);
   }
+
+  @media (min-width: 768px) {
+    .container-fallen {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-auto-rows: 40px;
+      grid-gap: 1rem;
+      row-gap: 2rem;
+  
+      div {
+        grid-column: span 2;
+
+        &:nth-child(10n + 6) {
+          grid-column-start: 2;
+          grid-column-end: 4;
+        }
+      }
+    }
+  }
+
 </style>
