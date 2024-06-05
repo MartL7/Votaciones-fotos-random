@@ -1,29 +1,45 @@
 ---
-import type { Images } from '@/logic/memories'
+import type { Images, Members } from '@/logic/memories'
 
 interface Props {
   id_group: string
-  members: string[]
+  members: Members[]
   imagesGalery: Images[]
 }
 
 const { id_group, members, imagesGalery } = Astro.props
 ---
-<span class="text-2xl text-yellow-300/90 mb-5"> {id_group} </span>
+<span class="text-2xl text-yellow-300/90 mb-5"> THE {id_group.toUpperCase()} </span>
 
 <section class="md:flex md:items-center md:gap-5 mb-5 p-5 md:p-0 grid grid-cols-4 sm:grid-cols-8 sm:gap-8 gap-5 members_group">
   {
-    members.map(member => (
-    <a class={`a`} href={`/character/${member}`}>
-      <img
-        decoding="async"
-        loading="lazy"
-        src={`/img/${member}/${member}-small.webp`}
-        alt={`imagen de ${member}`}
-        class="size-12 md:size-10 object-cover rounded-full shadow-blue-500/50 shadow-md hover:scale-110 transition"
-      />
-    </a>
-    ))
+    members.map(member => {
+      const { name, isPerfil } = member
+      return (
+        isPerfil ? (
+          <a class={`a`} href={`/character/${name}`}>
+            <img
+              decoding="async"
+              loading="lazy"
+              src={`/img/${name}/${name}-small.webp`}
+              alt={`imagen de ${name}`}
+              class="size-12 md:size-10 object-cover rounded-full shadow-blue-500/50 shadow-md hover:scale-110 transition"
+            />
+          </a>
+        )
+        : (
+          <div class={`a`}>
+            <img
+              decoding="async"
+              loading="lazy"
+              src={`/img/Fallen/${name}-small.webp`}
+              alt={`imagen de ${name}`}
+              class="size-12 md:size-10 object-cover rounded-full shadow-blue-500/50 shadow-md hover:scale-110 transition"
+            />
+          </div>
+        )
+      )
+    })
   }
 </section>
 

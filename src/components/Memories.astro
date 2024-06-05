@@ -1,6 +1,5 @@
 ---
 import { memories_1 } from '@/logic/memories'
-import { member } from '@/logic/memories'
 import Modal from '@/components/Modal.astro'
 import ShowMemories from '@/components/memories/ShowMemories.astro'
 
@@ -8,8 +7,11 @@ const groupPapus = memories_1.find((group) => group.id_group === 'papus')
 
 const secondGroup = memories_1.find((group) => group.id_group === 'second-group')
 
+const groupPusey = memories_1.find((group) => group.id_group === 'pusey')
+
 const { imagesGalery, members, id_group } = groupPapus
 const { imagesGalery: imagesGalery2, members: members2, id_group: id_group2 } = secondGroup
+const { imagesGalery: imagesGalery3, members: members3, id_group: id_group3 } = groupPusey
 ---
 <article class="flex flex-col justify-center items-center mt-20">
   <h2 class="font-Merri text-center font-bold text-4xl text-blue-100/90 mb-5"> Recuerdos del Grupo </h2>
@@ -17,6 +19,8 @@ const { imagesGalery: imagesGalery2, members: members2, id_group: id_group2 } = 
   <ShowMemories id_group={id_group} members={members} imagesGalery={imagesGalery} />
 
   <ShowMemories id_group={id_group2} members={members2} imagesGalery={imagesGalery2} />
+
+  <ShowMemories id_group={id_group3} members={members3} imagesGalery={imagesGalery3} />
 
   <Modal className="clip-dialog" id="close-dialog" isButton={true}>
     <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">

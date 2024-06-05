@@ -1,6 +1,6 @@
 interface Memories_1 {
     id_group: string
-    members: string[]
+    members: Members[]
     imagesGalery: Images[]
 }
 
@@ -10,15 +10,24 @@ export interface Images {
     className: string
 }
 
-interface Member {
-    id: string
-    class_member: string
+export interface Members {
+    name: string
+    isPerfil: boolean
 }
 
 export const memories_1: Memories_1[] = [
     {
         id_group: 'papus',
-        members: ['Damian', 'Geovas', 'Elvin', 'Antonio', 'Yahir', 'Karen', 'Ulises', 'CruCru'],
+        members: [
+            { name: 'Damian', isPerfil: true },
+            { name: 'Geovas', isPerfil: true },
+            { name: 'Elvin', isPerfil: true },
+            { name: 'Antonio', isPerfil: true },
+            { name: 'Yahir', isPerfil: true },
+            { name: 'Karen', isPerfil: true },
+            { name: 'Ulises', isPerfil: true },
+            { name: 'CruCru', isPerfil: true }
+        ],
         imagesGalery: [
             {
                 id: 'memorie-papus-1',
@@ -49,7 +58,13 @@ export const memories_1: Memories_1[] = [
     },
     {
         id_group: 'second-group',
-        members: ['Emmanuel', 'Ale', 'Janet', 'Yanet', 'Mike'],
+        members: [
+            { name: 'Emmanuel', isPerfil: true },
+            { name: 'Ale', isPerfil: true },
+            { name: 'Janet', isPerfil: true },
+            { name: 'Yanet', isPerfil: true },
+            { name: 'Mike', isPerfil: true }
+        ],
         imagesGalery: [
             {
                 id: 'memorie-second-group-1',
@@ -77,40 +92,32 @@ export const memories_1: Memories_1[] = [
                 className: 'sm:hidden col-start-2 col-end-3 row-start-2 row-end-4 h-[350px]'
             }
         ]
+    },
+    {
+        id_group: 'pusey',
+        members: [
+            { name : 'Leslie', isPerfil: true },
+            { name : 'Are', isPerfil: true },
+            { name : 'Camila', isPerfil: false },
+            { name : 'Lupita', isPerfil: true },
+            { name : 'Lizzu', isPerfil: false }
+        ],
+        imagesGalery: [
+            {
+                id: 'memorie-third-group-1',
+                image: '/img/Memories/Memorie-third-group-1.webp',
+                className: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px]',
+            },
+            {
+                id: 'memorie-third-group-2',
+                image: '/img/Memories/Memorie-third-group-2.webp',
+                className: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:h-[300px]',
+            },
+            {
+                id: 'memorie-third-group-3',
+                image: '/img/Memories/Memorie-third-group-4.webp',
+                className: 'sm:col-start-3 sm:col-end-5 sm:row-start-1 sm:row-end-2 sm:h-[300px]',
+            }
+        ],
     }
-]
-
-export const member: Member[] = [
-    {
-        id: 'Damian',
-        class_member: 'papus',
-    },
-    {
-        id: 'Geovas',
-        class_member: 'papus',
-    },
-    {
-        id: 'Elvin',
-        class_member: 'papus',
-    },
-    {
-        id: 'Antonio',
-        class_member: 'papus',
-    },
-    {
-        id: 'Yahir',
-        class_member: 'papus',
-    },
-    {
-        id: 'Karen',
-        class_member: 'papus',
-    },
-    {
-        id: 'Ulises',
-        class_member: 'papus',
-    },
-    {
-        id: 'CruCru',
-        class_member: 'papus',
-    },
 ]
