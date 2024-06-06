@@ -106,18 +106,33 @@ export const memories_1: Memories_1[] = [
             {
                 id: 'memorie-third-group-1',
                 image: '/img/Memories/Memorie-third-group-1.webp',
-                className: 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2 sm:h-[300px]',
+                className: 'md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2 md:h-[300px]',
             },
             {
                 id: 'memorie-third-group-2',
                 image: '/img/Memories/Memorie-third-group-2.webp',
-                className: 'sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 sm:h-[300px]',
+                className: 'md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 md:h-[300px]',
             },
             {
                 id: 'memorie-third-group-3',
                 image: '/img/Memories/Memorie-third-group-4.webp',
-                className: 'sm:col-start-3 sm:col-end-5 sm:row-start-1 sm:row-end-2 sm:h-[300px]',
-            }
+                className: 'md:col-start-3 md:col-end-5 md:row-start-1 md:row-end-2 md:h-[300px]  row-start-3 row-end-4 col-start-2 col-end-3',
+            },
+            {
+                id: 'memorie-third-group-4',
+                image: '/img/Memories/Memorie-third-group-5.webp',
+                className: 'md:col-start-3 md:col-end-4 md:row-start-2 md:row-end-3 md:h-[300px]',
+            },
+            {
+                id: 'memorie-third-group-5',
+                image: '/img/Memories/Memorie-third-group-6.webp',
+                className: 'md:col-start-4 md:col-end-5 md:row-start-2 md:row-end-3 md:h-[300px]',
+            },
+            {
+                id: 'memorie-third-group-6',
+                image: '/img/Memories/Memorie-third-group-7.webp',
+                className: 'md:row-start-2 md:row-end-3 md:col-start-1 md:col-end-3 md:h-[300px]',
+            },
         ],
     }
 ]
