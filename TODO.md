@@ -53,4 +53,4 @@
 -   51. Conseguir los cumpleaños de todos -> URGENTE ✅
 -   52. Agregar Script para calcular Edad automaticamente -> URGENTE ✅
 -   53. Volver a Optimizar la página -> ✅
--   54. Separar lógica en showShip.ts -> ❌
+-   54. Separar lógica en showShip.ts -> ✅
