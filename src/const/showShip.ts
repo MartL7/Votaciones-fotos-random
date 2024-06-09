@@ -20,13 +20,14 @@ const shipsForCharacters: ShipsCharacters[] = [
 ]
 
 export function showShip({ id }: { id: string }) {
+
   shipsForCharacters.forEach((ship) => {
-    const $images = ship.ships.map((ship) => $(`#character-${ship}`) as HTMLImageElement)
+
+    const { id: idShip, ships } = ship
+
+    const $images = ships.map((ship) => $(`#character-${ship}`) as HTMLImageElement)
     
-    if (ship.id === id) {
-      $images.forEach((image) => image.classList.add('ship'))
-    } else {
-      $images.forEach((image) => image.classList.remove('ship'))
-    }
+    if (idShip === id) $images.forEach((image) => image.classList.add('ship'))
+    else $images.forEach((image) => image.classList.remove('ship'))
   })
 }
