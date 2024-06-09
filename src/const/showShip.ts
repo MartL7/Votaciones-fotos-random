@@ -1,19 +1,32 @@
-// -> Agregar cuando lo optimice más
+import { $, $$ } from '@/lib/dom-selector'
+interface ShipsCharacters {
+  id: string
+  ships: string[]
+}
 
-/* if (id.toLowerCase() === 'elvin') {
-  $imageLink.forEach(($image) => {
-    const { id } = $image.dataset ?? null
-    if (id.toLocaleLowerCase() === 'ale' || id.toLowerCase() === 'janet') {
-      const $characterSmallImage = $$(`#character-${id}`) as globalThis.NodeListOf<HTMLImageElement>
-      $characterSmallImage.forEach((image) => image.classList.add('ship'))
+const shipsForCharacters: ShipsCharacters[] = [
+  {
+    id: 'Elvin',
+    ships: ['Ale', 'Janet']
+  },
+  {
+    id: 'Geovas',
+    ships: ['Leslie', 'Are']
+  },
+  {
+    id: 'Damian',
+    ships: ['Karen']
+  }
+]
+
+export function showShip({ id }: { id: string }) {
+  shipsForCharacters.forEach((ship) => {
+    const $images = ship.ships.map((ship) => $(`#character-${ship}`) as HTMLImageElement)
+    
+    if (ship.id === id) {
+      $images.forEach((image) => image.classList.add('ship'))
+    } else {
+      $images.forEach((image) => image.classList.remove('ship'))
     }
   })
-} else {
-  $imageLink.forEach(($image) => {
-    const { id } = $image.dataset ?? null
-    if (id.toLocaleLowerCase() === 'ale' || id.toLowerCase() === 'janet') {
-      const $characterSmallImage = $$(`#character-${id}`) as globalThis.NodeListOf<HTMLImageElement>
-      $characterSmallImage.forEach((image) => image.classList.remove('ship'))
-    }
-  })
-} */
+}

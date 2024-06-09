@@ -1,6 +1,7 @@
 import { $, $$ } from '@/lib/dom-selector'
 import { fallenCharacter } from '@/const/isFallenCharacter'
 import { saveLocalStorage, removeLocalStorage, getLocalStorage } from '@/const/localStorage'
+import { showShip } from '@/const/showShip'
 
 export function changeCharacterImage () {
   const $imageLink = $$('.character-link') as globalThis.NodeListOf<HTMLAnchorElement>
@@ -22,6 +23,8 @@ export function changeCharacterImage () {
 
       $image.addEventListener('mouseenter', () => {
         $nameText.textContent = id
+
+        showShip({ id })
 
         if (getLocalStorage({ key: 'lastHoveredImageId' })) {
             const lastHoveredImageId = getLocalStorage({ key: 'lastHoveredImageId' })
