@@ -177,6 +177,8 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
   import { showModal } from '@/const/showModal'
 
   document.addEventListener('astro:page-load', () => {
+
+    const $gridImages = $$('.image-container')
     
     const changeText = () => {
       const $funnyText = $('#funnyText') as HTMLParagraphElement
@@ -207,6 +209,18 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
         $textCounter.textContent = `${index + 1}/${arrayText.length}`
       })
     }
+
+    const onScroll = () => {
+      $gridImages.forEach(($image) => {
+        const rect = $image.getBoundingClientRect()
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          $image.classList.add('animate-zoom-in')
+        } 
+      })
+    }
+
+  window.addEventListener('scroll', onScroll)
+  onScroll()
   changeText()
   showModal()
 })
