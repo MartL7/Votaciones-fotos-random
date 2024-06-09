@@ -50,6 +50,7 @@
 -   48. Arreglar error de Tipos de TypeScript -> ✅
 -   49. Agregar Fallback de imagenes Webp a las Avif para soporte en navegadores antiguos. -> URGENTE ❌
 -   50. Mejorar el diseño en los perfiles de personaje -> URGENTE ✅
--   51. Conseguir los cumpleaños de todos -> URGENTE ❌
+-   51. Conseguir los cumpleaños de todos -> URGENTE ✅
 -   52. Agregar Script para calcular Edad automaticamente -> URGENTE ✅
 -   53. Volver a Optimizar la página -> ✅
+-   54. Separar lógica en showShip.ts -> ❌
