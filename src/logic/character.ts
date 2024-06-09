@@ -970,6 +970,6 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 sm:h-[300px] col-start-2 col-end-3 h-[250px] row-start-4 row-end-5',
             },
         ],
-        funnyText: ['Qué hace la trans?', 'Viva el Diablo', 'Una vez si, dos ya no'],
+        funnyText: ['Qué hace la trans?', 'Viva el Diablo', 'Una vez si, dos ya no', 'No se, me lo pasaron'],
     },
 ]
