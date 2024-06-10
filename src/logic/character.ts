@@ -469,7 +469,7 @@ export const Characters: Character[] = [
     },
     {
         id: 'Elvin',
-        name: 'Elvin',
+        name: 'MrCat',
         birthDay: '21/08/2006',
         imagePresentation: '/img/Elvin/Elvin-image-presentation.webp',
         imageSmall: '/img/Elvin/Elvin-small.webp',
