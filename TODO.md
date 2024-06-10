@@ -56,3 +56,5 @@
 -   54. Separar lógica en showShip.ts -> ✅
 -   55. Implementar funcionalidad de cambiar imagenes en Movil -> URGENTE ❌
 -   56. Agregar alguna animación al ir cambiando de imagenes ❌
+-   57. Simplificar en componente las reacciones dentro de InfoCharacterDesk.astro -> URGENTE ❌
+-   58. Agregar nuevo inicio de sesión y guardar la reacción en la BD -> URGENTE ❌
