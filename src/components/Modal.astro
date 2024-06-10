@@ -12,17 +12,19 @@ const { isButton, className, id } = Astro.props
 	id="dialog-image`
 >
 	<div class="relative block w-auto sm:w-[50vh] max-w-[1000px] bg-transparent">
-		<slot />
+		<section class="flex justify-center items-center gap-5 size-full">
+			<slot />
+		</section>
 
 		{
 			isButton ? (
 			<button
 					type="button"
-					class="close-dialog fixed right-8 top-8 rounded bg-black/60 p-4 transition hover:scale-110"
+					class="close-dialog border fixed right-8 top-8 rounded bg-black/60 p-4 transition hover:scale-110 hover:bg-blue-500/30 hover:border-blue-950"
 					id={id}
 				>
 					<svg
-						class="size-5"
+						class="size-5 hover:text-red-400/90"
 						aria-hidden="true"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
