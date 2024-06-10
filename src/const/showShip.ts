@@ -16,6 +16,10 @@ const shipsForCharacters: ShipsCharacters[] = [
   {
     id: 'Damian',
     ships: ['Karen']
+  },
+  {
+    id: 'Emmanuel',
+    ships: ['Marlen']
   }
 ]
 
