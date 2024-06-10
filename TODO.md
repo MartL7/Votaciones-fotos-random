@@ -54,3 +54,5 @@
 -   52. Agregar Script para calcular Edad automaticamente -> URGENTE ✅
 -   53. Volver a Optimizar la página -> ✅
 -   54. Separar lógica en showShip.ts -> ✅
+-   55. Implementar funcionalidad de cambiar imagenes en Movil -> URGENTE ❌
+-   56. Agregar alguna animación al ir cambiando de imagenes ❌
