@@ -5,6 +5,9 @@ import Socials from "@/components/Socials.astro"
 import ArrowRight from "@/components/icons/Arrows/ArrowRight.astro"
 import ArrowLeft from "@/components/icons/Arrows/ArrowLeft.astro"
 import InfoCharacterDesk from "@/components/InfoCharacterDesk.astro"
+import Like from '@/components/icons/Reactions/Like.astro'
+import Dislike from '@/components/icons/Reactions/Dislike.astro'
+import Heart from '@/components/icons/Reactions/Heart.astro'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
 
@@ -47,7 +50,7 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
     <input type="hidden" name="arrayToText" value={arrayText} id="arrayToText">
 
     <section class="hidden md:grid grid-cols-4 gap-10">  
-      <article class="flex flex-col gap-y-10 justify-center items-center">
+      <article class="row-start-1 row-end-3 flex flex-col gap-y-10 justify-center items-center">
         {
           firstThirdsFunnyText.map((text) => (
             <div class="flex justify-center items-center">
@@ -57,7 +60,19 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
         }
       </article>
 
-      <div class="col-start-2 col-end-4 flex justify-center items-center">
+      <div class="col-start-1 col-end-2 row-start-3 row-end-4 flex justify-center items-center gap-2">
+        <button id="like-button" class="group relative cursor-pointer hover:scale-105 hover:text-blue-500 transition">
+          <Like class="size-10"/>
+        </button>
+        <button id="dislike-button" class="group relative cursor-pointer hover:scale-105 hover:text-blue-500 transition">
+          <Dislike class="size-10"/>
+        </button>
+        <button id="heart-button" class="group relative cursor-pointer hover:scale-105 hover:text-red-500 transition">
+          <Heart class="size-10"/>
+        </button>
+      </div>
+
+      <div class="col-start-2 col-end-4 row-start-1 row-end-4 flex justify-center items-center">
         <a href="/" class="group relative cursor-pointer">
           <img 
             decoding="async"

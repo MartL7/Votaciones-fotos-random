@@ -1,4 +1,7 @@
 ---
+import Like from '@/components/icons/Reactions/Like.astro'
+import Dislike from '@/components/icons/Reactions/Dislike.astro'
+import Heart from '@/components/icons/Reactions/Heart.astro'
 interface Props {
   name: string
   birthDayText: string
@@ -10,7 +13,7 @@ const { name, birthDayText, isMobile, age } = Astro.props
 ---
 {
   !isMobile ? (
-    <section class="flex flex-col justify-center items-center gap-y-10">
+    <section class="row-start-1 row-end-3 flex flex-col justify-center items-center gap-y-10">
       <aside class="flex flex-col justify-center items-center">
         <h2 class="text-2xl text-center font-Oswald"> Cumpleaños </h2>
         <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {birthDayText} </span>
@@ -30,7 +33,7 @@ const { name, birthDayText, isMobile, age } = Astro.props
   :
   (
     <section class="w-full px-5 sm:px-10 md:hidden">
-      <div class="flex flex-col justify-center items-center gap-y-2">
+      <div class="flex flex-col justify-center items-center gap-y-2 mb-10">
 
         <div class="border-b-2 flex justify-between items-center w-full">
           <h2 class="text-2xl text-center font-Oswald"> Cumpleaños </h2>
@@ -47,6 +50,18 @@ const { name, birthDayText, isMobile, age } = Astro.props
           <span class="text-2xl text-center font-public text-blue-200/90 font-bold"> {age} </span>
         </div>
       </div>
+
+      <aside class="flex justify-center items-center gap-2">
+        <button id="like-button" class="group relative cursor-pointer hover:scale-105 hover:text-blue-500 transition">
+          <Like class="size-10"/>
+        </button>
+        <button id="dislike-button" class="group relative cursor-pointer hover:scale-105 hover:text-blue-500 transition">
+          <Dislike class="size-10"/>
+        </button>
+        <button id="heart-button" class="group relative cursor-pointer hover:scale-105 hover:text-red-500 transition">
+          <Heart class="size-10"/>
+        </button>
+      </aside>
     </section>
   )
 }
