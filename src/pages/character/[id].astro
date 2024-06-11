@@ -48,7 +48,8 @@ const session = await getSession(Astro.request)
 const reactionsForUser = await db
   .select({ reactionUser: Reactions.reaction, userReactionsUser: Reactions.userReaction })
   .from(Reactions)
-  .where(and(
+  .where(
+    and(
       eq(Reactions.userId, session.user.id),
       eq(Reactions.userReaction, name)
     ))
