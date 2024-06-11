@@ -1,4 +1,5 @@
 ---
+import { getSession } from 'auth-astro/server'
 import Modal from '@/components/Modal.astro'
 import Layout from "@/layouts/Layout.astro"
 import Socials from "@/components/Socials.astro"
@@ -10,6 +11,7 @@ import Dislike from '@/components/icons/Reactions/Dislike.astro'
 import Heart from '@/components/icons/Reactions/Heart.astro'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
+import { Reactions, db, eq, count } from 'astro:db'
 
 const { id } = Astro.params
 
@@ -39,8 +41,37 @@ const month = today.getMonth() - formatBirthDate.getMonth()
 if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
   age--
 }
+
+const session = await getSession(Astro.request)
+
+const reactions = await db.select().from(Reactions).where(eq(Reactions.userReaction, name))
+
+const allReactions = await db
+  .select({ reactions: Reactions.reaction, count: count() })
+  .from(Reactions)
+  .where(eq(Reactions.userReaction, name))
+  .groupBy(Reactions.reaction)
+
+
+const countLikes = allReactions.find((reaction) => reaction.reactions === 'like')?.count ?? 0
+const countDislikes = allReactions.find((reaction) => reaction.reactions === 'dislike')?.count ?? 0
+const countHearts = allReactions.find((reaction) => reaction.reactions === 'heart')?.count ?? 0
+
+const reaction = reactions?.at(0)?.reaction
 ---
 <Layout title={`Información del personaje ${name}`}>
+
+  <article class="hidden md:fixed top-0 left-0 md:flex gap-5">
+    <img src={session ? session.user.image : '/logos/Not-user.webp'} alt=`Imagen del usuario ${session?.user.name}` class="size-14 rounded-full">
+    <div class="flex flex-col">
+      <h1 class="text-2xl font-bold">{session?.user.name }</h1>
+      <button id={`${session == null ? 'login' : 'logout'}`}> 
+        <span class="text-red-400/70"> 
+          {session == null ? 'Iniciar Sesión' : 'Cerrar Sesión'} 
+        </span>
+      </button>
+    </div>
+  </article>
 
   <main class="flex justify-center flex-col items-center">
 
@@ -61,14 +92,17 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
       </article>
 
       <div class="col-start-1 col-end-2 row-start-3 row-end-4 flex justify-center items-center gap-2">
-        <button id="like-button" class="group relative cursor-pointer hover:scale-105 hover:text-blue-500 transition">
+        <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1 relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'like' ? 'text-blue-500' : 'text-white'}`} disabled={reactions.length > 0} data-reaction="like" data-name={name} data-session={JSON.stringify(session)}>
           <Like class="size-10"/>
+          <span class="text-xl text-yellow-300/90"> {countLikes} </span>
         </button>
-        <button id="dislike-button" class="group relative cursor-pointer hover:scale-105 hover:text-blue-500 transition">
+        <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1  relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'dislike' ? 'text-gray-400' : 'text-white'}`} disabled={reactions.length > 0} data-reaction="dislike" data-name={name} data-session={JSON.stringify(session)}>
           <Dislike class="size-10"/>
+          <span class="text-xl text-yellow-300/90"> {countDislikes} </span>
         </button>
-        <button id="heart-button" class="group relative cursor-pointer hover:scale-105 hover:text-red-500 transition">
+        <button class={`buttons-reactions group flex justify-center items-center flex-col gap-y-1  relative cursor-pointer hover:scale-105 hover:text-red-500 transition ${reaction === 'heart' ? 'text-red-500' : 'text-white'}`} disabled={reactions.length > 0} data-reaction="heart" data-name={name} data-session={JSON.stringify(session)}>
           <Heart class="size-10"/>
+          <span class="text-xl text-yellow-300/90"> {countHearts} </span>
         </button>
       </div>
 
@@ -190,10 +224,19 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
 <script>
   import { $, $$ } from '@/lib/dom-selector'
   import { showModal } from '@/const/showModal'
+  import { toastAlert } from '@/function/alerts'
 
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener('astro:page-load', async () => {
 
-    const $gridImages = $$('.image-container')
+    const $gridImages = $$('.image-container') as NodeListOf<HTMLPictureElement>
+    const $buttonsReactions = $$('.buttons-reactions') as NodeListOf<HTMLButtonElement>
+    const $logout = $('#logout') as HTMLButtonElement
+    const $login = $('#login') as HTMLButtonElement
+
+    const { signIn, signOut } = await import('auth-astro/client')
+
+    if ($login) $login.onclick = () => signIn("google")
+    if ($logout) $logout.onclick = () => signOut()
     
     const changeText = () => {
       const $funnyText = $('#funnyText') as HTMLParagraphElement
@@ -233,6 +276,42 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
         } 
       })
     }
+
+    $buttonsReactions.forEach(($button) => {
+      $button.addEventListener('click', async () => {
+        const { reaction, session, name } = $button.dataset
+
+        const userSession = JSON.parse(session)
+
+        if (userSession == null) {
+          $login.click()
+          return
+        }
+
+        const dataToSend = {
+          reaction,
+          userReaction: name,
+        }
+
+        const response = await fetch('/api/rections/reactions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(dataToSend),
+        })
+
+        if (response.ok) {
+          $button.classList.add('text-red-500')
+          $buttonsReactions.forEach(($button) => $button.disabled = true)
+          toastAlert({ title: 'Succes', type: 'success', icon: true, dismissible: false, location: 'bottom-center' })
+        } else {
+          console.log('Error al enviar la reacción')
+          toastAlert({ title: 'Error', type: 'error', icon: true, dismissible: false, location: 'bottom-center' })
+        }
+      })
+    })
+
 
   window.addEventListener('scroll', onScroll)
   onScroll()
