@@ -15,10 +15,19 @@ const Votes = {
   }
 }
 
+const Reactions = {
+  columns: {
+    id: column.text({ primaryKey: true }),
+    userId: column.text(),
+    userReaction: column.text(),
+  }
+}
+
 // https://astro.build/db/config
 export default defineDb({
   tables: { 
     Votes, 
     Categories,
+    Reactions
   }
 })
