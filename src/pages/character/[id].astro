@@ -48,7 +48,7 @@ const session = await getSession(Astro.request)
 const reactionsForUser = await db
   .select({ reactionUser: Reactions.reaction, userReactionsUser: Reactions.userReaction })
   .from(Reactions)
-  .where(and(eq(Reactions.userReaction, name), eq(Reactions.userId, session?.user.name)))
+  .where(and(eq(Reactions.userReaction, name), eq(Reactions.userId, session?.user.id)))
 
 const allReactions = await db
   .select({ reactions: Reactions.reaction, count: count() })
