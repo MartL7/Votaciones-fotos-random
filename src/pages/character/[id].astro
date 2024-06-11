@@ -12,6 +12,7 @@ import Heart from '@/components/icons/Reactions/Heart.astro'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
 import { Reactions, db, eq, count } from 'astro:db'
+import { and } from 'astro:db'
 
 const { id } = Astro.params
 
@@ -47,7 +48,7 @@ const session = await getSession(Astro.request)
 const reactionsForUser = await db
   .select({ reactionUser: Reactions.reaction, userReactionsUser: Reactions.userReaction })
   .from(Reactions)
-  .where(eq(Reactions.userId, session.user.id))
+  .where(and(eq(Reactions.userReaction, name), eq(Reactions.userId, session?.user.name)))
 
 const allReactions = await db
   .select({ reactions: Reactions.reaction, count: count() })
