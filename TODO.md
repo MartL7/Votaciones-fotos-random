@@ -57,4 +57,7 @@
 -   55. Implementar funcionalidad de cambiar imagenes en Movil -> URGENTE ❌
 -   56. Agregar alguna animación al ir cambiando de imagenes ❌
 -   57. Simplificar en componente las reacciones dentro de InfoCharacterDesk.astro -> URGENTE ❌
--   58. Agregar nuevo inicio de sesión y guardar la reacción en la BD -> URGENTE ❌
+-   58. Agregar nuevo inicio de sesión y guardar la reacción en la BD -> URGENTE ✅
+-   59. Arreglar errores que surgan en la beta de las reacciones -> URGENTE ❌
+-   60. Agregar sección de reacciones en Movil -> URGENTE ❌
+-   61. Arreglar y agregar diseño de sesion dentro de cada perfil -> URGENTE ❌
