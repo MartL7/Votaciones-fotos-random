@@ -15,7 +15,7 @@ const Votes = {
   }
 }
 
-const Reaction = {
+const Reactions = {
   columns: {
     id: column.text({ primaryKey: true }),
     userId: column.text(),
@@ -29,6 +29,6 @@ export default defineDb({
   tables: { 
     Votes, 
     Categories,
-    Reaction
+    Reactions
   }
 })
