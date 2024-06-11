@@ -19,7 +19,7 @@ const Reactions = {
   columns: {
     id: column.text({ primaryKey: true }),
     userId: column.text(),
-    reaction: column.text(),
+    reaction: column.text({ optional: true }),
     userReaction: column.text(),
   }
 }
