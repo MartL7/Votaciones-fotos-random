@@ -11,7 +11,7 @@ import Dislike from '@/components/icons/Reactions/Dislike.astro'
 import Heart from '@/components/icons/Reactions/Heart.astro'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
-import { Reactions, db, eq, count, and } from 'astro:db'
+import { Reactions, db, eq, count } from 'astro:db'
 
 const { id } = Astro.params
 
@@ -44,13 +44,7 @@ if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
 
 const session = await getSession(Astro.request)
 
-const reactionsForUser = await db
-  .select({ reaction: Reactions.reaction, userReaction: Reactions.userReaction})
-  .from(Reactions)
-  .where(and(
-      eq(Reactions.userId, session.user.id),
-      eq(Reactions.userReaction, name)
-    ))
+const reactions = await db.select().from(Reactions).where(eq(Reactions.userReaction, name))
 
 const allReactions = await db
   .select({ reactions: Reactions.reaction, count: count() })
@@ -58,12 +52,14 @@ const allReactions = await db
   .where(eq(Reactions.userReaction, name))
   .groupBy(Reactions.reaction)
 
+  console.log(allReactions)
+
 
 const countLikes = allReactions.find((reaction) => reaction.reactions === 'like')?.count ?? 0
 const countDislikes = allReactions.find((reaction) => reaction.reactions === 'dislike')?.count ?? 0
 const countHearts = allReactions.find((reaction) => reaction.reactions === 'heart')?.count ?? 0
 
-const reaction = reactionsForUser.at(0)?.reaction ?? ''
+const reaction = allReactions?.at(0)?.reactions
 ---
 <Layout title={`Información del personaje ${name}`}>
 
@@ -98,15 +94,15 @@ const reaction = reactionsForUser.at(0)?.reaction ?? ''
       </article>
 
       <div class="col-start-1 col-end-2 row-start-3 row-end-4 flex justify-center items-center gap-2">
-        <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1 relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'like' ? 'text-blue-500' : 'text-white'}`} disabled={reactionsForUser.length > 0} data-reaction="like" data-name={name} data-session={JSON.stringify(session)}>
+        <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1 relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'like' ? 'text-blue-500' : 'text-white'}`} disabled={reactions.length > 0} data-reaction="like" data-name={name} data-session={JSON.stringify(session)}>
           <Like class="size-10"/>
           <span class="text-xl text-yellow-300/90"> {countLikes} </span>
         </button>
-        <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1  relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'dislike' ? 'text-gray-400' : 'text-white'}`} disabled={reactionsForUser.length > 0} data-reaction="dislike" data-name={name} data-session={JSON.stringify(session)}>
+        <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1  relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'dislike' ? 'text-gray-400' : 'text-white'}`} disabled={reactions.length > 0} data-reaction="dislike" data-name={name} data-session={JSON.stringify(session)}>
           <Dislike class="size-10"/>
           <span class="text-xl text-yellow-300/90"> {countDislikes} </span>
         </button>
-        <button class={`buttons-reactions group flex justify-center items-center flex-col gap-y-1  relative cursor-pointer hover:scale-105 hover:text-red-500 transition ${reaction === 'heart' ? 'text-red-500' : 'text-white'}`} disabled={reactionsForUser.length > 0} data-reaction="heart" data-name={name} data-session={JSON.stringify(session)}>
+        <button class={`buttons-reactions group flex justify-center items-center flex-col gap-y-1  relative cursor-pointer hover:scale-105 hover:text-red-500 transition ${reaction === 'heart' ? 'text-red-500' : 'text-white'}`} disabled={reactions.length > 0} data-reaction="heart" data-name={name} data-session={JSON.stringify(session)}>
           <Heart class="size-10"/>
           <span class="text-xl text-yellow-300/90"> {countHearts} </span>
         </button>
