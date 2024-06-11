@@ -11,8 +11,7 @@ import Dislike from '@/components/icons/Reactions/Dislike.astro'
 import Heart from '@/components/icons/Reactions/Heart.astro'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
-import { Reactions, db, eq, count } from 'astro:db'
-import { and } from 'drizzle-orm'
+import { Reactions, db, eq, count, and } from 'astro:db'
 
 const { id } = Astro.params
 
