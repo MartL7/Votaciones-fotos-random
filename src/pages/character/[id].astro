@@ -6,9 +6,7 @@ import Socials from "@/components/Socials.astro"
 import ArrowRight from "@/components/icons/Arrows/ArrowRight.astro"
 import ArrowLeft from "@/components/icons/Arrows/ArrowLeft.astro"
 import InfoCharacterDesk from "@/components/InfoCharacterDesk.astro"
-import Like from '@/components/icons/Reactions/Like.astro'
-import Dislike from '@/components/icons/Reactions/Dislike.astro'
-import Heart from '@/components/icons/Reactions/Heart.astro'
+import ReactionsComponent from '@/components/ReactionsComponent.astro'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
 import { Reactions, db, eq, count } from 'astro:db'
@@ -64,16 +62,14 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
 ---
 <Layout title={`Información del personaje ${name}`}>
 
-  <article class="hidden md:fixed top-0 left-0 md:flex gap-5">
-    <img src={session ? session.user.image : '/logos/Not-user.webp'} alt=`Imagen del usuario ${session?.user.name}` class="size-14 rounded-full">
-    <div class="flex flex-col">
-      <h1 class="text-2xl font-bold">{session?.user.name }</h1>
-      <button id={`${session == null ? 'login' : 'logout'}`}> 
-        <span class="text-red-400/70"> 
-          {session == null ? 'Iniciar Sesión' : 'Cerrar Sesión'} 
-        </span>
-      </button>
-    </div>
+  <article class="fixed top-0 left-0 flex gap-5">
+   <button id={`${session == null ? 'login' : 'logout'}`}>
+      <img 
+        src={session ? session.user.image : '/logos/Not-user.webp'} 
+        alt=`Imagen del usuario ${session?.user.name}` 
+        class="md:size-14 size-10 rounded-full"
+      />
+   </button>
   </article>
 
   <main class="flex justify-center flex-col items-center">
@@ -94,20 +90,16 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         }
       </article>
 
-      <div class="col-start-1 col-end-2 row-start-3 row-end-4 flex justify-center items-center gap-2">
-        <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1 relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'like' ? 'text-blue-500' : 'text-white'}`} disabled={reactionsForUser.length > 0} data-reaction="like" data-name={name} data-session={JSON.stringify(session)}>
-          <Like class="size-10"/>
-          <span class="text-xl text-yellow-300/90"> {countLikes} </span>
-        </button>
-        <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1  relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'dislike' ? 'text-gray-400' : 'text-white'}`} disabled={reactionsForUser.length > 0} data-reaction="dislike" data-name={name} data-session={JSON.stringify(session)}>
-          <Dislike class="size-10"/>
-          <span class="text-xl text-yellow-300/90"> {countDislikes} </span>
-        </button>
-        <button class={`buttons-reactions group flex justify-center items-center flex-col gap-y-1  relative cursor-pointer hover:scale-105 hover:text-red-500 transition ${reaction === 'heart' ? 'text-red-500' : 'text-white'}`} disabled={reactionsForUser.length > 0} data-reaction="heart" data-name={name} data-session={JSON.stringify(session)}>
-          <Heart class="size-10"/>
-          <span class="text-xl text-yellow-300/90"> {countHearts} </span>
-        </button>
-      </div>
+      <ReactionsComponent 
+        isMobile={false}
+        name={name} 
+        reaction={reaction} 
+        reactionsForUser={reactionsForUser}
+        countLikes={countLikes}
+        countDislikes={countDislikes}
+        countHearts={countHearts}
+        session={session}
+      />
 
       <div class="col-start-2 col-end-4 row-start-1 row-end-4 flex justify-center items-center">
         <a href="/" class="group relative cursor-pointer">
@@ -174,20 +166,16 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
 
     <InfoCharacterDesk name={name} birthDayText={birthDayText} isMobile={true} age={age} />
 
-    <div class="md:hidden flex justify-center items-center gap-2">
-      <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1 relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'like' ? 'text-blue-500' : ''}`} disabled={reactionsForUser.length > 0} data-reaction="like" data-name={name} data-session={JSON.stringify(session)}>
-        <Like class="size-10"/>
-        <span class="text-xl text-yellow-300/90"> {countLikes} </span>
-      </button>
-      <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1  relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'dislike' ? 'text-gray-400' : ''}`} disabled={reactionsForUser.length > 0} data-reaction="dislike" data-name={name} data-session={JSON.stringify(session)}>
-        <Dislike class="size-10"/>
-        <span class="text-xl text-yellow-300/90"> {countDislikes} </span>
-      </button>
-      <button class={`buttons-reactions group flex justify-center items-center flex-col gap-y-1  relative cursor-pointer hover:scale-105 hover:text-red-500 transition ${reaction === 'heart' ? 'text-red-500' : ''}`} disabled={reactionsForUser.length > 0} data-reaction="heart" data-name={name} data-session={JSON.stringify(session)}>
-        <Heart class="size-10"/>
-        <span class="text-xl text-yellow-300/90"> {countHearts} </span>
-      </button>
-    </div>
+    <ReactionsComponent 
+      isMobile={true}
+      name={name} 
+      reaction={reaction} 
+      reactionsForUser={reactionsForUser}
+      countLikes={countLikes}
+      countDislikes={countDislikes}
+      countHearts={countHearts}
+      session={session}
+    />
 
     <h2 class="mt-20 font-semibold text-2xl sm:text-3xl "> Galeria de Fotos de {name} </h2>
     <small class="text-slate-300/90"> Has click a cualquier imagen para su vista en grande </small>
@@ -322,7 +310,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         if (response.ok) {
           $button.classList.add('text-blue-500')
           $buttonsReactions.forEach(($button) => $button.disabled = true)
-          toastAlert({ title: 'Succes', type: 'success', icon: true, dismissible: false, location: 'bottom-center' })
+          toastAlert({ title: 'Reaccionado 🤍', type: 'success', icon: true, dismissible: false, location: 'bottom-center' })
         } else {
           console.log('Error al enviar la reacción')
           toastAlert({ title: 'Error', type: 'error', icon: true, dismissible: false, location: 'bottom-center' })
