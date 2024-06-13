@@ -50,18 +50,6 @@ const { name, birthDayText, isMobile, age } = Astro.props
           <span class="text-2xl text-center font-public text-blue-200/90 font-bold"> {age} </span>
         </div>
       </div>
-
-      <aside class="flex justify-center items-center gap-2">
-        <button id="like-button" class="group relative cursor-pointer hover:scale-105 hover:text-blue-500 transition">
-          <Like class="size-10"/>
-        </button>
-        <button id="dislike-button" class="group relative cursor-pointer hover:scale-105 hover:text-blue-500 transition">
-          <Dislike class="size-10"/>
-        </button>
-        <button id="heart-button" class="group relative cursor-pointer hover:scale-105 hover:text-red-500 transition">
-          <Heart class="size-10"/>
-        </button>
-      </aside>
     </section>
   )
 }
