@@ -55,6 +55,7 @@ const allReactions = await db
   .groupBy(Reactions.reaction)
 
 const countLikes = allReactions.find((reaction) => reaction.reactions === 'like')?.count ?? 0
+const countStars = allReactions.find((reaction) => reaction.reactions === 'star')?.count ?? 0
 const countDislikes = allReactions.find((reaction) => reaction.reactions === 'dislike')?.count ?? 0
 const countHearts = allReactions.find((reaction) => reaction.reactions === 'heart')?.count ?? 0
 
@@ -96,8 +97,9 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         reaction={reaction} 
         reactionsForUser={reactionsForUser}
         countLikes={countLikes}
-        countDislikes={countDislikes}
+        countStars={countStars}
         countHearts={countHearts}
+        countDislikes={countDislikes}
         session={session}
       />
 
@@ -172,8 +174,9 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       reaction={reaction} 
       reactionsForUser={reactionsForUser}
       countLikes={countLikes}
-      countDislikes={countDislikes}
+      countStars={countStars}
       countHearts={countHearts}
+      countDislikes={countDislikes}
       session={session}
     />
 
