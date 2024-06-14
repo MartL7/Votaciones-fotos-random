@@ -181,7 +181,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
     />
 
     <h2 class="mt-20 font-semibold text-2xl sm:text-3xl "> Galeria de Fotos de {name} </h2>
-    <small class="text-slate-300/90"> Has click a cualquier imagen para su vista en grande </small>
+    <small class="text-slate-300/90 text-center"> Has click a cualquier imagen para su vista en grande </small>
     <section class="grid grid-cols-2 gap-5 sm:gap-8 md:gap-10 sm:grid-cols-3 p-5">
       {
         imagesGalery.map((imageObj, index) => (
@@ -312,6 +312,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
 
         if (response.ok) {
           $button.classList.add('text-blue-500')
+          $button.classList.add('shadow-lightblue')
           $buttonsReactions.forEach(($button) => $button.disabled = true)
           toastAlert({ title: 'Reaccionado 🤍', type: 'success', icon: true, dismissible: false, location: 'bottom-center' })
         } else {
