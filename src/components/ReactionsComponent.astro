@@ -23,20 +23,20 @@ const { isMobile, name, reaction, reactionsForUser, countLikes, countStars, coun
 <div 
   class={`${isMobile ? 'md:hidden flex justify-center items-center gap-2' : 'col-start-1 col-end-2 row-start-3 row-end-4 flex justify-center items-center flex-wrap gap-2'}`}
   >
-  <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1 relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'like' ? 'text-blue-500 shadow-lightblue' : ''}`} disabled={reactionsForUser.length > 0} data-reaction="like" data-name={name} data-session={JSON.stringify(session)}>
+  <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1 relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'like' ? 'text-blue-500 shadow-lightblue' : ''}`} data-reaction="like" data-name={name} data-session={JSON.stringify(session)}>
     <Like class="size-10"/>
     <span class="text-xl text-yellow-300/90"> {countLikes} </span>
   </button>
-  <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1  relative cursor-pointer hover:scale-105 hover:text-yellow-500 transition ${reaction === 'star' ? 'text-yellow-400 shadow-yellow' : ''}`} disabled={reactionsForUser.length > 0} data-reaction="star" data-name={name} data-session={JSON.stringify(session)}>
+  <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1  relative cursor-pointer hover:scale-105 hover:text-yellow-500 transition ${reaction === 'star' ? 'text-yellow-400 shadow-yellow' : ''}`} data-reaction="star" data-name={name} data-session={JSON.stringify(session)}>
     <Stars class="size-10"/>
     <span class="text-xl text-yellow-300/90"> {countStars} </span>
   </button>
-  <button class={`buttons-reactions group flex justify-center items-center flex-col gap-y-1  relative cursor-pointer hover:scale-105 hover:text-red-500 transition ${reaction === 'heart' ? 'text-red-500 shadow-red' : ''}`} disabled={reactionsForUser.length > 0} data-reaction="heart" data-name={name} data-session={JSON.stringify(session)}>
+  <button class={`buttons-reactions group flex justify-center items-center flex-col gap-y-1  relative cursor-pointer hover:scale-105 hover:text-red-500 transition ${reaction === 'heart' ? 'text-red-500 shadow-red' : ''}`} data-reaction="heart" data-name={name} data-session={JSON.stringify(session)}>
     <Heart class="size-10"/>
     <span class="text-xl text-yellow-300/90"> {countHearts} </span>
   </button>
 
-  <button class={`buttons-reactions group flex justify-center items-center flex-col gap-y-1  relative cursor-pointer hover:scale-105 hover:text-purple-400 transition ${reaction === 'dislike' ? 'text-purple-300 shadow-purple' : ''}`} disabled={reactionsForUser.length > 0} data-reaction="dislike" data-name={name} data-session={JSON.stringify(session)}>
+  <button class={`buttons-reactions group flex justify-center items-center flex-col gap-y-1  relative cursor-pointer hover:scale-105 hover:text-purple-400 transition ${reaction === 'dislike' ? 'text-purple-300 shadow-purple' : ''}`} data-reaction="dislike" data-name={name} data-session={JSON.stringify(session)}>
     <Sad class="size-10"/>
     <span class="text-xl text-yellow-300/90"> {countDislikes} </span>
   </button>
