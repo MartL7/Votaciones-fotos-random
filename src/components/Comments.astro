@@ -4,8 +4,8 @@ import { stickers } from '@/logic/stickers'
 import type { Session } from '@auth/core/types'
 
 interface Props {
-  sessionUser: Session
-  userComment: string
+    sessionUser: Session
+    userComment: string
 }
 
 const { sessionUser, userComment } = Astro.props
@@ -18,11 +18,11 @@ const nameDefault = name ?? 'Usuario'
 <div class="Comments flex flex-col mt-10 sm:mt-0 sm:flex-row justify-center items-center size-full">
     <div class="size-10">
         <img  
-          decoding="async"
-          loading="lazy"
-          src={imageDefault} 
-          alt={`Imagen del usuario ${nameDefault}`} 
-          class="size-full rounded-full"
+            decoding="async"
+            loading="lazy"
+            src={imageDefault} 
+            alt={`Imagen del usuario ${nameDefault}`} 
+            class="size-full rounded-full"  
         />
     </div>
     <form id="formComment" data-user-comment={userComment} data-session={JSON.stringify(sessionUser)}>
@@ -31,19 +31,19 @@ const nameDefault = name ?? 'Usuario'
             <div class="emotes">
                 <Smale_emotes />
                 <div class="content_emotes">
-                    <article class="grid grid-cols-2 gap-2">
+                    <article class="flex flex-wrap gap-2 ps-15 overflow-auto justify-center">
                         {
-                          stickers.map(({ imageUrl, code }) => (
+                            stickers.map(({ imageUrl, code }) => (
                             <button type="button" class="buttons-stickers" data-code={code}>
                                 <img 
-                                  decoding="async"
-                                  loading="lazy"
-                                  src={imageUrl} 
-                                  alt={`Sticker ${code}`} 
-                                  class="size-auto" 
+                                    decoding="async"
+                                    loading="lazy"
+                                    src={imageUrl} 
+                                    alt={`Sticker ${code}`} 
+                                    class="size-auto" 
                                 />
                             </button>
-                          ))
+                            ))
                         }
                     </article>
                 </div>
