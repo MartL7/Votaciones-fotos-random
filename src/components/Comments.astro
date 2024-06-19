@@ -40,7 +40,7 @@ const nameDefault = name ?? 'Usuario'
                                   loading="lazy"
                                   src={imageUrl} 
                                   alt={`Sticker ${code}`} 
-                                  class="size-auto" 
+                                  class="size-full rounded-lg" 
                                 />
                             </button>
                           ))
@@ -101,6 +101,8 @@ const nameDefault = name ?? 'Usuario'
         top: -400px;
         left: -30px;
         display: none;
+        overflow: hidden;
+        overflow-y: scroll;
     }
 
     .content_emotes::before {

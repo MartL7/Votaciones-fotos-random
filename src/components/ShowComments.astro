@@ -27,8 +27,10 @@ const { comments } = Astro.props
       const imageForSticker = sticker ? sticker?.imageUrl : ''
       return (
         <aside class="flex gap-x-3 mt-5 p-2 sm:p-3 md:p-0 w-full">
-          <img 
-            class="w-10 h-10 rounded-full" 
+          <img
+            decoding="async"
+            loading="lazy"
+            class="size-10 rounded-full"
             src={userImage} 
             alt={`Imagen del usuario ${userName}`}
           />
