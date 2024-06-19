@@ -1,0 +1,59 @@
+---
+import { stickers } from '@/logic/stickers'
+
+interface Comment {
+  id: string
+  userId: string
+  comment?: string
+  userComment: string
+  codeGif?: string
+}
+
+interface Props {
+  comments: Comment[]
+}
+
+const { comments } = Astro.props
+---
+
+<section class="flex flex-col w-full">
+  {
+    comments.map((coment) => {
+      const userName = coment.userId.split('^').at(0)
+      const userImage = coment.userId.split('^').at(-1)
+      const code = coment.codeGif?.split('#').at(-1)
+
+      const sticker = stickers.find((sticker) => sticker.code === coment.codeGif)
+      const imageForSticker = sticker ? sticker?.imageUrl : ''
+      return (
+        <aside class="flex gap-x-3 mt-5 p-2 sm:p-3 md:p-0 w-full">
+          <img 
+            class="w-10 h-10 rounded-full" 
+            src={userImage} 
+            alt={`Imagen del usuario ${userName}`}
+          />
+
+          <div class="flex flex-col gap-y-2 max-w-[250px] sm:max-w-lg md:max-w-xl lg:max-w-4xl">
+            <p class="font-bold">{userName}</p>
+            {
+              coment.comment && (
+                <p class="text-red-100/90 text-pretty overflow-hidden text-ellipsis break-words"> - {coment.comment}</p>
+              )
+            }
+            {
+              coment.codeGif && (
+                <img 
+                  decoding="async"
+                  loading="lazy"
+                  class="max-h-[90px] max-w-[110px] size-auto rounded-lg"
+                  src={imageForSticker} 
+                  alt={`Sticker ${code}`}
+                />
+              )
+            }
+          </div>
+        </aside>
+      )
+    })
+  }
+</section>

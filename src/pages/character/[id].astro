@@ -7,10 +7,12 @@ import ArrowRight from "@/components/icons/Arrows/ArrowRight.astro"
 import ArrowLeft from "@/components/icons/Arrows/ArrowLeft.astro"
 import InfoCharacterDesk from "@/components/InfoCharacterDesk.astro"
 import ReactionsComponent from '@/components/ReactionsComponent.astro'
+import ShowComments from '@/components/ShowComments.astro'
 import  Comments from '@/components/Comments.astro'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
 import { Reactions, db, eq, count } from 'astro:db'
+import { Comments as TableComments } from 'astro:db'
 import { and } from 'astro:db'
 
 const { id } = Astro.params
@@ -18,7 +20,7 @@ const { id } = Astro.params
 const character = Characters.find((character) => character.id === id)
 
 if (!character) {
-  location.href = '/'
+  return Astro.redirect('/')
 }
 
 const { imagePresentation, name, birthDay, imagesGalery, funnyText, socials } = character
@@ -54,6 +56,13 @@ const allReactions = await db
   .from(Reactions)
   .where(eq(Reactions.userReaction, name))
   .groupBy(Reactions.reaction)
+
+const allComments = await db
+  .select()
+  .from(TableComments)
+  .where(eq(TableComments.userComment, name))
+
+console.log(allComments)
 
 const countLikes = allReactions.find((reaction) => reaction.reactions === 'like')?.count ?? 0
 const countStars = allReactions.find((reaction) => reaction.reactions === 'star')?.count ?? 0
@@ -220,7 +229,9 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       </div>
     </section>
 
-    <Comments />
+    <Comments sessionUser={session} userComment={name} />
+
+    <ShowComments comments={allComments} />
 
     <Modal className="clip-dialog" id="close-dialog" isButton={true}>
       <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
@@ -315,8 +326,19 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         })
 
         if (response.ok) {
+          $buttonsReactions.forEach(($button) => {
+            $button.classList.remove('text-blue-500')
+            $button.classList.remove('shadow-lightblue')
+            $button.classList.remove('text-yellow-400')
+            $button.classList.remove('shadow-yellow')
+            $button.classList.remove('text-red-500')
+            $button.classList.remove('shadow-red')
+            $button.classList.remove('text-purple-300')
+            $button.classList.remove('shadow-purple')
+          })
           $button.classList.add('text-blue-500')
           $button.classList.add('shadow-lightblue')
+
           $buttonsReactions.forEach(($button) => $button.disabled = true)
           toastAlert({ title: 'Reaccionado 🤍', type: 'success', icon: true, dismissible: false, location: 'bottom-center' })
         } else {

@@ -1,46 +1,60 @@
 ---
 import Smale_emotes from '@/components/icons/smale.astro'
+import { stickers } from '@/logic/stickers'
+import type { Session } from '@auth/core/types'
+
+interface Props {
+  sessionUser: Session
+  userComment: string
+}
+
+const { sessionUser, userComment } = Astro.props
+
+const { image, name } = sessionUser?.user
+
+const imageDefault = image ?? '/img/User-session.webp'
+const nameDefault = name ?? 'Usuario'
 ---
-<div class="Comments">
-    <div class="image_user">
-        <img  src="https://via.placeholder.com/40" alt="user">
+<div class="Comments flex flex-col mt-10 sm:mt-0 sm:flex-row justify-center items-center size-full">
+    <div class="size-10">
+        <img  
+          decoding="async"
+          loading="lazy"
+          src={imageDefault} 
+          alt={`Imagen del usuario ${nameDefault}`} 
+          class="size-full rounded-full"
+        />
     </div>
-    <form>
-        <textarea placeholder="Comentario...">
-hola a  todos 🍎
-ya casi se termina :3</textarea>
-        <div class="options_Comment">
+    <form id="formComment" data-user-comment={userComment} data-session={JSON.stringify(sessionUser)}>
+        <textarea placeholder="Comentario..."></textarea>
+        <div class="options_Comment flex justify-between w-full px-[10px]">
             <div class="emotes">
-                <Smale_emotes></Smale_emotes>
+                <Smale_emotes />
                 <div class="content_emotes">
-                    <!--Aqui agrega el contenedor de emotes -->
+                    <article class="grid grid-cols-2 gap-2">
+                        {
+                          stickers.map(({ imageUrl, code }) => (
+                            <button type="button" class="buttons-stickers" data-code={code}>
+                                <img 
+                                  decoding="async"
+                                  loading="lazy"
+                                  src={imageUrl} 
+                                  alt={`Sticker ${code}`} 
+                                  class="size-auto" 
+                                />
+                            </button>
+                          ))
+                        }
+                    </article>
                 </div>
             </div>
-            <input type="submit" value="Publicar">
+            <button type="submit" class="p-2 bg-slate-200/20 rounded-lg"> Enviar </button>
         </div>
-    </form>
-    <!--Agregar contenedor para comentarios (no se que opciones se tendra) -->
+    </form> 
 </div>
 
 
 <style>
-    .Comments {
-        display: flex;
-        justify-content: center;
-        width: 95%;
-        margin-top: 30px;
-    }
-    .image_user{
-        background-color: rgba(46, 46, 46, 0.282);
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        position: relative;
-        top: 10px;
-        display: grid;
-        place-items: center;
-        overflow: hidden;
-    }
     .image_user img{
         height: 40px;
         width: 40px;
@@ -64,19 +78,6 @@ ya casi se termina :3</textarea>
 
     .Comments textarea:focus {
         outline: none;
-    }
-
-    .options_Comment {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 10px;
-    }
-    .options_Comment > input{
-        cursor: pointer;
-        background-color: rgba(255, 255, 255, 0.138);
-        padding: 8px 6px;
-        border-radius: 5px;
     }
     .emotes {
         background-color: rgba(255, 255, 255, 0.522);
@@ -113,3 +114,127 @@ ya casi se termina :3</textarea>
         border-color: rgb(46, 46, 46) transparent transparent transparent;
     }
 </style>
+
+<script>
+    import { $, $$ } from '@/lib/dom-selector'
+    import { toastAlert } from '@/function/alerts'
+
+    document.addEventListener('astro:page-load', () => {
+        const $buttonShowStickers = $('.emotes') as HTMLButtonElement
+        const $containerStickers = $('.content_emotes') as HTMLElement
+        const $formComment = $('#formComment') as HTMLFormElement
+        const $buttonsStickers = $$('.buttons-stickers') as NodeListOf<HTMLButtonElement>
+
+        
+        const { userComment, session } = $formComment.dataset
+
+        $buttonsStickers.forEach(($button) => {
+            $button.addEventListener('click', async () => {
+                const { code } = $button.dataset
+
+                const dataToSend = {
+                    userComment,
+                    codeGif: code
+                }
+
+                if (session == null) {
+                    toastAlert(
+                    { title: 'Debes iniciar sesión para enviar stickers 😢', 
+                        type: 'error', 
+                        icon: true, 
+                        dismissible: false, 
+                        location: 'bottom-center' 
+                    }
+                    )
+                    return
+                }
+
+                const response = await fetch('/api/comments/comments', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dataToSend)
+                })
+
+                if (response.ok) {
+                    toastAlert(
+                    { title: 'Sticker enviado 💚', 
+                        type: 'success', 
+                        icon: true, 
+                        dismissible: false, 
+                        location: 'bottom-center' 
+                    }
+                    )
+                }
+                else {
+                    toastAlert(
+                    { title: 'Error al enviar el Sticker 😢', 
+                        type: 'error', 
+                        icon: true, 
+                        dismissible: false, 
+                        location: 'bottom-center' 
+                    }
+                    )
+                }
+            })
+        })
+
+
+        $formComment.addEventListener('submit', async (event) => {
+            event.preventDefault()
+            const $textarea = $formComment.querySelector('textarea') as HTMLTextAreaElement
+            const comment = $textarea.value
+
+            const dataToSend = {
+                userComment,
+                comment
+            }
+
+            if (session == null) {
+                toastAlert(
+                    { title: 'Debes iniciar sesión para enviar Comentarios 😢', 
+                    type: 'error', 
+                    icon: true, 
+                    dismissible: false, 
+                    location: 'bottom-center' 
+                    }
+                )
+                return
+            }
+
+            const response = await fetch('/api/comments/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToSend)
+            })
+
+            if (response.ok) {
+                toastAlert(
+                { title: 'Comentario enviado 💚', 
+                    type: 'success', 
+                    icon: true, 
+                    dismissible: false, 
+                    location: 'bottom-center' 
+                }
+                )
+            }
+            else {
+                toastAlert(
+                { title: 'Error al enviar el comentario 😢', 
+                    type: 'error', 
+                    icon: true, 
+                    dismissible: false, 
+                    location: 'bottom-center' 
+                }
+                )
+            }
+        })
+
+        $buttonShowStickers.addEventListener('click', () => {
+            $containerStickers.style.display = $containerStickers.style.display === 'block' ? 'none' : 'block'
+        })
+    })
+</script>
