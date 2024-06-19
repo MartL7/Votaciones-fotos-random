@@ -2,7 +2,6 @@ interface Sticker {
   id: string
   code: string
   imageUrl: string
-  isGif ?: boolean
 }
 
 export const stickers: Sticker[] = [
@@ -40,6 +39,11 @@ export const stickers: Sticker[] = [
     id: 'Sticker-6',
     code: '#ss6',
     imageUrl: '/img/Stickers/ss6.gif',
-    isGif: true
+  },
+
+  {
+    id: 'Sticker-7',
+    code: '#ss7',
+    imageUrl: '/img/Stickers/ss7.webp'
   }
 ]
