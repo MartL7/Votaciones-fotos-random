@@ -7,6 +7,7 @@ import ArrowRight from "@/components/icons/Arrows/ArrowRight.astro"
 import ArrowLeft from "@/components/icons/Arrows/ArrowLeft.astro"
 import InfoCharacterDesk from "@/components/InfoCharacterDesk.astro"
 import ReactionsComponent from '@/components/ReactionsComponent.astro'
+import  Comments from '@/components/Comments.astro'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
 import { Reactions, db, eq, count } from 'astro:db'
@@ -218,6 +219,9 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         }
       </div>
     </section>
+
+    <Comments />
+
     <Modal className="clip-dialog" id="close-dialog" isButton={true}>
       <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
     </Modal>
