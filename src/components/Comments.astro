@@ -1,6 +1,115 @@
 ---
-
+import Smale_emotes from '@/components/icons/smale.astro'
 ---
+<div class="Comments">
+    <div class="image_user">
+        <img  src="https://via.placeholder.com/40" alt="user">
+    </div>
+    <form>
+        <textarea placeholder="Comentario...">
+hola a  todos 🍎
+ya casi se termina :3</textarea>
+        <div class="options_Comment">
+            <div class="emotes">
+                <Smale_emotes></Smale_emotes>
+                <div class="content_emotes">
+                    <!--Aqui agrega el contenedor de emotes -->
+                </div>
+            </div>
+            <input type="submit" value="Publicar">
+        </div>
+    </form>
+    <!--Agregar contenedor para comentarios (no se que opciones se tendra) -->
+</div>
 
 
-<!-- Diseño del Fomurlario -->
+<style>
+    .Comments {
+        display: flex;
+        justify-content: center;
+        width: 95%;
+        margin-top: 30px;
+    }
+    .image_user{
+        background-color: rgba(46, 46, 46, 0.282);
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        position: relative;
+        top: 10px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+    }
+    .image_user img{
+        height: 40px;
+        width: 40px;
+    }
+    .Comments > form {
+        width: 85%;
+    }
+
+    .Comments textarea {
+        width: 100%;
+        padding: 10px 0px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        margin: 10px;
+        box-sizing: border-box;
+        display: block;
+        resize: none;
+        field-sizing: content;
+    }
+
+    .Comments textarea:focus {
+        outline: none;
+    }
+
+    .options_Comment {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px;
+    }
+    .options_Comment > input{
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.138);
+        padding: 8px 6px;
+        border-radius: 5px;
+    }
+    .emotes {
+        background-color: rgba(255, 255, 255, 0.522);
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .emotes svg {
+        height: 100%;
+        width: 100%;
+    }
+
+    .content_emotes {
+        background-color: rgb(46, 46, 46);
+        width: 200px;
+        height: 350px;
+        border-radius: 15px;
+        position: relative;
+        top: -400px;
+        left: -30px;
+        display: none;
+    }
+
+    .content_emotes::before {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 23%;
+        transform: translateX(-50%);
+        border-width: 15px;
+        border-style: solid;
+        border-color: rgb(46, 46, 46) transparent transparent transparent;
+    }
+</style>
