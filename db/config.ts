@@ -24,11 +24,22 @@ const Reactions = {
   }
 }
 
+const Comments = {
+  columns: {
+    id: column.text({ primaryKey: true }),
+    userId: column.text(),
+    comment: column.text({ optional: true }),
+    userComment: column.text(),
+    codeGif: column.text({ optional: true }),
+  }
+}
+
 // https://astro.build/db/config
 export default defineDb({
   tables: { 
     Votes, 
     Categories,
-    Reactions
+    Reactions,
+    Comments
   }
 })
