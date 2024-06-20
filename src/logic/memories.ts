@@ -57,7 +57,7 @@ export const memories_1: Memories_1[] = [
         ],
     },
     {
-        id_group: 'second-group',
+        id_group: 'Marthas Temporada 6',
         members: [
             { name: 'Emmanuel', isPerfil: true },
             { name: 'Ale', isPerfil: true },
