@@ -10,10 +10,10 @@ interface Props {
 
 const { sessionUser, userComment } = Astro.props
 
-const { image, name } = sessionUser?.user
+/* const { image, name } = sessionUser?.user */
 
-const imageDefault = image ?? '/img/User-session.webp'
-const nameDefault = name ?? 'Usuario'
+const imageDefault = sessionUser.user.image ?? '/img/User-session.webp'
+const nameDefault = sessionUser.user.name ?? 'Usuario'
 ---
 <div class="Comments flex flex-col mt-10 sm:mt-0 sm:flex-row justify-center items-center size-full">
     <div class="size-10">
@@ -48,7 +48,14 @@ const nameDefault = name ?? 'Usuario'
                     </article>
                 </div>
             </div>
-            <button type="submit" class="p-2 bg-slate-200/20 rounded-lg"> Enviar </button>
+            <button 
+              id="button-send"
+              type="submit" 
+              class="p-2 bg-slate-200/20 rounded-lg cursor-pointer hover:scale-105 hover:bg-slate-200/40 transition" 
+              disabled
+            > 
+                Enviar 
+            </button>
         </div>
     </form> 
 </div>
@@ -126,9 +133,16 @@ const nameDefault = name ?? 'Usuario'
         const $containerStickers = $('.content_emotes') as HTMLElement
         const $formComment = $('#formComment') as HTMLFormElement
         const $buttonsStickers = $$('.buttons-stickers') as NodeListOf<HTMLButtonElement>
+        const $buttonSend = $('#button-send') as HTMLButtonElement
 
-        
         const { userComment, session } = $formComment.dataset
+
+        const $textAreaStatus = $formComment.querySelector('textarea') as HTMLTextAreaElement
+
+        $textAreaStatus.onchange = () => {
+            $buttonSend.removeAttribute('disabled')
+        }
+
 
         $buttonsStickers.forEach(($button) => {
             $button.addEventListener('click', async () => {
@@ -168,6 +182,10 @@ const nameDefault = name ?? 'Usuario'
                         location: 'bottom-center' 
                     }
                     )
+                     // Forma Cutre -> Arreglar 
+                    setTimeout(() => {
+                        window.location.reload()
+                    }, 700)
                 }
                 else {
                     toastAlert(
@@ -216,12 +234,16 @@ const nameDefault = name ?? 'Usuario'
             if (response.ok) {
                 toastAlert(
                 { title: 'Comentario enviado 💚', 
-                    type: 'success', 
-                    icon: true, 
-                    dismissible: false, 
-                    location: 'bottom-center' 
+                  type: 'success',
+                  icon: true, 
+                  dismissible: false, 
+                  location: 'bottom-center' 
                 }
                 )
+                // Forma Cutre -> Arreglar 
+                setTimeout(() => {
+                    window.location.reload()
+                }, 700)
             }
             else {
                 toastAlert(
