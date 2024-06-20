@@ -30,8 +30,8 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
         <div class="options_Comment flex justify-between w-full px-[10px]">
             <div class="emotes">
                 <Smale_emotes />
-                <div class="content_emotes">
-                    <article class="grid grid-cols-2 gap-2">
+                <div class="content_emotes p-3 md:p-2">
+                    <article class="grid  grid-cols-3 gap-5">
                         {
                           stickers.map(({ imageUrl, code }) => (
                             <button type="button" class="buttons-stickers" data-code={code}>
@@ -40,7 +40,7 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
                                   loading="lazy"
                                   src={imageUrl} 
                                   alt={`Sticker ${code}`} 
-                                  class="size-full rounded-lg" 
+                                  class="w-16 h-full rounded-lg" 
                                 />
                             </button>
                           ))
@@ -100,7 +100,7 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
     }
 
     .content_emotes {
-        background-color: rgb(46, 46, 46);
+        background-color: rgba(46, 46, 46, 0.627);
         width: 200px;
         height: 350px;
         border-radius: 15px;
@@ -109,19 +109,9 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
         left: -30px;
         display: none;
         overflow: hidden;
-        overflow-y: scroll;
+        overflow: auto;
     }
 
-    .content_emotes::before {
-        content: '';
-        position: absolute;
-        bottom: -30px;
-        left: 23%;
-        transform: translateX(-50%);
-        border-width: 15px;
-        border-style: solid;
-        border-color: rgb(46, 46, 46) transparent transparent transparent;
-    }
 </style>
 
 <script>
