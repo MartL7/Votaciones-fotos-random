@@ -32,6 +32,7 @@ export const showModal = () => {
   $imageDialog.addEventListener('close', () => {
     $imageClip.src = ''
     document.removeEventListener('keydown', handleKeyDown)
+    removeTouchEvents()
   })
 
   $imageContainer.forEach((image, index) => {
@@ -40,6 +41,7 @@ export const showModal = () => {
       showImage($imageClip, imageUrls[currentIndex])
       $imageDialog.showModal()
       document.addEventListener('keydown', handleKeyDown)
+      addTouchEvents()
     })
   })
 
@@ -61,5 +63,38 @@ export const showModal = () => {
       currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length
       showImage($imageClip, imageUrls[currentIndex])
     }
+  }
+  
+  let touchStartX = 0
+  let touchEndX = 0
+
+  const handleTouchStart = (event: TouchEvent) => {
+    touchStartX = event.touches[0].clientX
+  }
+
+  const handleTouchMove = (event: TouchEvent) => {
+    touchEndX = event.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX - touchEndX > 50) {
+      currentIndex = (currentIndex + 1) % imageUrls.length
+      showImage($imageClip, imageUrls[currentIndex])
+    } else if (touchEndX - touchStartX > 50) {
+      currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length
+      showImage($imageClip, imageUrls[currentIndex])
+    }
+  }
+
+  const addTouchEvents = () => {
+    $imageClip.addEventListener('touchstart', handleTouchStart)
+    $imageClip.addEventListener('touchmove', handleTouchMove)
+    $imageClip.addEventListener('touchend', handleTouchEnd)
+  }
+
+  const removeTouchEvents = () => {
+    $imageClip.removeEventListener('touchstart', handleTouchStart)
+    $imageClip.removeEventListener('touchmove', handleTouchMove)
+    $imageClip.removeEventListener('touchend', handleTouchEnd)
   }
 }
