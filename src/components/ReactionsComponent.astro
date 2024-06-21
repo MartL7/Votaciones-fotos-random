@@ -9,7 +9,7 @@ interface Props {
   isMobile: boolean
   name: string
   reaction: string
-  reactionsForUser: { reactionUser: string, userReactionsUser: string }[]
+  /* reactionsForUser: { reactionUser: string, userReactionsUser: string }[] */
   countLikes: number
   countStars: number
   countHearts: number
@@ -17,7 +17,7 @@ interface Props {
   session: Session
 }
 
-const { isMobile, name, reaction, reactionsForUser, countLikes, countStars, countHearts, countDislikes, session } = Astro.props
+const { isMobile, name, reaction, countLikes, countStars, countHearts, countDislikes, session } = Astro.props
 ---
 
 <div 

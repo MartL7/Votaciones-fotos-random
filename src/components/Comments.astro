@@ -4,16 +4,14 @@ import { stickers } from '@/logic/stickers'
 import type { Session } from '@auth/core/types'
 
 interface Props {
-  sessionUser: Session
+  sessionUser?: Session
   userComment: string
 }
 
 const { sessionUser, userComment } = Astro.props
 
-/* const { image, name } = sessionUser?.user */
-
-const imageDefault = sessionUser.user.image ?? '/img/User-session.webp'
-const nameDefault = sessionUser.user.name ?? 'Usuario'
+const imageDefault = sessionUser?.user?.image ?? '/img/User-session.webp'
+const nameDefault = sessionUser?.user?.name ?? 'Usuario'
 ---
 <div class="Comments flex flex-col mt-10 sm:mt-0 sm:flex-row justify-center items-center size-full">
     <div class="size-10">
@@ -30,8 +28,8 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
         <div class="options_Comment flex justify-between w-full px-[10px]">
             <div class="emotes">
                 <Smale_emotes />
-                <div class="content_emotes p-3 md:p-2">
-                    <article class="grid  grid-cols-3 gap-5">
+                <div class="content_emotes w-[250px] h-[350px] sm:w-[300px] sm:h-[350px] p-3 md:p-2">
+                    <article class="grid grid-cols-3 gap-5">
                         {
                           stickers.map(({ imageUrl, code }) => (
                             <button type="button" class="buttons-stickers" data-code={code}>
@@ -40,7 +38,7 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
                                   loading="lazy"
                                   src={imageUrl} 
                                   alt={`Sticker ${code}`} 
-                                  class="w-16 h-full rounded-lg" 
+                                  class="size-16 sm:size-20 rounded-lg" 
                                 />
                             </button>
                           ))
@@ -101,8 +99,6 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
 
     .content_emotes {
         background-color: rgba(46, 46, 46, 0.627);
-        width: 200px;
-        height: 350px;
         border-radius: 15px;
         position: relative;
         top: -400px;
@@ -127,6 +123,8 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
 
         const { userComment, session } = $formComment.dataset
 
+        const userSession = JSON.parse(session)
+
         const $textAreaStatus = $formComment.querySelector('textarea') as HTMLTextAreaElement
 
         $textAreaStatus.onchange = () => {
@@ -143,7 +141,7 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
                     codeGif: code
                 }
 
-                if (session == null) {
+                if (userSession == null) {
                     toastAlert(
                     { title: 'Debes iniciar sesión para enviar stickers 😢', 
                         type: 'error', 
@@ -201,7 +199,7 @@ const nameDefault = sessionUser.user.name ?? 'Usuario'
                 comment
             }
 
-            if (session == null) {
+            if (userSession == null) {
                 toastAlert(
                     { title: 'Debes iniciar sesión para enviar Comentarios 😢', 
                     type: 'error', 
