@@ -10,55 +10,46 @@ export const stickers: Sticker[] = [
     code: '#ss1',
     imageUrl: '/img/Stickers/ss1.webp'
   },
-
   {
     id: 'Sticker-2',
     code: '#ss2',
     imageUrl: '/img/Stickers/ss2.webp'
   },
-
   {
     id: 'Sticker-3',
     code: '#ss3',
     imageUrl: '/img/Stickers/ss3.webp'
   },
-
   {
     id: 'Sticker-4',
     code: '#ss4',
     imageUrl: '/img/Stickers/ss4.webp'
   },
-
   {
     id: 'Sticker-5',
     code: '#ss5',
     imageUrl: '/img/Stickers/ss5.webp'
   },
-
   {
     id: 'Sticker-6',
     code: '#ss6',
     imageUrl: '/img/Stickers/ss6.gif',
   },
-
   {
     id: 'Sticker-7',
     code: '#ss7',
     imageUrl: '/img/Stickers/ss7.webp'
   },
-
   {
     id: 'Sticker-8',
     code: '#ss8',
     imageUrl: '/img/Stickers/ss8.gif'
   },
-
   {
     id: 'Sticker-9',
     code: '#ss9',
     imageUrl: '/img/Stickers/ss9.webp'
   },
-
   {
     id: 'Sticker-10',
     code: '#ss10',
@@ -148,7 +139,30 @@ export const stickers: Sticker[] = [
     id: 'Sticker-27',
     code: '#ss27',
     imageUrl: '/img/Stickers/ss27.gif'
+  },
+  {
+    id: 'Sticker-28',
+    code: '#ss28',
+    imageUrl: '/img/Stickers/ss28.webp'
+  },
+  {
+    id: 'Sticker-29',
+    code: '#ss29',
+    imageUrl: '/img/Stickers/ss29.gif'
+  },
+  {
+    id: 'Sticker-30',
+    code: '#ss30',
+    imageUrl: '/img/Stickers/ss30.webp'
+  },
+  {
+    id: 'Sticker-31',
+    code: '#ss31',
+    imageUrl: '/img/Stickers/ss31.webp'
+  },
+  {
+    id: 'Sticker-32',
+    code: '#ss32',
+    imageUrl: '/img/Stickers/ss32.webp'
   }
-  
-  
 ]
