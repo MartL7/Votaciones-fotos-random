@@ -164,5 +164,45 @@ export const stickers: Sticker[] = [
     id: 'Sticker-32',
     code: '#ss32',
     imageUrl: '/img/Stickers/ss32.webp'
+  },
+  {
+    id: 'Sticker-33',
+    code: '#ss33',
+    imageUrl: '/img/Stickers/ss33.gif'
+  },
+  {
+    id: 'Sticker-34',
+    code: '#ss34',
+    imageUrl: '/img/Stickers/ss34.webp'
+  },
+  {
+    id: 'Sticker-35',
+    code: '#ss35',
+    imageUrl: '/img/Stickers/ss35.webp'
+  },
+  {
+    id: 'Sticker-36',
+    code: '#ss36',
+    imageUrl: '/img/Stickers/ss36.webp'
+  },
+  {
+    id: 'Sticker-37',
+    code: '#ss37',
+    imageUrl: '/img/Stickers/ss37.webp'
+  },
+  {
+    id: 'Sticker-38',
+    code: '#ss38',
+    imageUrl: '/img/Stickers/ss38.webp'
+  },
+  {
+    id: 'Sticker-39',
+    code: '#ss39',
+    imageUrl: '/img/Stickers/ss39.gif'
+  },
+  {
+    id: 'Sticker-40',
+    code: '#ss40',
+    imageUrl: '/img/Stickers/ss40.gif'
   }
 ]
