@@ -77,10 +77,10 @@ export const showModal = () => {
   }
 
   const handleTouchEnd = () => {
-    if (touchStartX - touchEndX > 50) {
+    if (touchStartX - touchEndX > 100) {
       currentIndex = (currentIndex + 1) % imageUrls.length
       showImage($imageClip, imageUrls[currentIndex])
-    } else if (touchEndX - touchStartX > 50) {
+    } else if (touchEndX - touchStartX > 100) {
       currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length
       showImage($imageClip, imageUrls[currentIndex])
     }
