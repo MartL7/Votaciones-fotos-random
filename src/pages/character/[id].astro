@@ -62,8 +62,6 @@ const allComments = await db
   .from(TableComments)
   .where(eq(TableComments.userComment, name))
 
-console.log(allComments)
-
 const countLikes = allReactions.find((reaction) => reaction.reactions === 'like')?.count ?? 0
 const countStars = allReactions.find((reaction) => reaction.reactions === 'star')?.count ?? 0
 const countDislikes = allReactions.find((reaction) => reaction.reactions === 'dislike')?.count ?? 0
@@ -75,10 +73,14 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
 
   <article class="fixed top-0 left-0 flex gap-5">
    <button id={`${session == null ? 'login' : 'logout'}`}>
-      <img 
+      <img
+        decoding="async"
         src={session ? session.user.image : '/logos/Not-user.webp'} 
         alt=`Imagen del usuario ${session?.user.name}` 
         class="md:size-14 size-10 rounded-full"
+        data-birthday={birthDayText}
+        data-name={name}
+        id="session-image"
       />
    </button>
   </article>
@@ -105,7 +107,6 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         isMobile={false}
         name={name} 
         reaction={reaction} 
-        
         countLikes={countLikes}
         countStars={countStars}
         countHearts={countHearts}
@@ -120,7 +121,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
             src={imagePresentation}
             alt={`Imagen Grande de ${name}`}
             transition:name={`Character-Yahir`}
-            class="masked-image sm:h-[70vh] transition"
+            class="masked-image sm:h-[70dvh] transition"
           />
     
           <div>
@@ -145,7 +146,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         src={imagePresentation}
         alt={`Imagen Grande de ${name}`}
         transition:name={`Character-Yahir`}
-        class="masked-image sm:h-[60vh] transition"
+        class="masked-image sm:h-[60dvh] transition"
       />
 
       <div>
@@ -182,7 +183,6 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       isMobile={true}
       name={name} 
       reaction={reaction} 
-      
       countLikes={countLikes}
       countStars={countStars}
       countHearts={countHearts}
@@ -249,11 +249,14 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
   import { $, $$ } from '@/lib/dom-selector'
   import { showModal } from '@/const/showModal'
   import { toastAlert } from '@/function/alerts'
+  import Swal from 'sweetalert2'
+  import confetti from 'canvas-confetti'
 
   document.addEventListener('astro:page-load', async () => {
 
     const $gridImages = $$('.image-container') as NodeListOf<HTMLPictureElement>
     const $buttonsReactions = $$('.buttons-reactions') as NodeListOf<HTMLButtonElement>
+    const $sessionImage = $('#session-image') as HTMLImageElement
     const $logout = $('#logout') as HTMLButtonElement
     const $login = $('#login') as HTMLButtonElement
 
@@ -297,7 +300,11 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         const rect = $image.getBoundingClientRect()
         if (rect.top < window.innerHeight && rect.bottom >= 0) {
           $image.classList.add('animate-zoom-in')
-        } 
+          $image.classList.remove('animate-zoom-out')
+        } else {
+          $image.classList.remove('animate-zoom-in')
+          $image.classList.add('animate-zoom-out')
+        }
       })
     }
 
@@ -348,10 +355,62 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       })
     })
 
+    const sendEmailForBirtDay = async () => {
+      if (!$sessionImage) return
+
+      const { birthday, name } = $sessionImage.dataset
+
+      const today = new Date()
+      const [day, month, year] = birthday.split('/')
+      const birthDay = new Date(Number(year), Number(month) - 1, Number(day))
+
+      if (today.getDate() === birthDay.getDate() && today.getMonth() === birthDay.getMonth()) {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+          shapes: ['star', 'square', 'circle'],
+        })
+
+        if (!localStorage.getItem(`alertBirthDay-${name}`)) {
+          Swal.fire({
+            title: 'Feliz Cumpleaños!',
+            html: `Hoy es el cumpleaños de <span class="text-red-400/90 font-bold">${name}</span>`,
+            footer: `<span>Espero que <span class="text-blue-300/90">${name}</span> tenga un <span class="text-yellow-400/90 font-bold">día increíble</span></span>`,
+            showCancelButton: true,
+            allowOutsideClick: false,
+            confirmButtonText: "Celebrar!",
+            cancelButtonText: "Cerrar",
+            showClass: {
+              popup: 'animate-fade-in'
+            },
+            hideClass: {
+              popup: 'animate-fade-out'
+            },
+            imageUrl: '/recursos/gif-birthday.gif',
+            imageWidth: 200,
+            imageAlt: 'Gif de Feliz Cumpleaños',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              confetti({
+                particleCount: 300,
+                spread: 70,
+                origin: { y: 0.6 },
+                shapes: ['star', 'square', 'circle'],
+              })
+              localStorage.setItem(`alertBirthDay-${name}`, 'true')
+            }
+
+            if (result.isDismissed) localStorage.setItem(`alertBirthDay-${name}`, 'true')
+          })
+        }
+      }
+    }
 
   window.addEventListener('scroll', onScroll)
+  sendEmailForBirtDay()
   onScroll()
   changeText()
   showModal()
-})
+}, { once: true })
 </script>
