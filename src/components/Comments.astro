@@ -121,6 +121,8 @@ const nameDefault = sessionUser?.user?.name ?? 'Usuario'
         const $buttonsStickers = $$('.buttons-stickers') as NodeListOf<HTMLButtonElement>
         const $buttonSend = $('#button-send') as HTMLButtonElement
 
+        if (!$buttonShowStickers || !$containerStickers || !$formComment || !$buttonsStickers || !$buttonSend) return
+
         const { userComment, session } = $formComment.dataset
 
         const userSession = JSON.parse(session)
