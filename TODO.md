@@ -67,3 +67,4 @@
 -   65. Agregar funcionalidad de ue cada usuario pueda editar sus comentarios -> ❌
 -   66. Arreglar los Anys de TypeScript en los scripts de Session -> ❌
 -   67. Simpificar JS del id.astro -> URGENTE ❌
+-   68. Mejorar la función de Cumpleaños -> ❌
