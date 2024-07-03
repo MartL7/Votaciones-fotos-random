@@ -47,6 +47,9 @@ importers:
       canvas-confetti:
         specifier: ^1.9.2
         version: 1.9.2
+      sweetalert2:
+        specifier: ^11.12.1
+        version: 11.12.1
       swiper:
         specifier: ^11.1.1
         version: 11.1.1
@@ -3588,6 +3591,9 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  sweetalert2@11.12.1:
+    resolution: {integrity: sha512-xV3/YI7Ah6BeP+bXKcrHy1yn6duh8eqlX2TSI9I/rTIzGLYQvnnTa3mOIo5RHUobAjSmacC2IhPApxjvppZaEQ==}
 
   swiper@11.1.1:
     resolution: {integrity: sha512-jGmEA/fNz1lACIcY4/40ggm1Gcyv+EUivmgV/Jd2WFPsEJhbWXnRAwzZR8OPjkBLtDxmzcoYG/iiAMWfRs0YKQ==}
@@ -8002,6 +8008,8 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  sweetalert2@11.12.1: {}
 
   swiper@11.1.1: {}
 
