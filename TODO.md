@@ -66,3 +66,4 @@
 -   64. Arreglar bug al cambio de imagenes en móvil -> ❌
 -   65. Agregar funcionalidad de ue cada usuario pueda editar sus comentarios -> ❌
 -   66. Arreglar los Anys de TypeScript en los scripts de Session -> ❌
+-   67. Simpificar JS del id.astro -> URGENTE ❌
