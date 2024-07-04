@@ -262,6 +262,30 @@ export const Characters: Character[] = [
                 image: '/img/Mike/Mike-image-5.webp',
                 class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px]',
             },
+            {
+                image: '/img/Mike/Mike-image-6.webp',
+                class: 'sm:col-start-2 sm:col-end-4 sm:h-[350px] sm:row-start-3 sm:row-end-4 col-start-1 col-end-2 row-start-5 row-end-6'
+            },
+            {
+                image: '/img/Mike/Mike-image-7.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:h-[350px] sm:row-start-3 sm:row-end-4 col-start-2 col-end-3 row-start-3 row-end-4'
+            },
+            {
+                image: '/img/Mike/Mike-image-8.webp',
+                class: 'sm:h-[300px] sm:col-start-1 sm:col-end-2 sm:row-start-4 sm:row-end-5 col-start-1 col-end-2 row-start-4 row-end-5 h-[200px]'
+            },
+            {
+                image: '/img/Mike/Mike-image-9.webp',
+                class: 'sm:h-[300px] sm:col-start-2 sm:col-end-3 sm:row-start-4 sm:row-end-5 col-start-2 col-end-3 row-start-4 row-end-6 h-[350px]'
+            },
+            {
+                image: '/img/Mike/Mike-image-10.webp',
+                class: 'sm:col-start-3 sm:col-end-4 sm:h-[300px] sm:row-start-4 sm:row-end-5 col-start-1 col-end-2 row-start-6 row-end-7 h-auto'
+            },
+            {
+                image: '/img/Mike/Mike-image-11.webp',
+                class: 'sm:col-start-1 sm:col-end-2 sm:row-start-5 sm:row-end-6 sm:h-[300px] col-start-2 col-end-3 row-start-6 row-end-7 h-auto'
+            },
         ],
         funnyText: ['A poco si tilin'],
         socials: [
