@@ -3,12 +3,23 @@ import { fallenCharacter } from '@/const/isFallenCharacter'
 import { saveLocalStorage, removeLocalStorage, getLocalStorage } from '@/const/localStorage'
 import { showShip } from '@/const/showShip'
 
-export function changueColorText (genre: string, $nameText: HTMLSpanElement) {
+export function changueColorText (id: string, genre: string, $nameText: HTMLSpanElement) {
   if (!genre) {
     $nameText.classList.remove('text-blue-300/90')
     $nameText.classList.remove('shadow-text-blue')
 
     $nameText.classList.add('shadow-text-purple')
+    return
+  }
+
+  if (id === 'Damian') {
+    $nameText.classList.remove('text-blue-300/90')
+    $nameText.classList.remove('shadow-text-blue')
+    $nameText.classList.remove('text-purple-300/90')
+    $nameText.classList.remove('shadow-text-purple')
+
+    $nameText.classList.add('text-green-300/90')
+    $nameText.classList.add('shadow-text-green')
     return
   }
 
@@ -66,7 +77,7 @@ export function changeCharacterImage () {
 
         fallenCharacter({ isFallenCharacter, $characterPhoto, $nameText })
 
-        changueColorText(genre, $nameText)
+        changueColorText(id, genre, $nameText)
 
         $characterPhoto.setAttribute('transition:name', `Character-${id}`)
         $characterSmallImage.forEach((image) => image.classList.add('active'))
@@ -84,6 +95,8 @@ export function changeCharacterImage () {
         $characterSmallImage.forEach((image) => image.classList.add('active'))
         
         fallenCharacter({ isFallenCharacter, $characterPhoto, $nameText })
+
+        changueColorText(id, genre, $nameText)
 
         $nameText.textContent = lastName
     }

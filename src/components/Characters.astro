@@ -85,7 +85,7 @@ const secondArray = person.slice(9, person.length)
 
             if ($characterPhoto == null) return
 
-            changueColorText(genre, $nameText)
+            changueColorText(id, genre, $nameText)
             saveLocalStorage({ key: 'lastCharacterId', value: id })
             $characterPhoto.src = characterSrc ?? defaultImage
             $nameText.textContent = id
