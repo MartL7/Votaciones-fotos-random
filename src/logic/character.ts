@@ -198,6 +198,26 @@ export const Characters: Character[] = [
                 image: '/img/Geovas/Geovas-image-8.webp',
                 class: 'sm:col-start-3 sm:col-end-4 sm:row-start-2 sm:row-end-4 sm:h-[440px]',
             },
+            {
+                image: '/img/Geovas/Geovas-image-10.avif',
+                class: 'h-auto sm:h-[350px]'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-11.avif',
+                class: 'h-auto sm:h-[350px]'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-12.avif',
+                class: 'h-auto sm:h-[350px]'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-13.avif',
+                class: 'h-auto sm:h-[350px]'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-14.avif',
+                class: 'h-auto sm:h-[350px]'
+            }
         ],
         funnyText: [
             'Te extraño Karlita :(',
