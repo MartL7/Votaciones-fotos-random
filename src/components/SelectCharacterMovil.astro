@@ -25,8 +25,9 @@ const charactersForMobile: CharactersMobile[] = characters.concat(fallenCharacte
       class="size-full object-contain transition duration-300"
       id="image-presentation-2"
       style="mask-image: linear-gradient(black 50%, transparent);"
+      style="filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));"
     />
-    <span id="name-text" class='font-Merri font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-5xl lg:text-3xl text-blue-300/90'>
+    <span id="name-text" class='font-Merri font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-0 left-0 right-0 z-50 mx-auto text-5xl lg:text-3xl text-blue-300/90 shadow-text-blue'>
       
     </span>
   </picture>
@@ -35,7 +36,7 @@ const charactersForMobile: CharactersMobile[] = characters.concat(fallenCharacte
     <div class="swiper-wrapper">
       {
         // -> Forma pirata xd -> Corregir el -mt-10
-        charactersForMobile.map(({ folder, id, name, imageSmall }) => {
+        charactersForMobile.map(({ folder, id, name, imageSmall, genre }) => {
 
           const isFallen = folder === 'Fallen'
           const classFallen = isFallen ? 'fallen-character' : ''
@@ -47,8 +48,9 @@ const charactersForMobile: CharactersMobile[] = characters.concat(fallenCharacte
                 href={!isFallen ? `/character/${id}` : '#'} 
                 class={`character-link relative flex justify-center items-center h-20 ${classFallen}`}
                 data-id={id}
+                data-genre={!isFallen ? genre : null}
                 data-folder={isFallen ? folder : null}
-                >
+              >
                 <img 
                   src={imageSmall} 
                   alt={`Imagen del personaje ${name}`}
@@ -94,7 +96,7 @@ const charactersForMobile: CharactersMobile[] = characters.concat(fallenCharacte
   }
 
   .fallen-character {
-    text-decoration:line-through ;
+    text-decoration: line-through ;
     color: #ff5050e6;
   }
 </style>

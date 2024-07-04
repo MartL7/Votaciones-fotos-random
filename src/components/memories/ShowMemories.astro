@@ -9,7 +9,7 @@ interface Props {
 
 const { id_group, members, imagesGalery } = Astro.props
 ---
-<span class="text-2xl text-yellow-300/90 mb-5"> THE {id_group.toUpperCase()} </span>
+<span class="text-2xl text-yellow-300/90 shadow-text-custom mb-5"> THE {id_group.toUpperCase()} </span>
 
 <section class="md:flex md:items-center md:gap-5 mb-5 p-5 md:p-0 grid grid-cols-4 sm:grid-cols-8 sm:gap-8 gap-5 members_group">
   {
@@ -23,7 +23,9 @@ const { id_group, members, imagesGalery } = Astro.props
               loading="lazy"
               src={`/img/${name}/${name}-small.webp`}
               alt={`imagen de ${name}`}
-              class="size-12 md:size-10 object-cover rounded-full shadow-blue-500/50 shadow-md hover:scale-110 transition"
+              class="size-12 md:size-14 object-cover rounded-full hover:scale-110 transition duration-300"
+              style="mask-image: linear-gradient(black 50%, transparent 95%);"
+              style="filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));"
             />
           </a>
         )
@@ -34,7 +36,9 @@ const { id_group, members, imagesGalery } = Astro.props
               loading="lazy"
               src={`/img/Fallen/${name}-small.webp`}
               alt={`imagen de ${name}`}
-              class="size-12 md:size-10 object-cover rounded-full shadow-blue-500/50 shadow-md hover:scale-110 transition"
+              class="size-12 md:size-14 object-cover rounded-full hover:scale-110 transition duration-300"
+              style="mask-image: linear-gradient(black 50%, transparent 95%);"
+              style="filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));"
             />
           </div>
         )
@@ -43,7 +47,7 @@ const { id_group, members, imagesGalery } = Astro.props
   }
 </section>
 
-<section class="grid grid-cols-2 md:grid-cols-4 gap-5 p-2 md:p-5">
+<section class="grid grid-cols-2 md:grid-cols-4 gap-5 p-2 md:p-5 mb-10">
   {
     imagesGalery.map(({ id, image, className }) => (
       <picture class={`image-container ${className}`} data-url={image}>

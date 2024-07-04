@@ -3,6 +3,30 @@ import { fallenCharacter } from '@/const/isFallenCharacter'
 import { saveLocalStorage, removeLocalStorage, getLocalStorage } from '@/const/localStorage'
 import { showShip } from '@/const/showShip'
 
+export function changueColorText (genre: string, $nameText: HTMLSpanElement) {
+  if (!genre) {
+    $nameText.classList.remove('text-blue-300/90')
+    $nameText.classList.remove('shadow-text-blue')
+
+    $nameText.classList.add('shadow-text-purple')
+    return
+  }
+
+  if (genre.toLowerCase() !== 'hombre') {
+    $nameText.classList.remove('text-blue-300/90')
+    $nameText.classList.remove('shadow-text-blue')
+
+    $nameText.classList.add('text-purple-300/90')
+    $nameText.classList.add('shadow-text-purple')
+  } else {
+    $nameText.classList.remove('text-purple-300/90')
+    $nameText.classList.remove('shadow-text-purple')
+
+    $nameText.classList.add('text-blue-300/90')
+    $nameText.classList.add('shadow-text-blue')
+  }
+}
+
 export function changeCharacterImage () {
   const $imageLink = $$('.character-link') as globalThis.NodeListOf<HTMLAnchorElement>
   const $characterPhoto = $('#image-presentation') as HTMLImageElement
@@ -11,7 +35,7 @@ export function changeCharacterImage () {
   let $lastActiveImage: HTMLImageElement | null = null
 
   $imageLink.forEach(($image) => {
-      const { id } = $image.dataset ?? null
+      const { id, genre } = $image.dataset ?? null
 
       const { folder } = $image.dataset ?? null
 
@@ -41,6 +65,8 @@ export function changeCharacterImage () {
         $characterPhoto.alt = `Imagen de ${id}`
 
         fallenCharacter({ isFallenCharacter, $characterPhoto, $nameText })
+
+        changueColorText(genre, $nameText)
 
         $characterPhoto.setAttribute('transition:name', `Character-${id}`)
         $characterSmallImage.forEach((image) => image.classList.add('active'))

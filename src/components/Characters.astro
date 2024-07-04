@@ -26,6 +26,7 @@ const secondArray = person.slice(9, person.length)
   import Swiper from 'swiper/bundle'
   import { $ } from '@/lib/dom-selector'
   import { fallenCharacter } from '@/const/isFallenCharacter'
+  import { changueColorText } from '@/const/changeCharacterImage'
   import { saveLocalStorage, getLocalStorage } from '@/const/localStorage'
 
   const Carrousel = () => {
@@ -68,7 +69,7 @@ const secondArray = person.slice(9, person.length)
 
             if (!$characterLink || !$characterLink.dataset) return
 
-            const { id } = $characterLink.dataset ?? null
+            const { id, genre } = $characterLink.dataset ?? null
             const { folder } = $characterLink.dataset ?? null
             const $characterPhoto = $('#image-presentation-2') as HTMLImageElement
 
@@ -84,6 +85,7 @@ const secondArray = person.slice(9, person.length)
 
             if ($characterPhoto == null) return
 
+            changueColorText(genre, $nameText)
             saveLocalStorage({ key: 'lastCharacterId', value: id })
             $characterPhoto.src = characterSrc ?? defaultImage
             $nameText.textContent = id
