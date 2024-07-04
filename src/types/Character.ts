@@ -13,6 +13,7 @@ export interface Character {
   id: string
   name: string
   birthDay?: string
+  genre?: string
   imagePresentation: string
   imageSmall: string
   imagesGalery: Images[]

@@ -5,6 +5,7 @@ export const Characters: Character[] = [
         id: 'Ulises',
         name: 'El Prota',
         birthDay: '10/11/2006',
+        genre: 'Hombre',
         imagePresentation: '/img/Ulises/Ulises-image-presentation.webp',
         imageSmall: '/img/Ulises/Ulises-small.webp',
         imagesGalery: [
@@ -39,6 +40,7 @@ export const Characters: Character[] = [
         id: 'Janet',
         name: 'Jann',
         birthDay: '20/03/2006',
+        genre: 'Mujer',
         imagePresentation: '/img/Janet/Janet-image-presentation.webp',
         imageSmall: '/img/Janet/Janet-small.webp',
         imagesGalery: [
@@ -76,6 +78,7 @@ export const Characters: Character[] = [
         id: 'Marlen',
         name: 'Mar',
         birthDay: '21/12/2006',
+        genre: 'Mujer',
         imagePresentation: '/img/Marlen/Marlen-image-presentation.webp',
         imageSmall: '/img/Marlen/Marlen-small.webp',
         imagesGalery: [
@@ -122,6 +125,7 @@ export const Characters: Character[] = [
         id: 'Yanet',
         name: 'Yane',
         birthDay: '25/01/2006',
+        genre: 'Mujer',
         imagePresentation: '/img/Yanet/Yanet-image-presentation.webp',
         imageSmall: '/img/Yanet/Yanet-small.webp',
         imagesGalery: [
@@ -167,6 +171,7 @@ export const Characters: Character[] = [
         id: 'Geovas',
         name: 'Geovas',
         birthDay: '21/08/2006',
+        genre: 'Hombre',
         imagePresentation: '/img/Geovas/Geovas-image-presentation-1.webp',
         imageSmall: '/img/Geovas/Geovas-small.webp',
         imagesGalery: [
@@ -239,6 +244,7 @@ export const Characters: Character[] = [
         id: 'Mike',
         name: 'Mike',
         birthDay: '27/10/2006',
+        genre: 'Hombre',
         imagePresentation: '/img/Mike/Mike-image-presentation.webp',
         imageSmall: '/img/Mike/Mike-small.webp',
         imagesGalery: [
@@ -267,6 +273,7 @@ export const Characters: Character[] = [
         id: 'Karen',
         name: 'Karen',
         birthDay: '04/03/2004',
+        genre: 'Mujer',
         imagePresentation: '/img/Karen/Karen-image-presentation.webp',
         imageSmall: '/img/Karen/Karen-small.webp',
         imagesGalery: [
@@ -340,6 +347,7 @@ export const Characters: Character[] = [
         id: 'CruCru',
         name: 'Andy',
         birthDay: '30/11/2006',
+        genre: 'Hombre',
         imagePresentation: '/img/CruCru/CruCru-image-presentation.webp',
         imageSmall: '/img/CruCru/CruCru-small.webp',
         imagesGalery: [
@@ -375,6 +383,7 @@ export const Characters: Character[] = [
         id: 'Sebastian',
         name: 'Sebas',
         birthDay: '23/01/2005',
+        genre: 'Hombre',
         imagePresentation: '/img/Sebastian/Sebastian-image-presentation.webp',
         imageSmall: '/img/Sebastian/Sebastian-small.webp',
         imagesGalery: [
@@ -407,6 +416,7 @@ export const Characters: Character[] = [
         id: 'Ale',
         name: 'Alita',
         birthDay: '09/11/2006',
+        genre: 'Mujer',
         imagePresentation: '/img/Ale/Ale-image-presentation.webp',
         imageSmall: '/img/Ale/Ale-small.webp',
         imagesGalery: [
@@ -491,6 +501,7 @@ export const Characters: Character[] = [
         id: 'Elvin',
         name: 'MrCat',
         birthDay: '21/08/2006',
+        genre: 'Hombre',
         imagePresentation: '/img/Elvin/Elvin-image-presentation.webp',
         imageSmall: '/img/Elvin/Elvin-small.webp',
         imagesGalery: [
@@ -555,6 +566,7 @@ export const Characters: Character[] = [
         id: 'Emmanuel',
         name: 'El Morro',
         birthDay: '19/07/2005',
+        genre: 'Hombre',
         imagePresentation: '/img/Emmanuel/Emmanuel-image-presentation.webp',
         imageSmall: '/img/Emmanuel/Emmanuel-small.webp',
         imagesGalery: [
@@ -644,6 +656,7 @@ export const Characters: Character[] = [
         id: 'Are',
         name: 'Luzcesita',
         birthDay: '05/12/2006',
+        genre: 'Mujer',
         imagePresentation: '/img/Are/Are-image-presentation.webp',
         imageSmall: '/img/Are/Are-small.webp',
         imagesGalery: [
@@ -717,6 +730,7 @@ export const Characters: Character[] = [
         id: 'Leslie',
         name: 'Less',
         birthDay: '07/04/2006',
+        genre: 'Mujer',
         imagePresentation: '/img/Leslie/Leslie-image-presentation.webp',
         imageSmall: '/img/Leslie/Leslie-small.webp',
         imagesGalery: [
@@ -795,6 +809,7 @@ export const Characters: Character[] = [
         id: 'Lupita',
         name: 'China',
         birthDay: '19/12/2006',
+        genre: 'Mujer',
         imagePresentation: '/img/Lupita/Lupita-image-presentation.webp',
         imageSmall: '/img/Lupita/Lupita-small.webp',
         imagesGalery: [
@@ -846,6 +861,7 @@ export const Characters: Character[] = [
         id: 'Damian',
         name: 'Damian',
         birthDay: '09/03/2005',
+        genre: 'Hombre',
         imagePresentation: '/img/Damian/Damian-image-presentation.webp',
         imageSmall: '/img/Damian/Damian-small.webp',
         imagesGalery: [
@@ -904,6 +920,7 @@ export const Characters: Character[] = [
         id: 'Yahir',
         name: 'Yahir',
         birthDay: '11/11/2006',
+        genre: 'Hombre',
         imagePresentation: '/img/Yahir/Yahir-image-presentation.webp',
         imageSmall: '/img/Yahir/Yahir-small.webp',
         imagesGalery: [
@@ -958,6 +975,7 @@ export const Characters: Character[] = [
         id: 'Antonio',
         name: 'Toño',
         birthDay: '23/01/2006',
+        genre: 'Hombre',
         imagePresentation: '/img/Antonio/Antonio-image-presentation.webp',
         imageSmall: '/img/Antonio/Antonio-small.webp',
         imagesGalery: [
