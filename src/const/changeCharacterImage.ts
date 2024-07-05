@@ -3,38 +3,52 @@ import { fallenCharacter } from '@/const/isFallenCharacter'
 import { saveLocalStorage, removeLocalStorage, getLocalStorage } from '@/const/localStorage'
 import { showShip } from '@/const/showShip'
 
+function addClassName ($element: HTMLSpanElement, colorsToAdd: string[]) {
+  colorsToAdd.forEach((color) => {
+    $element.classList.add(
+      `text-${color}-300/90`,
+      `shadow-text-${color}`
+    )
+  })
+}
+
+function deleteClassName ($element: HTMLSpanElement, colorsToDelete: string[]) {
+  colorsToDelete.forEach((color) => {
+    $element.classList.remove(
+      `text-${color}-300/90`,
+      `shadow-text-${color}`
+    )
+  })
+}
+
 export function changueColorText (id: string, genre: string, $nameText: HTMLSpanElement) {
   if (!genre) {
-    $nameText.classList.remove('text-blue-300/90')
-    $nameText.classList.remove('shadow-text-blue')
+    deleteClassName($nameText, ['blue', 'purple', 'green', 'yellow'])
 
     $nameText.classList.add('shadow-text-purple')
     return
   }
 
   if (id === 'Damian') {
-    $nameText.classList.remove('text-blue-300/90')
-    $nameText.classList.remove('shadow-text-blue')
-    $nameText.classList.remove('text-purple-300/90')
-    $nameText.classList.remove('shadow-text-purple')
+    deleteClassName($nameText, ['blue', 'purple', 'yellow'])
+    addClassName($nameText, ['green'])
 
-    $nameText.classList.add('text-green-300/90')
-    $nameText.classList.add('shadow-text-green')
+    return
+  }
+
+  if (id === 'Elvin') {
+    deleteClassName($nameText, ['blue', 'purple'])
+    addClassName($nameText, ['yellow'])
+
     return
   }
 
   if (genre.toLowerCase() !== 'hombre') {
-    $nameText.classList.remove('text-blue-300/90')
-    $nameText.classList.remove('shadow-text-blue')
-
-    $nameText.classList.add('text-purple-300/90')
-    $nameText.classList.add('shadow-text-purple')
+    deleteClassName($nameText, ['blue', 'green', 'yellow'])
+    addClassName($nameText, ['purple'])
   } else {
-    $nameText.classList.remove('text-purple-300/90')
-    $nameText.classList.remove('shadow-text-purple')
-
-    $nameText.classList.add('text-blue-300/90')
-    $nameText.classList.add('shadow-text-blue')
+    deleteClassName($nameText, ['purple', 'green', 'yellow'])
+    addClassName($nameText, ['blue'])
   }
 }
 
