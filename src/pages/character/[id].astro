@@ -9,6 +9,7 @@ import InfoCharacterDesk from "@/components/InfoCharacterDesk.astro"
 import ReactionsComponent from '@/components/ReactionsComponent.astro'
 import ShowComments from '@/components/ShowComments.astro'
 import  Comments from '@/components/Comments.astro'
+import { colorsText } from '@/logic/colorsText'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
 import { Reactions, db, eq, count } from 'astro:db'
@@ -20,11 +21,19 @@ const { id } = Astro.params
 const character = Characters.find((character) => character.id === id)
 
 if (!character) {
-  return Astro.redirect('/')
+  return Astro.redirect('/404')
 }
 
-const { imagePresentation, name, birthDay, imagesGalery, funnyText, socials } = character
+const { imagePresentation, name, birthDay, imagesGalery, funnyText, socials, genre } = character
 
+let colorText = ''
+
+const finded = colorsText.filter(c => {
+  if (c.id === id) colorText = `text-${c.color}-300/90 shadow-text-${c.color}`
+  return c.id === id
+})
+
+if (!finded.length) colorText = genre === 'Hombre' ? 'text-blue-300/90 shadow-text-blue' : 'text-purple-400/90 shadow-text-purple'
 
 const arrayText = funnyText.join('. ')
 
@@ -69,7 +78,7 @@ const countHearts = allReactions.find((reaction) => reaction.reactions === 'hear
 
 const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
 ---
-<Layout title={`Información del personaje ${name}`}>
+<Layout title={`${genre === 'Hombre' ? 'Perfil del compañero' : 'Perfil de la compañera'} ${name}`}>
 
   <article class="fixed top-0 left-0 flex gap-5">
    <button id={`${session == null ? 'login' : 'logout'}`}>
@@ -125,7 +134,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
           />
     
           <div>
-            <span class=`font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-48 md:bottom-28 lg:bottom-48 left-0 right-0 z-50 mx-auto text-6xl lg:text-6xl`>
+            <span class=`font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-48 md:bottom-28 lg:bottom-48 left-0 right-0 z-50 mx-auto text-6xl lg:text-6xl ${colorText}`>
               {name}
             </span>
     
@@ -150,7 +159,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       />
 
       <div>
-        <span class=`font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-48 md:bottom-28 lg:bottom-48 left-0 right-0 z-50 mx-auto text-6xl lg:text-6xl`>
+        <span class=`font-Dancing font-bold skew-y-[-21deg] pointer-events-none text-center absolute bottom-48 md:bottom-28 lg:bottom-48 left-0 right-0 z-50 mx-auto text-6xl lg:text-6xl ${colorText}`>
           {name}
         </span>
 
