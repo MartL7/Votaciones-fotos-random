@@ -10,13 +10,21 @@ interface Props {
 }
 
 const { name, birthDayText, isMobile, age } = Astro.props
+
+let yearBirthDay = new Date().getFullYear()
+
+const today = new Date()
+const [day, month, year] = birthDayText.split('/')
+const birthDay = new Date(Number(year), Number(month) - 1, Number(day))
+
+if(today.getDate() > birthDay.getDate() && today.getMonth() >= birthDay.getMonth()) yearBirthDay += 1
 ---
 {
   !isMobile ? (
     <section class="row-start-1 row-end-3 flex flex-col justify-center items-center gap-y-10">
       <aside class="flex flex-col justify-center items-center">
         <h2 class="text-2xl text-center font-Oswald"> Cumpleaños </h2>
-        <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {birthDayText} </span>
+        <span class="text-3xl text-center font-public text-blue-200/90 font-bold"> {day}/{month}/{yearBirthDay} </span>
       </aside>
 
       <aside class="flex flex-col justify-center items-center">
@@ -37,7 +45,7 @@ const { name, birthDayText, isMobile, age } = Astro.props
 
         <div class="border-b-2 flex justify-between items-center w-full">
           <h2 class="text-2xl text-center font-Oswald"> Cumpleaños </h2>
-          <span class="text-2xl text-center font-public text-blue-200/90 font-bold"> {birthDayText} </span>
+          <span class="text-2xl text-center font-public text-blue-200/90 font-bold"> {day}/{month}/{yearBirthDay} </span>
         </div>
 
         <div class="border-b-2 flex justify-between items-center w-full">
