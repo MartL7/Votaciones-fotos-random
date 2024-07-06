@@ -1,27 +1,5 @@
-import { $, $$ } from '@/lib/dom-selector'
-interface ShipsCharacters {
-  id: string
-  ships: string[]
-}
-
-const shipsForCharacters: ShipsCharacters[] = [
-  {
-    id: 'Elvin',
-    ships: ['Ale', 'Janet']
-  },
-  {
-    id: 'Geovas',
-    ships: ['Leslie', 'Are']
-  },
-  {
-    id: 'Damian',
-    ships: ['Karen']
-  },
-  {
-    id: 'Emmanuel',
-    ships: ['Marlen']
-  }
-]
+import { $ } from '@/lib/dom-selector'
+import { shipsForCharacters } from '@/logic/shipsCharacters'
 
 export function showShip({ id }: { id: string }) {
 
