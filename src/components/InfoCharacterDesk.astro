@@ -1,7 +1,4 @@
 ---
-import Like from '@/components/icons/Reactions/Like.astro'
-import Dislike from '@/components/icons/Reactions/Stars.astro'
-import Heart from '@/components/icons/Reactions/Heart.astro'
 interface Props {
   name: string
   birthDayText: string
@@ -17,7 +14,7 @@ const today = new Date()
 const [day, month, year] = birthDayText.split('/')
 const birthDay = new Date(Number(year), Number(month) - 1, Number(day))
 
-if(today.getDate() > birthDay.getDate() && today.getMonth() >= birthDay.getMonth()) yearBirthDay += 1
+if(today.getDate() >= birthDay.getDate() && today.getMonth() >= birthDay.getMonth() || today.getDate() < birthDay.getDate() && today.getMonth() > birthDay.getMonth()) yearBirthDay += 1
 ---
 {
   !isMobile ? (
