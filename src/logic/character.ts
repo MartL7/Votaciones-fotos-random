@@ -34,7 +34,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-3 sm:col-end-4 sm:row-start-3 sm:row-end-4 sm:h-[300px]',
             },
         ],
-        funnyText: ['El guión de mi lado'],
+        funnyText: ['El guión de mi lado', 'El poder del guión', 'En la palma de mi mano'],
     },
     {
         id: 'Janet',
