@@ -273,7 +273,8 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
     mask-image: linear-gradient(black 50%, transparent);
   }
 
-  @keyframes show {
+  /* Agregar compatibilidad a navegadores mientras usando JS */
+  /* @keyframes show {
     from {
       opacity: 0; scale: 10%;
     }
@@ -291,7 +292,8 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
 
     animation-timeline: --reveal;
     animation-range: entry 25% cover 50%;
-  }
+  } */
+  
 </style>
 
 <script>
@@ -344,7 +346,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       })
     }
 
-    /* const onScroll = () => {
+    const onScroll = () => {
       $gridImages.forEach(($image) => {
         const rect = $image.getBoundingClientRect()
         if (rect.top < window.innerHeight && rect.bottom >= 0) {
@@ -355,7 +357,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
           $image.classList.add('animate-zoom-out')
         }
       })
-    } */
+    }
 
     $buttonsReactions.forEach(($button) => {
       $button.addEventListener('click', async () => {
@@ -456,9 +458,9 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       }
     }
 
-    //window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll)
     sendEmailForBirtDay()
-    //onScroll()
+    onScroll()
     changeText()
     showModal()
   })

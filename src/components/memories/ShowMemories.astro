@@ -63,7 +63,8 @@ const { id_group, members, imagesGalery } = Astro.props
 </section>
 
 <style>
-  @keyframes show {
+  /* Agregar compatibilidad a navegadores mientras usando JS */
+  /* @keyframes show {
     from {
       opacity: 0; scale: 10%;
     }
@@ -81,5 +82,5 @@ const { id_group, members, imagesGalery } = Astro.props
 
     animation-timeline: --reveal;
     animation-range: entry 25% cover 50%;
-  }
+  } */
 </style>
