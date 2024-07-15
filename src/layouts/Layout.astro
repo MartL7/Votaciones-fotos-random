@@ -13,21 +13,26 @@ import '@fontsource-variable/oswald'
 
 interface Props {
 	title: string
+	description?: string
+	imageShare ?: string
 }
 
-const { title } = Astro.props 
+const { title, description, imageShare } = Astro.props 
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Recuerdos del grupo M del CBTis 86. 😸" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preload" href="/img/Ulises/Ulises-image-presentation.webp" as="image">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta property="og:title" content="6M Forever ♥️" />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={imageShare} />
 		<ViewTransitions />
 
 		<SEO />
