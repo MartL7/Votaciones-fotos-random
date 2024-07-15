@@ -93,7 +93,11 @@ const countHearts = allReactions.find((reaction) => reaction.reactions === 'hear
 
 const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
 ---
-<Layout title={`${genre === 'Hombre' ? 'Perfil del compañero' : 'Perfil de la compañera'} ${name}`}>
+<Layout 
+  title={`${name} - Forever 6M`}
+  description={`${genre === 'Hombre' ? 'Perfil del compañero' : 'Perfil de la compañera'} ${name} - Forever 6M`}
+  imageShare={`/img/SEO/Share-profiles/${id}-image-share.webp`}
+  >
 
   <article class="fixed top-0 left-0 flex gap-5">
    <button id={`${session == null ? 'login' : 'logout'}`}>
