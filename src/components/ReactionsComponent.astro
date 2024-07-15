@@ -7,9 +7,9 @@ import type { Session } from '@auth/core/types'
 
 interface Props {
   isMobile: boolean
+  isZurd?: boolean
   name: string
   reaction: string
-  /* reactionsForUser: { reactionUser: string, userReactionsUser: string }[] */
   countLikes: number
   countStars: number
   countHearts: number
@@ -17,11 +17,11 @@ interface Props {
   session: Session
 }
 
-const { isMobile, name, reaction, countLikes, countStars, countHearts, countDislikes, session } = Astro.props
+const { isMobile, isZurd, name, reaction, countLikes, countStars, countHearts, countDislikes, session } = Astro.props
 ---
 
 <div 
-  class={`${isMobile ? 'md:hidden flex justify-center items-center gap-2' : 'col-start-1 col-end-2 row-start-3 row-end-4 flex justify-center items-center flex-wrap gap-2'}`}
+  class={`${isMobile ? 'md:hidden flex justify-center items-center gap-2' : `col-start-1 col-end-2 ${isZurd ? 'row-start-2 row-end-3' : 'row-start-3 row-end-4'} flex justify-center items-center flex-wrap gap-2`}`}
   >
   <button class={`buttons-reactions group flex flex-col justify-center items-center gap-y-1 relative cursor-pointer hover:scale-105 hover:text-blue-500 transition ${reaction === 'like' ? 'text-blue-500 shadow-lightblue' : ''}`} data-reaction="like" data-name={name} data-session={JSON.stringify(session)}>
     <Like class="size-10"/>

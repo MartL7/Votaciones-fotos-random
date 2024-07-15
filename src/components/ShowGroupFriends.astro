@@ -1,0 +1,164 @@
+---
+interface Props {
+  id: string
+  groupForCharacter: {name: string, isPerfil: boolean}[][]
+  isMobile: boolean
+  isZurd?: boolean
+}
+
+const { id, groupForCharacter, isMobile, isZurd } = Astro.props
+---
+
+{
+  !isMobile
+  ?
+  (
+    isZurd
+    ?
+    (
+      <article class="col-start-1 col-end-2 row-start-3 row-end-4 grid grid-cols-2 gap-5 gap-y-10">
+        <div class="col-span-2 flex justify-center items-center"> 
+          <h3 class="text-pretty text-center text-sm md:text-lg text-yellow-300/80"> Grupo de Mejores Amig@s </h3>
+        </div>
+        {
+          groupForCharacter?.at(0)?.slice(0, 4)?.map(({ name, isPerfil }) => {
+            const sourceImage = 
+              isPerfil ? `/img/${name}/${name}-small.webp` : `/img/Fallen/${name}-small.webp`
+
+            if (name === id) return
+
+            return (
+              <a 
+                href={`/character/${name}`}
+                class="group relative flex justify-center items-center md:h-12 lg:h-14"
+              >
+                <img 
+                  src={sourceImage} 
+                  alt={`Imagen del Compañero ${name}`}
+                  decoding="async"
+                  loading="lazy"
+                  class={`md:size-14 lg:size-20 saturate-0 object-cover z-[1000] -mt-10 group-hover:scale-105 group-hover:saturate-100 transiton duration-300`}
+                  style="mask-image: linear-gradient(black 70%, transparent);"
+                />
+                <div class="absolute inset-0 character-link-background"></div>
+                <span class="absolute bottom-0 text-center text-gray-400/90 font-Merri -skew-y-3 font-bold text-sm group-hover:text-xl"> 
+                  {name} 
+                </span>
+              </a>
+            )
+          })
+        }
+      </article>
+      <article class="col-start-4 col-end-5 row-start-3 row-end-4 grid grid-cols-2 gap-5 gap-y-10">
+        <div class="col-span-2 flex justify-center items-center"> 
+          <h3 class="text-pretty text-center text-sm md:text-lg text-yellow-300/80"> Grupo de Mejores Amig@s </h3>
+        </div>
+        {
+          groupForCharacter?.at(0)?.slice(4)?.map(({ name, isPerfil }) => {
+            const sourceImage = 
+              isPerfil ? `/img/${name}/${name}-small.webp` : `/img/Fallen/${name}-small.webp`
+
+            if (name === id) return
+
+            return (
+              <a 
+                href={`/character/${name}`}
+                class="group relative flex justify-center items-center md:h-12 lg:h-14"
+              >
+                <img 
+                  src={sourceImage} 
+                  alt={`Imagen del Compañero ${name}`}
+                  decoding="async"
+                  loading="lazy"
+                  class={`md:size-14 lg:size-20 saturate-0 object-cover z-[1000] -mt-10 group-hover:scale-105 group-hover:saturate-100 transiton duration-300`}
+                  style="mask-image: linear-gradient(black 70%, transparent);"
+                />
+                <div class="absolute inset-0 character-link-background"></div>
+                <span class="absolute bottom-0 text-center text-gray-400/90 font-Merri -skew-y-3 font-bold text-sm group-hover:text-xl"> 
+                  {name} 
+                </span>
+              </a>
+            )
+          })
+        }
+      </article>
+    )
+    :
+      <article class="col-start-4 col-end-5 row-start-3 row-end-4 grid grid-cols-2 gap-5 gap-y-10">
+        <div class="col-span-2 flex justify-center items-center"> 
+          <h3 class="text-pretty text-center text-sm md:text-lg text-yellow-300/80"> Grupo de Mejores Amig@s </h3>
+        </div>
+        {
+          groupForCharacter?.at(0)?.map(({ name, isPerfil }) => {
+            const sourceImage = 
+              isPerfil ? `/img/${name}/${name}-small.webp` : `/img/Fallen/${name}-small.webp`
+
+            if (name === id) return
+
+            return (
+              <a 
+                href={`/character/${name}`}
+                class="group relative flex justify-center items-center md:h-12 lg:h-14"
+              >
+                <img 
+                  src={sourceImage} 
+                  alt={`Imagen del Compañero ${name}`}
+                  decoding="async"
+                  loading="lazy"
+                  class={`md:size-14 lg:size-20 saturate-0 object-cover z-[1000] -mt-10 group-hover:scale-105 group-hover:saturate-100 transiton duration-300`}
+                  style="mask-image: linear-gradient(black 70%, transparent);"
+                />
+                <div class="absolute inset-0 character-link-background"></div>
+                <span class="absolute bottom-0 text-center text-gray-400/90 font-Merri -skew-y-3 font-bold text-sm group-hover:text-xl"> 
+                  {name} 
+                </span>
+              </a>
+            )
+          })
+        }
+      </article>
+  )
+  :
+  (
+    <article class="mt-5 flex flex-col justify-center items-center p-5 md:hidden"> 
+      <h3 class="text-pretty text-center text-sm md:text-lg text-yellow-300/80 mb-10"> Grupo de Mejores Amig@s </h3>
+      <section class="grid grid-cols-3 sm:grid-cols-4 sm:gap-8 gap-4 gap-y-8">
+        {
+          groupForCharacter?.at(0)?.map(({ name, isPerfil }) => {
+            const sourceImage = 
+              isPerfil ? `/img/${name}/${name}-small.webp` : `/img/Fallen/${name}-small.webp`
+
+            if (name === id) return
+
+            return (
+              <a 
+                href={`/character/${name}`}
+                class="group relative flex justify-center items-center h-14"
+              >
+                <img 
+                  src={sourceImage} 
+                  alt={`Imagen del Compañero ${name}`}
+                  decoding="async"
+                  loading="lazy"
+                  class={`size-[85px] saturate-0 object-cover z-[1000] -mt-10 group-hover:scale-105 group-hover:saturate-100 transiton duration-300`}
+                  style="mask-image: linear-gradient(black 70%, transparent);"
+                />
+                <div class="absolute inset-0 character-link-background"></div>
+                <span class="absolute bottom-0 text-center text-gray-400/90 font-Merri -skew-y-3 font-bold text-sm group-hover:text-xl"> 
+                  {name} 
+                </span>
+              </a>
+            )
+          })
+        }
+      </section>
+    </article>
+  )
+}
+
+<style>
+  .character-link-background {
+    opacity: .25;
+    background: linear-gradient(#fff 0%, #ffffff80 30%, #0000 95%);
+  }
+</style>
