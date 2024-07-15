@@ -43,8 +43,7 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
           transition:name="Character-Yahir"
           decoding="async"
           alt="Imagen de Emmanuel" id="image-presentation" 
-          class="size-full object-contain transition duration-300 z-10"
-          style="mask-image: linear-gradient(black 50%, transparent 95%);"
+          class="masked size-full object-contain transition duration-300 z-10"
           style="filter: drop-shadow(0 0 10px rgba(0, 0, 0, .8));"
         />
 
@@ -94,6 +93,19 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
   .active {
     filter: saturate(150%);
     transform: scale(1.1);
+  }
+
+  .masked {
+    -webkit-mask-image: linear-gradient(to left, black 80%, transparent 95%),
+                        linear-gradient(to right, black 80%, transparent 95%),
+                        linear-gradient(to top, black 95%, transparent),
+                        linear-gradient(to bottom, black 70%, transparent);
+    mask-image: linear-gradient(to left, black 80%, transparent 95%),
+                linear-gradient(to right, black 80%, transparent 95%),
+                linear-gradient(to top, black 95%, transparent),
+                linear-gradient(to bottom, black 70%, transparent);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
   }
 
   .container-characters {
