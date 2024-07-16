@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://forever6m.vercel.app
+
+# Sitemaps
+Sitemap: https://forever6m.vercel.app/sitemap.xml
