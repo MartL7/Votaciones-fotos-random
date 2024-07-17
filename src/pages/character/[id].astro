@@ -315,6 +315,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
   import { toastAlert } from '@/function/alerts'
   import Swal from 'sweetalert2'
   import confetti from 'canvas-confetti'
+  import JSConfetti from 'js-confetti'
 
   document.addEventListener('astro:page-load', async () => {
 
@@ -422,6 +423,10 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
     const sendEmailForBirtDay = async () => {
       if (!$sessionImage) return
 
+      const jsConfetti = new JSConfetti()
+
+      const birthDaySound = new Audio('/recursos/Sounds/happy-birthday.mp3')
+
       const { birthday, name } = $sessionImage.dataset
 
       const today = new Date()
@@ -456,13 +461,12 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
             imageAlt: 'Gif de Feliz Cumpleaños',
           }).then((result) => {
             if (result.isConfirmed) {
-              confetti({
-                particleCount: 300,
-                spread: 70,
-                origin: { y: 0.6 },
-                shapes: ['star', 'square', 'circle'],
+              jsConfetti.addConfetti({
+                emojis: ['🎉', '🎈', '🎂', '🎁', '🍰', '🥳', '🎊'],
+                emojiSize: 50,
               })
               localStorage.setItem(`alertBirthDay-${name}`, 'true')
+              birthDaySound.play()
             }
 
             if (result.isDismissed) localStorage.setItem(`alertBirthDay-${name}`, 'true')
