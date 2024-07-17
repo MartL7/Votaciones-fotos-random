@@ -23,6 +23,7 @@
     "astro": "^4.6.1",
     "auth-astro": "^4.1.1",
     "canvas-confetti": "^1.9.2",
+    "js-confetti": "^0.12.0",
     "sweetalert2": "^11.12.1",
     "swiper": "^11.1.1",
     "tailwind": "^4.0.0",
