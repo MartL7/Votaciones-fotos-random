@@ -1,0 +1,57 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Pin from "@/components/icons/Pin.astro"
+---
+
+<Layout
+  title="Dedicatoria - Forever 6M"
+  description="Dedicatoria de Forever 6M, el anuario de compañeros de la generación 2024 del CBTis 86, donde podrás entrar, comentar y reaccionar a los perfiles de cada compañero del grupo. ¡Entra ahora! 😸"
+	imageShare="/img/Memories/group-m-image-2.webp"
+>
+
+<main class="flex flex-col items-center justify-center gap-10 md:gap-20">
+  <article class="flex flex-col md:flex-row md:gap-10 h-auto justify-center items-center">
+    <img 
+      decoding="async"
+      src="/img/Memories/group-m-image-1.webp" 
+      class="size-[400px] relative pointer-events-none opacity-30 md:opacity-100 rounded-lg" 
+      alt="Imagen del Grupo M"
+    />
+
+    <div class="flex absolute md:relative flex-col gap-y-4 text-center max-w-[350px]">
+        <h2 class="font-Dancing -skew-y-3 text-4xl lg:text-5xl text-blue-400/90 font-bold lowercase">
+            Dedicatoria
+        </h2>
+
+        <p class="text-pretty text-xl">
+          La graduación ha finalizado. Solo quiero que sepan que jamás los olvidaré; son el mejor grupo que he tenido en la vida. Saben que, si algún día necesitan algo, pueden contar con esta humilde persona. Espero que cada uno de ustedes logre lo que se propone y que sigamos creciendo juntos, como siempre lo hicimos en el grupo. <br />
+          "El famoso grupo M"
+        </p>
+    </div>
+  </article>
+  
+  <section class="flex flex-col gap-10 justify-center items-center">
+    <p class="text-center text-pretty">
+      <span class="font-Dancing text-3xl text-purple-400/90 font-semibold"> Con amor y Cariño </span> <br />
+      <span class="text-xl font-bold font-dancing"> El Geovas </span>
+    </p>
+
+    <div class="container-image w-[350px] h-[200px] border-4 sm:w-[550px] sm:h-[300px] lg:w-[750px] lg:h-[400px] border-white flex justify-center items-center -rotate-3 relative">
+      <img 
+        decoding="async"
+        loading="lazy"
+        src="/img/Memories/group-m-image-2.webp"
+        class="size-full"
+      />
+
+      <Pin class="absolute -top-5 size-8 text-red-500 mask-image" />
+    </div>
+  </section>  
+</main>
+
+<style>
+  .mask-image {
+    mask-image: linear-gradient(black 50%, transparent);
+  }
+</style>
+</Layout>
