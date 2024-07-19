@@ -61,3 +61,16 @@ import Pin from "@/components/icons/Pin.astro"
   }
 </style>
 </Layout>
+
+<script>
+  import confetti from 'canvas-confetti'
+
+  document.addEventListener('astro:page-load', () => {
+    confetti({
+      particleCount: 400,
+      spread: 70,
+      origin: { y: 0.6 },
+      shapes: ['star'],
+    })
+  }, { once: true })
+</script>
