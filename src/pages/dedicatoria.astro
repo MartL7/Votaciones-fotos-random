@@ -19,13 +19,13 @@ import Pin from "@/components/icons/Pin.astro"
     />
 
     <div class="flex absolute md:relative flex-col gap-y-4 text-center max-w-[350px]">
-        <h2 class="font-Dancing -skew-y-3 text-4xl lg:text-5xl text-blue-400/90 font-bold lowercase">
+        <h2 class="font-Dancing -skew-y-3 text-4xl lg:text-5xl text-blue-400/90 font-bold">
             Dedicatoria
         </h2>
 
         <p class="text-pretty text-xl">
-          La graduación ha finalizado. Solo quiero que sepan que jamás los olvidaré; son el mejor grupo que he tenido en la vida. Saben que, si algún día necesitan algo, pueden contar con esta humilde persona. Espero que cada uno de ustedes logre lo que se propone y que sigamos creciendo juntos, como siempre lo hicimos en el grupo. <br />
-          "El famoso grupo M"
+          <span class="text-red-400/90 font-bold">La graduación ha finalizado.</span> Solo quiero que sepan que <span class="text-green-400/90 font-bold">jamás los olvidaré</span>; son el mejor grupo que he tenido en la vida. Saben que, si algún día necesitan algo, <span class="text-yellow-400/90 font-bold">pueden contar con esta humilde persona. </span> Espero que cada uno de ustedes logre lo que se propone y que <span class="text-purple-400/90 font-bold">sigamos creciendo juntos,</span> como siempre lo hicimos en el grupo. <br />
+          <span class="text-2xl text-gradient flex justify-center items-center -skew-y-3">"El famoso grupo M"</span>
         </p>
     </div>
   </article>
@@ -52,6 +52,12 @@ import Pin from "@/components/icons/Pin.astro"
 <style>
   .mask-image {
     mask-image: linear-gradient(black 50%, transparent);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400/90 to-pink-400/90 font-bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>
 </Layout>
