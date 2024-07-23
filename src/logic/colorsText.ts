@@ -12,5 +12,10 @@ export const colorsText: ColorsText[] = [
   {
     id: 'Elvin',
     color: 'yellow'
+  },
+
+  {
+    id: 'Yahir',
+    color: 'green'
   }
 ]

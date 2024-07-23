@@ -29,7 +29,7 @@ export function changueColorText (id: string, genre: string, $nameText: HTMLSpan
     return
   }
 
-  if (id === 'Damian') {
+  if (id === 'Damian' || id === 'Yahir') {
     deleteClassName($nameText, ['blue', 'purple', 'yellow'])
     addClassName($nameText, ['green'])
 
