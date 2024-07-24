@@ -10,41 +10,48 @@ interface Props {
 
 const { links } = Astro.props
 ---
-<div class="menu-nav flex items-center justify-between px-5 md:hidden h-20">
+<header class="flex justify-between items-center md:hidden" id="header-mobile">
+  <figure>
+    <img
+      decoding="async" 
+      src="/logos/6m-logo.webp" 
+      alt="Logo del Grupo M - Forever 6M"
+      class="size-[60px]"
+    />
+  </figure>
 
-  <picture class="size-20 flex flex-col items-center justify-center">
-    <a href="/" aria-label="Volver al inicio">
-      <img 
-        src="/logos/6m-logo.webp" 
-        loading="lazy"
-        alt="logo del grupo M" class="size-full"
-      />
-    </a>
-  </picture>
-
-  <div class="relative size-24 mr-10"> 
+  <div class="flex justify-center items-center relative">
     <img 
       src="/logos/logo-full.webp" 
       loading="lazy"
       alt="logo del grupo M" 
-      class="absolute size-full object-contain inset-0 blur-xl shadow-xl"
+      class="size-20 object-contain blur-lg shadow-lg"
     />
-    <img src="/logos/logo-full.webp" alt="logo del grupo M" class="absolute size-full object-contain inset-0"/>
+    
+    <img 
+      src="/logos/logo-full.webp" 
+      loading="lazy"
+      alt="logo del grupo M" 
+      class="absolute inset-0 size-full object-contain scale-[1.9]"
+    />
   </div>
 
-  <button class="button-nav flex" aria-label="Menú hamburguesa">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </button>
-</div>
+  <div class="flex justify-center items-center gap-3 px-5">    
+    <button class="nav-button" aria-label="Menú hamburguesa">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+  </div>
+
+</header>
 
 <Modal className="menu-dialog" id="menu-close-dialog" isButton={false}>
   <div class="flex flex-col justify-center items-center gap-y-5">
     <div class="flex w-full justify-between items-center">
       <span> Menú </span>
-      <button class="hamburguer-nav">
+      <button class="hamburguer-button">
         <div></div>
         <div></div>
         <div></div>
@@ -70,7 +77,13 @@ const { links } = Astro.props
           class={`h-[2px] w-full border-t-0 ${image ? 'hidden' : ''}`}
           style="background:linear-gradient(to right, transparent 0%, white 50%, transparent 100%)"
         />
-        <a href={href} aria-label={label} class={`text-2xl uppercase ${image ? 'hidden' : ''}`}>{name}</a>
+        <a 
+          href={href} 
+          aria-label={label} 
+          class={`text-xl uppercase ${image ? 'hidden' : ''}`}
+        >
+          {name}
+        </a>
       ))
     }
     <hr
@@ -78,7 +91,7 @@ const { links } = Astro.props
       style="background:linear-gradient(to right, transparent 0%, white 50%, transparent 100%)"
     />
 
-    <span class="text-center text-xl text-white/50 md:px-5">
+    <span class="text-center text-lg text-white/50 md:px-5">
       © 2024 Recuerdos Del grupo M <strong> by Geovas </strong>
     </span>
     <nav class="md:px-5">
@@ -115,45 +128,43 @@ const { links } = Astro.props
     gap: .30rem;
   }
 
-  .hamburger-nav {
+  button:focus {
+    outline: none;
+  }
+  .hamburguer-button, .nav-button {
     display: flex;
     flex-direction: column;
-    width: 2rem;
-    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.2rem;
     border: 0;
     background: transparent;
-    gap: .30rem;
+    gap: .25rem;
+    transition: all 0.5s ease;
   }
 
-  .hamburguer-nav > div {
-    background: #FFF;
-    height: 3px;
-    width: 100%;
-    transition: all .5s;
-    transform-origin: left;
+  .hamburguer-button.active div:first-child, .nav-button.active div:first-child {
+    transform: rotate(43deg);
+    -webkit-transform: rotate(43deg);
   }
 
-  .hamburguer-nav.active div:first-child {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-
-  .hamburguer-nav.active div:nth-child(2) {
+  .hamburguer-button.active div:nth-child(2), .nav-button.active div:nth-child(2) {
     opacity: 0;
   }
 
-  .hamburguer-nav.active div:nth-child(3) {
+  .hamburguer-button.active div:nth-child(3), .nav-button.active div:nth-child(3) {
     opacity: 0;
   }
 
-  .hamburguer-nav.active div:nth-child(4) {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+  .hamburguer-button.active div:nth-child(4), .nav-button.active div:nth-child(4) {
+    transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
   }
 
-  button > div {
+  .hamburguer-button > div, .nav-button > div {
     background: #FFF;
-    height: 2px;
+    height: 1px;
     width: 100%;
     transition: all .5s;
     transform-origin: left;
@@ -164,18 +175,25 @@ const { links } = Astro.props
   import { $ } from '@/lib/dom-selector'
 
  document.addEventListener('astro:page-load', () => {
-    const $hamburguer = $('.hamburguer-nav') as HTMLButtonElement
-    const $button = $('.button-nav') as HTMLButtonElement
+    const $hamburguerButton = $('.nav-button') as HTMLButtonElement
+    const $hamburguerButtonModal = $('.hamburguer-button') as HTMLButtonElement
+
     const $navDialog = $('.menu-dialog') as HTMLDialogElement
 
-    $button.addEventListener('click', () => {
+    $hamburguerButton.addEventListener('click', () => {
+    
       $navDialog.showModal()
-      $hamburguer.classList.toggle('active')
+    
+      requestAnimationFrame(() => {
+        $hamburguerButton.classList.add('active')
+        $hamburguerButtonModal.classList.add('active')
+      })
 
-      $hamburguer.onclick = () => {
-        $hamburguer.classList.toggle('active')
+      $hamburguerButtonModal.addEventListener('click', () => {
+        $hamburguerButtonModal.classList.remove('active')
+        $hamburguerButton.classList.remove('active')
         $navDialog.close()
-      }
+      })
     })
  })
 </script>
