@@ -290,7 +290,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
   }
 
   /* Agregar compatibilidad a navegadores mientras usando JS */
-  /* @keyframes show {
+  @keyframes show {
     from {
       opacity: 0; scale: 10%;
     }
@@ -300,7 +300,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
   
   }
 
-  .image-container {
+  .animate-chrome {
     view-timeline-name: --reveal;
 
     animation-name: show;
@@ -308,7 +308,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
 
     animation-timeline: --reveal;
     animation-range: entry 25% cover 50%;
-  } */
+  }
   
 </style>
 
@@ -343,7 +343,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       const $arrayToText = $('#arrayToText') as HTMLInputElement
       const $textCounter = $('#text-counter') as HTMLSpanElement
   
-      if (!$funnyText || !$buttonChangeText || !$buttonLeftChangeText || !$arrayToText || !$textCounter || $buttonDownload) return
+      if (!$funnyText || !$buttonChangeText || !$buttonLeftChangeText || !$arrayToText || !$textCounter) return
       
       let index = 0
       const arrayText = $arrayToText?.value.split('. ')
@@ -375,6 +375,16 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
           $image.classList.remove('animate-zoom-in')
           $image.classList.add('animate-zoom-out')
         }
+      })
+    }
+
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+    if (isSafari) {
+      onScroll()
+      window.addEventListener('scroll', onScroll)
+    } else {
+      $gridImages.forEach(($image) => {
+        $image.classList.add('animate-chrome')
       })
     }
 
@@ -480,12 +490,12 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       }
     }
 
-    $buttonDownload.addEventListener('click', () => downloadImages({ $buttonDownload, $containerImages: $gridImages }))
+    $buttonDownload?.addEventListener('click', () => downloadImages({ $buttonDownload, $containerImages: $gridImages }))
 
-    window.addEventListener('scroll', onScroll)
-    sendEmailForBirtDay()
-    onScroll()
     changeText()
+   // window.addEventListener('scroll', onScroll)
+    sendEmailForBirtDay()
+    //onScroll()
     showModal()
   })
 </script>
