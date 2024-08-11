@@ -39,7 +39,7 @@ const { imagesGalery: imagesGalery3, members: members3, id_group: id_group3 } = 
     const $containerImages = $$('.image-container') as NodeListOf<HTMLPictureElement>
     const $buttonDownload = $('#button-download-memories') as HTMLButtonElement
 
-    $buttonDownload.addEventListener('click', () => downloadImages({$buttonDownload, $containerImages}))
+    $buttonDownload?.addEventListener('click', () => downloadImages({$buttonDownload, $containerImages}))
 
     showModal()
   })

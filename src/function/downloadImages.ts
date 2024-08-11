@@ -6,6 +6,8 @@ interface Props {
 }
 
 export function downloadImages ({ $buttonDownload, $containerImages }: Props): void {
+  if (!$buttonDownload || !$containerImages) return
+
   const $svgIcon = $buttonDownload.querySelector('svg') as SVGSVGElement
 
   $buttonDownload.disabled = true
