@@ -1,6 +1,7 @@
 ---
 import { memories_1 } from '@/logic/memories'
 import Modal from '@/components/Modal.astro'
+import SectionDownload from '@/sections/SectionDownload.astro'
 import ShowMemories from '@/components/memories/ShowMemories.astro'
 
 const groupPapus = memories_1.find((group) => group.id_group === 'papus')
@@ -22,6 +23,8 @@ const { imagesGalery: imagesGalery3, members: members3, id_group: id_group3 } = 
 
   <ShowMemories id_group={id_group3} members={members3} imagesGalery={imagesGalery3} />
 
+  <SectionDownload  idButton="button-download-memories" textDownload="Descargar el Álbum Completo" />
+
   <Modal className="clip-dialog" id="close-dialog" isButton={true}>
     <img decoding="async" loading="lazy" src='' alt="" id="image-clip" class="rounded-lg size-full">
   </Modal>
@@ -29,6 +32,15 @@ const { imagesGalery: imagesGalery3, members: members3, id_group: id_group3 } = 
 
 <script>
   import { showModal } from '@/const/showModal'
+  import { $, $$ } from '@/lib/dom-selector'
+  import { downloadImages } from '@/function/downloadImages'
 
-  document.addEventListener('astro:page-load', showModal)
+  document.addEventListener('astro:page-load', () => {
+    const $containerImages = $$('.image-container') as NodeListOf<HTMLPictureElement>
+    const $buttonDownload = $('#button-download-memories') as HTMLButtonElement
+
+    $buttonDownload.addEventListener('click', () => downloadImages({$buttonDownload, $containerImages}))
+
+    showModal()
+  })
 </script>

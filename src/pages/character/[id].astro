@@ -5,6 +5,7 @@ import Layout from "@/layouts/Layout.astro"
 import Socials from "@/components/Socials.astro"
 import ArrowRight from "@/components/icons/Arrows/ArrowRight.astro"
 import ArrowLeft from "@/components/icons/Arrows/ArrowLeft.astro"
+import SectionDownload from "@/sections/SectionDownload.astro"
 import InfoCharacterDesk from "@/components/InfoCharacterDesk.astro"
 import ReactionsComponent from '@/components/ReactionsComponent.astro'
 import ShowComments from '@/components/ShowComments.astro'
@@ -241,6 +242,8 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       }
     </section>
 
+    <SectionDownload idButton="button-download" textDownload="Descargar Álbum" />
+
     <section class="mt-10">
       <h3 class="uppercase text-3xl text-center font-bold mb-8"> Redes Sociales </h3>
       <div class="mx-auto flex max-w-[600px] flex-wrap justify-center gap-2 lg:max-w-full">
@@ -313,6 +316,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
   import { $, $$ } from '@/lib/dom-selector'
   import { showModal } from '@/const/showModal'
   import { toastAlert } from '@/function/alerts'
+  import { downloadImages } from '@/function/downloadImages'
   import Swal from 'sweetalert2'
   import confetti from 'canvas-confetti'
   import JSConfetti from 'js-confetti'
@@ -320,6 +324,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
   document.addEventListener('astro:page-load', async () => {
 
     const $gridImages = $$('.image-container') as NodeListOf<HTMLPictureElement>
+    const $buttonDownload = $('#button-download') as HTMLButtonElement
     const $buttonsReactions = $$('.buttons-reactions') as NodeListOf<HTMLButtonElement>
     const $sessionImage = $('#session-image') as HTMLImageElement
     const $logout = $('#logout') as HTMLButtonElement
@@ -338,7 +343,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       const $arrayToText = $('#arrayToText') as HTMLInputElement
       const $textCounter = $('#text-counter') as HTMLSpanElement
   
-      if (!$funnyText || !$buttonChangeText || !$buttonLeftChangeText || !$arrayToText || !$textCounter) return
+      if (!$funnyText || !$buttonChangeText || !$buttonLeftChangeText || !$arrayToText || !$textCounter || $buttonDownload) return
       
       let index = 0
       const arrayText = $arrayToText?.value.split('. ')
@@ -474,6 +479,8 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         }
       }
     }
+
+    $buttonDownload.addEventListener('click', () => downloadImages({ $buttonDownload, $containerImages: $gridImages }))
 
     window.addEventListener('scroll', onScroll)
     sendEmailForBirtDay()
