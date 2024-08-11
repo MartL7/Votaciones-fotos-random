@@ -172,7 +172,7 @@ export const Characters: Character[] = [
         name: 'Geovas',
         birthDay: '21/08/2006',
         genre: 'Hombre',
-        imagePresentation: '/img/Geovas/Geovas-image-presentation-1.webp',
+        imagePresentation: '/img/Geovas/Geovas-image-presentation.webp',
         imageSmall: '/img/Geovas/Geovas-small.webp',
         imagesGalery: [
             {
@@ -197,7 +197,11 @@ export const Characters: Character[] = [
             },
             {
                 image: '/img/Geovas/Geovas-image-7.avif',
-                class: 'sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[200px]',
+                class: 'sm:hidden',
+            },
+            {
+                image:'/img/Geovas/Geovas-image-22.webp',
+                class: 'hidden sm:block sm:col-start-2 sm:col-end-3 sm:row-start-3 sm:row-end-4 sm:h-[200px]'
             },
             {
                 image: '/img/Geovas/Geovas-image-8.webp',
@@ -222,6 +226,38 @@ export const Characters: Character[] = [
             {
                 image: '/img/Geovas/Geovas-image-14.avif',
                 class: 'h-auto sm:h-[350px]'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-15.webp',
+                class: 'h-auto sm:h-[350px]'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-16.webp',
+                class: 'h-auto sm:h-[400px] sm:row-start-6 sm:row-end-8'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-17.webp',
+                class: 'h-auto sm:h-[400px] row-span-2 sm:row-start-6 sm:row-end-8'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-21.webp',
+                class: 'h-[150px] sm:h-[190px] sm:row-start-6 sm:row-end-7'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-19.webp',
+                class: 'h-[150px] sm:h-[190px] sm:row-start-7 sm:row-end-8'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-20.webp',
+                class: 'h-auto sm:h-[350px] row-span-2 sm:row-span-1'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-18.webp',
+                class: 'h-[150px] sm:h-[350px] sm:col-span-2'
+            },
+            {
+                image: '/img/Geovas/Geovas-image-22.webp',
+                class: 'h-[150px] sm:hidden'
             }
         ],
         funnyText: [
