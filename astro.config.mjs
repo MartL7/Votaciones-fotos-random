@@ -14,10 +14,6 @@ export default defineConfig({
     enabled: false,
   },
 
-  build: {
-    inlineStylesheets: 'always',
-  },
-
   integrations: [auth(), tailwind(), db()],
 
   output: 'server',
