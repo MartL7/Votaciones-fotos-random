@@ -12,19 +12,32 @@ const { isButton, className, id } = Astro.props
 	id="dialog-image`
 >
 	<div class="relative block w-auto sm:w-[50dvh] max-w-[50dvh] bg-transparent">
-		<section class="flex justify-center items-center gap-5 size-full">
+		<section class="relative flex justify-center items-center gap-5 size-full p-5">
+			{ 
+				isButton ? (
+					<span class="absolute z-10 -top-1 pointer-events-none text-center text-sm">
+							<h2 class="hidden xl:block pointer-events-none font-Merri font-semibold text-gray-300/90">
+								Usa las teclas de flecha para navegar
+							</h2>
+
+							<h2 class="block xl:hidden pointer-events-none font-Merri font-semibold text-gray-300/90">
+								Desliza hacia los lados para navegar
+							</h2>
+					</span>
+				) : null
+			}
 			<slot />
 		</section>
 
 		{
 			isButton ? (
-			<button
+				<button
 					type="button"
 					class="close-dialog border fixed right-8 top-8 rounded bg-black/60 p-4 transition hover:scale-110 hover:bg-blue-500/30 hover:border-blue-950"
 					id={id}
 				>
 					<svg
-						class="size-5 hover:text-red-400/90"
+						class="size-5 hover:text-blue-400/90"
 						aria-hidden="true"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -59,6 +72,10 @@ const { isButton, className, id } = Astro.props
 		animation-duration: 200ms;
 		animation-fill-mode: forwards;
 		animation-timing-function: ease-in-out;
+	}
+
+	button:focus {
+		outline: none;
 	}
 
 	@keyframes join-anim {
