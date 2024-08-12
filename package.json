@@ -35,6 +35,7 @@
   "devDependencies": {
     "@types/hammerjs": "^2.0.45",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "esbuild": "^0.23.0",
     "eslint": "^8.57.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-import": "^2.29.1",
