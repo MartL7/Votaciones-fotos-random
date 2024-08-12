@@ -1,4 +1,5 @@
 import { $, $$ } from '@/lib/dom-selector'
+import Hammer from 'hammerjs'
 
 const closeDialog = ($imageClip: HTMLImageElement, $imageDialog: HTMLDialogElement) => {
   $imageClip.classList.remove('animate-zoom-in')
@@ -12,8 +13,10 @@ const closeDialog = ($imageClip: HTMLImageElement, $imageDialog: HTMLDialogEleme
 const showImage = ($imageClip: HTMLImageElement, url: string) => {
   const name = url.split('/').at(-2)
 
+  // animate-slide-in-right animate-slide-in-left
   $imageClip.classList.remove('animate-zoom-out')
   $imageClip.classList.add('animate-zoom-in')
+  
   $imageClip.alt = `Imagen de la galeria de ${name}`
   $imageClip.src = url
 }
@@ -32,7 +35,7 @@ export const showModal = () => {
   $imageDialog.addEventListener('close', () => {
     $imageClip.src = ''
     document.removeEventListener('keydown', handleKeyDown)
-    removeTouchEvents()
+    hammer.destroy()
   })
 
   $imageContainer.forEach((image, index) => {
@@ -41,7 +44,8 @@ export const showModal = () => {
       showImage($imageClip, imageUrls[currentIndex])
       $imageDialog.showModal()
       document.addEventListener('keydown', handleKeyDown)
-      addTouchEvents()
+      addSwipeEvents()
+
     })
   })
 
@@ -65,36 +69,21 @@ export const showModal = () => {
     }
   }
   
-  let touchStartX = 0
-  let touchEndX = 0
+  let hammer: HammerManager
 
-  const handleTouchStart = (event: TouchEvent) => {
-    touchStartX = event.touches[0].clientX
-  }
+  const addSwipeEvents = () => {
+    hammer = new Hammer($imageClip)
 
-  const handleTouchMove = (event: TouchEvent) => {
-    touchEndX = event.touches[0].clientX
-  }
+    hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL })
 
-  const handleTouchEnd = () => {
-    if (touchStartX - touchEndX > 100) {
+    hammer.on('swipeleft', () => {
       currentIndex = (currentIndex + 1) % imageUrls.length
       showImage($imageClip, imageUrls[currentIndex])
-    } else if (touchEndX - touchStartX > 100) {
+    })
+
+    hammer.on('swiperight', () => {
       currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length
       showImage($imageClip, imageUrls[currentIndex])
-    }
-  }
-
-  const addTouchEvents = () => {
-    $imageClip.addEventListener('touchstart', handleTouchStart)
-    $imageClip.addEventListener('touchmove', handleTouchMove)
-    $imageClip.addEventListener('touchend', handleTouchEnd)
-  }
-
-  const removeTouchEvents = () => {
-    $imageClip.removeEventListener('touchstart', handleTouchStart)
-    $imageClip.removeEventListener('touchmove', handleTouchMove)
-    $imageClip.removeEventListener('touchend', handleTouchEnd)
+    })
   }
 }
