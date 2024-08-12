@@ -29,9 +29,9 @@ export default defineConfig({
     }
   }),
 
-  /* vite: {
+  vite: {
     build: {
       cssMinify: 'lightningcss',
     }
-  } */
+  }
 });
