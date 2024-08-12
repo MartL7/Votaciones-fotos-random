@@ -23,6 +23,7 @@
     "astro": "^4.6.1",
     "auth-astro": "^4.1.1",
     "canvas-confetti": "^1.9.2",
+    "hammerjs": "^2.0.8",
     "js-confetti": "^0.12.0",
     "sweetalert2": "^11.12.1",
     "swiper": "^11.1.1",
@@ -32,6 +33,7 @@
     "valibot": "^0.30.0"
   },
   "devDependencies": {
+    "@types/hammerjs": "^2.0.45",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "eslint": "^8.57.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
