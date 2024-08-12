@@ -55,7 +55,7 @@
 -   53. Volver a Optimizar la página -> ✅
 -   54. Separar lógica en showShip.ts -> ✅
 -   55. Implementar funcionalidad de cambiar imagenes en Movil -> URGENTE ✅
--   56. Agregar alguna animación al ir cambiando de imagenes -> URGENTE ❌
+-   56. Agregar alguna animación al ir cambiando de imagenes -> URGENTE ❌ ❌
 -   57. Simplificar en componente las reacciones dentro de InfoCharacterDesk.astro -> URGENTE ✅
 -   58. Agregar nuevo inicio de sesión y guardar la reacción en la BD -> URGENTE ✅
 -   59. Arreglar errores que surgan en la beta de las reacciones -> URGENTE ✔️ (Falta por ver más)
@@ -63,8 +63,9 @@
 -   61. Arreglar y agregar diseño de sesion dentro de cada perfil -> URGENTE ✅
 -   62. Agregar sección de comentarios -> ✅
 -   63. Agregar Base de Datos de comentarios -> ✅
--   64. Arreglar bug al cambio de imagenes en móvil -> ❌
+-   64. Arreglar bug al cambio de imagenes en móvil -> ✅
 -   65. Agregar funcionalidad de ue cada usuario pueda editar sus comentarios -> ❌
 -   66. Arreglar los Anys de TypeScript en los scripts de Session -> ❌
 -   67. Simpificar JS del id.astro -> URGENTE ❌
--   68. Mejorar la función de Cumpleaños -> ❌
+-   68. Mejorar la función de Cumpleaños -> ✅
+-   69. Hacer el punto 56. --> ❌
