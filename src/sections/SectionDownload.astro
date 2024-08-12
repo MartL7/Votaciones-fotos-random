@@ -10,7 +10,7 @@ const { idButton, textDownload } = Astro.props
 ---
 <section class="mt-10">
   <div class="flex flex-col sm:flex-row justify-center items-center gap-3">
-    <button class="group" id={idButton}> 
+    <button class="group" id={idButton} aria-label="Boton de Descargar imagenes" title="Boton de Descarga"> 
       <DownloadIcon class="size-10 group-hover:scale-110 hover:text-red-400/90 transition" />
     </button>
     <h3 class="text-lg text-yellow-300/70"> { textDownload } </h3>
