@@ -12,10 +12,10 @@ const { isButton, className, id } = Astro.props
 	id="dialog-image`
 >
 	<div class="relative block w-auto sm:w-[50dvh] max-w-[50dvh] bg-transparent">
-		<section class="flex justify-center items-center gap-5 size-full p-5">
-			<!-- { 
+		<section class={`relative flex justify-center items-center gap-5 size-full ${isButton ? 'p-5' : 'p-0'}`}>
+			{ 
 				isButton ? (
-					<span class="absolute z-10 -top-1 pointer-events-none text-center text-sm">
+					<span class="absolute -top-1 pointer-events-none text-center text-sm">
 							<h2 class="hidden xl:block pointer-events-none font-Merri font-semibold text-gray-300/90">
 								Usa las teclas de flecha para navegar
 							</h2>
@@ -25,7 +25,7 @@ const { isButton, className, id } = Astro.props
 							</h2>
 					</span>
 				) : ''
-			} -->
+			}
 			<slot />
 		</section>
 
