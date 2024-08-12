@@ -24,7 +24,7 @@ const { isButton, className, id } = Astro.props
 								Desliza hacia los lados para navegar
 							</h2>
 					</span>
-				) : null
+				) : ''
 			}
 			<slot />
 		</section>
@@ -63,7 +63,7 @@ const { isButton, className, id } = Astro.props
 		animation-fill-mode: forwards;
 		background: radial-gradient(ellipse at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0));
 		animation-timing-function: ease-in-out;
-		backdrop-filter: blur(50px);
+		backdrop-filter: blur(80px);
 	}
 
 	.clip-dialog[open]::backdrop {

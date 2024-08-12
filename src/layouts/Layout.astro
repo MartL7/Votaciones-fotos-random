@@ -15,26 +15,29 @@ interface Props {
 	title: string
 	description?: string
 	imageShare ?: string
+	imagePreLoad ?: string
 }
 
-const { title, description, imageShare } = Astro.props 
+const { title, description, imageShare, imagePreLoad } = Astro.props
+
+const preLoadImage = imagePreLoad ?? '/img/Ulises/Ulises-image-presentation.webp'
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
+		<ViewTransitions />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preload" href="/img/Ulises/Ulises-image-presentation.webp" as="image">
+		<link rel="preload" href={preLoadImage} as="image">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="google-site-verification" content="iLRybt197ofHHCfiMV8DPLyoOTON175UrkulIfdNlgo" />
 		<meta property="og:title" content="6M Forever ♥️" />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={imageShare} />
-		<ViewTransitions />
 
 		<SEO />
 	</head>
