@@ -15,7 +15,7 @@ export default defineConfig({
   },
 
   build: {
-    inlineStylesheets: 'always',
+    inlineStylesheets: 'never',
   },
 
   integrations: [auth(), tailwind(), db()],
@@ -29,9 +29,9 @@ export default defineConfig({
     }
   }),
 
-  vite: {
+  /* vite: {
     build: {
       cssMinify: 'lightningcss',
     }
-  }
+  } */
 });
