@@ -15,7 +15,7 @@ export default defineConfig({
   },
 
   build: {
-    inlineStylesheets: 'never',
+    inlineStylesheets: 'always',
   },
 
   integrations: [auth(), tailwind(), db()],
