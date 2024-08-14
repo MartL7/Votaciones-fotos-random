@@ -318,6 +318,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
   import { showModal } from '@/const/showModal'
   import { toastAlert } from '@/function/alerts'
   import { downloadImages } from '@/function/downloadImages'
+  import { isSafari } from '@/function/isSafari'
   import Swal from 'sweetalert2'
   import confetti from 'canvas-confetti'
   import JSConfetti from 'js-confetti'
@@ -379,14 +380,11 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       })
     }
 
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
-    if (isSafari) {
+    if (isSafari()) {
       onScroll()
       window.addEventListener('scroll', onScroll)
     } else {
-      $gridImages.forEach(($image) => {
-        $image.classList.add('animate-chrome')
-      })
+      $gridImages.forEach(($image) => $image.classList.add('animate-chrome'))
     }
 
     $buttonsReactions.forEach(($button) => {

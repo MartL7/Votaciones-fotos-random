@@ -34,12 +34,17 @@ const { imagesGalery: imagesGalery3, members: members3, id_group: id_group3 } = 
   import { showModal } from '@/const/showModal'
   import { $, $$ } from '@/lib/dom-selector'
   import { downloadImages } from '@/function/downloadImages'
+  import { isSafari } from '@/function/isSafari'
 
   document.addEventListener('astro:page-load', () => {
     const $containerImages = $$('.image-container') as NodeListOf<HTMLPictureElement>
     const $buttonDownload = $('#button-download-memories') as HTMLButtonElement
 
     $buttonDownload?.addEventListener('click', () => downloadImages({$buttonDownload, $containerImages}))
+
+    if (!isSafari()) {
+      $containerImages.forEach(($image) => $image.classList.add('animate-chrome'))
+    }
 
     showModal()
   })
