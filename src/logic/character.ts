@@ -264,7 +264,7 @@ export const Characters: Character[] = [
             'Te extraño Karlita :(',
             'Ya es noche',
             'X, somos chavos',
-            'Apoco si tilin'
+            'Apoco si tilin',
             'Los voy a extrañar mucho, papus :c',
         ],
 
