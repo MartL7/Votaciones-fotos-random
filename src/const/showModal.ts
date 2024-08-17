@@ -59,11 +59,12 @@ export const showModal = () => {
   }
 
   const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'ArrowRight') {
+    const { key } = event
+    if (key === 'ArrowRight') {
       currentIndex = (currentIndex + 1) % imageUrls.length
       showImage($imageClip, imageUrls[currentIndex])
 
-    } else if (event.key === 'ArrowLeft') {
+    } else if (key === 'ArrowLeft') {
       currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length
       showImage($imageClip, imageUrls[currentIndex])
     }
