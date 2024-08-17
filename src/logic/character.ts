@@ -265,8 +265,7 @@ export const Characters: Character[] = [
             'Ya es noche',
             'X, somos chavos',
             'Lee esto cuando estes triste',
-            'Ahorita no pendejo, cuando estes triste',
-            'Los voy a extrañar mucho, papus :c',
+            'Ahorita no pendejo, cuando estes triste'
         ],
 
         socials: [
