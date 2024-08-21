@@ -15,12 +15,13 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
     <article class="grid grid-cols-4 gap-x-10">
       <div class="container-characters">
         {
-          firstArrayCharacters.map(({ id, name, imageSmall, genre }) => (
+          firstArrayCharacters.map(({ id, name, imageSmall, genre, birthDay }) => (
             <a 
               href={`/character/${id}`} 
               class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24" 
               data-id={id}
               data-genre={genre}
+              data-birthday={birthDay}
             >
               <img 
                 src={imageSmall} 
@@ -57,12 +58,13 @@ const { firstArrayCharacters, secondArrayCharacters, arrayCharacters } = Astro.p
 
       <div class="container-characters-zurd">
         {
-          secondArrayCharacters.map(({ id, name, imageSmall, genre }) => (
+          secondArrayCharacters.map(({ id, name, imageSmall, genre, birthDay }) => (
             <a 
               href={`/character/${id}`} 
               class="character-link relative md:w-32 md:h-20 lg:w-36 lg:h-24" 
               data-id={id}
               data-genre={genre}
+              data-birthday={birthDay}
             >
               <img 
                 src={imageSmall} 

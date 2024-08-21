@@ -172,6 +172,7 @@ export const Characters: Character[] = [
         name: 'Geovas',
         birthDay: '21/08/2006',
         genre: 'Hombre',
+        numberPhone: 7761029302,
         imagePresentation: '/img/Geovas/Geovas-image-presentation.webp',
         imageSmall: '/img/Geovas/Geovas-small.webp',
         imagesGalery: [
@@ -561,6 +562,7 @@ export const Characters: Character[] = [
         name: 'MrCat',
         birthDay: '21/08/2006',
         genre: 'Hombre',
+        numberPhone: 7761155728,
         imagePresentation: '/img/Elvin/Elvin-image-presentation.webp',
         imageSmall: '/img/Elvin/Elvin-small.webp',
         imagesGalery: [

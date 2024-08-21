@@ -5,6 +5,7 @@ import Layout from "@/layouts/Layout.astro"
 import Socials from "@/components/Socials.astro"
 import ArrowRight from "@/components/icons/Arrows/ArrowRight.astro"
 import ArrowLeft from "@/components/icons/Arrows/ArrowLeft.astro"
+import SendIcon from '@/components/icons/Send.astro'
 import SectionDownload from "@/sections/SectionDownload.astro"
 import InfoCharacterDesk from "@/components/InfoCharacterDesk.astro"
 import ReactionsComponent from '@/components/ReactionsComponent.astro'
@@ -40,7 +41,7 @@ const groupForCharacter = allMembers.filter((member) => {
 if (groupForCharacter?.at(0)?.length > 5) isZurd = true
 else isZurd = false
 
-const { imagePresentation, name, birthDay, imagesGalery, funnyText, socials, genre } = character
+const { imagePresentation, name, birthDay, imagesGalery, funnyText, socials, genre, numberPhone } = character
 
 let colorText = ''
 
@@ -68,6 +69,8 @@ const month = today.getMonth() - formatBirthDate.getMonth()
 if (month < 0 || (month === 0 && today.getDate() < formatBirthDate.getDate())) {
   age--
 }
+
+const phoneNumber = numberPhone ?? 7761001001
 
 const session = await getSession(Astro.request)
 
@@ -225,6 +228,26 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
 
     <ShowGroupFriends id={id} groupForCharacter={groupForCharacter} isMobile={true} />
 
+    <article id="section-message" data-phone-number={phoneNumber}>
+      <section class="hidden mt-10 md:mt-20 flex-col gap-5 justify-center items-center">
+        <p class="flex flex-col justify-center items-center text-center">
+          <span class="text-2xl"> Hoy es el Cumpleaños de {name} </span>
+          <span class="text-blue-300/90 text-xl"> 
+            Enviale un mensaje para {genre === 'Hombre' ? 'felicitarlo!!' : 'felicitarla!!'} 
+          </span>
+        </p>
+
+        <aside class="flex justify-center items-center gap-5 max-w-[300px] sm:max-w-[450px] md:max-w-[550px]">
+          <textarea placeholder="Ingresa el Mensaje" class="texarea-message p-3 focus:outline-none border border-b-2 border-t-0 border-l-0 border-r-0" />
+
+          <button class="group border border-blue-200 hover:border-blue-600 hover:bg-slate-300/90 rounded-lg p-3 transition hover:text-black flex justify-center items-center gap-2"> 
+            Enviar 
+            <SendIcon class="size-6 group-hover:-rotate-45" />
+          </button>
+        </aside>
+      </section>
+    </article>
+
     <h2 class="mt-20 font-semibold text-2xl sm:text-3xl "> Galeria de Fotos de {name} </h2>
     <small class="text-slate-300/90 text-center"> Has click a cualquier imagen para su vista en grande </small>
     <section class="grid grid-cols-2 gap-5 sm:gap-8 md:gap-10 sm:grid-cols-3 p-5">
@@ -290,6 +313,12 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
     mask-composite: intersect;
   }
 
+  .texarea-message {
+    field-sizing: content;
+    background-color: transparent;
+    resize: none;
+  }
+
   /* Agregar compatibilidad a navegadores mientras usando JS */
   @keyframes show {
     from {
@@ -319,6 +348,7 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
   import { toastAlert } from '@/function/alerts'
   import { downloadImages } from '@/function/downloadImages'
   import { isSafari } from '@/function/isSafari'
+  import { getBirthDay } from '@/const/changeCharacterImage'
   import Swal from 'sweetalert2'
   import confetti from 'canvas-confetti'
   import JSConfetti from 'js-confetti'
@@ -434,25 +464,39 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
       })
     })
 
-    const sendEmailForBirtDay = async () => {
+    function sendEmailForBirtDay () {
       if (!$sessionImage) return
 
+      const $sectionMessageBirthDay = $('#section-message')
+      const { phoneNumber } = $sectionMessageBirthDay.dataset
+
       const jsConfetti = new JSConfetti()
-
+      
       const birthDaySound = new Audio('/recursos/Sounds/happy-birthday.mp3')
-
+      
       const { birthday, name } = $sessionImage.dataset
+      
+      const isBirthDay = getBirthDay(birthday)
 
-      const today = new Date()
-      const [day, month, year] = birthday.split('/')
-      const birthDay = new Date(Number(year), Number(month) - 1, Number(day))
+      if (isBirthDay) {
+        const $sectionHidden = $sectionMessageBirthDay.querySelector('section')
+        $sectionHidden.classList.remove('hidden')
+        $sectionHidden.classList.add('flex')
 
-      if (today.getDate() === birthDay.getDate() && today.getMonth() === birthDay.getMonth()) {
+        const $buttonSendMessage = $sectionHidden.querySelector('button') as HTMLButtonElement
+        const $textareaMessage = $sectionHidden.querySelector('textarea') as HTMLTextAreaElement
+
         confetti({
           particleCount: 100,
           spread: 70,
           origin: { y: 0.6 },
           shapes: ['star', 'square', 'circle'],
+        })
+
+        $buttonSendMessage.addEventListener('click', () => {
+          const { value } = $textareaMessage
+          const valueFormat = encodeURIComponent(value)
+          window.open(`https://wa.me/52${phoneNumber}?text=${valueFormat}`, '_blank');
         })
 
         if (!localStorage.getItem(`alertBirthDay-${name}`)) {
@@ -488,13 +532,11 @@ const reaction = reactionsForUser.at(0)?.reactionUser ?? ''
         }
       }
     }
+    sendEmailForBirtDay()
 
     $buttonDownload?.addEventListener('click', () => downloadImages({ $buttonDownload, $containerImages: $gridImages }))
 
     changeText()
-   // window.addEventListener('scroll', onScroll)
-    sendEmailForBirtDay()
-    //onScroll()
     showModal()
   })
 </script>
