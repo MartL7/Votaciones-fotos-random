@@ -93,7 +93,12 @@ export function changeCharacterImage () {
               html: `
                 Hoy es el cumpleaños de <span class="text-red-400/90 font-bold">${id}</span>
                 <aside class="flex justify-center items-center">
-                  <img src="${image}" class="size-[120px]" alt="Imagen del cumpleañero ${id}" /> 
+                  <img 
+                    src="${image}" 
+                    class="size-[120px]" 
+                    alt="Imagen del cumpleañero ${id}" 
+                    style="mask-image: linear-gradient(black 70%, transparent);"
+                  /> 
                 </aside>`,
               footer: `<span>Espero que <span class="text-blue-300/90">${id}</span> tenga un <span class="text-yellow-400/90 font-bold">día increíble</span></span>`,
               showCancelButton: true,
@@ -121,8 +126,18 @@ export function changeCharacterImage () {
               title: 'ESPERAAAAA!!!',
               html: `Hoy es el cumpleaños de <span class="text-red-400/90 font-bold">${nameBirthDay1} y de ${nameBirthDay2}</span>
               <aside class="flex justify-center items-center gap-3">
-                <img src="${image1}" class="size-[120px]" alt="Imagen del cumpleañero ${nameBirthDay1}" />
-                <img src="${image2}" class="size-[120px]" alt="Imagen del cumpleañero ${nameBirthDay2}" />
+                <img 
+                  src="${image1}" 
+                  class="size-[120px]" 
+                  alt="Imagen del cumpleañero ${nameBirthDay1}" 
+                  style="mask-image: linear-gradient(black 70%, transparent);"
+                />
+                <img 
+                  src="${image2}" 
+                  class="size-[120px]" 
+                  alt="Imagen del cumpleañero ${nameBirthDay2}" 
+                  style="mask-image: linear-gradient(black 70%, transparent);"
+                />
               </aside>`,
               footer: `<span class="text-black font-bold">DIRIGETE AL PERFIL DE CADA UNO PARA FELICITARLO!!!</span>`,
               showCancelButton: true,
