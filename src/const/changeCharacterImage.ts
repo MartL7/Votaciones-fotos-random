@@ -124,11 +124,9 @@ export function changeCharacterImage () {
                 <img src="${image1}" class="size-[120px]" alt="Imagen del cumpleañero ${nameBirthDay1}" />
                 <img src="${image2}" class="size-[120px]" alt="Imagen del cumpleañero ${nameBirthDay2}" />
               </aside>`,
-              footer: `<span class="text-black font-bold">Dirigete al perfil de cada uno para felicitarlo!!</span>`,
+              footer: `<span class="text-black font-bold">DIRIGETE AL PERFIL DE CADA UNO PARA FELICITARLO!!!</span>`,
               showCancelButton: true,
               allowOutsideClick: false,
-              confirmButtonText: "Celebrar!",
-              cancelButtonText: "Cerrar",
               showClass: {
                 popup: 'animate-fade-in'
               },
