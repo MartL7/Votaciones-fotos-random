@@ -323,7 +323,7 @@ export const Characters: Character[] = [
                 class: 'sm:col-start-1 sm:col-end-2 sm:row-start-5 sm:row-end-6 sm:h-[300px] col-start-2 col-end-3 row-start-6 row-end-7 h-auto'
             },
         ],
-        funnyText: ['A poco si tilin'],
+        funnyText: ['A poco si tilin', 'Tengo un talento oculto y asi se va a quedar', 'Arriba las manos y abajo los calzones', 'Me conocieron abajo, y ahí me quedé', 'Cierra los ojos, me veo a toda madre'],
         socials: [
             { name: 'Instagram', link: 'https://www.instagram.com/holasoymike.87', type: 'instagram' },
         ]
