@@ -606,6 +606,9 @@ export const Characters: Character[] = [
                 image: '/img/Elvin/Elvin-image-6.avif',
                 class: 'sm:hidden col-start-2 col-end-3 row-start-7 row-end-8 h-[200px]',
             },
+            {
+                image: '/img/Elvin/Elvin-image-11.jpg',
+            }
         ],
         funnyText: [
             'Lo hago en 30 segundos!',
