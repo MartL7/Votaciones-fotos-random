@@ -27,5 +27,9 @@ export const shipsForCharacters: ShipsCharacters[] = [
   {
     id: 'Are',
     ships: ['Geovas']
-  }
+  },
+  {
+    id: 'Leslie',
+    ships: ['Geovas']
+  },
 ]
