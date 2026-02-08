@@ -21,7 +21,7 @@ export default defineConfig({
   integrations: [auth(), tailwind(), db()],
 
   output: 'server',
-  site: 'https://forever6m.vercel.app/',
+  site: 'https://forever6m.vercel.app',
 
   adapter: vercel({
     webAnalytics: {
