@@ -16,8 +16,8 @@ import { memories_1 } from '@/logic/memories'
 import { colorsText } from '@/logic/colorsText'
 import { Characters } from "@/logic/character"
 import { socialIcons } from '@/logic/socials'
-import { Reactions, db, eq, count } from 'astro:db'
-import { Comments as TableComments } from 'astro:db'
+//import { Reactions, db, eq, count } from 'astro:db'
+//import { Comments as TableComments } from 'astro:db'
 import { and } from 'astro:db'
 
 const { id } = Astro.params
@@ -77,18 +77,18 @@ const session = await getSession(Astro.request)
 const reactionsForUser = await db
   .select({ reactionUser: Reactions.reaction, userReactionsUser: Reactions.userReaction })
   .from(Reactions)
-  .where(and(eq(Reactions.userReaction, name), eq(Reactions.userId, session?.user.id)))
+  .where(and(eq(Reactions.userReaction, name), eq(Reactions.userId, session?.user.id))) ?? []
 
 const allReactions = await db
   .select({ reactions: Reactions.reaction, count: count() })
   .from(Reactions)
   .where(eq(Reactions.userReaction, name))
-  .groupBy(Reactions.reaction)
+  .groupBy(Reactions.reaction) ?? []
 
 const allComments = await db
   .select()
   .from(TableComments)
-  .where(eq(TableComments.userComment, name))
+  .where(eq(TableComments.userComment, name)) ?? []
 
 const countLikes = allReactions.find((reaction) => reaction.reactions === 'like')?.count ?? 0
 const countStars = allReactions.find((reaction) => reaction.reactions === 'star')?.count ?? 0
